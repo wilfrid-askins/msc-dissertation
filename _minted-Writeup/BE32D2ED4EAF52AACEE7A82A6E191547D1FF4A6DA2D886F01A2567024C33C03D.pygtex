@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{k}{if} \PYG{n}{model}\PYGZbs{}\PYG{n}{\PYGZus{}name} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{models}\PYG{p}{:}
+        \PYG{k}{with} \PYG{n}{job}\PYG{o}{.}\PYGZbs{}\PYG{n}{\PYGZus{}lock}\PYG{p}{:}
+          \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{done} \PYG{o}{=} \PYG{k+kc}{True}
+          \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{error} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}model not found\PYGZdq{}}
+          \PYG{k}{return}
+      \PYG{n}{model} \PYG{o}{=} \PYG{n}{models}\PYG{p}{[}\PYG{n}{model}\PYGZbs{}\PYG{n}{\PYGZus{}name}\PYG{p}{]}
+
+      \PYG{k}{if} \PYG{n}{query\PYGZus{}name} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{model}\PYG{o}{.}\PYG{n}{get}\PYGZbs{}\PYG{n}{\PYGZus{}queries}\PYG{p}{():}
+        \PYG{k}{with} \PYG{n}{job}\PYG{o}{.}\PYGZbs{}\PYG{n}{\PYGZus{}lock}\PYG{p}{:}
+          \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{done} \PYG{o}{=} \PYG{k+kc}{True}
+          \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{error} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}query not found\PYGZdq{}}
+          \PYG{k}{return}
+      \PYG{n}{query} \PYG{o}{=} \PYG{n}{model}\PYG{o}{.}\PYG{n}{get}\PYGZbs{}\PYG{n}{\PYGZus{}queries}\PYG{p}{()[}\PYG{n}{query}\PYGZbs{}\PYG{n}{\PYGZus{}name}\PYG{p}{]}
+\end{Verbatim}

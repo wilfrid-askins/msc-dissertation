@@ -1,0 +1,258 @@
+\begin{thebibliography}{10}
+
+\bibitem{greenfield-project}
+John Adams.
+\newblock {Greenfield vs Brownfield}.
+\newblock
+  \url{https://www.johnadamsit.com/software-development-greenfield-vs-brownfield/},
+  2020.
+\newblock [Online; accessed 01-August-2022].
+
+\bibitem{nls-collections}
+Sarah Ames and Stuart Lewis.
+\newblock Disrupting the library: Digital scholarship and big data at the
+  national library of scotland.
+\newblock {\em Big Data \& Society}, 7(2):2053951720970576, 2020.
+
+\bibitem{docker}
+Charles Anderson.
+\newblock Docker [software engineering].
+\newblock {\em Ieee Software}, 32(3):102--c3, 2015.
+
+\bibitem{semantic-web-primer}
+Grigoris Antoniou and Frank Van~Harmelen.
+\newblock {\em A semantic web primer}.
+\newblock MIT press, 2004.
+
+\bibitem{agile-manifesto}
+Agile authors.
+\newblock {Manifesto for Agile Software Development}.
+\newblock \url{https://agilemanifesto.org/}, 2001.
+\newblock [Online; accessed 02-August-2022].
+
+\bibitem{sql-alchemy}
+SQLAlchemy authors.
+\newblock {SQLAlchemy ORM}.
+\newblock \url{https://docs.sqlalchemy.org/en/14/orm/}, 2021.
+\newblock [Online; accessed 01-August-2022].
+
+\bibitem{test-driven-dev}
+Kent Beck.
+\newblock {TDD}.
+\newblock \url{https://www.agilealliance.org/glossary/tdd/}, 2016.
+\newblock [Online; accessed 01-August-2022].
+
+\bibitem{ttl-files}
+David Beckett and Tim Berners-Lee.
+\newblock {Turtle - Terse RDF Triple Language}.
+\newblock \url{https://www.w3.org/TeamSubmission/turtle/}, 2008.
+\newblock [Online; accessed 31-July-2022].
+
+\bibitem{rdf-historical}
+Kate Byrne.
+\newblock Nested named entity recognition in historical archive text.
+\newblock In {\em International Conference on Semantic Computing (ICSC 2007)},
+  pages 589--596, 2007.
+
+\bibitem{info-extraction}
+Claire Cardie.
+\newblock Empirical methods in information extraction.
+\newblock {\em AI Magazine}, 18(4):65, Dec. 1997.
+
+\bibitem{nlp-fundamentals}
+KR1442 Chowdhary.
+\newblock Natural language processing.
+\newblock {\em Fundamentals of artificial intelligence}, pages 603--649, 2020.
+
+\bibitem{flasgger-desc}
+Flasgger Contributors.
+\newblock {Flasgger - Easy Swagger UI for your Flask API}.
+\newblock \url{https://github.com/flasgger/flasgger}, 2021.
+\newblock [Online; accessed 05-August-2022].
+
+\bibitem{terraform}
+Terraform Contributors.
+\newblock {Terraform Documentation}.
+\newblock \url{https://www.terraform.io/docs}, 2022.
+\newblock [Online; accessed 02-August-2022].
+
+\bibitem{ontology}
+Lisa Ehrlinger and Wolfram W{\"o}{\ss}.
+\newblock Towards a definition of knowledge graphs.
+\newblock {\em SEMANTiCS (Posters, Demos, SuCCESS)}, 48(1-4):2, 2016.
+
+\bibitem{eb-ontology}
+Rosa Filgueira.
+\newblock {EB Ontology}.
+\newblock \url{https://francesnlp.github.io/EB-ontology/doc/index-en.html},
+  2021.
+\newblock [Online; accessed 31-July-2022].
+
+\bibitem{defoe}
+Rosa Filgueira, Michael Jackson, Anna Roubickova, Amrey Krause, Ruth Ahnert,
+  Tessa Hauswedell, Julianne Nyhan, David Beavan, Timothy Hobson, Mariona~Coll
+  Ardanuy, et~al.
+\newblock defoe: A spark-based toolbox for analysing digital historical textual
+  data.
+\newblock In {\em 2019 15th International Conference on eScience (eScience)},
+  pages 235--242. IEEE, 2019.
+
+\bibitem{pyspark-dataframes}
+Apache~Software Foundation.
+\newblock {Apache Spark - Getting Started}.
+\newblock \url{https://spark.apache.org/docs/latest/sql-getting-started.html},
+  2020.
+\newblock [Online; accessed 03-August-2022].
+
+\bibitem{pyspark-site}
+Apache~Software Foundation.
+\newblock {Apache Spark - Quickstart: DataFrame}.
+\newblock
+  \url{https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html},
+  2020.
+\newblock [Online; accessed 03-August-2022].
+
+\bibitem{apache-fuseki}
+Apache~Software Foundation.
+\newblock {Apache Jena Fuseki}.
+\newblock \url{https://jena.apache.org/documentation/fuseki2/}, 2022.
+\newblock [Online; accessed 31-July-2022].
+
+\bibitem{openapi}
+The~Linux Foundation.
+\newblock {OpenAPI - Providing Documentation and Examples}.
+\newblock \url{https://oai.github.io/Documentation/specification-docs.html},
+  2022.
+\newblock [Online; accessed 05-August-2022].
+
+\bibitem{flask}
+Miguel Grinberg.
+\newblock {\em Flask web development: developing web applications with python}.
+\newblock " O'Reilly Media, Inc.", 2018.
+
+\bibitem{kg-def}
+Claudio Gutierrez and Juan~F Sequeda.
+\newblock Knowledge graphs.
+\newblock {\em Communications of the ACM}, 64(3):96--104, 2021.
+
+\bibitem{jwt-desc}
+Auth0 Inc.
+\newblock {Introduction to JSON Web Tokens}.
+\newblock \url{https://jwt.io/introduction}, 2022.
+\newblock [Online; accessed 04-August-2022].
+
+\bibitem{consul-desc}
+HashiCorp Limited.
+\newblock {Use Case - Discover Services with Consul}.
+\newblock \url{https://www.consul.io/use-cases/discover-services}, 2022.
+\newblock [Online; accessed 04-August-2022].
+
+\bibitem{react-desc}
+Inc Meta~Platforms.
+\newblock {React - A JavaScript library for building user interfaces}.
+\newblock \url{https://reactjs.org/}, 2022.
+\newblock [Online; accessed 05-August-2022].
+
+\bibitem{kg-graphic}
+Maximilian Nickel, Kevin Murphy, Volker Tresp, and Evgeniy Gabrilovich.
+\newblock A review of relational machine learning for knowledge graphs.
+\newblock {\em Proceedings of the IEEE}, 104(1):11--33, 2015.
+
+\bibitem{kg-machine-learning}
+Maximilian Nickel, Kevin Murphy, Volker Tresp, and Evgeniy Gabrilovich.
+\newblock A review of relational machine learning for knowledge graphs.
+\newblock {\em Proceedings of the IEEE}, 104(1):11--33, 2016.
+
+\bibitem{docker-example}
+Michael Okoh and Alex Garnett.
+\newblock {How To Build and Deploy a Flask Application Using Docker on Ubuntu
+  20.04}.
+\newblock
+  \url{https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-20-04},
+  2021.
+\newblock [Online; accessed 05-August-2022].
+
+\bibitem{nlp-historical}
+Michael Piotrowski.
+\newblock Natural language processing for historical texts.
+\newblock {\em Synthesis lectures on human language technologies}, 5(2):1--157,
+  2012.
+
+\bibitem{scrum}
+Ken Schwaber and Jeff Sutherland.
+\newblock {WHAT IS SCRUM?}
+\newblock \url{https://www.scrum.org/resources/what-is-scrum}, 2022.
+\newblock [Online; accessed 01-August-2022].
+
+\bibitem{ocr-trends}
+Om~Prakash Sharma, MK~Ghose, Krishna~Bikram Shah, and Benoy~Kumar Thakur.
+\newblock Recent trends and tools for feature extraction in ocr technology.
+\newblock {\em International Journal of Soft Computing and Engineering},
+  2(6):220--223, 2013.
+
+\bibitem{waterfall}
+Rick Sherman.
+\newblock {\em Business intelligence guidebook: From data integration to
+  analytics}.
+\newblock Newnes, 2014.
+
+\bibitem{docker-stats}
+Dmitry Shurupov.
+\newblock {Kubernetes and containerization trends (according to the reports of
+  2021)}.
+\newblock
+  \url{https://blog.flant.com/kubernetes-and-containers-market-trends-2021/},
+  2021.
+\newblock [Online; accessed 31-July-2022].
+
+\bibitem{apache-jena}
+Stefan Siemer.
+\newblock Exploring the apache jena framework.
+\newblock 2019.
+
+\bibitem{swagger}
+SmartBear Software.
+\newblock {Swagger API Documentation}.
+\newblock \url{https://swagger.io/solutions/api-documentation/}, 2022.
+\newblock [Online; accessed 01-August-2022].
+
+\bibitem{swagger-ui}
+SmartBear Software.
+\newblock {Swagger UI}.
+\newblock \url{https://swagger.io/tools/swagger-ui/}, 2022.
+\newblock [Online; accessed 05-August-2022].
+
+\bibitem{c4-model}
+Andrea V{\'a}zquez-Ingelmo, Alicia Garc{\'\i}a-Holgado, and Francisco~J
+  Garc{\'\i}a-Pe{\~n}alvo.
+\newblock C4 model in a software engineering subject to ease the comprehension
+  of uml and the software.
+\newblock In {\em 2020 IEEE Global Engineering Education Conference (EDUCON)},
+  pages 919--924. IEEE, 2020.
+
+\bibitem{kg-examples}
+Jihong Yan, Chengyu Wang, Wenliang Cheng, Ming Gao, and Aoying Zhou.
+\newblock A retrospective of knowledge graphs.
+\newblock {\em Frontiers of Computer Science}, 12(1):55--74, 2018.
+
+\bibitem{postgres}
+Xiaojie Yang.
+\newblock Analysis of dbms: Mysql vs postgresql.
+\newblock 2011.
+
+\bibitem{spark-rdds}
+Matei Zaharia, Mosharaf Chowdhury, Tathagata Das, Ankur Dave, Justin Ma, Murphy
+  McCauly, Michael~J Franklin, Scott Shenker, and Ion Stoica.
+\newblock Resilient distributed datasets: A $\{$Fault-Tolerant$\}$ abstraction
+  for $\{$In-Memory$\}$ cluster computing.
+\newblock In {\em 9th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 12)}, pages 15--28, 2012.
+
+\bibitem{info-extraction-def}
+Jiansong Zhang and Nora~M El-Gohary.
+\newblock Semantic nlp-based information extraction from construction
+  regulatory documents for automated compliance checking.
+\newblock {\em Journal of Computing in Civil Engineering}, 30(2):04015014,
+  2016.
+
+\end{thebibliography}

@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE} \PYG{k}{TABLE} \PYG{k}{IF} \PYG{k}{NOT} \PYG{k}{EXISTS} \PYG{n}{Users} \PYG{p}{(}
+  \PYG{n}{userID} \PYG{n}{UUID} \PYG{k}{PRIMARY} \PYG{k}{KEY} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{firstName} \PYG{n+nb}{VARCHAR} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{)} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{lastName} \PYG{n+nb}{VARCHAR} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{)} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{email} \PYG{n+nb}{VARCHAR} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{)} \PYG{k}{NOT} \PYG{k}{NULL} \PYG{k}{UNIQUE}\PYG{p}{,}
+  \PYG{n}{password} \PYG{n+nb}{TEXT} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{createdAt} \PYG{k}{TIMESTAMP} \PYG{k}{WITHOUT} \PYG{k}{TIME} \PYG{k}{ZONE} \PYG{k}{NOT} \PYG{k}{NULL}
+                                   \PYG{k}{DEFAULT} \PYG{p}{(}\PYG{k}{current\PYGZus{}timestamp} \PYG{k}{AT} \PYG{k}{TIME} \PYG{k}{ZONE} \PYG{l+s+s1}{\PYGZsq{}UTC\PYGZsq{}}\PYG{p}{),}
+  \PYG{n}{updatedAt} \PYG{k}{TIMESTAMP} \PYG{k}{WITHOUT} \PYG{k}{TIME} \PYG{k}{ZONE}\PYG{p}{,}
+  \PYG{n}{status} \PYG{n+nb}{VARCHAR} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{)} \PYG{k}{NOT} \PYG{k}{NULL} \PYG{k}{DEFAULT} \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}} \PYG{k}{CHECK} \PYG{p}{(}\PYG{n}{status} \PYG{k}{IN} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}pending\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}deleted\PYGZsq{}}\PYG{p}{))}
+\PYG{p}{);}
+
+\PYG{k}{CREATE} \PYG{k}{TABLE} \PYG{k}{IF} \PYG{k}{NOT} \PYG{k}{EXISTS} \PYG{n}{Submissions} \PYG{p}{(}
+  \PYG{n}{submissionID} \PYG{n}{UUID} \PYG{k}{PRIMARY} \PYG{k}{KEY} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{userID} \PYG{n}{UUID} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{submissionName} \PYG{n+nb}{VARCHAR} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{)} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{k}{result} \PYG{n+nb}{text} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+  \PYG{n}{error} \PYG{n+nb}{VARCHAR} \PYG{p}{(}\PYG{l+m+mi}{255}\PYG{p}{)} \PYG{k}{NOT} \PYG{k}{NULL}\PYG{p}{,}
+
+  \PYG{n}{submitTime} \PYG{k}{TIMESTAMP} \PYG{k}{WITHOUT} \PYG{k}{TIME} \PYG{k}{ZONE} \PYG{k}{NOT} \PYG{k}{NULL}
+       \PYG{k}{DEFAULT} \PYG{p}{(}\PYG{k}{current\PYGZus{}timestamp} \PYG{k}{AT} \PYG{k}{TIME} \PYG{k}{ZONE} \PYG{l+s+s1}{\PYGZsq{}UTC\PYGZsq{}}\PYG{p}{),}
+
+  \PYG{k}{FOREIGN} \PYG{k}{KEY} \PYG{p}{(}\PYG{n}{userID}\PYG{p}{)} \PYG{k}{REFERENCES} \PYG{n}{Users}\PYG{p}{(}\PYG{n}{userID}\PYG{p}{)}
+\PYG{p}{);}
+\end{Verbatim}

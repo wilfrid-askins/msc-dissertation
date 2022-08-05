@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}spark\PYGZhy{}submit\PYGZdq{}}\PYG{p}{)}
+            \PYG{n}{cwd} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{getcwd}\PYG{p}{()}
+            \PYG{n}{os}\PYG{o}{.}\PYG{n}{chdir}\PYG{p}{(}\PYG{n}{defoe\PYGZus{}path}\PYG{p}{)}
+            \PYG{n}{cmd}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}spark\PYGZhy{}submit \PYGZhy{}\PYGZhy{}driver\PYGZhy{}memory 12g \PYGZhy{}\PYGZhy{}py\PYGZhy{}files defoe.zip defoe/run\PYGZus{}query.py sparql\PYGZus{}data.txt sparql defoe.sparql.queries.\PYGZdq{}}\PYG{o}{+} \PYG{n}{defoe\PYGZus{}selection}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}}\PYG{o}{+} \PYG{n}{config\PYGZus{}file}  \PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{} \PYGZhy{}r \PYGZdq{}} \PYG{o}{+} \PYG{n}{results\PYGZus{}file} \PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{} \PYGZhy{}n 34\PYGZdq{}}
+            \PYG{n}{os}\PYG{o}{.}\PYG{n}{chdir}\PYG{p}{(}\PYG{n}{cwd}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@query}\PYG{o}{.}\PYG{n}{route}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/eb\PYGZus{}details\PYGZdq{}}\PYG{p}{,}  \PYG{n}{methods}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}POST\PYGZsq{}}\PYG{p}{])}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/query/eb\PYGZus{}details.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{eb\PYGZus{}details}\PYG{p}{():}
+	\PYG{o}{...}
+\end{Verbatim}

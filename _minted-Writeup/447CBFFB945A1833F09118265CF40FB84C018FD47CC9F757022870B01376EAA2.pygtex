@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} syntax=docker/dockerfile:1}
+
+FROM python:3.8\PYGZhy{}slim\PYGZhy{}buster
+\PYG{c+c1}{\PYGZsh{} FROM conda/miniconda3}
+
+WORKDIR /app
+
+\PYG{c+c1}{\PYGZsh{} install prequisites}
+
+RUN apt update
+RUN apt \PYGZhy{}y install build\PYGZhy{}essential
+RUN apt \PYGZhy{}y install curl
+
+RUN pip install \PYGZhy{}\PYGZhy{}upgrade pip
+
+\PYG{c+c1}{\PYGZsh{} install defoe}
+
+COPY ./defoe\PYGZus{}lib/requirements.txt defoe\PYGZhy{}req.txt
+RUN pip install \PYGZhy{}r defoe\PYGZhy{}req.txt
+
+\PYG{c+c1}{\PYGZsh{} COPY ./defoe\PYGZus{}lib/requirements.sh defoe\PYGZhy{}req.sh}
+\PYG{c+c1}{\PYGZsh{} COPY ./defoe\PYGZus{}lib/scripts/download\PYGZus{}ntlk\PYGZus{}corpus.sh ./scripts/download\PYGZus{}ntlk\PYGZus{}corpus.sh}
+\PYG{c+c1}{\PYGZsh{} RUN bash defoe\PYGZhy{}req.sh}
+
+\PYG{c+c1}{\PYGZsh{} install frances}
+
+COPY ./frances\PYGZhy{}api/web\PYGZus{}app/requirements.txt frances\PYGZhy{}req.txt
+RUN pip install \PYGZhy{}r frances\PYGZhy{}req.txt
+
+\PYG{c+c1}{\PYGZsh{} copy code files}
+
+COPY ./frances\PYGZhy{}api ./frances\PYGZhy{}api
+COPY ./defoe\PYGZus{}lib ./defoe\PYGZus{}lib
+
+\PYG{c+c1}{\PYGZsh{} copy default consul config}
+
+COPY install\PYGZus{}config.sh .
+COPY ./data/config.json ./data/config.json
+
+\PYG{c+c1}{\PYGZsh{} required ports}
+
+EXPOSE \PYG{l+m}{80}
+EXPOSE \PYG{l+m}{8080}
+EXPOSE \PYG{l+m}{5000}
+
+\PYG{c+c1}{\PYGZsh{} entrypoint}
+
+COPY start.sh .
+RUN chmod +x start.sh
+
+CMD \PYG{o}{[}\PYG{l+s+s2}{\PYGZdq{}bash\PYGZdq{}}, \PYG{l+s+s2}{\PYGZdq{}start.sh\PYGZdq{}}\PYG{o}{]}
+\end{Verbatim}

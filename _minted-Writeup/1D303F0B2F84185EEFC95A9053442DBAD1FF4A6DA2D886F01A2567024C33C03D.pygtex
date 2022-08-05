@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pyspark.sql} \PYG{k+kn}{import} \PYG{n}{SparkSession}
+
+\PYG{n}{spark} \PYG{o}{=} \PYG{n}{SparkSession}\PYG{o}{.}\PYG{n}{builder}\PYG{o}{.}\PYG{n}{getOrCreate}\PYG{p}{()}
+
+\PYG{c+c1}{\PYGZsh{} spark is an existing SparkSession}
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{spark}\PYG{o}{.}\PYG{n}{read}\PYG{o}{.}\PYG{n}{json}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}examples/src/main/resources/people.json\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Displays the content of the DataFrame to stdout}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{} +\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+}
+\PYG{c+c1}{\PYGZsh{} | age|   name|}
+\PYG{c+c1}{\PYGZsh{} +\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+}
+\PYG{c+c1}{\PYGZsh{} |null|Michael|}
+\PYG{c+c1}{\PYGZsh{} |  30|   Andy|}
+\PYG{c+c1}{\PYGZsh{} |  19| Justin|}
+\PYG{c+c1}{\PYGZsh{} +\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+}
+\end{Verbatim}

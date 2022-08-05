@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+  \PYG{n+nt}{\PYGZdq{}frances\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{\PYGZdq{}fusekiUrl\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}http://fuseki:3030/total\PYGZus{}eb/sparql\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nt}{\PYGZdq{}files\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+      \PYG{n+nt}{\PYGZdq{}uploads\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}/app/frances\PYGZhy{}api/web\PYGZus{}app/query\PYGZus{}app/upload\PYGZus{}folder\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}results\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}/app/frances\PYGZhy{}api/web\PYGZus{}app/query\PYGZus{}app/defoe\PYGZus{}results\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}models\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}/app/frances\PYGZhy{}api/web\PYGZus{}app/models\PYGZdq{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{},}
+  \PYG{n+nt}{\PYGZdq{}defoe\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{\PYGZdq{}sparkUrl\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}local[1]\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nt}{\PYGZdq{}fusekiUrl\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}http://fuseki:3030/total\PYGZus{}eb/sparql\PYGZdq{}}
+  \PYG{p}{\PYGZcb{},}
+  \PYG{n+nt}{\PYGZdq{}database\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{\PYGZdq{}host\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}database\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nt}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}frances\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nt}{\PYGZdq{}password\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}frances\PYGZdq{}}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

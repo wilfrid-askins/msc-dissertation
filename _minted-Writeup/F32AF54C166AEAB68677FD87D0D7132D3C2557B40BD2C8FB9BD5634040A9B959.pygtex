@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+class HelloMessage extends React.Component \PYGZob{}
+  render() \PYGZob{}
+    return \PYG{p}{\PYGZlt{}}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}Hello \PYGZob{}this.props.name\PYGZcb{}\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}};
+  \PYGZcb{}
+\PYGZcb{}
+\end{Verbatim}

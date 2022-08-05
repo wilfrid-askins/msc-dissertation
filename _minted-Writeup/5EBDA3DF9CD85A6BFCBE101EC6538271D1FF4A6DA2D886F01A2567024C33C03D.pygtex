@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{Model}\PYG{p}{:}
+  \PYG{k}{def} \PYG{n+nf}{get}\PYGZbs{}\PYG{n}{\PYGZus{}queries}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+      \PYG{k}{return} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}frequency\PYGZbs{}\PYGZus{}keysearch\PYGZbs{}\PYGZus{}by\PYGZbs{}\PYGZus{}year\PYGZdq{}}\PYG{p}{:} \PYG{n}{frequency}\PYGZbs{}\PYG{n}{\PYGZus{}keysearch}\PYGZbs{}\PYG{n}{\PYGZus{}by}\PYGZbs{}\PYG{n}{\PYGZus{}year}\PYG{o}{.}\PYG{n}{do}\PYGZbs{}\PYG{n}{\PYGZus{}query}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}publication\PYGZbs{}\PYGZus{}normalized\PYGZdq{}}\PYG{p}{:} \PYG{n}{publication}\PYGZbs{}\PYG{n}{\PYGZus{}normalized}\PYG{o}{.}\PYG{n}{do}\PYGZbs{}\PYG{n}{\PYGZus{}query}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}terms\PYGZbs{}\PYGZus{}fulltext\PYGZbs{}\PYGZus{}keysearch\PYGZbs{}\PYGZus{}by\PYGZbs{}\PYGZus{}year\PYGZdq{}}\PYG{p}{:} \PYG{n}{terms}\PYGZbs{}\PYG{n}{\PYGZus{}fulltext}\PYGZbs{}\PYG{n}{\PYGZus{}keysearch}\PYGZbs{}\PYG{n}{\PYGZus{}by}\PYGZbs{}\PYG{n}{\PYGZus{}year}\PYG{o}{.}\PYG{n}{do}\PYGZbs{}\PYG{n}{\PYGZus{}query}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}uris\PYGZbs{}\PYGZus{}keysearch\PYGZdq{}}\PYG{p}{:} \PYG{n}{uris}\PYGZbs{}\PYG{n}{\PYGZus{}keysearch}\PYG{o}{.}\PYG{n}{do}\PYGZbs{}\PYG{n}{\PYGZus{}query}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}terms\PYGZbs{}\PYGZus{}snippet\PYGZbs{}\PYGZus{}keysearch\PYGZbs{}\PYGZus{}by\PYGZbs{}\PYGZus{}year\PYGZdq{}}\PYG{p}{:} \PYG{n}{terms}\PYGZbs{}\PYG{n}{\PYGZus{}snippet}\PYGZbs{}\PYG{n}{\PYGZus{}keysearch}\PYGZbs{}\PYG{n}{\PYGZus{}by}\PYGZbs{}\PYG{n}{\PYGZus{}year}\PYG{o}{.}\PYG{n}{do}\PYGZbs{}\PYG{n}{\PYGZus{}query}\PYG{p}{,}
+      \PYG{p}{\PYGZcb{}}
+\end{Verbatim}
