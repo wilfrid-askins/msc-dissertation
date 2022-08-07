@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{User}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n+nb}{id}\PYG{p}{,} \PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{id} \PYG{o}{=} \PYG{n+nb}{id}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{first\PYGZus{}name} \PYG{o}{=} \PYG{n}{first\PYGZus{}name}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{last\PYGZus{}name} \PYG{o}{=} \PYG{n}{last\PYGZus{}name}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{email} \PYG{o}{=} \PYG{n}{email}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{password} \PYG{o}{=} \PYG{n}{password}
+
+    \PYG{n+nd}{@staticmethod}
+    \PYG{k}{def} \PYG{n+nf}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{):}
+        \PYG{n+nb}{id} \PYG{o}{=} \PYG{n}{uuid}\PYG{o}{.}\PYG{n}{uuid5}\PYG{p}{(}\PYG{n}{uuid}\PYG{o}{.}\PYG{n}{NAMESPACE\PYGZus{}URL}\PYG{p}{,} \PYG{n}{namespace} \PYG{o}{+} \PYG{n}{first\PYGZus{}name} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{time}\PYG{o}{.}\PYG{n}{time}\PYG{p}{()))}
+        \PYG{k}{return} \PYG{n}{User}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{,} \PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{)}
+\end{Verbatim}

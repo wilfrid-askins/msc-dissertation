@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}results\PYGZdq{}}\PYG{p}{:} \PYG{n}{results\PYGZus{}for\PYGZus{}render}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}pagination\PYGZdq{}}\PYG{p}{:} \PYG{n}{pagination\PYGZus{}to\PYGZus{}dict}\PYG{p}{(}\PYG{n}{pagination}\PYG{p}{),}
+        \PYG{l+s+s2}{\PYGZdq{}headers\PYGZdq{}}\PYG{p}{:} \PYG{n}{headers}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}term\PYGZdq{}}\PYG{p}{:} \PYG{n}{term}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}bar\PYGZus{}plot\PYGZdq{}}\PYG{p}{:} \PYG{n}{figure\PYGZus{}to\PYGZus{}dict}\PYG{p}{(}\PYG{n}{bar\PYGZus{}plot}\PYG{p}{),}
+        \PYG{l+s+s2}{\PYGZdq{}heatmap\PYGZus{}plot\PYGZdq{}}\PYG{p}{:} \PYG{n}{figure\PYGZus{}to\PYGZus{}dict}\PYG{p}{(}\PYG{n}{heatmap\PYGZus{}plot}\PYG{p}{),}
+    \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+\end{Verbatim}

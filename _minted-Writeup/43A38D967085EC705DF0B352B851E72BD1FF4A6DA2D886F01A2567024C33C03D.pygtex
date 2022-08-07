@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}user\PYGZus{}by\PYGZus{}email}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{email}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}SELECT userId,firstName, lastName,email,password FROM Users WHERE Email=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{;\PYGZdq{}}
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{p}{(}\PYG{n}{email}\PYG{p}{,))}
+
+        \PYG{n}{results} \PYG{o}{=} \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{fetchall}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{results}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return} \PYG{k+kc}{None}
+
+        \PYG{n}{res} \PYG{o}{=} \PYG{n}{results}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{k}{return} \PYG{n}{User}\PYG{p}{(}\PYG{o}{*}\PYG{n}{res}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{add\PYGZus{}user}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{user}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}INSERT INTO Users (userId, firstName, lastName, email, password) VALUES (}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{);\PYGZdq{}}
+        \PYG{n}{vals} \PYG{o}{=} \PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{email}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{password}\PYG{p}{)}
+
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{n}{vals}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{commit}\PYG{p}{()}
+        \PYG{k}{return}
+\end{Verbatim}

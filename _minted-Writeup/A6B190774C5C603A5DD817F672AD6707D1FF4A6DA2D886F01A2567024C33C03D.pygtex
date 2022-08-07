@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/token/refresh\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@jwt\PYGZus{}required}\PYG{p}{(}\PYG{n}{refresh}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/refresh.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{refresh\PYGZus{}token}\PYG{p}{():}
+    \PYG{n}{user\PYGZus{}id} \PYG{o}{=} \PYG{n}{get\PYGZus{}jwt\PYGZus{}identity}\PYG{p}{()}
+    \PYG{n}{access\PYGZus{}token} \PYG{o}{=} \PYG{n}{create\PYGZus{}access\PYGZus{}token}\PYG{p}{(}\PYG{n}{identity}\PYG{o}{=}\PYG{n}{user\PYGZus{}id}\PYG{p}{)}
+    \PYG{n}{response} \PYG{o}{=} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}refresh\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{True}
+    \PYG{p}{\PYGZcb{})}
+    \PYG{n}{set\PYGZus{}access\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{access\PYGZus{}token}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{response}\PYG{p}{,} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+\end{Verbatim}

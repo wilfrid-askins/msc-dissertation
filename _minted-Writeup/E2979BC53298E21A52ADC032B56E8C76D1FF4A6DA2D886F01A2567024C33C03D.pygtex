@@ -1,0 +1,184 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{psycopg2}
+\PYG{k+kn}{import} \PYG{n+nn}{psycopg2.extras}
+
+\PYG{k+kn}{import} \PYG{n+nn}{json}
+\PYG{k+kn}{import} \PYG{n+nn}{time}
+\PYG{k+kn}{import} \PYG{n+nn}{uuid}
+\PYG{k+kn}{from} \PYG{n+nn}{pathlib} \PYG{k+kn}{import} \PYG{n}{Path}
+
+\PYG{c+c1}{\PYGZsh{} Find path to web\PYGZhy{}app, which is the base directory.}
+\PYG{n}{base\PYGZus{}path} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n+nv+vm}{\PYGZus{}\PYGZus{}file\PYGZus{}\PYGZus{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{parent}\PYG{o}{.}\PYG{n}{parent}
+\PYG{c+c1}{\PYGZsh{} Find path for sql script file for tables creation.}
+\PYG{n}{tables\PYGZus{}file\PYGZus{}path} \PYG{o}{=} \PYG{n}{base\PYGZus{}path}\PYG{o}{.}\PYG{n}{joinpath}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}db/tables.sql\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{namespace} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}github.com/frances\PYGZhy{}ai/frances\PYGZhy{}api\PYGZdq{}}
+
+\PYG{n}{psycopg2}\PYG{o}{.}\PYG{n}{extras}\PYG{o}{.}\PYG{n}{register\PYGZus{}uuid}\PYG{p}{()}
+
+
+\PYG{k}{class} \PYG{n+nc}{DatabaseConfig}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{host} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{user} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{password} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+
+    \PYG{n+nd}{@staticmethod}
+    \PYG{k}{def} \PYG{n+nf}{from\PYGZus{}dict}\PYG{p}{(}\PYG{n}{vals}\PYG{p}{):}
+        \PYG{n}{config} \PYG{o}{=} \PYG{n}{DatabaseConfig}\PYG{p}{()}
+        \PYG{n}{config}\PYG{o}{.}\PYG{n}{host} \PYG{o}{=} \PYG{n}{vals}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}host\PYGZdq{}}\PYG{p}{]}
+        \PYG{n}{config}\PYG{o}{.}\PYG{n}{user} \PYG{o}{=} \PYG{n}{vals}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{]}
+        \PYG{n}{config}\PYG{o}{.}\PYG{n}{password} \PYG{o}{=} \PYG{n}{vals}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}password\PYGZdq{}}\PYG{p}{]}
+        \PYG{k}{return} \PYG{n}{config}
+
+
+\PYG{k}{class} \PYG{n+nc}{Database}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{config}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db} \PYG{o}{=} \PYG{n}{psycopg2}\PYG{o}{.}\PYG{n}{connect}\PYG{p}{(}
+            \PYG{n}{host}\PYG{o}{=}\PYG{n}{config}\PYG{o}{.}\PYG{n}{host}\PYG{p}{,}
+            \PYG{n}{port}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}5432\PYGZdq{}}\PYG{p}{,}
+            \PYG{n}{user}\PYG{o}{=}\PYG{n}{config}\PYG{o}{.}\PYG{n}{user}\PYG{p}{,}
+            \PYG{n}{password}\PYG{o}{=}\PYG{n}{config}\PYG{o}{.}\PYG{n}{password}
+        \PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{create\PYGZus{}tables}\PYG{p}{()}
+
+    \PYG{k}{def} \PYG{n+nf}{create\PYGZus{}tables}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{n}{f} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{n}{tables\PYGZus{}file\PYGZus{}path}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{queries} \PYG{o}{=} \PYG{n}{f}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{queries}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{commit}\PYG{p}{()}
+
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}user\PYGZus{}by\PYGZus{}id}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n+nb}{id}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}SELECT userId, firstName, lastName,email,password FROM Users WHERE UserID=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{;\PYGZdq{}}
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{,))}
+
+        \PYG{n}{results} \PYG{o}{=} \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{fetchall}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{results}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return} \PYG{k+kc}{None}
+
+        \PYG{n}{res} \PYG{o}{=} \PYG{n}{results}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{k}{return} \PYG{n}{User}\PYG{p}{(}\PYG{o}{*}\PYG{n}{res}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}user\PYGZus{}by\PYGZus{}email}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{email}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}SELECT userId,firstName, lastName,email,password FROM Users WHERE Email=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{;\PYGZdq{}}
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{p}{(}\PYG{n}{email}\PYG{p}{,))}
+
+        \PYG{n}{results} \PYG{o}{=} \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{fetchall}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{results}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return} \PYG{k+kc}{None}
+
+        \PYG{n}{res} \PYG{o}{=} \PYG{n}{results}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{k}{return} \PYG{n}{User}\PYG{p}{(}\PYG{o}{*}\PYG{n}{res}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{add\PYGZus{}user}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{user}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}INSERT INTO Users (userId, firstName, lastName, email, password) VALUES (}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{);\PYGZdq{}}
+        \PYG{n}{vals} \PYG{o}{=} \PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{email}\PYG{p}{,} \PYG{n}{user}\PYG{o}{.}\PYG{n}{password}\PYG{p}{)}
+
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{n}{vals}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{commit}\PYG{p}{()}
+        \PYG{k}{return}
+
+    \PYG{k}{def} \PYG{n+nf}{add\PYGZus{}submission}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{sub}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}INSERT INTO Submissions (submissionID, userID, submissionName, result, error) VALUES (}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{);\PYGZdq{}}
+        \PYG{n}{vals} \PYG{o}{=} \PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{userID}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{result}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{error}\PYG{p}{)}
+
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{n}{vals}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{commit}\PYG{p}{()}
+        \PYG{k}{return}
+
+    \PYG{k}{def} \PYG{n+nf}{update\PYGZus{}submission}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{sub}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}UPDATE Submissions SET userID=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, submissionName=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, result=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{, error=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{ WHERE submissionID=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{;\PYGZdq{}}
+        \PYG{n}{vals} \PYG{o}{=} \PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{userID}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{result}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{error}\PYG{p}{,} \PYG{n}{sub}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{n}{vals}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{commit}\PYG{p}{()}
+        \PYG{k}{return}
+
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}submissions}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{userID}\PYG{p}{):}
+        \PYG{n}{sql} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}SELECT submissionID, userID, submissionName, result, error, submitTime FROM Submissions WHERE userID=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{;\PYGZdq{}}
+        \PYG{n}{cursor} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+        \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{sql}\PYG{p}{,} \PYG{p}{(}\PYG{n}{userID}\PYG{p}{,))}
+
+        \PYG{n}{records} \PYG{o}{=} \PYG{n}{cursor}\PYG{o}{.}\PYG{n}{fetchall}\PYG{p}{()}
+        \PYG{n}{subs} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{records}\PYG{p}{:}
+            \PYG{n}{subs}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{Submission}\PYG{p}{(}\PYG{o}{*}\PYG{n}{row}\PYG{p}{))}
+        \PYG{k}{return} \PYG{n}{subs}
+
+
+\PYG{k}{class} \PYG{n+nc}{User}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n+nb}{id}\PYG{p}{,} \PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{id} \PYG{o}{=} \PYG{n+nb}{id}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{first\PYGZus{}name} \PYG{o}{=} \PYG{n}{first\PYGZus{}name}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{last\PYGZus{}name} \PYG{o}{=} \PYG{n}{last\PYGZus{}name}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{email} \PYG{o}{=} \PYG{n}{email}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{password} \PYG{o}{=} \PYG{n}{password}
+
+    \PYG{n+nd}{@staticmethod}
+    \PYG{k}{def} \PYG{n+nf}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{):}
+        \PYG{n+nb}{id} \PYG{o}{=} \PYG{n}{uuid}\PYG{o}{.}\PYG{n}{uuid5}\PYG{p}{(}\PYG{n}{uuid}\PYG{o}{.}\PYG{n}{NAMESPACE\PYGZus{}URL}\PYG{p}{,} \PYG{n}{namespace} \PYG{o}{+} \PYG{n}{first\PYGZus{}name} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{time}\PYG{o}{.}\PYG{n}{time}\PYG{p}{()))}
+        \PYG{k}{return} \PYG{n}{User}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{,} \PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{)}
+
+
+\PYG{k}{class} \PYG{n+nc}{Submission}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n+nb}{id}\PYG{p}{,} \PYG{n}{userID}\PYG{p}{,} \PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{,} \PYG{n}{error}\PYG{p}{,} \PYG{n}{time}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{id} \PYG{o}{=} \PYG{n+nb}{id}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{userID} \PYG{o}{=} \PYG{n}{userID}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{name} \PYG{o}{=} \PYG{n}{name}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{result} \PYG{o}{=} \PYG{n}{result}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{error} \PYG{o}{=} \PYG{n}{error}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{time} \PYG{o}{=} \PYG{n}{time}
+
+    \PYG{n+nd}{@staticmethod}
+    \PYG{k}{def} \PYG{n+nf}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{userID}\PYG{p}{,} \PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{,} \PYG{n}{error}\PYG{p}{):}
+        \PYG{n+nb}{id} \PYG{o}{=} \PYG{n}{uuid}\PYG{o}{.}\PYG{n}{uuid5}\PYG{p}{(}\PYG{n}{uuid}\PYG{o}{.}\PYG{n}{NAMESPACE\PYGZus{}URL}\PYG{p}{,} \PYG{n}{namespace} \PYG{o}{+} \PYG{n}{name} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{time}\PYG{o}{.}\PYG{n}{time}\PYG{p}{()))}
+        \PYG{k}{return} \PYG{n}{Submission}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{,} \PYG{n}{userID}\PYG{p}{,} \PYG{n}{name}\PYG{p}{,} \PYG{n}{result}\PYG{p}{,} \PYG{n}{error}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{config} \PYG{o}{=} \PYG{n}{DatabaseConfig}\PYG{p}{()}
+    \PYG{n}{config}\PYG{o}{.}\PYG{n}{host} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}127.0.0.1\PYGZdq{}}
+    \PYG{n}{config}\PYG{o}{.}\PYG{n}{user} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}frances\PYGZdq{}}
+    \PYG{n}{config}\PYG{o}{.}\PYG{n}{password} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}frances\PYGZdq{}}
+
+    \PYG{n}{db} \PYG{o}{=} \PYG{n}{Database}\PYG{p}{(}\PYG{n}{config}\PYG{p}{)}
+
+    \PYG{n}{user} \PYG{o}{=} \PYG{n}{User}\PYG{o}{.}\PYG{n}{create\PYGZus{}new}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}wilfrid\PYGZhy{}askins\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}wilfridaskins@gmail.com\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}abcabc\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{db}\PYG{o}{.}\PYG{n}{add\PYGZus{}user}\PYG{p}{(}\PYG{n}{user}\PYG{p}{)}
+
+    \PYG{n}{u} \PYG{o}{=} \PYG{n}{db}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}id}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{u}\PYG{o}{.}\PYG{n}{first\PYGZus{}name}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{u}\PYG{o}{.}\PYG{n}{email}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{()}
+
+    \PYG{n}{u} \PYG{o}{=} \PYG{n}{db}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}email}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}damonyu97@hotmail.com\PYGZsq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{u}\PYG{p}{)}
+
+    \PYG{n}{sub} \PYG{o}{=} \PYG{n}{Submission}\PYG{o}{.}\PYG{n}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}basic\PYGZhy{}job\PYGZhy{}1\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}result1234\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{db}\PYG{o}{.}\PYG{n}{add\PYGZus{}submission}\PYG{p}{(}\PYG{n}{sub}\PYG{p}{)}
+
+    \PYG{n}{sub1} \PYG{o}{=} \PYG{n}{Submission}\PYG{o}{.}\PYG{n}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}basic\PYGZhy{}job\PYGZhy{}2\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{db}\PYG{o}{.}\PYG{n}{add\PYGZus{}submission}\PYG{p}{(}\PYG{n}{sub1}\PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{sub} \PYG{o+ow}{in} \PYG{n}{db}\PYG{o}{.}\PYG{n}{get\PYGZus{}submissions}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{):}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}submission\PYGZdq{}}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{result}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{error}\PYG{p}{)}
+
+    \PYG{n}{sub1}\PYG{o}{.}\PYG{n}{result} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}blahblah\PYGZdq{}}
+    \PYG{n}{sub1}\PYG{o}{.}\PYG{n}{error} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}error job failed\PYGZdq{}}
+    \PYG{n}{db}\PYG{o}{.}\PYG{n}{update\PYGZus{}submission}\PYG{p}{(}\PYG{n}{sub1}\PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{sub} \PYG{o+ow}{in} \PYG{n}{db}\PYG{o}{.}\PYG{n}{get\PYGZus{}submissions}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{):}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}submission\PYGZdq{}}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{result}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sub}\PYG{o}{.}\PYG{n}{error}\PYG{p}{)}
+\end{Verbatim}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.5)  5 AUG 2022 22:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.5)  7 AUG 2022 16:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -458,37 +458,38 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
  [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+)
 \tf@toc=\write6
 \openout6 = `Writeup.toc'.
 
- [3] [4]
+ [4]
 Overfull \hbox (6.21487pt too wide) in paragraph at lines 64--65
 []\OT1/cmr/m/n/12 Discourse Anal-y-sis - han-dling the re-la-tion-ships be-twee
 n sen-tences. These
  []
 
-<./images/info-extraction-arch.png, id=404, 699.61375pt x 379.4175pt>
+<./images/info-extraction-arch.png, id=432, 699.61375pt x 379.4175pt>
 File: ./images/info-extraction-arch.png Graphic file (type png)
 <use ./images/info-extraction-arch.png>
 Package pdftex.def Info: ./images/info-extraction-arch.png  used on input line 
 78.
 (pdftex.def)             Requested size: 390.0pt x 211.51129pt.
 [5]
-<./images/knowledge-graph-startrek.png, id=417, 651.43375pt x 276.03125pt>
+<./images/knowledge-graph-startrek.png, id=447, 651.43375pt x 276.03125pt>
 File: ./images/knowledge-graph-startrek.png Graphic file (type png)
 <use ./images/knowledge-graph-startrek.png>
 Package pdftex.def Info: ./images/knowledge-graph-startrek.png  used on input l
 ine 93.
 (pdftex.def)             Requested size: 390.0pt x 165.2578pt.
  [6 <./images/info-extraction-arch.png>]
-<./images/semantic-before.png, id=430, 496.85625pt x 276.03125pt>
+<./images/semantic-before.png, id=460, 496.85625pt x 276.03125pt>
 File: ./images/semantic-before.png Graphic file (type png)
 <use ./images/semantic-before.png>
 Package pdftex.def Info: ./images/semantic-before.png  used on input line 115.
 (pdftex.def)             Requested size: 390.0pt x 216.66815pt.
  [7 <./images/knowledge-graph-startrek.png>]
-<./images/semantic-after.png, id=442, 496.85625pt x 171.64125pt>
+<./images/semantic-after.png, id=472, 496.85625pt x 171.64125pt>
 File: ./images/semantic-after.png Graphic file (type png)
 <use ./images/semantic-after.png>
 Package pdftex.def Info: ./images/semantic-after.png  used on input line 128.
@@ -524,7 +525,7 @@ C03D.pygtex) [12]
 
 (./_minted-Writeup/8208487EDA56A9F755620BB052D151F101CEB8D98ECFF6B06FDEA15966AE
 2461.pygtex)
-<./images/swagger-ui.png, id=504, 732.93825pt x 360.74776pt>
+<./images/swagger-ui.png, id=534, 732.93825pt x 360.74776pt>
 File: ./images/swagger-ui.png Graphic file (type png)
 <use ./images/swagger-ui.png>
 Package pdftex.def Info: ./images/swagger-ui.png  used on input line 300.
@@ -540,71 +541,128 @@ C03D.pygtex) [14 <./images/swagger-ui.png>]
 
 (./_minted-Writeup/528773B5562C8304966D81B23E5A7D405DB30244B95A8D3EA58D844A2565
 B266.pygtex) [15]
-<./images/eb-ontology.png, id=543, 619.31375pt x 691.58376pt>
+<./images/eb-ontology.png, id=573, 619.31375pt x 691.58376pt>
 File: ./images/eb-ontology.png Graphic file (type png)
 <use ./images/eb-ontology.png>
-Package pdftex.def Info: ./images/eb-ontology.png  used on input line 378.
+Package pdftex.def Info: ./images/eb-ontology.png  used on input line 382.
 (pdftex.def)             Requested size: 390.0pt x 435.53122pt.
  [16] [17 <./images/eb-ontology.png>] [18]
 Overfull \vbox (18.64966pt too high) has occurred while \output is active []
 
 
 [19] [20]
-<./images/scrum.png, id=577, 2007.5pt x 1003.75pt>
+<./images/scrum.png, id=608, 2007.5pt x 1003.75pt>
 File: ./images/scrum.png Graphic file (type png)
 <use ./images/scrum.png>
-Package pdftex.def Info: ./images/scrum.png  used on input line 467.
+Package pdftex.def Info: ./images/scrum.png  used on input line 471.
 (pdftex.def)             Requested size: 390.0pt x 194.98764pt.
  [21 <./images/scrum.png>]
-Overfull \hbox (76.26787pt too wide) in paragraph at lines 498--510
+Overfull \hbox (76.26787pt too wide) in paragraph at lines 502--514
  [] 
  []
 
 [22] [23]
-<./images/arch-components.png, id=604, 956.57375pt x 441.65pt>
+<./images/arch-components.png, id=634, 956.57375pt x 441.65pt>
 File: ./images/arch-components.png Graphic file (type png)
 <use ./images/arch-components.png>
-Package pdftex.def Info: ./images/arch-components.png  used on input line 553.
+Package pdftex.def Info: ./images/arch-components.png  used on input line 557.
 (pdftex.def)             Requested size: 390.0pt x 180.06007pt.
- [24] [25 <./images/arch-components.png>] [26]
+ [24] [25 <./images/arch-components.png>]
+Overfull \hbox (2.53343pt too wide) in paragraph at lines 597--598
+\OT1/cmr/m/n/12 database op-er-a-tions were han-dled by the Database class (see
+ Ap-pendix []A.1.2[]).
+ []
+
+[26]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/6C8D27E7A3287C937781478D6C025CBCD1FF4A6DA2D886F01A2567024C33
-C03D.pygtex)
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/8EF92BBCDA75C35F8F4CC5C30A538A1E2C1DDF34A44CE152F3FB6DA3488B
-974F.pygtex [27]
+(./_minted-Writeup/43A38D967085EC705DF0B352B851E72BD1FF4A6DA2D886F01A2567024C33
+C03D.pygtex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 9.
+(Font)              <5> on input line 3.
 )
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/9CDDC2B8E37509DF91DB33780E793906D1FF4A6DA2D886F01A2567024C33
+(./_minted-Writeup/6E92D0A5836044E9DBFC51B5C1A5DA88D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex [27])
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/6C8D27E7A3287C937781478D6C025CBCD1FF4A6DA2D886F01A2567024C33
 C03D.pygtex) [28]
 \openout3 = `Writeup.pyg'.
 
 
+(./_minted-Writeup/56EDAF420E322DF81AC98B66D5491F6FD1FF4A6DA2D886F01A2567024C33
+C03D.pygtex
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 5--5
+\OT1/cmtt/m/n/12 bar_plot[]=[]bar_plot, 
+ []
+
+
+Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
+\OT1/cmtt/m/n/12 heatmap_plot[]=[]heatmap_plot)|  
+ []
+
+) [29]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/7000D02E8822CAEF83AB37D1793021D0D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/1DBE465C901A459E6C325296EA963AD501CEB8D98ECFF6B06FDEA15966AE
+2461.pygtex [30])
+
+LaTeX Warning: Citation `oauth-2' on page 31 undefined on input line 738.
+
+
+LaTeX Warning: Citation `http-cookies' on page 31 undefined on input line 742.
+
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/94AC026D0BB8A52A94B459AF628AE368D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex [31])
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/A6B190774C5C603A5DD817F672AD6707D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/D57BB4746761E78F9D451E00EF32096ED1FF4A6DA2D886F01A2567024C33
+C03D.pygtex) [32]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/9CDDC2B8E37509DF91DB33780E793906D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
 (./_minted-Writeup/9F53FBBD5FE9620D391883AFF9AACDCC53F219A02012CDD69DF1A8AF0A5F
-CF52.pygtex) [29]
+CF52.pygtex [33])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/B4B4B01D2E1245C438036B75EDFA09ADFF6798B4605EB498A056B1E738CB
-FCAE.pygtex)
+FCAE.pygtex [34])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/2D4768B94560B69ED4A1489C3753A105D1FF4A6DA2D886F01A2567024C33
-C03D.pygtex [30])
+C03D.pygtex) [35]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/2DBE15434D62DA163A4FCF9D1EABFC93D1FF4A6DA2D886F01A2567024C33
-C03D.pygtex) [31]
+C03D.pygtex) [36]
 \openout3 = `Writeup.pyg'.
 
 
@@ -614,12 +672,32 @@ FCAE.pygtex)
 
 
 (./_minted-Writeup/C88ECA29AE5651C9286EE843B162AFC4D1FF4A6DA2D886F01A2567024C33
-C03D.pygtex [32])
+C03D.pygtex) [37]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/BEF24DD2AE619CF27FB9864AC5E0D1EFD1FF4A6DA2D886F01A2567024C33
+C03D.pygtex [38])
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/866956745E19814F2AEB4205D764C5F7D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/286F12EA3E1446054307097C535F9E59D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/45D616BE241D30806254B907551FE047D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex [39])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/6AF45DD1DAE5BF5EABAB59899BF6DC5CD1FF4A6DA2D886F01A2567024C33
-C03D.pygtex [33])
+C03D.pygtex)
 \openout3 = `Writeup.pyg'.
 
 
@@ -629,17 +707,17 @@ C03D.pygtex)
 
 
 (./_minted-Writeup/3B8E6CE5A41E60B10E3ABA78954476C8D1FF4A6DA2D886F01A2567024C33
-C03D.pygtex)
+C03D.pygtex [40])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/EDDA8C447E4A9B5933B6058725B6DA8AD1FF4A6DA2D886F01A2567024C33
-C03D.pygtex [34]) [35]
+C03D.pygtex) [41]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/B698F3008817AB5E1AD49C4CC273EC7E4C018FD47CC9F757022870B01376
-EAA2.pygtex)
+EAA2.pygtex [42])
 \openout3 = `Writeup.pyg'.
 
 
@@ -649,134 +727,172 @@ EAA2.pygtex)
 
 
 (./_minted-Writeup/246614E4C0FD8E449D13181C16A0BDD04C018FD47CC9F757022870B01376
-EAA2.pygtex) [36] (./Writeup.bbl
+EAA2.pygtex) (./Writeup.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 \OT1/cmtt/m/n/12 com / software-[]development-[]greenfield-[]vs-[]brownfield/$[
 ]\OT1/cmr/m/n/12 , 2020.
  []
 
-
+[43]
 Underfull \hbox (badness 5374) in paragraph at lines 34--38
 []\OT1/cmr/m/n/12 SQLAlchemy au-thors.  SQLAlchemy ORM.  []$\OT1/cmtt/m/n/12 ht
 tps : / / docs .
  []
 
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 101--106
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 113--118
 \OT1/cmtt/m/n/12 / / spark . apache . org / docs / latest / sql-[]getting-[]sta
 rted . html$[]\OT1/cmr/m/n/12 ,
  []
 
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 108--114
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--126
 []$\OT1/cmtt/m/n/12 https : / / spark . apache . org / docs / latest / api / py
 thon / getting _
  []
 
 
-Underfull \hbox (badness 7116) in paragraph at lines 122--127
+Underfull \hbox (badness 7116) in paragraph at lines 134--139
 []\OT1/cmr/m/n/12 The Linux Foun-da-tion.  Ope-nAPI - Pro-vid-ing Doc-u-men-ta-
 
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 122--127
+Underfull \hbox (badness 6173) in paragraph at lines 134--139
 \OT1/cmr/m/n/12 tion and Ex-am-ples.  []$\OT1/cmtt/m/n/12 https : / / oai . git
 hub . io / Documentation /
  []
 
-
-Underfull \hbox (badness 3108) in paragraph at lines 157--160
+[45]
+Underfull \hbox (badness 3108) in paragraph at lines 175--178
 []\OT1/cmr/m/n/12 Maximilian Nickel, Kevin Mur-phy, Volker Tresp, and Ev-geniy
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 162--165
+Underfull \hbox (badness 3108) in paragraph at lines 180--183
 []\OT1/cmr/m/n/12 Maximilian Nickel, Kevin Mur-phy, Volker Tresp, and Ev-geniy
  []
 
 
-Underfull \hbox (badness 4181) in paragraph at lines 167--174
+Underfull \hbox (badness 4181) in paragraph at lines 185--192
 []\OT1/cmr/m/n/12 Michael Okoh and Alex Gar-nett.  How To Build and De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--174
+Underfull \hbox (badness 10000) in paragraph at lines 185--192
 \OT1/cmr/m/n/12 ploy a Flask Ap-pli-ca-tion Us-ing Docker on Ubuntu 20.04.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--174
+Underfull \hbox (badness 10000) in paragraph at lines 185--192
 []$\OT1/cmtt/m/n/12 https : / / www . digitalocean . com / community / tutorial
 s /
  []
 
 
-Overfull \hbox (88.5166pt too wide) in paragraph at lines 167--174
+Overfull \hbox (88.5166pt too wide) in paragraph at lines 185--192
 \OT1/cmtt/m/n/12 how-[]to-[]build-[]and-[]deploy-[]a-[]flask-[]application-[]us
 ing-[]docker-[]on-[]ubuntu-[]20-[]04$[]\OT1/cmr/m/n/12 ,
  []
 
-[39]
-Underfull \hbox (badness 1735) in paragraph at lines 200--207
+[46]
+Underfull \hbox (badness 1735) in paragraph at lines 218--225
 []\OT1/cmr/m/n/12 Dmitry Shu-rupov.  Ku-ber-netes and con-tainer-iza-tion trend
 s (ac-
  []
 
 
-Underfull \hbox (badness 4927) in paragraph at lines 200--207
+Underfull \hbox (badness 4927) in paragraph at lines 218--225
 \OT1/cmr/m/n/12 cord-ing to the re-ports of 2021).  []$\OT1/cmtt/m/n/12 https :
  / / blog . flant . com /
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 226--232
+Underfull \hbox (badness 1052) in paragraph at lines 250--256
 []\OT1/cmr/m/n/12 Andrea V^^Sazquez-Ingelmo, Ali-cia Garc^^S^^Pa-Holgado, and F
 ran-cisco J
  []
 
-[40])
+
+Underfull \hbox (badness 6001) in paragraph at lines 258--264
+[]\OT1/cmr/m/n/12 Jason Wat-more.  Re-act + Fetch - HTTP POST Re-quest
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--264
+\OT1/cmr/m/n/12 Ex-am-ples.  []$\OT1/cmtt/m/n/12 https : / / jasonwatmore . com
+ / post / 2020 / 02 / 01 /
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 258--264
+\OT1/cmtt/m/n/12 react-[]fetch-[]http-[]post-[]request-[]examples$[]\OT1/cmr/m/
+n/12 , 2020.  [On-line; ac-
+ []
+
+[47])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/0DDECB4F84E27F115556352A58EB79452C1DDF34A44CE152F3FB6DA3488B
-974F.pygtex [41])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 976.
- [42]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 976.
+974F.pygtex [48])
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/E2979BC53298E21A52ADC032B56E8C76D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex [49] [50] [51] [52] [53])
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/4F9141C2D4C6D9086D7AA52EF367ACE5D1FF4A6DA2D886F01A2567024C33
+C03D.pygtex [54] [55] [56] [57])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1551.
+ [58]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1551.
  (./Writeup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 976.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 976.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1551.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1551.
+
 Package rerunfilecheck Info: File `Writeup.out' has not changed.
-(rerunfilecheck)             Checksum: 8ABFB5FF892A00C682A64DAF16C70F0C;5011.
+(rerunfilecheck)             Checksum: 55ECD1B2743EA562FE0B37BD788527B4;5470.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 runsystem(rm Writeup.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 10142 strings out of 480608
- 178973 string characters out of 5903631
- 495136 words of memory out of 5000000
- 25602 multiletter control sequences out of 15000+600000
+ 10266 strings out of 480608
+ 185108 string characters out of 5903631
+ 498237 words of memory out of 5000000
+ 25648 multiletter control sequences out of 15000+600000
  539303 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,39p,940b,649s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Writeup.pdf (42 pages, 1268424 bytes).
+ 41i,9n,40p,940b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{[} has been referenced but does not exist, replac
+ed by a fixed one
+
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Writeup.pdf (58 pages, 1293637 bytes).
 PDF statistics:
- 843 PDF objects out of 1000 (max. 8388607)
- 763 compressed objects within 8 object streams
- 183 named destinations out of 1000 (max. 500000)
- 617 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 994 PDF objects out of 1000 (max. 8388607)
+ 897 compressed objects within 9 object streams
+ 222 named destinations out of 1000 (max. 500000)
+ 665 words of extra memory for PDF output out of 10000 (max. 10000000)
 

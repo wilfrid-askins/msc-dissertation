@@ -76,6 +76,18 @@ Terraform Contributors.
 \newblock \url{https://www.terraform.io/docs}, 2022.
 \newblock [Online; accessed 02-August-2022].
 
+\bibitem{uuids-what-is}
+Charlie Custer.
+\newblock {What is a UUID, and Why Should You Care?}
+\newblock \url{https://www.cockroachlabs.com/blog/what-is-a-uuid/}, 2021.
+\newblock [Online; accessed 06-August-2022].
+
+\bibitem{html-forms}
+Refsnes Data.
+\newblock {W3Schools - HTML Forms}.
+\newblock \url{https://www.w3schools.com/html/html_forms.asp}, 2022.
+\newblock [Online; accessed 06-August-2022].
+
 \bibitem{ontology}
 Lisa Ehrlinger and Wolfram W{\"o}{\ss}.
 \newblock Towards a definition of knowledge graphs.
@@ -153,6 +165,12 @@ Inc Meta~Platforms.
 \newblock \url{https://reactjs.org/}, 2022.
 \newblock [Online; accessed 05-August-2022].
 
+\bibitem{uuids-compare}
+Nanoglyph Newsletter.
+\newblock {Identity Crisis: Sequence v. UUID as Primary Key}.
+\newblock \url{https://brandur.org/nanoglyphs/026-ids}, 2021.
+\newblock [Online; accessed 06-August-2022].
+
 \bibitem{kg-graphic}
 Maximilian Nickel, Kevin Murphy, Volker Tresp, and Evgeniy Gabrilovich.
 \newblock A review of relational machine learning for knowledge graphs.
@@ -222,6 +240,12 @@ SmartBear Software.
 \newblock \url{https://swagger.io/tools/swagger-ui/}, 2022.
 \newblock [Online; accessed 05-August-2022].
 
+\bibitem{uuids-support}
+The~Psycopg Team.
+\newblock {psycopg2.extras – Miscellaneous goodies for Psycopg 2}.
+\newblock \url{https://www.psycopg.org/docs/extras.html}, 2021.
+\newblock [Online; accessed 06-August-2022].
+
 \bibitem{c4-model}
 Andrea V{\'a}zquez-Ingelmo, Alicia Garc{\'\i}a-Holgado, and Francisco~J
   Garc{\'\i}a-Pe{\~n}alvo.
@@ -229,6 +253,14 @@ Andrea V{\'a}zquez-Ingelmo, Alicia Garc{\'\i}a-Holgado, and Francisco~J
   of uml and the software.
 \newblock In {\em 2020 IEEE Global Engineering Education Conference (EDUCON)},
   pages 919--924. IEEE, 2020.
+
+\bibitem{react-json}
+Jason Watmore.
+\newblock {React + Fetch - HTTP POST Request Examples}.
+\newblock
+  \url{https://jasonwatmore.com/post/2020/02/01/react-fetch-http-post-request-examples},
+  2020.
+\newblock [Online; accessed 06-August-2022].
 
 \bibitem{kg-examples}
 Jihong Yan, Chengyu Wang, Wenliang Cheng, Ming Gao, and Aoying Zhou.

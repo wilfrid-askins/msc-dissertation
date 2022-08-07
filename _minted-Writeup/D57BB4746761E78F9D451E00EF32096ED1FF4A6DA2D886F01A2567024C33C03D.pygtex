@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/protected/auth/profile\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@jwt\PYGZus{}required}\PYG{p}{()}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/profile.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{profile}\PYG{p}{():}
+    \PYG{n}{user\PYGZus{}id} \PYG{o}{=} \PYG{n}{get\PYGZus{}jwt\PYGZus{}identity}\PYG{p}{()}
+    \PYG{n}{user} \PYG{o}{=} \PYG{n}{database}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}id}\PYG{p}{(}\PYG{n}{user\PYGZus{}id}\PYG{p}{)}
+    \PYG{o}{...}
+\end{Verbatim}

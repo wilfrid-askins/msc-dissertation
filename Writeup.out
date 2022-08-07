@@ -21,52 +21,58 @@
 \BOOKMARK [3][-]{subsubsection.2.3.10}{OpenAPI}{subsection.2.3}% 21
 \BOOKMARK [3][-]{subsubsection.2.3.11}{Swagger}{subsection.2.3}% 22
 \BOOKMARK [3][-]{subsubsection.2.3.12}{React}{subsection.2.3}% 23
-\BOOKMARK [2][-]{subsection.2.4}{Pre-existing work}{section.2}% 24
-\BOOKMARK [3][-]{subsubsection.2.4.1}{NLS Digital Collections}{subsection.2.4}% 25
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Defoe analysis library}{subsection.2.4}% 26
-\BOOKMARK [3][-]{subsubsection.2.4.3}{EB Ontology and EB Knowledge Graph}{subsection.2.4}% 27
-\BOOKMARK [3][-]{subsubsection.2.4.4}{Frances web app}{subsection.2.4}% 28
-\BOOKMARK [1][-]{section.3}{Requirements}{}% 29
-\BOOKMARK [2][-]{subsection.3.1}{Functional}{section.3}% 30
-\BOOKMARK [2][-]{subsection.3.2}{Non-Functional}{section.3}% 31
-\BOOKMARK [1][-]{section.4}{Software Engineering Process}{}% 32
-\BOOKMARK [2][-]{subsection.4.1}{Methodology}{section.4}% 33
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Agile Methodological Approach}{subsection.4.1}% 34
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Test-driven implementation}{subsection.4.1}% 35
-\BOOKMARK [2][-]{subsection.4.2}{Task Allocation}{section.4}% 36
-\BOOKMARK [1][-]{section.5}{Ethics}{}% 37
-\BOOKMARK [1][-]{section.6}{Design}{}% 38
-\BOOKMARK [2][-]{subsection.6.1}{System Architecture}{section.6}% 39
-\BOOKMARK [2][-]{subsection.6.2}{Frontend}{section.6}% 40
-\BOOKMARK [2][-]{subsection.6.3}{Storage Solutions}{section.6}% 41
-\BOOKMARK [3][-]{subsubsection.6.3.1}{ElasticSearch}{subsection.6.3}% 42
-\BOOKMARK [3][-]{subsubsection.6.3.2}{PostgreSQL}{subsection.6.3}% 43
-\BOOKMARK [2][-]{subsection.6.4}{Deployment}{section.6}% 44
-\BOOKMARK [3][-]{subsubsection.6.4.1}{Containerisation}{subsection.6.4}% 45
-\BOOKMARK [3][-]{subsubsection.6.4.2}{Local environment}{subsection.6.4}% 46
-\BOOKMARK [3][-]{subsubsection.6.4.3}{Cloud platform}{subsection.6.4}% 47
-\BOOKMARK [1][-]{section.7}{Implementation}{}% 48
-\BOOKMARK [2][-]{subsection.7.1}{Frontend}{section.7}% 49
-\BOOKMARK [2][-]{subsection.7.2}{Database}{section.7}% 50
-\BOOKMARK [3][-]{subsubsection.7.2.1}{Abstraction of operations}{subsection.7.2}% 51
-\BOOKMARK [3][-]{subsubsection.7.2.2}{Table creation on startup}{subsection.7.2}% 52
-\BOOKMARK [2][-]{subsection.7.3}{Backend}{section.7}% 53
-\BOOKMARK [3][-]{subsubsection.7.3.1}{API definition}{subsection.7.3}% 54
-\BOOKMARK [3][-]{subsubsection.7.3.2}{Enabling user accounts}{subsection.7.3}% 55
-\BOOKMARK [3][-]{subsubsection.7.3.3}{Configuration}{subsection.7.3}% 56
-\BOOKMARK [3][-]{subsubsection.7.3.4}{Removing redundant files}{subsection.7.3}% 57
-\BOOKMARK [2][-]{subsection.7.4}{Defoe library}{section.7}% 58
-\BOOKMARK [3][-]{subsubsection.7.4.1}{Execution workflow update}{subsection.7.4}% 59
-\BOOKMARK [3][-]{subsubsection.7.4.2}{Processing location change}{subsection.7.4}% 60
-\BOOKMARK [3][-]{subsubsection.7.4.3}{Fix query name resolution}{subsection.7.4}% 61
-\BOOKMARK [3][-]{subsubsection.7.4.4}{Fix frequency keysearch spelling mistake}{subsection.7.4}% 62
-\BOOKMARK [2][-]{subsection.7.5}{Deployment}{section.7}% 63
-\BOOKMARK [3][-]{subsubsection.7.5.1}{Containerisation}{subsection.7.5}% 64
-\BOOKMARK [3][-]{subsubsection.7.5.2}{Local environment}{subsection.7.5}% 65
-\BOOKMARK [3][-]{subsubsection.7.5.3}{Cloud platform}{subsection.7.5}% 66
-\BOOKMARK [1][-]{section.8}{Evaluation}{}% 67
-\BOOKMARK [1][-]{section.9}{Future work}{}% 68
-\BOOKMARK [1][-]{section.10}{Conclusion}{}% 69
-\BOOKMARK [1][-]{appendix.A}{Project Code}{}% 70
-\BOOKMARK [2][-]{subsection.A.1}{Database}{appendix.A}% 71
-\BOOKMARK [3][-]{subsubsection.A.1.1}{tables.sql}{subsection.A.1}% 72
+\BOOKMARK [3][-]{subsubsection.2.3.13}{Universally Unique Identifiers \(UUIDs\)}{subsection.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.4}{Pre-existing work}{section.2}% 25
+\BOOKMARK [3][-]{subsubsection.2.4.1}{NLS Digital Collections}{subsection.2.4}% 26
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Defoe analysis library}{subsection.2.4}% 27
+\BOOKMARK [3][-]{subsubsection.2.4.3}{EB Ontology and EB Knowledge Graph}{subsection.2.4}% 28
+\BOOKMARK [3][-]{subsubsection.2.4.4}{Frances web app}{subsection.2.4}% 29
+\BOOKMARK [1][-]{section.3}{Requirements}{}% 30
+\BOOKMARK [2][-]{subsection.3.1}{Functional}{section.3}% 31
+\BOOKMARK [2][-]{subsection.3.2}{Non-Functional}{section.3}% 32
+\BOOKMARK [1][-]{section.4}{Software Engineering Process}{}% 33
+\BOOKMARK [2][-]{subsection.4.1}{Methodology}{section.4}% 34
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Agile Methodological Approach}{subsection.4.1}% 35
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Test-driven implementation}{subsection.4.1}% 36
+\BOOKMARK [2][-]{subsection.4.2}{Task Allocation}{section.4}% 37
+\BOOKMARK [1][-]{section.5}{Ethics}{}% 38
+\BOOKMARK [1][-]{section.6}{Design}{}% 39
+\BOOKMARK [2][-]{subsection.6.1}{System Architecture}{section.6}% 40
+\BOOKMARK [2][-]{subsection.6.2}{Frontend}{section.6}% 41
+\BOOKMARK [2][-]{subsection.6.3}{Storage Solutions}{section.6}% 42
+\BOOKMARK [3][-]{subsubsection.6.3.1}{ElasticSearch}{subsection.6.3}% 43
+\BOOKMARK [3][-]{subsubsection.6.3.2}{PostgreSQL}{subsection.6.3}% 44
+\BOOKMARK [2][-]{subsection.6.4}{Deployment}{section.6}% 45
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Containerisation}{subsection.6.4}% 46
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Local environment}{subsection.6.4}% 47
+\BOOKMARK [3][-]{subsubsection.6.4.3}{Cloud platform}{subsection.6.4}% 48
+\BOOKMARK [1][-]{section.7}{Implementation}{}% 49
+\BOOKMARK [2][-]{subsection.7.1}{Frontend}{section.7}% 50
+\BOOKMARK [2][-]{subsection.7.2}{Database}{section.7}% 51
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Abstraction of operations}{subsection.7.2}% 52
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Table creation on startup}{subsection.7.2}% 53
+\BOOKMARK [2][-]{subsection.7.3}{Backend}{section.7}% 54
+\BOOKMARK [3][-]{subsubsection.7.3.1}{API creation}{subsection.7.3}% 55
+\BOOKMARK [3][-]{subsubsection.7.3.2}{API documentation and testing}{subsection.7.3}% 56
+\BOOKMARK [3][-]{subsubsection.7.3.3}{Enabling user accounts}{subsection.7.3}% 57
+\BOOKMARK [3][-]{subsubsection.7.3.4}{Configuration}{subsection.7.3}% 58
+\BOOKMARK [3][-]{subsubsection.7.3.5}{Removing redundant files}{subsection.7.3}% 59
+\BOOKMARK [2][-]{subsection.7.4}{Defoe library}{section.7}% 60
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Execution workflow update}{subsection.7.4}% 61
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Processing location change}{subsection.7.4}% 62
+\BOOKMARK [3][-]{subsubsection.7.4.3}{Create basic executor}{subsection.7.4}% 63
+\BOOKMARK [3][-]{subsubsection.7.4.4}{Fix query name resolution}{subsection.7.4}% 64
+\BOOKMARK [3][-]{subsubsection.7.4.5}{Fix frequency keysearch spelling mistake}{subsection.7.4}% 65
+\BOOKMARK [2][-]{subsection.7.5}{Deployment}{section.7}% 66
+\BOOKMARK [3][-]{subsubsection.7.5.1}{Containerisation}{subsection.7.5}% 67
+\BOOKMARK [3][-]{subsubsection.7.5.2}{Local environment}{subsection.7.5}% 68
+\BOOKMARK [3][-]{subsubsection.7.5.3}{Cloud platform}{subsection.7.5}% 69
+\BOOKMARK [1][-]{section.8}{Evaluation}{}% 70
+\BOOKMARK [1][-]{section.9}{Future work}{}% 71
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 72
+\BOOKMARK [1][-]{appendix.A}{Project Code}{}% 73
+\BOOKMARK [2][-]{subsection.A.1}{Database}{appendix.A}% 74
+\BOOKMARK [3][-]{subsubsection.A.1.1}{tables.sql}{subsection.A.1}% 75
+\BOOKMARK [3][-]{subsubsection.A.1.2}{db.py}{subsection.A.1}% 76
+\BOOKMARK [2][-]{subsection.A.2}{Backend}{appendix.A}% 77
+\BOOKMARK [3][-]{subsubsection.A.2.1}{auth.py}{subsection.A.2}% 78
