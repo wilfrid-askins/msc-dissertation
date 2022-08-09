@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+user@test \PYGZgt{}\PYGZgt{} bash greeting.sh thomas holland
+Your name is thomas holland
+Nice to meet you
+\end{Verbatim}

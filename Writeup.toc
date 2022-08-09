@@ -1,97 +1,106 @@
 \contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
 \contentsline {section}{\numberline {2}Context Survey}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Analysis of historical texts}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Background}{4}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Motivation}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}OCR Technology}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2}OCR Technology}{5}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}NLP Technology}{5}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Background}{5}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Information extraction}{5}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Knowledge Graphs}{6}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Semantic Web}{7}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Relevant Technology}{9}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Apache Spark}{9}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}PySpark}{9}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Apache Jena}{10}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Apache Jena Fuseki and SPARQL}{10}{subsubsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.5}Docker}{11}{subsubsection.2.3.5}%
-\contentsline {subsubsection}{\numberline {2.3.6}Flask}{12}{subsubsection.2.3.6}%
-\contentsline {subsubsection}{\numberline {2.3.7}Deep Learning Transformers / Hugging Face}{12}{subsubsection.2.3.7}%
-\contentsline {subsubsection}{\numberline {2.3.8}HashiCorp Consul}{12}{subsubsection.2.3.8}%
-\contentsline {subsubsection}{\numberline {2.3.9}JSON Web Token (JWT)}{12}{subsubsection.2.3.9}%
-\contentsline {subsubsection}{\numberline {2.3.10}OpenAPI}{13}{subsubsection.2.3.10}%
-\contentsline {subsubsection}{\numberline {2.3.11}Swagger}{13}{subsubsection.2.3.11}%
-\contentsline {paragraph}{Swagger UI}{14}{section*.2}%
-\contentsline {paragraph}{Flasgger}{14}{section*.3}%
-\contentsline {subsubsection}{\numberline {2.3.12}React}{15}{subsubsection.2.3.12}%
-\contentsline {subsubsection}{\numberline {2.3.13}Universally Unique Identifiers (UUIDs)}{15}{subsubsection.2.3.13}%
-\contentsline {subsection}{\numberline {2.4}Pre-existing work}{15}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}NLS Digital Collections}{15}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Defoe analysis library}{16}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}EB Ontology and EB Knowledge Graph}{16}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Frances web app}{18}{subsubsection.2.4.4}%
-\contentsline {section}{\numberline {3}Requirements}{18}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Functional}{18}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Non-Functional}{20}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Software Engineering Process}{20}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Methodology}{20}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Agile Methodological Approach}{20}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Test-driven implementation}{21}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Task Allocation}{22}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Ethics}{23}{section.5}%
-\contentsline {section}{\numberline {6}Design}{24}{section.6}%
-\contentsline {subsection}{\numberline {6.1}System Architecture}{24}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Frontend}{25}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Storage Solutions}{25}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}ElasticSearch}{25}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}PostgreSQL}{25}{subsubsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.4}Deployment}{26}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {6.4.1}Containerisation}{26}{subsubsection.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.4.2}Local environment}{26}{subsubsection.6.4.2}%
-\contentsline {subsubsection}{\numberline {6.4.3}Cloud platform}{26}{subsubsection.6.4.3}%
-\contentsline {section}{\numberline {7}Implementation}{27}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Frontend}{27}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Database}{27}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Abstraction of operations}{27}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Table creation on startup}{28}{subsubsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.3}Backend}{29}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}API creation}{29}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}API documentation and testing}{30}{subsubsection.7.3.2}%
-\contentsline {subsubsection}{\numberline {7.3.3}Enabling user accounts}{31}{subsubsection.7.3.3}%
-\contentsline {paragraph}{Account security features}{31}{section*.4}%
-\contentsline {paragraph}{Issuing access and refresh}{31}{section*.5}%
-\contentsline {paragraph}{Protected routes}{32}{section*.6}%
-\contentsline {subsubsection}{\numberline {7.3.4}Configuration}{32}{subsubsection.7.3.4}%
-\contentsline {paragraph}{Problem description}{32}{section*.7}%
-\contentsline {paragraph}{Consul configuration loading}{33}{section*.8}%
-\contentsline {paragraph}{Duplicate fusekiUrl in configuration}{34}{section*.9}%
-\contentsline {subsubsection}{\numberline {7.3.5}Removing redundant files}{34}{subsubsection.7.3.5}%
-\contentsline {subsection}{\numberline {7.4}Defoe library}{35}{subsection.7.4}%
-\contentsline {subsubsection}{\numberline {7.4.1}Execution workflow update}{35}{subsubsection.7.4.1}%
-\contentsline {paragraph}{Problem description}{35}{section*.10}%
-\contentsline {paragraph}{Loading files abstraction}{36}{section*.11}%
-\contentsline {paragraph}{Conversion to Python modules}{36}{section*.12}%
-\contentsline {subsubsection}{\numberline {7.4.2}Processing location change}{37}{subsubsection.7.4.2}%
-\contentsline {subsubsection}{\numberline {7.4.3}Create basic executor}{38}{subsubsection.7.4.3}%
-\contentsline {paragraph}{Problem Description}{38}{section*.13}%
-\contentsline {paragraph}{Creating a job definition}{39}{section*.14}%
-\contentsline {paragraph}{Maintaining the list of jobs}{39}{section*.15}%
-\contentsline {paragraph}{Handling concurrency}{39}{section*.16}%
-\contentsline {paragraph}{Returning job statuses}{40}{section*.17}%
-\contentsline {subsubsection}{\numberline {7.4.4}Fix query name resolution}{40}{subsubsection.7.4.4}%
-\contentsline {subsubsection}{\numberline {7.4.5}Fix frequency keysearch spelling mistake}{41}{subsubsection.7.4.5}%
-\contentsline {subsection}{\numberline {7.5}Deployment}{42}{subsection.7.5}%
-\contentsline {subsubsection}{\numberline {7.5.1}Containerisation}{42}{subsubsection.7.5.1}%
-\contentsline {paragraph}{Docker Image}{42}{section*.18}%
-\contentsline {paragraph}{Installation simplified}{42}{section*.19}%
-\contentsline {paragraph}{Default config script}{42}{section*.20}%
-\contentsline {subsubsection}{\numberline {7.5.2}Local environment}{43}{subsubsection.7.5.2}%
-\contentsline {subsubsection}{\numberline {7.5.3}Cloud platform}{43}{subsubsection.7.5.3}%
-\contentsline {section}{\numberline {8}Evaluation}{43}{section.8}%
-\contentsline {section}{\numberline {9}Future work}{43}{section.9}%
-\contentsline {section}{\numberline {10}Conclusion}{44}{section.10}%
-\contentsline {section}{\numberline {A}Project Code}{48}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Database}{48}{subsection.A.1}%
-\contentsline {subsubsection}{\numberline {A.1.1}tables.sql}{48}{subsubsection.A.1.1}%
-\contentsline {subsubsection}{\numberline {A.1.2}db.py}{49}{subsubsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.2}Backend}{54}{subsection.A.2}%
-\contentsline {subsubsection}{\numberline {A.2.1}auth.py}{54}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.4}Information extraction}{6}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Knowledge Graphs}{7}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Semantic Web}{7}{subsubsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.2}Relevant Technology}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Python}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Apache Spark}{10}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}PySpark}{10}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Apache Jena}{11}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Apache Jena Fuseki and SPARQL}{12}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}YAML (Yet Another Markup Language)}{13}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Bash scripts}{13}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}HTML (HyperText Markup Language)}{14}{subsubsection.2.2.8}%
+\contentsline {subsubsection}{\numberline {2.2.9}Docker}{16}{subsubsection.2.2.9}%
+\contentsline {subsubsection}{\numberline {2.2.10}Docker Compose}{17}{subsubsection.2.2.10}%
+\contentsline {subsubsection}{\numberline {2.2.11}Flask}{17}{subsubsection.2.2.11}%
+\contentsline {subsubsection}{\numberline {2.2.12}Deep Learning Transformers}{17}{subsubsection.2.2.12}%
+\contentsline {subsubsection}{\numberline {2.2.13}JSON (JavaScript Object Notation)}{17}{subsubsection.2.2.13}%
+\contentsline {subsubsection}{\numberline {2.2.14}HashiCorp Consul}{18}{subsubsection.2.2.14}%
+\contentsline {subsubsection}{\numberline {2.2.15}JSON Web Token (JWT)}{18}{subsubsection.2.2.15}%
+\contentsline {subsubsection}{\numberline {2.2.16}OpenAPI}{18}{subsubsection.2.2.16}%
+\contentsline {subsubsection}{\numberline {2.2.17}Swagger}{19}{subsubsection.2.2.17}%
+\contentsline {paragraph}{Swagger UI}{19}{section*.2}%
+\contentsline {paragraph}{Flasgger}{20}{section*.3}%
+\contentsline {subsubsection}{\numberline {2.2.18}React}{21}{subsubsection.2.2.18}%
+\contentsline {subsubsection}{\numberline {2.2.19}Universally Unique Identifiers (UUIDs)}{21}{subsubsection.2.2.19}%
+\contentsline {subsection}{\numberline {2.3}Pre-existing work}{21}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}NLS Digital Collections}{21}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Defoe analysis library}{22}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}EB Ontology and EB Knowledge Graph}{23}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Frances web app}{25}{subsubsection.2.3.4}%
+\contentsline {section}{\numberline {3}Requirements}{25}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Functional}{25}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Non-Functional}{27}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Software Engineering Process}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Methodology}{27}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Agile Methodological Approach}{27}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Test-driven implementation}{28}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Task Allocation}{29}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Ethics}{30}{section.5}%
+\contentsline {paragraph}{Database security features}{30}{section*.4}%
+\contentsline {paragraph}{Web server security features}{31}{section*.5}%
+\contentsline {section}{\numberline {6}Design}{31}{section.6}%
+\contentsline {subsection}{\numberline {6.1}System Architecture}{31}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Old architecture}{31}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}New architecture}{32}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Frontend}{33}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Storage Solutions}{33}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}ElasticSearch}{33}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}PostgreSQL}{33}{subsubsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.4}Deployment}{33}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Containerisation}{33}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}Local environment}{34}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}Cloud platform}{34}{subsubsection.6.4.3}%
+\contentsline {section}{\numberline {7}Implementation}{34}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Frontend}{34}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Database}{34}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Abstraction of operations}{35}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Table creation on startup}{36}{subsubsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.3}Backend}{37}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}API creation}{37}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}API documentation and testing}{39}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Enabling user accounts}{40}{subsubsection.7.3.3}%
+\contentsline {paragraph}{Account security features}{40}{section*.6}%
+\contentsline {paragraph}{Issuing access and refresh}{40}{section*.7}%
+\contentsline {paragraph}{Protected routes}{41}{section*.8}%
+\contentsline {subsubsection}{\numberline {7.3.4}Configuration}{42}{subsubsection.7.3.4}%
+\contentsline {paragraph}{Problem description}{42}{section*.9}%
+\contentsline {paragraph}{Consul configuration loading}{43}{section*.10}%
+\contentsline {paragraph}{Note on duplicate fusekiUrl}{44}{section*.11}%
+\contentsline {subsubsection}{\numberline {7.3.5}Removing redundant files}{44}{subsubsection.7.3.5}%
+\contentsline {subsection}{\numberline {7.4}Defoe library}{45}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Execution workflow update}{45}{subsubsection.7.4.1}%
+\contentsline {paragraph}{Problem description}{45}{section*.12}%
+\contentsline {paragraph}{Loading files abstraction}{46}{section*.13}%
+\contentsline {paragraph}{Conversion to Python modules}{46}{section*.14}%
+\contentsline {subsubsection}{\numberline {7.4.2}Processing location change}{48}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Create basic executor}{48}{subsubsection.7.4.3}%
+\contentsline {paragraph}{Problem Description}{48}{section*.15}%
+\contentsline {paragraph}{Creating a job definition}{49}{section*.16}%
+\contentsline {paragraph}{Maintaining the list of jobs}{49}{section*.17}%
+\contentsline {paragraph}{Handling concurrency}{50}{section*.18}%
+\contentsline {paragraph}{Returning job statuses}{50}{section*.19}%
+\contentsline {subsubsection}{\numberline {7.4.4}Fix query name resolution}{51}{subsubsection.7.4.4}%
+\contentsline {subsubsection}{\numberline {7.4.5}Fix frequency keysearch spelling mistake}{53}{subsubsection.7.4.5}%
+\contentsline {subsection}{\numberline {7.5}Deployment}{53}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}Containerisation}{53}{subsubsection.7.5.1}%
+\contentsline {paragraph}{Docker Image}{53}{section*.20}%
+\contentsline {paragraph}{Installation simplified}{53}{section*.21}%
+\contentsline {paragraph}{Default config script}{54}{section*.22}%
+\contentsline {subsubsection}{\numberline {7.5.2}Local environment}{55}{subsubsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.3}Cloud platform}{55}{subsubsection.7.5.3}%
+\contentsline {section}{\numberline {8}Evaluation}{55}{section.8}%
+\contentsline {section}{\numberline {9}Future work}{55}{section.9}%
+\contentsline {section}{\numberline {10}Conclusion}{56}{section.10}%
+\contentsline {section}{\numberline {A}Project Code}{61}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Database}{61}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {A.1.1}tables.sql}{61}{subsubsection.A.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.2}db.py}{62}{subsubsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.2}Backend}{67}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {A.2.1}auth.py}{67}{subsubsection.A.2.1}%

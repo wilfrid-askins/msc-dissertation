@@ -18,9 +18,11 @@
 \begin{abstract}
 This report describes the design, implementation and evaluation of frances, a web-app developed to make Deep Learning, Natural-Language Processing and Text Mining accessible to an audience of researchers. 
 
-This report builds on existing work in which the prototype of a web tool called frances was created, using AI tools to analyse the Encyclopaedia Britannica. An ontology and knowledge graph were created to describe the relationships between definitions, editions, volumes and more in the encyclopaedia.
+This report builds on existing work in which the prototype of a web tool called frances was created, using AI tools to analyse the Encyclopaedia Britannica. An ontology and knowledge graph were previously created to describe the relationships between definitions, editions, volumes and more in the encyclopaedia.
 
-This report describes how account functions such as register and login were implemented. The system was split into a front-end and back-end architecture. The system was then containerised to be deployable across various environments.
+This was a group project in which several system features were implemented. Account functions such as register and login were created. The system was split into a front-end and back-end architecture. The system was then containerised to be deployable across various environments.
+
+TODO check DOER, write list of objectives for the project, say which ones I worked on
 
 \end{abstract}
 
@@ -28,9 +30,13 @@ This report describes how account functions such as register and login were impl
 
 \section{Introduction}
 
+TODO write
+
 \section{Context Survey}
 
-\subsection{Analysis of historical texts}
+TODO intro, what this section is about, justify why I have decided to explain what these things are
+
+\subsection{Background}
 
 \subsubsection{Motivation}
 
@@ -42,6 +48,8 @@ Historical texts are extremely useful for a wide variety of researchers trying t
 
 OCR (Optical Character Recognition) is technology that translates hand written and printed text into a machine-readable format \cite{ocr-trends}. One typical OCR system used the following stages in-order:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{enumerate}
 \item Preprocessing - includes noise removal and enhancement to make the image easier to interpret.
 \item Segmentation - involves the segmentation of lines, words and characters, resulting in a set of segmented characters. 
@@ -49,7 +57,11 @@ OCR (Optical Character Recognition) is technology that translates hand written a
 \item Feature extraction - feature vectors are extracted from the character data.
 \item Classification - a neural net is trained to recognise characters from feature vectors.
 \end{enumerate}
-\cite{ocr-trends}
+\caption{An example architecture of an Information Extraction System \cite{ocr-trends}}
+\end{figure}
+\end{flushleft}
+
+TODO explain how this is relevant, see feedback
 
 \subsubsection{NLP Technology}
 
@@ -65,7 +77,7 @@ Natural Language Processing Technology (NLP) is a field in which computers are t
 \end{itemize}
 \cite{nlp-fundamentals}
 
-\subsection{Background}
+TODO include paragraph about deep learning transfromers, reference other section 
 
 \subsubsection{Information extraction}
 
@@ -73,11 +85,10 @@ Information extraction is the processing of using syntactic, semantic and discou
 
 \begin{flushleft}
 \begin{figure}[H]
-\caption{An example architecture of an Information Extraction System}
 \centering
 \includegraphics[width=\textwidth]{info-extraction-arch}
+\caption{An example architecture of an Information Extraction System \cite{info-extraction}}
 \end{figure}
-\cite{info-extraction}
 \end{flushleft}
 
 One important distinction to understand is that there is a difference between systems that extract text from images, versus systems that extract information from that text. In the example shown above, all three forms of NLP Analysis have been used to create the final result, which contains structured information derived from several sentences of text \cite{info-extraction}.
@@ -88,11 +99,10 @@ Knowledge Graphs are data structures which describe the relationships between re
 
 \begin{flushleft}
 \begin{figure}[H]
-\caption{An example of a Knowledge Graph}
 \centering
 \includegraphics[width=\textwidth]{knowledge-graph-startrek}
+\caption{An example of a Knowledge Graph \cite{kg-graphic}}
 \end{figure}
-\cite{kg-graphic}
 \end{flushleft}
 
 This technology can also be used to predict new features in the world. Machine learning models have been trained on Knowledge Graphs, and have then been used to predict new nodes in the graph. These nodes correspond to new facts about the subject area of the graph \cite{kg-machine-learning}.
@@ -110,11 +120,24 @@ It is difficult to understand what the Semantic Web might look like without seei
 
 \begin{flushleft}
 \begin{figure}[H]
-\caption{An example web page for a physiotherapist}
 \centering
-\includegraphics[width=\textwidth]{semantic-before}
+\begin{minted}{text}
+<h1>Agilitas Physiotherapy Centre</h1>
+Welcome to the home page of the Agilitas Physiotherapy Centre.
+Do you feel pain? Have you had an injury? Let our staff
+Lisa Davenport, Kelly Townsend (our lovely secretary)
+and Steve Matthews take care of your body and soul.
+Mon 11am - 7pm <br>
+Tue 11am - 7pm <br>
+Wed 3pm - 7pm <br>
+Thu 11am - 7pm <br>
+Fri 11am - 3pm <br>
+But note that we do not offer consultation
+during the weeks of the
+<a href="...">State Of Origin</a> games.
+\end{minted}
+\caption{An example web page for a physiotherapist \cite{semantic-web-primer}}
 \end{figure}
-\cite{semantic-web-primer}
 \end{flushleft}
 
 \begin{flushleft}
@@ -123,31 +146,76 @@ Whereas the following is the Semantic Web equivalent:
 
 \begin{flushleft}
 \begin{figure}[H]
-\caption{An example of a Semantic Web page}
 \centering
-\includegraphics[width=\textwidth]{semantic-after}
+\begin{minted}{text}
+<company>
+	<treatmentOffered>Physiotherapy</treatmentOffered>
+	<companyName>Agilitas Physiotherapy Centre</companyName>
+	<staff>
+		<therapist>Lisa Davenport</therapist>
+		<therapist>Steve Matthews</therapist>
+		<secretary>Kelly Townsend</secretary>
+	</staff>
+</company>
+\end{minted}
+\caption{An example of a Semantic Web page \cite{semantic-web-primer}}
 \end{figure}
-\cite{semantic-web-primer}
 \end{flushleft}
 
 The first example is much easier to read for a human, whereas the second is far easier for a machine to read. This form of data would then be combined with a different method of searching, replacing the keyword-based search engines that currently exist \cite{semantic-web-primer}.
 
 \subsection{Relevant Technology}
 
+TODO add an intro paragraph listing relevant technology, why each are relevant to the project
+
+\subsubsection{Python}\label{sec:python-desc}
+
+\begin{flushleft}
+Python \footnote{Python: https://www.python.org/} is a dynamically typed programming language, meaning variables don't have types at compile time, and get given them at runtime depending on the data they are assigned. This makes it relatively quick to write Python code. Furthermore, it is used widely in industry for a variety of applications \cite{python-desc}. It is relevant to this dissertation because it is used in the Flask web server (see \ref{sec:flask-desc}) which serves the frances web app (see \ref{sec:design}) .
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}{python}
+def maths_function(x):
+    return x * 10
+
+maths_time = True
+y = 3
+z = 2
+if maths_time:
+    print(maths_function(y * z))
+else:
+    print("Hello World!")
+\end{minted}
+\caption{An example of a basic Python program}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+This basic Python snippet shows a function defined called maths\_function, which takes in a variable x. If the boolean maths\_time is True, then it prints y * z * 10, equal to 60. Otherwise, it prints a hello world message. Note that the function doesn't state the parameter type, meaning you could also pass a floating point number to the function.
+\end{flushleft}
+
 \subsubsection{Apache Spark}
 
-Apache Spark is a system for executing cluster computing workloads. Spark was originally created to work with RDDs (Resilient Distributed Datasets) which are unique by applying only coarse-grained transformations to data. In other words, a user applies a single operation to each data point. This has the benefit of enabling a high level of parallelism, as computations can be distributed between many machines in a cluster and executed concurrently. Furthermore, it provides fault tolerance by describing a dataset as a result of transformations from a previous dataset. This means an intermediate step or result of a computation can be recreated if lost using the original dataset plus the transformation  \cite{spark-rdds}.
+Apache Spark
+\footnote{Apache Spark: https://spark.apache.org/}
+is a system for executing cluster computing workloads. Spark was originally created to work with RDDs (Resilient Distributed Datasets) which are unique by applying only coarse-grained transformations to data. In other words, a user applies a single operation to each data point. This has the benefit of enabling a high level of parallelism, as computations can be distributed between many machines in a cluster and executed concurrently. Furthermore, it provides fault tolerance by describing a dataset as a result of transformations from a previous dataset. This means an intermediate step or result of a computation can be recreated if lost using the original dataset plus the transformation  \cite{spark-rdds}.
 
 \subsubsection{PySpark}\label{sec:pyspark-desc}
 
 \begin{flushleft}
-PySpark is an Apache Spark driver for Python. It enables you to write Spark queries using the provided Python API. It can also create a local Spark master server if needed for development purposes \cite{pyspark-site}.
+PySpark
+\footnote{PySpark: https://spark.apache.org/docs/latest/api/python/}
+is an Apache Spark driver for Python. It enables you to write Spark queries using the provided Python API. It can also create a local Spark master server if needed for development purposes \cite{pyspark-site}.
 \end{flushleft}
 
 \begin{flushleft}
 Here is an example snippet from the Spark website to better illustrate how PySpark works. It shows a basic Spark session being created, and then the loading and output of a dataframe from a file. A dataframe is essentially an RDD with named columns, in a way that is extremely similar to traditional SQL tables \cite{pyspark-site}.
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 from pyspark.sql import SparkSession
 
@@ -165,16 +233,30 @@ df.show()
 # |  19| Justin|
 # +----+-------+
 \end{minted}
-\cite{pyspark-dataframes}
+\caption{An example of a basic PySpark query \cite{pyspark-dataframes}}
+\end{figure}
+\end{flushleft}
 
-\subsubsection{Apache Jena}
+\begin{flushleft}
+The snippet above shows the creation of a Spark Session. This must be done before any Spark queries are made. It involves connecting to the configured Spark server, whether that be a local or remote one. The next operation is to read a dataframe from a JSON file (see \ref{sec:json-desc}). This dataframe is then printed to the command line, with the output shown as a structured table of data \cite{pyspark-dataframes}.
+\end{flushleft}
 
-Apache Jena is a framework created by the Apache Foundation to create Semantic Web and Linked Data applications. This framework is useful for programs which need to describe both data and relationships between data  \cite{apache-jena}. One commonly used format is RDF (Resource Description Framework) which is a standard to describe graph data \cite{apache-jena}. This data is often exchanged in TTL (Terse RDF Triple Language) files \cite{ttl-files}.
+\subsubsection{Apache Jena}\label{sec:jena-desc}
 
-\subsubsection{Apache Jena Fuseki and SPARQL}
+Apache Jena
+\footnote{Apache Jena: https://jena.apache.org/}
+is a framework created by the Apache Foundation to create Semantic Web and Linked Data applications. This framework is useful for programs which need to describe both data and relationships between data  \cite{apache-jena}. One commonly used format is RDF (Resource Description Framework) which is a standard to describe graph data \cite{apache-jena}. This data is often exchanged in TTL (Terse RDF Triple Language) files \cite{ttl-files}.
 
-Apache Jena Fuseki (usually called Apache Fuseki) is a SPARQL server for the Apache Jena framework. It allows users to upload, store and query RDF files \cite{apache-fuseki}. An example, created by the pre-existing frances project, is shown below:
+\subsubsection{Apache Jena Fuseki and SPARQL}\label{sec:sparql-desc}\label{sec:fuseki-desc}
 
+Apache Jena Fuseki
+\footnote{Apache Fuseki: https://jena.apache.org/documentation/archive/serving\_data/fuseki1.html}
+(usually called Apache Fuseki) is a SPARQL
+\footnote{SPARQL: https://jena.apache.org/tutorials/sparql.html/}
+server for the Apache Jena framework. It allows users to upload, store and query RDF files \cite{apache-fuseki}. An example, created by the pre-existing frances project, is shown below:
+
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{text}
 PREFIX eb: <https://w3id.org/eb#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -201,17 +283,133 @@ PREFIX eb: <https://w3id.org/eb#>
             }
        }  
 \end{minted}
+\caption{An example of a basic SPARQL Query \cite{defoe}}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+This snippet begins with the prefix declarations, which are simply used to abbreviate URLs to make them easier to write and understand. It then selects a number of fields from the ontology, where the article details match the parameters. It then performs a union, which returns a disjunction between both graphs. In other words, it returns both articles and topics with the given parameters, with results from both sides of the union included \cite{sparql-syntax}.
+\end{flushleft}
+
+\subsubsection{YAML (Yet Another Markup Language)}\label{sec:yaml-desc}
+
+\begin{flushleft}
+YAML \footnote{YAML: https://yaml.org/} is a markup language designed to be human readable and is often used as an alternative to JSON (see \ref{sec:json-desc}). YAML has a number of uses such as for configuration files \cite{yaml-desc}, which is where YAML will be used in this project in creating OpenAPI documents (see \ref{sec:openapi-desc}) to document endpoints with Swagger (see \ref{sec:swagger-desc}).
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}{yaml}
+---
+# An employee record
+name: Martin D'vloper
+job: Developer
+skill: Elite
+employed: True
+foods:
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
+\end{minted}
+\caption{An example of a basic YAML file \cite{yaml-desc}}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+This example shows an employee with the name Martin D'vloper. Their job is as a developer with elite skill level, and they have four foods listed.
+\end{flushleft}
+
+\subsubsection{Bash scripts}\label{sec:bash-desc}
+
+\begin{flushleft}
+A Bash script \footnote{Bash: https://www.gnu.org/software/bash/} is a set of ordered commands in a file. They can contain variables and control flow structures such as if statements, which makes them an extremely powerful alternative for small operations to creating a full application \cite{bash-desc}. These scripts are relevant because they can be used to setup projects automatically, making them especially useful for Docker files (see \ref{sec:docker-desc}). The following shows an example script.
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}{bash}
+#!/bin/bash
+first_name=\$1
+last_name=\$2
+
+full_name=\$first_name" "\$last_name
+echo "Your name is "\$full_name
+echo "Nice to meet you"
+\end{minted}
+\caption{An example of a basic Bash script}
+\end{figure}
+\end{flushleft}
+
+TODO: unescape dollar signs when document complete (breaks word count in TeXShop)
+
+\begin{flushleft}
+This script is very simple. The script takes two parameters, called first and last. It then concatenates them and prints the result as a greeting. When run in the command line, the following will be displayed:
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}{text}
+user@test >> bash greeting.sh thomas holland
+Your name is thomas holland
+Nice to meet you
+\end{minted}
+\caption{The result of running the example Bash script}
+\end{figure}
+\end{flushleft}
+
+\subsubsection{HTML (HyperText Markup Language)}\label{sec:html-desc}
+
+\begin{flushleft}
+HTML is a language designed to define the structure of content on the web. All web pages are written in HTML which is then rendered and displayed by a browser \cite{html-desc}. HTML is relevant to this project because the pre-existing frances web app was a server which would return HTML on requests (see \ref{sec:api-creation}).
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{html}
+<!doctype html>
+<html>
+  <h1>Phone company</h1>
+  <body>
+    <p>
+      This is my phone company's website. We sell all kinds of <b>phones, accessories and more!</b>
+    </p>
+    <p>
+      Buy from us on <a href="https://amazon.com">Amazon</a> now.
+    </p>
+  </body>
+</html>
+\end{minted}
+\caption{An example of a basic HTML document}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+This example document is the code for a simple web page. It contains a number of elements, beginning with the doctype tag which tells the browser this is a HTML document. It has a title defined by the "h1" tags. It has content structured using paragraph tags, then a piece of text in bold, then a link to Amazon using an anchor tag \cite{html-desc}. This document looks like this when rendered:
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{html-example}
+\caption{A screenshot of the HTML document when rendered}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{Docker}\label{sec:docker-desc}
 
 \begin{flushleft}
-Docker is a platform which containerises applications so they can be deployed operating system agnostically. In order words, apps contained in Docker can run on any machine with the Docker engine installed. This platform is commonly used to deploy microservice architectures to cloud platforms \cite{docker}.
+Docker
+\footnote{Docker: https://www.docker.com/}
+is a platform which containerises applications so they can be deployed operating system agnostically. In order words, apps contained in Docker can run on any machine with the Docker engine installed. This platform is commonly used to deploy microservice architectures to cloud platforms \cite{docker}.
 \end{flushleft}
 
 \begin{flushleft}
 A Docker image can be created from a base image, with the addition of commands specific to your program. This is defined using a Dockerfile \cite{docker-example}. For example, a basic Flask app (see \hyperref[sec:flask-desc]{Flask Description}) can be containerised with the following Dockerfile:
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{bash}
 # The base image
 FROM tiangolo/uwsgi-nginx-flask:python3.8-alpine
@@ -229,12 +427,26 @@ RUN pip install -r /var/www/requirements.txt
 # Run the Flask server
 CMD ["bash", "start.sh"] 
 \end{minted}
-\cite{docker-example}
+\caption{An example of a basic Dockerfile \cite{docker-example}}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+This example begins with a base of a machine with Python 3.8 running Alpine Linux \footnote{Alpine Linux: https://www.alpinelinux.org/}. It then installs Bash (see \ref{sec:bash-desc}). It sets two environment variables needed to deploy Flask (see \ref{sec:flask-desc}). It copies and installs the app's requirements file, which will install the required Python modules on the system. Finally, it runs the Flask server using the command line.
+\end{flushleft}
+
+\subsubsection{Docker Compose}\label{sec:docker-compose-desc}
+
+TODO write
 
 \subsubsection{Flask}\label{sec:flask-desc}
 
-Flask is a popular Python web server framework. It provides a number of tools to make development easier including hot reload and template rendering \cite{flask}. Flask makes development extremely quick to begin, with the following shown below being a basic Flask app:
+Flask
+\footnote{Flask: https://flask.palletsprojects.com/en/2.2.x/}
+is a popular Python web server framework. It provides a number of tools to make development easier including hot reload and template rendering \cite{flask}. Flask makes development extremely quick to begin, with the following shown below being a basic Flask app:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 from flask import Flask
 app = Flask(__name__)
@@ -243,15 +455,23 @@ app = Flask(__name__)
 def index():
     return '<h1>Hello World!</h1>' 
 \end{minted}
-\cite{flask}
+\caption{An example of a basic Flask app \cite{flask}}
+\end{figure}
+\end{flushleft}
 
-\subsubsection{Deep Learning Transformers / Hugging Face}
+TODO explain this snippet
+
+\subsubsection{Deep Learning Transformers}
 
 Transformers are the most common form of architecture for Natural Language Processing. This 
 
 Hugging Face is a library that provides a large number of pre-trained models to be applied to a variety of inputs. 
 
 TODO finish
+
+\subsubsection{JSON (JavaScript Object Notation)}\label{sec:json-desc}
+
+TODO write
 
 \subsubsection{HashiCorp Consul}\label{sec:consul-desc}
 Consul is a service discovery application. In practice, this means that when a service such as a web app launches, it could send a request to Consul to find the IP addresses of its database, caching server and other dependencies. Furthermore it could store configuration information such as the number of threads to run on, or where to log errors to \cite{consul-desc}.
@@ -267,9 +487,12 @@ JSON Web Tokens are a standard of sending information between two communicators 
 
 \subsubsection{OpenAPI}\label{sec:openapi-desc}
 
-OpenAPI is a specification which describes how documents can be written to define APIs (Application Programming Interfaces). Most importantly it includes both a machine-readable description and human-readable info for developers. This means it can be used for both documentation and code generation purposes \cite{openapi}. One relevant part of an OpenAPI document is the paths field, which describes the endpoints that exist for an API. This looks like the following:
+OpenAPI
+\footnote{OpenAPI: https://www.openapis.org/}
+is a specification which describes how documents can be written to define APIs (Application Programming Interfaces). Most importantly it includes both a machine-readable description and human-readable info for developers. This means it can be used for both documentation and code generation purposes \cite{openapi}. One relevant part of an OpenAPI document is the paths field, which describes the endpoints that exist for an API. This looks like the following:
 
 \begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{yaml}
 paths:
   /audio/volume:
@@ -283,23 +506,25 @@ paths:
               minimum: 0
               maximum: 11
 \end{minted}
-\cite{openapi}
+\caption{An example of a basic OpenAPI document \cite{openapi}}
+\end{figure}
 \end{flushleft}
 
 The snippet above describes a HTTP PUT endpoint that takes a JSON body. The schema of the body is also defined as containing an integer with set boundaries.
 
 \subsubsection{Swagger}\label{sec:swagger-desc}
-Swagger is a set of tools for API Development. This includes Swagger UI, Swagger libraries and many other tools \cite{swagger}.
+Swagger
+\footnote{Swagger: https://swagger.io/}
+is a set of tools for API Development. This includes Swagger UI, Swagger libraries and many other tools \cite{swagger}.
 
 \paragraph{Swagger UI} is a tool to visualise an OpenAPI Definition (see \hyperref[sec:openapi-desc]{OpenAPI Description}). It will create a local web server which can be navigated to, which will show the following:
 
 \begin{flushleft}
 \begin{figure}[H]
-\caption{A screenshot of the Swagger UI}
 \centering
 \includegraphics[width=\textwidth]{swagger-ui}
+\caption{A screenshot of the Swagger UI \cite{swagger-ui}}
 \end{figure}
-\cite{swagger-ui}
 \end{flushleft}
 
 \begin{flushleft}
@@ -308,19 +533,29 @@ This web page will allow a developer to test API requests using the provided for
 
 \paragraph{Flasgger} is a Python library which integrates Swagger with Flask (see \hyperref[sec:flask-desc]{Flask Description}). It allows quick generation of the Swagger UI using a Flask REST function combined with an OpenAPI specification \cite{flasgger-desc}. This looks like the following:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 @query.route("/eb_details",  methods=['POST'])
 @swag_from("../docs/query/eb_details.yml")
 def eb_details():
 	...
 \end{minted}
+\caption{A Flask endpoint with a linked Swagger file}
+\end{figure}
+\end{flushleft}
 
 The code shown above will automatically generate a Swagger UI from the given file, allowing us to easily test this endpoint.
 
 \subsubsection{React}\label{sec:react-desc}
-React is a JavaScript frontend framework created by Facebook to make user interfaces. It uses the concept of components, which are instances describing appearance, behaviour and state \cite{react-desc}. A basic example would look like this:
+React
+\footnote{React: https://reactjs.org/}
+is a JavaScript
+\footnote{JavaScript: https://www.javascript.com/}
+frontend framework created by Facebook to make user interfaces. It uses the concept of components, which are instances describing appearance, behaviour and state \cite{react-desc}. A basic example would look like this:
 
 \begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{javascript}
 class HelloMessage extends React.Component {
   render() {
@@ -330,7 +565,8 @@ class HelloMessage extends React.Component {
 
 root.render(<HelloMessage name="Taylor"/>);
 \end{minted}
-\cite{react-desc}
+\caption{A React component defined in a JavaScript class \cite{react-desc}}
+\end{figure}
 \end{flushleft}
 
 \begin{flushleft}
@@ -343,9 +579,13 @@ TODO write
 
 \subsection{Pre-existing work}
 
-\subsubsection{NLS Digital Collections}
+TODO add intro for this section, explaining what you are going to read about
 
-The National Library of Scotland (NLS) provides many digital collections, which are historical collections in the same sense that a museum might offer. A large part of these collections come from the mass digitisation program of books, maps, manuscripts and newspapers. However, they also include more than 5 million e-books and e-journals \cite{nls-collections}.
+\subsubsection{NLS Digital Collections}\label{sec:nls-desc}
+
+The National Library of Scotland (NLS) provides many digital collections
+\footnote{NLS Digital Collections: https://data.nls.uk/data/digitised-collections/}
+, which are historical collections in the same sense that a museum might offer. A large part of these collections come from the mass digitisation program of books, maps, manuscripts and newspapers. However, they also include more than 5 million e-books and e-journals \cite{nls-collections}.
 
 \begin{flushleft}
 The NLS has over 5PB stored in the library as of 2020. The NLS Data Foundry makes a large portion of this open to the public, available to download in several formats:
@@ -357,10 +597,12 @@ The NLS has over 5PB stored in the library as of 2020. The NLS Data Foundry make
 \cite{nls-collections}
 \end{flushleft}
 
-\subsubsection{Defoe analysis library}
+\subsubsection{Defoe analysis library}\label{sec:defoe-desc}
 
 \begin{flushleft}
-Defoe is a Python library that provides tools to analyse historical texts using Apache Spark. It provides a number of pre-made queries, with their results being computed in parallel \cite{defoe}. 
+Defoe
+\footnote{Defoe: https://github.com/francesNLP/defoe}
+is a Python library that provides tools to analyse historical texts using Apache Spark. It provides a number of pre-made queries, with their results being computed in parallel \cite{defoe}. 
 \end{flushleft}
 
 \begin{flushleft}
@@ -371,22 +613,25 @@ The library's queries take parameters allowing a user to customise them. For exa
 Defoe is primarily designed to make digital collections more accessible to academics working in the humanities. These researchers would previously have had little access to HPC (High Performance Computing) but can use defoe on the command-line in many different environments (personal laptops, cloud platforms, etc) \cite{defoe}.
 \end{flushleft}
 
-\subsubsection{EB Ontology and EB Knowledge Graph}
+TODO rewrite section to be easier to understand if you've never seen defoe before, see feedback
 
-An ontology as described in this report is a formal specification of a model of concepts and their relationships \cite{ontology}. EB Ontology is an ontology describing the relationships between definitions, editions, volumes and more in the Encyclopaedia Britannica \cite{eb-ontology}. The following is a diagram of these links:
+\subsubsection{EB Ontology and EB Knowledge Graph}\label{sec:eb-ontology-desc}
+
+An ontology as described in this report is a formal specification of a model of concepts and their relationships \cite{ontology}. EB Ontology \footnote{EB Ontology: https://w3id.org/eb} is an ontology describing the relationships between definitions, editions, volumes and more in the Encyclopaedia Britannica \cite{eb-ontology}. The following is a diagram of these links:
 
 \begin{flushleft}
 \begin{figure}[H]
-\caption{A diagram of the EB Ontology}
 \centering
 \includegraphics[width=\textwidth]{eb-ontology}
+\caption{A diagram of the EB Ontology}
 \end{figure}
-\cite{eb-ontology}
 \end{flushleft}
 
-With this in mind, EB Knowledge Graph (also referred to as EB-KG) is then the knowledge graph created using EB Ontology and the data extracted from the Encyclopaedia Britannica. The distinction is that EB Ontology refers to the abstract relationship between entities in the encyclopaedia, whereas EB-KG is a collection of instances of these entities and relationships \cite{eb-ontology}.
+With this in mind, EB Knowledge Graph
+\footnote{EB Knowledge Graph: https://zenodo.org/record/6673897\#.YvEYbvHMLz9}
+(also referred to as EB-KG) is then the knowledge graph created using EB Ontology and the data extracted from the Encyclopaedia Britannica. The distinction is that EB Ontology refers to the abstract relationship between entities in the encyclopaedia, whereas EB-KG is a collection of instances of these entities and relationships \cite{eb-ontology}.
 
-\subsubsection{Frances web app}
+\subsubsection{Frances web app}\label{sec:frances-desc}
 
 \begin{flushleft}
 Frances is a web app, which the prototype of was created prior to this report. Frances allows users to query the EB Knowledge Graph to gain insights about the Encyclopaedia Britannica. For example, a user could search for a term and see it's usages. The term could then be spell checked to remove mistakes from the definition. Finally, the term could be visualised to see how often it is used in the encyclopaedia.
@@ -396,7 +641,12 @@ Frances is a web app, which the prototype of was created prior to this report. F
 Frances also allows users to execute defoe queries using the web interface. This is more accessible than the command-line interface defoe previously offered. 
 \end{flushleft}
 
+TODO add screenshots of the old frances web app
+
 \section{Requirements}
+
+From this section onwards I will be writing about the work myself and my partner did in this project. This work added new features to the pre-existing frances web app (see \ref{sec:frances-desc}).
+
 \subsection{Functional}
 
 The following requirements are about the how the system should function. They are derived from a combination of the following sources:
@@ -443,7 +693,10 @@ The following requirements are about the how the system should function. They ar
 
 \section{Software Engineering Process}
 
+TODO intro
+
 \subsection{Methodology}
+
 \subsubsection{Agile Methodological Approach}
 
 The Agile manifesto describes the Agile methodology, which is summarised as:
@@ -513,60 +766,77 @@ Task allocation in this project was handled informally and on an ad-hoc basis de
 \end{tabular}
 \end{center}
 
+TODO add paragraph for each requirement
+TODO Link to the DOER objectives
+
 \section{Ethics}
-This project was relatively low-risk ethically for a number of reasons:
-\begin{itemize}
-\item The project analyses data that is publicly available, meaning that most of the project has zero privacy risk.
-\item The scope of our report is only on software development, and doesn't require us to conduct any research on real subjects (e.g. interviewing people and collecting data).  
-\end{itemize}
-
-However, the project did have some small areas which had to be focused on:
-
-\begin{itemize}
-\item The project holds user account data which could contain sensitive data (full names, passwords, etc).
-\item The project exposes a web server which could compromise user's machines to malicious actors.
-\end{itemize}
 
 \begin{flushleft}
-    Overall, these ethical factors had to be considered in the design and implementation of the application. The following should be done to ensure this:
-    
-    \begin{itemize}
-    \item Database security features
-        \begin{itemize}
-        \item All database configuration should be done dynamically with options for any IP address, username and password. This means that account data can be held in a PostgreSQL database configured securely and separately from the main application. The alternative is hardcoded values in the same way as frances was previously configured, but this is inherently risky from a security perspective.
-        \item If possible, all database connections should stay within the container orchestration network, meaning no outside connection from bad actors is possible.
-        \item Account passwords should always be hashed, meaning a data leak will not expose the real values of user passwords.
-        \end{itemize}
-    \item Web server security features
-        \begin{itemize}
-        \item Users shouldn't be able to input file paths outside the application's root directory, as this could be used to access a host machine remotely.
-        \item When running defoe, users shouldn't be able to execute arbitrary shell commands, as this could be used for a wide variety of malicious goals.
-        \end{itemize}
-    \end{itemize}
+This project was relatively low-risk ethically for a number of reasons. It analyses data that is publicly available, meaning that most of the project has zero privacy risk. Also, the scope of our report is only on software development, and doesn't require us to conduct any research on real subjects (e.g. interviewing people and collecting data).  
 \end{flushleft}
 
-\section{Design}
+\begin{flushleft}
+On the other hand, the project did have some small areas which had to be focused on. The project holds user account data which could contain sensitive data (full names, passwords, etc). Furthermore, the project exposes a web server which could compromise user's machines to malicious actors. Overall, these ethical factors had to be considered in the design and implementation of the application. The following paragraphs will describe this.
+\end{flushleft}
+
+\paragraph{Database security features}
+
+\begin{flushleft}
+All database configuration should be done dynamically with options for any IP address, username and password. This means that account data can be held in a PostgreSQL database configured securely and separately from the main application. The alternative is hardcoded values in the same way as frances was previously configured, but this is inherently risky from a security perspective. If possible, all database connections should stay within the container orchestration network, meaning no outside connection from bad actors is possible. Finally, account passwords should always be hashed, meaning a data leak will not expose the real values of user passwords.
+\end{flushleft}
+
+\paragraph{Web server security features}
+
+\begin{flushleft}
+Users shouldn't be able to input file paths outside the application's root directory, as this could be used to access a host machine remotely. Also, when running defoe, users shouldn't be able to execute arbitrary shell commands, as this could be used for a wide variety of malicious goals.
+\end{flushleft}
+
+\section{Design}\label{sec:design}
+
+TODO intro
 
 \subsection{System Architecture}
 
-The system architecture was designed using the Component diagram from the C4 Model. This is a viewpoint set which describes what diagrams should be included in the documentation of an architecture \cite{c4-model}. However, since we are updating an existing system, the only diagram that is required is the Component diagram. This is because the other viewpoints (System Context, Container, Code) have already been decided by pre-existing work so won't be changed throughout this report.
+The system architecture was designed using the Component diagram from the C4 Model. The C4 Model is a viewpoint set which describes what diagrams should be included in the documentation of an architecture. It uses four main diagrams, called the Context, Containers, Components, and Code diagrams \cite{c4-model}. However, since we are updating an existing system, the only diagram that is required is the Component diagram. This is because the other viewpoints (System Context, Container, Code) have already been decided by pre-existing work so won't be changed throughout this report.
 
+\subsubsection{Old architecture}
+
+To make comparisons easier, I have recreated the old system architecture diagram using the Component diagram of the C4 Model.
+
+\begin{flushleft}
 \begin{figure}[H]
-\caption{The System Architecture at the component level}
-\centering
-\includegraphics[width=\textwidth]{arch-components}
+\includegraphics[width=\textwidth]{arch-components-old}
+\caption{The old frances architecture at the component level}
 \end{figure}
+\end{flushleft}
+
+TODO explain
+
+\subsubsection{New architecture}
+
+TODO justify, I decided, etc
+
+\begin{flushleft}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{arch-components}
+\caption{The new frances architecture at the component level}
+\end{figure}
+\end{flushleft}
+
+TODO explain
 
 \subsection{Frontend}
 
 The application's frontend was previously HTML returned from the pre-existing Flask app. However, since the architecture split the system into frontend and backend, this made it a difficult choice to decide which framework was suitable for the frontend.
+
+TODO write about react
 
 \subsection{Storage Solutions}
 \subsubsection{ElasticSearch}
 \subsubsection{PostgreSQL}
 
 \begin{flushleft}
-PostgreSQL was selected as the database software for this project over MySQL. The two DBMS (Database Management Systems) are extremely similar but PostgresSQL offers slightly better features for customisation of constraints, data security and recovery \cite{postgres}. While these aren't enormously important pressures on the project, this made it the preferred solution.
+PostgreSQL \footnote{PostgreSQL: https://www.postgresql.org/} was selected as the database software for this project over MySQL. The two DBMS (Database Management Systems) are extremely similar but PostgresSQL offers slightly better features for customisation of constraints, data security and recovery \cite{postgres}. While these aren't enormously important pressures on the project, this made it the preferred solution.
  \end{flushleft}
 
 \begin{flushleft}
@@ -574,13 +844,18 @@ Note that this app was designed to use PostgreSQL directly, instead of an ORM (O
  \end{flushleft}
 
 \subsection{Deployment}
+
+TODO intro
+
 \subsubsection{Containerisation}
 
-To containerise the application, the choice was made to use Docker, which is a framework to package a program in a container which emulates an operating system (see \hyperref[sec:docker-desc]{Docker Description}). Docker was a good choice for this technology because it is free and open-source \cite{docker}. Furthermore, it is very popular in the industry, being used by 50\% of deployments \cite{docker-stats} and therefore will be easier to maintain in the future by other contributors.
+TODO explain containerisation
+
+To containerise the application, the choice was made to use Docker (see \ref{sec:docker-desc}), which is a framework to package a program in a container which emulates an operating system. Docker was a good choice for this technology because it is free and open-source \cite{docker}. Furthermore, it is very popular in the industry, being used by 50\% of deployments \cite{docker-stats} and therefore will be easier to maintain in the future by other contributors.
 
 \subsubsection{Local environment}
 
-To deploy the project to a local environment, the tool Docker Compose was chosen. This was a natural choice because it comes packaged with the default Docker installation. By creating a YAML config file, a user can describe a number of containers with a network between them. This config file can then be run locally by a user to create the app and its dependencies \cite{docker}.
+To deploy the project to a local environment, the tool Docker Compose (see \ref{sec:docker-compose-desc}) was chosen. This was a natural choice because it comes packaged with the default Docker installation. By creating a YAML config file (see \ref{sec:yaml-desc}), a user can describe a number of containers with a network between them. This config file can then be run locally by a user to create the app and its dependencies \cite{docker}.
 
 \subsubsection{Cloud platform}
 
@@ -588,14 +863,22 @@ When deployed to a cloud platform, the choice was made to use the tool Terraform
 
 \section{Implementation}
 
+TODO intro
+
 \subsection{Frontend}\label{sec:frontend}
+
+TODO write
 
 \subsection{Database}
 
+TODO intro, what is the db storing, what operations will this need to support
+
 \subsubsection{Abstraction of operations}\label{sec:absraction-of-operations}
 
-If we had queries written everywhere in the API endpoints, it would be extremely difficult to understand, debug and test. To solve this problem, database operations were handled by the Database class (see Appendix \ref{appendix:db.py}). An extract from this class shows some of the typical functions:
+If we had queries written everywhere in the API endpoints, it would be extremely difficult to understand, debug and test. To solve this problem, database operations were handled by the Database class (see \ref{appendix:db.py}). An extract from this class shows some of the typical functions:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
     def get_user_by_email(self, email):
         sql = "SELECT userId,firstName, lastName,email,password FROM Users WHERE Email=%s;"
@@ -618,9 +901,14 @@ If we had queries written everywhere in the API endpoints, it would be extremely
         self.db.commit()
         return
 \end{minted}
+\caption{Two Python functions in the Database class (see \ref{appendix:db.py})}
+\end{figure}
+\end{flushleft}
 
 These functions all work with the same data classes. This means that a user returned by one function can be consumed by another. The user class looks like the following:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
 class User:
     def __init__(self, id, first_name, last_name, email, password):
@@ -635,6 +923,9 @@ class User:
         id = uuid.uuid5(uuid.NAMESPACE_URL, namespace + first_name + str(time.time()))
         return User(id, first_name, last_name, email, password)
 \end{minted}
+\caption{The User class used to abstract database operations (see \ref{appendix:db.py})}
+\end{figure}
+\end{flushleft}
 
 Note that all IDs in the database are UUIDs (see \hyperref[sec:uuids-desc]{UUIDs Description}) created in Python code, rather than an integer auto-incremented by the database. This choice was made because of several factors:
 \begin{itemize}
@@ -645,8 +936,10 @@ Note that all IDs in the database are UUIDs (see \hyperref[sec:uuids-desc]{UUIDs
 
 \subsubsection{Table creation on startup}
 
-Every time the frances web server starts up, it connects to the database. The first operation it runs is shown below, which is to read the tables creation file and execute it.
+Every time the frances web server starts up, it connects to the database in order to read and write account data (for usage during login). The first operation it runs is shown below, which is to read the tables creation file (see \ref{appendix:tables.sql}) and execute it.
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
     def create_tables(self):
         f = open(tables_file_path, "r")
@@ -654,28 +947,40 @@ Every time the frances web server starts up, it connects to the database. The fi
         self.db.cursor().execute(queries)
         self.db.commit()
 \end{minted}
+\caption{The Python function to create all the app's tables on startup}
+\end{figure}
+\end{flushleft}
 
-This file contains a collection of SQL statements which describe the entire table structure (see Appendix \ref{appendix:tables-sql}). They are all defined so that the app can be connected to an empty database, and still work immediately by creating all required tables. This is extremely useful because database deployment will be successful in any environment, so long as the database connection details are correct.
+This file contains a collection of SQL statements which describe the entire table structure (see \ref{appendix:tables-sql}). They are all defined so that the app can be connected to an empty database, and still work immediately by creating all required tables. This is extremely useful because database deployment will be successful in any environment, so long as the database connection details are correct.
 
 \subsection{Backend}
 
-\subsubsection{API creation}
+TODO intro
+
+\subsubsection{API creation}\label{sec:api-creation}
 
 \begin{flushleft}
 The pre-existing code didn't expose an API publicly, instead it used endpoints which returned rendered HTML templates. This essentially means that the frontend and backend are merged together. While this approach is fine for small and simple applications, it becomes an increasing problem when apps become large and complex. To fix this from the backend perspective, the frances web server had to be updated to return a backend API response rather than a rendered page. The old version looked like this:
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
     return render_template("results.html", results=results_for_render,
                                            pagination = pagination, 
                                            headers=headers,
                                            term=term, bar_plot=bar_plot, heatmap_plot=heatmap_plot)
 \end{minted}
+\caption{An example of the old system's server responding with a HTML file}
+\end{figure}
+\end{flushleft}
 
 \begin{flushleft}
 Because React (see \hyperref[sec:react-desc]{React Description}) was chosen as a frontend framework (see \ref{sec:frontend}), it made sense to work with data that React could handle effectively. Traditional HTTP APIs often use form data, in which the data is defined directly in the HTML, with the request built by the browser and sent to defined endpoint \cite{html-forms}. This is different to how React apps often handle data. Because React is a JavaScript framework, it often works with responses in JSON (JavaScript Object Notation). This is incredibly easy to use because the language supports it by default \cite{react-json}. Furthermore requests can easily be asynchronous if needed, in comparison to HTML forms which are inherently not \cite{html-forms}. This decision changed the previous code to this:
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
     return jsonify({
         "results": results_for_render,
@@ -686,6 +991,9 @@ Because React (see \hyperref[sec:react-desc]{React Description}) was chosen as a
         "heatmap_plot": figure_to_dict(heatmap_plot),
     }), HTTPStatus.OK
 \end{minted}
+\caption{An example of the new system's server responding with a JSON document (see \ref{sec:json-desc})}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{API documentation and testing}
 
@@ -693,6 +1001,8 @@ Because React (see \hyperref[sec:react-desc]{React Description}) was chosen as a
 Since this project involved creating an API, it was important to document and test it in order to make it reliable and maintainable. The only issue was that we had an extremely limited amount of time to work on this, so we needed to finish it efficiently. The solution was to use Swagger and Flasgger (see \hyperref[sec:swagger-desc]{Swagger Description}) to write a basic OpenAPI document for each endpoint (see \hyperref[sec:openapi-desc]{OpenAPI Description}) and then autogenerate the Swagger UI test suite. The following shows the document for the volume details endpoint:
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{yaml}
 Volume Details
 ---
@@ -715,6 +1025,9 @@ responses:
   400:
     description: Invalid input
 \end{minted}
+\caption{A YAML document (see \ref{sec:yaml-desc}) describing an endpoint in the new system}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{Enabling user accounts}
 
@@ -742,6 +1055,8 @@ Our implementation of authentication uses an OAuth 2.0 scheme to issue access an
 When a user logs in, an access and refresh token are created based on that user's ID. These tokens are set as HTTP Cookies, which are items of data with a limited size that are stored in the end user's web browser. They can then be used by the server to identify that browser again in future requests, making them useful for handling login data such as this \cite{http-cookies}. As the user attempts to log in, their password is checked, then the cookies are set as shown below.
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
             access_token = create_access_token(identity=user.id)
             refresh_token = create_refresh_token(identity=user.id)
@@ -749,11 +1064,16 @@ When a user logs in, an access and refresh token are created based on that user'
             set_access_cookies(response, access_token)
             set_refresh_cookies(response, refresh_token)
 \end{minted}
+\caption{An extract showing the creation and storage of access and refresh cookies (see \ref{appendix:auth.py})}
+\end{figure}
+\end{flushleft}
 
 \begin{flushleft}
 This access token can then be refreshed using the token refresh endpoint as shown below.
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 @auth.post("/auth/token/refresh")
 @jwt_required(refresh=True)
@@ -767,6 +1087,9 @@ def refresh_token():
     set_access_cookies(response, access_token)
     return response, HTTPStatus.OK
 \end{minted}
+\caption{The code which handles the refreshing of access tokens (see \ref{appendix:auth.py})}
+\end{figure}
+\end{flushleft}
 
 \paragraph{Protected routes}
 
@@ -774,6 +1097,8 @@ def refresh_token():
 Finally, the following shows how this authentication scheme works on protected routes. These routes must have the jwt\_required decorator to be protected and use the get\_jwt\_identity function to find the current logged in user.
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 @auth.get("/protected/auth/profile")
 @jwt_required()
@@ -783,6 +1108,9 @@ def profile():
     user = database.get_user_by_id(user_id)
     ...
 \end{minted}
+\caption{An endpoint in the new system protected by user authentication with JWT (see \ref{sec:jwt-desc})}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{Configuration}
 
@@ -792,6 +1120,8 @@ def profile():
 The pre-existing service was configured using hardcoded values within the frances application, as shown below (abridged):
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 # frances/web-app/config.py
 BASE_DIR = Path(os.path.abspath(os.path.dirname(__file__)))
@@ -801,6 +1131,9 @@ UPLOAD_FOLDER="/Users/.../frances/web-app/query_app/upload_folder"
 CONFIG_FOLDER="/Users/.../frances/web-app/query_app/config_folder"
 RESULTS_FOLDER="/Users/.../frances/web-app/query_app/defoe_results"
 \end{minted}
+\caption{An extract showing the old static configuration of the frances web app}
+\end{figure}
+\end{flushleft}
 
 \begin{flushleft}
 This form of configuration is fine for a proof-of-concept program, but it has immediate limitations which become apparent when deploying it to several diverse environments. For example, deploying the app locally for development will use a different database address from an app deployed in a Docker image on a cloud server. This principle applies to a large collection of fields which will vary depending on environment. The most difficult example is the file path to the machine learning models, which will vary on every machine the app is run on.
@@ -813,6 +1146,8 @@ To solve this problem, I used a service called consul (see \hyperref[sec:consul-
 \end{flushleft}
 
 Here is an example of the new frances configuration:
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{json}
 {
   "frances": {
@@ -834,6 +1169,9 @@ Here is an example of the new frances configuration:
   }
 }
 \end{minted}
+\caption{An example JSON document (see \ref{sec:json-desc}) showing the new way of configuring frances}
+\end{figure}
+\end{flushleft}
 
 The following points may need to be explained to fully understand this document:
 \begin{itemize}
@@ -850,8 +1188,10 @@ You may notice that "fusekiUrl" is included twice in the config. This isn't a mi
 
 \subsubsection{Removing redundant files}
 
-There were a huge number of redundant files that existed in the frances web app code that made the codebase extremely messy. The largest example was the existence of a NodeJS server which didn't serve any clear purpose and was therefore deleted. This included the following files:
+There were a huge number of redundant files that existed in the frances web app code that made the codebase extremely messy. The largest example was the existence of a Node.js server \footnote{Node.js: https://nodejs.org/en/} which didn't serve any clear purpose and was therefore deleted. This included the following files:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{text}
 web-app/query_app/node_modules/.package-lock.json
 web-app/query_app/node_modules/escape-unicode/CHANGES.md
@@ -863,8 +1203,13 @@ web-app/query_app/node_modules/escape-unicode/src/parse.js
 web-app/query_app/package-lock.json
 web-app/query_app/package.json
 \end{minted}
+\caption{The redundant files I deleted when working on this project}
+\end{figure}
+\end{flushleft}
 
 \subsection{Defoe library}
+
+TODO intro
 
 \subsubsection{Execution workflow update}
 
@@ -881,6 +1226,8 @@ The defoe analysis library exists separately from the frances web app. For this 
 
 This looked like the following in the code when running defoe:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
             print("spark-submit")
             cwd = os.getcwd()
@@ -888,6 +1235,9 @@ This looked like the following in the code when running defoe:
             cmd="spark-submit --driver-memory 12g --py-files defoe.zip defoe/run_query.py sparql_data.txt sparql defoe.sparql.queries."+ defoe_selection+" "+ config_file  +" -r " + results_file +" -n 34"
             os.chdir(cwd)
 \end{minted}
+\caption{The Python code which the old frances web app used to run defoe queries (see \ref{sec:defoe-desc})}
+\end{figure}
+\end{flushleft}
 
 This sequence presented several problems which were removed in the final implementation:
 \begin{itemize}
@@ -901,12 +1251,19 @@ This sequence presented several problems which were removed in the final impleme
 
 The pre-existing version of defoe took file names as parameters passed via the command line. These names were then used to read the files, and query using data included in those files. This would be totally fine except it was not designed with any level of abstraction. In other words, every single defoe query took a file name and read from the file. This looked like the following in one case:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
     with open(config_file, "r") as f:
         config = yaml.safe_load(f)
 \end{minted}
+\caption{Python code showing how the old system read config files}
+\end{figure}
+\end{flushleft}
 
 This was a bad idea because programs often require different input methods in certain circumstances. For example, if I want to make unit tests for the system, I need to create real test files for the program to read. In our use case, running defoe as a library call, we needed to pass parameters as strings, rather than files containing those strings. Furthermore, ideally this file reading would only be done once in the main method, rather than repeated for each query. This made the implementation difficult, because every query had to be updated to use strings rather than files.
+
+TODO add example of new system
 
 \paragraph{Conversion to Python modules}
 \label{sec:convert-to-modules}
@@ -922,12 +1279,21 @@ In order for frances to call defoe at runtime, I had to make defoe importable by
 
 Furthermore, I had to update the frances run command to execute the app from a directory containing both frances and defoe\_lib. This is because Python can only look through subdirectories of where the command is run to find modules. Now that the repositories are modules, the command to run frances looks like the following:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{text}
 python3 -m frances-api.web_app
 \end{minted}
+\caption{The new command to run the frances web app}
+\end{figure}
+\end{flushleft}
 
+\begin{flushleft}
 After these updates, running defoe looks like the following in the code:
+\end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
         job = get_defoe().submit_job(
           job_id = job_id,
@@ -936,7 +1302,10 @@ After these updates, running defoe looks like the following in the code:
           query_config = config,
         )
 \end{minted}
- 
+\caption{Python code showing how the new system submits defoe queries}
+\end{figure}
+\end{flushleft}
+
 \subsubsection{Processing location change}
 
 \begin{flushleft}
@@ -975,6 +1344,8 @@ For these reasons, I had to implement a module within the defoe library that doe
 
 TODO write
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
 class Job:
   def __init__(self, id):
@@ -984,6 +1355,9 @@ class Job:
     self.error = ""
     self._lock = threading.Lock()
 \end{minted}
+\caption{Python code showing the class representing defoe jobs}
+\end{figure}
+\end{flushleft}
 
 \paragraph{Maintaining the list of jobs}
 
@@ -991,6 +1365,8 @@ TODO write
 
 The job list is created as a simple Python dictionary. When it 
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
   def submit_job(self, job_id, model_name, query_name, query_config):
     if job_id in jobs:
@@ -1006,6 +1382,9 @@ The job list is created as a simple Python dictionary. When it
   
     return jobs[job_id]
 \end{minted}
+\caption{Python code showing how a job submission creates a worker thread}
+\end{figure}
+\end{flushleft}
 
 \paragraph{Handling concurrency}
 
@@ -1014,6 +1393,8 @@ TODO write
 lock shown previously (see \hyperref[sec:job-definition]{Creating a job definition})
 all reads and writes to job data must be done with a lock on the instance
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
       with job._lock:
         jobs[id].done = True
@@ -1021,17 +1402,25 @@ all reads and writes to job data must be done with a lock on the instance
         if result != None:
           jobs[id].result = yaml.safe_dump(dict(result))
 \end{minted}
+\caption{Python code showing how a job completion is handled concurrently}
+\end{figure}
+\end{flushleft}
 
 \paragraph{Returning job statuses}
 
 TODO write
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
   def get_status(self, job_id):
     if job_id not in jobs:
       raise ValueError("job id not found")
     return jobs[job_id]
 \end{minted}
+\caption{The get\_status function reading from the jobs list}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{Fix query name resolution}\label{sec:query-name-res}
 
@@ -1039,6 +1428,8 @@ TODO write
 The pre-existing defoe code used string-based importing of module and function names to run each query. The query name was the path to the query file in the filesystem, relative to the module root as shown below.
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
     setup = importlib.import_module(root_module +
                                     "." +
@@ -1050,6 +1441,9 @@ The pre-existing defoe code used string-based importing of module and function n
     filename_to_object = setup.filename_to_object
     do_query = query.do_query
 \end{minted}
+\caption{How the old frances web app mapped query names to functions}
+\end{figure}
+\end{flushleft}
 
 \begin{flushleft}
 This is a terrible idea because it won't work when the Python command is run in a different directory (e.g. when defoe is imported as a module). If you do that as I did (see \hyperref[snippet:new-run-frances]{The start.sh script}) then defoe will crash when it can't find the query requested. We could hardcode a new path from that new directory, but we run into the same problem again when testing defoe on its own, or running in a different context.
@@ -1059,14 +1453,21 @@ This is a terrible idea because it won't work when the Python command is run in 
 This was updated to use a basic mapping of string to instance. All we need to do is map from a model and query name to a query function. The model (e.g. "sparql") was resolved first as shown in this dictionary:
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
 models = {
   "sparql": sparql.Model(),
 }
 \end{minted}
+\caption{How the new frances web app maps modules names to modules}
+\end{figure}
+\end{flushleft}
 
 Within the model, there is a second mapping of string to function, as shown below:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}[breaklines]{python}
 class Model:
   def get_queries(self):
@@ -1078,11 +1479,16 @@ class Model:
         "terms_snippet_keysearch_by_year": terms_snippet_keysearch_by_year.do_query,
       }
 \end{minted}
+\caption{How the new frances web app maps query names to queries}
+\end{figure}
+\end{flushleft}
 
 \begin{flushleft}
 Using both of these, the app can then map from a string such as "sparql.frequency\_keysearch\_by\_year" using the following code. Note that this code's safety is also improved hugely because we gracefully handle errors such as requesting queries that don't exist.
 \end{flushleft}
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{python}
       if model_name not in models:
         with job._lock:
@@ -1098,12 +1504,18 @@ Using both of these, the app can then map from a string such as "sparql.frequenc
           return
       query = model.get_queries()[query_name]
 \end{minted}
+\caption{How the new frances web app validates query names}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{Fix frequency keysearch spelling mistake}
 
 The query file frequency\_keyseach\_by\_year.py was missing the letter "r" which caused some problems with testing and execution. This was fixed by renaming it to frequency\_keysearch\_by\_year.py. Note that due to how query name resolution was setup (see \hyperref[sec:query-name-res]{Fix query name resolution}) this also changes the required parameters for defoe. One of the example commands used this query name, and will cause an error message unless you've updated it.
 
 \subsection{Deployment}
+
+TODO intro
+
 \subsubsection{Containerisation}
 
 \paragraph{Docker Image}
@@ -1118,6 +1530,8 @@ Creating the Docker image was made easier by the simplification of the installat
 
 The container is likely to be deployed to a fresh installation in a variety of contexts. For example, if a new user wants to use frances locally. In this scenario, the frances container will look for a configuration and find nothing, causing it to crash. To avoid this, I included a Bash script in the container to push a default configuration to Consul when none exists. This looks like the following:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{bash}
 # Address within a docker network
 consul_addr="consul"
@@ -1139,15 +1553,25 @@ if [[ "$consul_response" == 404 ]] ; then
   curl -X PUT -d "$consul_config" $consul_url
 fi
 \end{minted}
+\caption{Bash code (see \ref{sec:bash-desc}) the new frances web app installs the default configuration}
+\end{figure}
+\end{flushleft}
 
 This script fits incredibly cleanly into the Docker startup process. The following entry point is set in the Dockerfile:
 
+\begin{flushleft}
+\begin{figure}[H]
 \begin{minted}{bash}
 CMD ["bash", "start.sh"] 
 \end{minted}
+\caption{The command used to run the app in a Docker (see \ref{docker-desc}) environment}
+\end{figure}
+\end{flushleft}
 
 The start script then looks like this to run the install\_config script:
 
+\begin{flushleft}
+\begin{figure}[H]
 \label{snippet:new-run-frances}
 \begin{minted}{bash}
 #!/bin/bash
@@ -1155,6 +1579,9 @@ The start script then looks like this to run the install\_config script:
 bash install_config.sh
 python3 -m frances-api.web_app
 \end{minted}
+\caption{Bash code showing the first operations run in the Docker (see \ref{sec:docker-desc}) environment}
+\end{figure}
+\end{flushleft}
 
 \subsubsection{Local environment}
 \subsubsection{Cloud platform}

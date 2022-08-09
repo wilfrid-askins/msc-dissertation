@@ -24,6 +24,14 @@ Grigoris Antoniou and Frank Van~Harmelen.
 \newblock {\em A semantic web primer}.
 \newblock MIT press, 2004.
 
+\bibitem{oauth-2}
+Dan Arias and Sam Bellen.
+\newblock {What Are Refresh Tokens and How to Use Them Securely}.
+\newblock
+  \url{https://auth0.com/blog/refresh-tokens-what-are-they-and-when-to-use-them/},
+  2021.
+\newblock [Online; accessed 07-August-2022].
+
 \bibitem{agile-manifesto}
 Agile authors.
 \newblock {Manifesto for Agile Software Development}.
@@ -70,11 +78,26 @@ Flasgger Contributors.
 \newblock \url{https://github.com/flasgger/flasgger}, 2021.
 \newblock [Online; accessed 05-August-2022].
 
+\bibitem{http-cookies}
+MDN Contributors.
+\newblock {Using HTTP cookies}.
+\newblock \url{https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies},
+  2022.
+\newblock [Online; accessed 07-August-2022].
+
 \bibitem{terraform}
 Terraform Contributors.
 \newblock {Terraform Documentation}.
 \newblock \url{https://www.terraform.io/docs}, 2022.
 \newblock [Online; accessed 02-August-2022].
+
+\bibitem{python-desc}
+Coursera.
+\newblock {What Is Python Used For? A Beginner’s Guide}.
+\newblock
+  \url{https://www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python},
+  2022.
+\newblock [Online; accessed 09-August-2022].
 
 \bibitem{uuids-what-is}
 Charlie Custer.
@@ -92,6 +115,12 @@ Refsnes Data.
 Lisa Ehrlinger and Wolfram W{\"o}{\ss}.
 \newblock Towards a definition of knowledge graphs.
 \newblock {\em SEMANTiCS (Posters, Demos, SuCCESS)}, 48(1-4):2, 2016.
+
+\bibitem{sparql-syntax}
+Lee Feigenbaum.
+\newblock {SPARQL By Example}.
+\newblock \url{https://www.w3.org/2009/Talks/0615-qbe/}, 2009.
+\newblock [Online; accessed 09-August-2022].
 
 \bibitem{eb-ontology}
 Rosa Filgueira.
@@ -130,6 +159,14 @@ Apache~Software Foundation.
 \newblock \url{https://jena.apache.org/documentation/fuseki2/}, 2022.
 \newblock [Online; accessed 31-July-2022].
 
+\bibitem{html-desc}
+Mozilla Foundation.
+\newblock {HTML basics}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics},
+  2022.
+\newblock [Online; accessed 09-August-2022].
+
 \bibitem{openapi}
 The~Linux Foundation.
 \newblock {OpenAPI - Providing Documentation and Examples}.
@@ -146,6 +183,15 @@ Miguel Grinberg.
 Claudio Gutierrez and Juan~F Sequeda.
 \newblock Knowledge graphs.
 \newblock {\em Communications of the ACM}, 64(3):96--104, 2021.
+
+\bibitem{bash-desc}
+Zaira Hira.
+\newblock {Shell Scripting for Beginners – How to Write Bash Scripts in
+  Linux}.
+\newblock
+  \url{https://www.freecodecamp.org/news/shell-scripting-crash-course-how-to-write-bash-scripts-in-linux/},
+  2022.
+\newblock [Online; accessed 09-August-2022].
 
 \bibitem{jwt-desc}
 Auth0 Inc.
@@ -195,6 +241,12 @@ Michael Piotrowski.
 \newblock Natural language processing for historical texts.
 \newblock {\em Synthesis lectures on human language technologies}, 5(2):1--157,
   2012.
+
+\bibitem{yaml-desc}
+Inc Red~Hat.
+\newblock {What is YAML?}
+\newblock \url{https://www.redhat.com/en/topics/automation/what-is-yaml}, 2021.
+\newblock [Online; accessed 09-August-2022].
 
 \bibitem{scrum}
 Ken Schwaber and Jeff Sutherland.
