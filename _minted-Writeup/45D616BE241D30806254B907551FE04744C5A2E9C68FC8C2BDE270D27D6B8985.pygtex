@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}status}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{job\PYGZus{}id}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{job\PYGZus{}id} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{jobs}\PYG{p}{:}
+      \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}job id not found\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{jobs}\PYG{p}{[}\PYG{n}{job\PYGZus{}id}\PYG{p}{]}
+\end{Verbatim}

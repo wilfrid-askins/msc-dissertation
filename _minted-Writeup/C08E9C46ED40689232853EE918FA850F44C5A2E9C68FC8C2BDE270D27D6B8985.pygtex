@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{models} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+  \PYG{l+s+s2}{\PYGZdq{}sparql\PYGZdq{}}\PYG{p}{:} \PYG{n}{sparql}\PYG{o}{.}\PYG{n}{Model}\PYG{p}{(),}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

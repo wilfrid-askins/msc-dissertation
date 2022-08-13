@@ -1,0 +1,151 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{flasgger} \PYG{k+kn}{import} \PYG{n}{swag\PYGZus{}from}
+\PYG{k+kn}{from} \PYG{n+nn}{flask} \PYG{k+kn}{import} \PYG{n}{Blueprint}\PYG{p}{,} \PYG{n}{request}\PYG{p}{,} \PYG{n}{jsonify}
+\PYG{k+kn}{from} \PYG{n+nn}{http} \PYG{k+kn}{import} \PYG{n}{HTTPStatus}
+\PYG{k+kn}{import} \PYG{n+nn}{validators}
+\PYG{k+kn}{from} \PYG{n+nn}{flask\PYGZus{}jwt\PYGZus{}extended} \PYG{k+kn}{import} \PYG{n}{create\PYGZus{}access\PYGZus{}token}\PYG{p}{,} \PYG{n}{create\PYGZus{}refresh\PYGZus{}token}\PYG{p}{,} \PYG{n}{jwt\PYGZus{}required}\PYG{p}{,} \PYG{n}{get\PYGZus{}jwt\PYGZus{}identity}\PYG{p}{,} \PYGZbs{}
+    \PYG{n}{set\PYGZus{}access\PYGZus{}cookies}\PYG{p}{,} \PYG{n}{set\PYGZus{}refresh\PYGZus{}cookies}\PYG{p}{,} \PYG{n}{unset\PYGZus{}jwt\PYGZus{}cookies}
+\PYG{k+kn}{from} \PYG{n+nn}{werkzeug.security} \PYG{k+kn}{import} \PYG{n}{generate\PYGZus{}password\PYGZus{}hash}\PYG{p}{,} \PYG{n}{check\PYGZus{}password\PYGZus{}hash}
+
+\PYG{k+kn}{from} \PYG{n+nn}{..db} \PYG{k+kn}{import} \PYG{n}{User}
+\PYG{k+kn}{from} \PYG{n+nn}{..resolver} \PYG{k+kn}{import} \PYG{n}{get\PYGZus{}database}
+
+\PYG{n}{auth} \PYG{o}{=} \PYG{n}{Blueprint}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}auth\PYGZdq{}}\PYG{p}{,} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}}\PYG{p}{,} \PYG{n}{url\PYGZus{}prefix}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/api/v1\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{database} \PYG{o}{=} \PYG{n}{get\PYGZus{}database}\PYG{p}{()}
+
+\PYG{k}{def} \PYG{n+nf}{validate\PYGZus{}register\PYGZus{}info}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{password}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{6}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Password is too short\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{last\PYGZus{}name}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{password}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{email}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Required register info can not be empty\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{validators}\PYG{o}{.}\PYG{n}{email}\PYG{p}{(}\PYG{n}{email}\PYG{p}{):}
+        \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Email is not valid\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{database}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}email}\PYG{p}{(}\PYG{n}{email}\PYG{p}{)} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Email has been registered\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/emailRegistered\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/emailRegistered.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{email\PYGZus{}registered}\PYG{p}{():}
+    \PYG{n}{email} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{p}{]}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{validators}\PYG{o}{.}\PYG{n}{email}\PYG{p}{(}\PYG{n}{email}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}Email is not valid\PYGZsq{}}
+        \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{BAD\PYGZus{}REQUEST}
+
+    \PYG{n}{registered} \PYG{o}{=} \PYG{k+kc}{False}
+    \PYG{k}{if} \PYG{n}{database}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}email}\PYG{p}{(}\PYG{n}{email}\PYG{p}{)} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n}{registered} \PYG{o}{=} \PYG{k+kc}{True}
+
+    \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}registered\PYGZdq{}}\PYG{p}{:} \PYG{n}{registered}
+    \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+
+
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/register\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/register.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{register}\PYG{p}{():}
+    \PYG{n}{first\PYGZus{}name} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}first\PYGZus{}name\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{last\PYGZus{}name} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}last\PYGZus{}name\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{email} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{password} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}password\PYGZsq{}}\PYG{p}{]}
+
+    \PYG{k}{try}\PYG{p}{:}
+        \PYG{n}{validate\PYGZus{}register\PYGZus{}info}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{email}\PYG{p}{,} \PYG{n}{password}\PYG{p}{)}
+    \PYG{k}{except} \PYG{n+ne}{Exception} \PYG{k}{as} \PYG{n}{e}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{e}\PYG{p}{)}
+        \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{BAD\PYGZus{}REQUEST}
+
+    \PYG{c+c1}{\PYGZsh{} encode password}
+    \PYG{n}{pwd\PYGZus{}hash} \PYG{o}{=} \PYG{n}{generate\PYGZus{}password\PYGZus{}hash}\PYG{p}{(}\PYG{n}{password}\PYG{p}{)}
+
+    \PYG{n}{user} \PYG{o}{=} \PYG{n}{User}\PYG{o}{.}\PYG{n}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{o}{=}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{o}{=}\PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{password}\PYG{o}{=}\PYG{n}{pwd\PYGZus{}hash}\PYG{p}{,} \PYG{n}{email}\PYG{o}{=}\PYG{n}{email}\PYG{p}{)}
+    \PYG{n}{database}\PYG{o}{.}\PYG{n}{add\PYGZus{}user}\PYG{p}{(}\PYG{n}{user}\PYG{p}{)}
+
+    \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}first\PYGZus{}name\PYGZdq{}}\PYG{p}{:} \PYG{n}{first\PYGZus{}name}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}last\PYGZus{}name\PYGZdq{}}\PYG{p}{:} \PYG{n}{last\PYGZus{}name}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{:} \PYG{n}{email}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+
+
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/login\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/login.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{login}\PYG{p}{():}
+    \PYG{n}{email} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{password} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{json}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}password\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Validate email and password}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{email}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{password}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}Required login info can not be empty\PYGZsq{}}
+        \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{BAD\PYGZus{}REQUEST}
+
+    \PYG{n}{user} \PYG{o}{=} \PYG{n}{database}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}email}\PYG{p}{(}\PYG{n}{email}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{user}\PYG{p}{:}
+        \PYG{n}{pwd\PYGZus{}correct} \PYG{o}{=} \PYG{n}{check\PYGZus{}password\PYGZus{}hash}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{password}\PYG{p}{,} \PYG{n}{password}\PYG{p}{)}
+
+        \PYG{k}{if} \PYG{n}{pwd\PYGZus{}correct}\PYG{p}{:}
+            \PYG{n}{access\PYGZus{}token} \PYG{o}{=} \PYG{n}{create\PYGZus{}access\PYGZus{}token}\PYG{p}{(}\PYG{n}{identity}\PYG{o}{=}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+            \PYG{n}{refresh\PYGZus{}token} \PYG{o}{=} \PYG{n}{create\PYGZus{}refresh\PYGZus{}token}\PYG{p}{(}\PYG{n}{identity}\PYG{o}{=}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+
+            \PYG{n}{response} \PYG{o}{=} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}first\PYGZus{}name\PYGZdq{}}\PYG{p}{:} \PYG{n}{user}\PYG{o}{.}\PYG{n}{first\PYGZus{}name}\PYG{p}{,}
+                    \PYG{l+s+s2}{\PYGZdq{}last\PYGZus{}name\PYGZdq{}}\PYG{p}{:} \PYG{n}{user}\PYG{o}{.}\PYG{n}{last\PYGZus{}name}\PYG{p}{,}
+                    \PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{:} \PYG{n}{user}\PYG{o}{.}\PYG{n}{email}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{})}
+
+            \PYG{n}{set\PYGZus{}access\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{access\PYGZus{}token}\PYG{p}{)}
+            \PYG{n}{set\PYGZus{}refresh\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{refresh\PYGZus{}token}\PYG{p}{)}
+
+            \PYG{k}{return} \PYG{n}{response}\PYG{p}{,} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+
+    \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}error\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}wrong credential\PYGZdq{}}
+    \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{UNAUTHORIZED}
+
+
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{post}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}/auth/logout\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/logout.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{logout}\PYG{p}{():}
+    \PYG{n}{response} \PYG{o}{=} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}logout\PYGZsq{}}\PYG{p}{:} \PYG{k+kc}{True}\PYG{p}{\PYGZcb{})}
+    \PYG{n}{unset\PYGZus{}jwt\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{response}\PYG{p}{,} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+
+
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/token/refresh\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@jwt\PYGZus{}required}\PYG{p}{(}\PYG{n}{refresh}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/refresh.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{refresh\PYGZus{}token}\PYG{p}{():}
+    \PYG{n}{user\PYGZus{}id} \PYG{o}{=} \PYG{n}{get\PYGZus{}jwt\PYGZus{}identity}\PYG{p}{()}
+    \PYG{n}{access\PYGZus{}token} \PYG{o}{=} \PYG{n}{create\PYGZus{}access\PYGZus{}token}\PYG{p}{(}\PYG{n}{identity}\PYG{o}{=}\PYG{n}{user\PYGZus{}id}\PYG{p}{)}
+    \PYG{n}{response} \PYG{o}{=} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}refresh\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{True}
+    \PYG{p}{\PYGZcb{})}
+    \PYG{n}{set\PYGZus{}access\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{access\PYGZus{}token}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{response}\PYG{p}{,} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+
+
+\PYG{n+nd}{@auth}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/protected/auth/profile\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nd}{@jwt\PYGZus{}required}\PYG{p}{()}
+\PYG{n+nd}{@swag\PYGZus{}from}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../docs/auth/profile.yml\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{profile}\PYG{p}{():}
+    \PYG{n}{user\PYGZus{}id} \PYG{o}{=} \PYG{n}{get\PYGZus{}jwt\PYGZus{}identity}\PYG{p}{()}
+    \PYG{n}{user} \PYG{o}{=} \PYG{n}{database}\PYG{o}{.}\PYG{n}{get\PYGZus{}user\PYGZus{}by\PYGZus{}id}\PYG{p}{(}\PYG{n}{user\PYGZus{}id}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{jsonify}\PYG{p}{(\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}first\PYGZus{}name\PYGZdq{}}\PYG{p}{:} \PYG{n}{user}\PYG{o}{.}\PYG{n}{first\PYGZus{}name}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}last\PYGZus{}name\PYGZdq{}}\PYG{p}{:} \PYG{n}{user}\PYG{o}{.}\PYG{n}{last\PYGZus{}name}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{:} \PYG{n}{user}\PYG{o}{.}\PYG{n}{email}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}),} \PYG{n}{HTTPStatus}\PYG{o}{.}\PYG{n}{OK}
+\end{Verbatim}

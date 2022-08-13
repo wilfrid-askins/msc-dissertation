@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{n+nv}{first\PYGZus{}name}\PYG{o}{=}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}\PYG{l+m}{1}
+\PYG{n+nv}{last\PYGZus{}name}\PYG{o}{=}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}\PYG{l+m}{2}
+
+\PYG{n+nv}{full\PYGZus{}name}\PYG{o}{=}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}first\PYGZus{}name\PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}last\PYGZus{}name
+\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}Your name is \PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}\PYGZdl{}}full\PYGZus{}name
+\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}Nice to meet you\PYGZdq{}}
+\end{Verbatim}

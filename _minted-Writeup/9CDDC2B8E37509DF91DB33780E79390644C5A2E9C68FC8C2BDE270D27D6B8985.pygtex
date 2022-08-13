@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} frances/web\PYGZhy{}app/config.py}
+\PYG{n}{BASE\PYGZus{}DIR} \PYG{o}{=} \PYG{n}{Path}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{dirname}\PYG{p}{(}\PYG{n+nv+vm}{\PYGZus{}\PYGZus{}file\PYGZus{}\PYGZus{}}\PYG{p}{)))}
+\PYG{n}{SECRET\PYGZus{}KEY} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{urandom}\PYG{p}{(}\PYG{l+m+mi}{64}\PYG{p}{)}
+\PYG{o}{...}
+\PYG{n}{UPLOAD\PYGZus{}FOLDER}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Users/.../frances/web\PYGZhy{}app/query\PYGZus{}app/upload\PYGZus{}folder\PYGZdq{}}
+\PYG{n}{CONFIG\PYGZus{}FOLDER}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Users/.../frances/web\PYGZhy{}app/query\PYGZus{}app/config\PYGZus{}folder\PYGZdq{}}
+\PYG{n}{RESULTS\PYGZus{}FOLDER}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}/Users/.../frances/web\PYGZhy{}app/query\PYGZus{}app/defoe\PYGZus{}results\PYGZdq{}}
+\end{Verbatim}

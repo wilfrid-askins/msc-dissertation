@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{return} \PYG{n}{render\PYGZus{}template}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}results.html\PYGZdq{}}\PYG{p}{,} \PYG{n}{results}\PYG{o}{=}\PYG{n}{results\PYGZus{}for\PYGZus{}render}\PYG{p}{,}
+                                           \PYG{n}{pagination} \PYG{o}{=} \PYG{n}{pagination}\PYG{p}{,}
+                                           \PYG{n}{headers}\PYG{o}{=}\PYG{n}{headers}\PYG{p}{,}
+                                           \PYG{n}{term}\PYG{o}{=}\PYG{n}{term}\PYG{p}{,} \PYG{n}{bar\PYGZus{}plot}\PYG{o}{=}\PYG{n}{bar\PYGZus{}plot}\PYG{p}{,} \PYG{n}{heatmap\PYGZus{}plot}\PYG{o}{=}\PYG{n}{heatmap\PYGZus{}plot}\PYG{p}{)}
+\end{Verbatim}

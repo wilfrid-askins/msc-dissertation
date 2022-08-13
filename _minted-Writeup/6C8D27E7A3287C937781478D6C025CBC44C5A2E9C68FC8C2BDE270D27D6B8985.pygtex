@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{def} \PYG{n+nf}{create\PYGZus{}tables}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{n}{f} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{n}{tables\PYGZus{}file\PYGZus{}path}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{queries} \PYG{o}{=} \PYG{n}{f}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{queries}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{db}\PYG{o}{.}\PYG{n}{commit}\PYG{p}{()}
+\end{Verbatim}

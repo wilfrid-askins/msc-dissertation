@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{k}{with} \PYG{n}{job}\PYG{o}{.}\PYG{n}{\PYGZus{}lock}\PYG{p}{:}
+        \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{done} \PYG{o}{=} \PYG{k+kc}{True}
+        \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{error} \PYG{o}{=} \PYG{n+nb}{repr}\PYG{p}{(}\PYG{n}{error}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{result} \PYG{o}{!=} \PYG{k+kc}{None}\PYG{p}{:}
+          \PYG{n}{jobs}\PYG{p}{[}\PYG{n+nb}{id}\PYG{p}{]}\PYG{o}{.}\PYG{n}{result} \PYG{o}{=} \PYG{n}{yaml}\PYG{o}{.}\PYG{n}{safe\PYGZus{}dump}\PYG{p}{(}\PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{result}\PYG{p}{))}
+\end{Verbatim}

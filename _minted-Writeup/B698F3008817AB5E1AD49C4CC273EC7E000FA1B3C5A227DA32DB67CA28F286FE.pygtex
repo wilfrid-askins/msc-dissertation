@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Address within a docker network}
+\PYG{n+nv}{consul\PYGZus{}addr}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}consul\PYGZdq{}}
+
+\PYG{n+nv}{config\PYGZus{}file}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}./data/config.json\PYGZdq{}}
+\PYG{n+nv}{consul\PYGZus{}url}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}http://}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{consul\PYGZus{}addr}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{:8500/v1/kv/frances/config\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Check consul for the uploaded config}
+\PYG{n+nv}{consul\PYGZus{}response}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}
+  curl \PYGZhy{}X GET \PYG{n+nv}{\PYGZdl{}consul\PYGZus{}url} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}write\PYGZhy{}out \PYG{l+s+se}{\PYGZbs{}\PYGZpc{}}\PYG{o}{\PYGZob{}}http\PYGZus{}code\PYG{o}{\PYGZcb{}} \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}silent \PYG{l+s+se}{\PYGZbs{}}
+  \PYGZhy{}\PYGZhy{}output /dev/null
+  \PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} If needed, set consul key/value}
+\PYG{k}{if} \PYG{o}{[[} \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}consul\PYGZus{}response}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{==} \PYG{l+m}{404} \PYG{o}{]]} \PYG{p}{;} \PYG{k}{then}
+  \PYG{n+nv}{consul\PYGZus{}config}\PYG{o}{=}\PYG{l+s+sb}{`}cat \PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{config\PYGZus{}file}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{`}
+  curl \PYGZhy{}X PUT \PYGZhy{}d \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}consul\PYGZus{}config}\PYG{l+s+s2}{\PYGZdq{}} \PYG{n+nv}{\PYGZdl{}consul\PYGZus{}url}
+\PYG{k}{fi}
+\end{Verbatim}

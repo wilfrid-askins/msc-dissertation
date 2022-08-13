@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{user}\PYG{n+nd}{@test}\PYG{p}{:} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{python3}
+\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n+nb}{id} \PYG{o}{=} \PYG{n}{uuid}\PYG{o}{.}\PYG{n}{uuid5}\PYG{p}{(}\PYG{n}{uuid}\PYG{o}{.}\PYG{n}{NAMESPACE\PYGZus{}URL}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}https://google.com/\PYGZdq{}}\PYG{p}{)}
+\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n+nb}{print}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{)}
+\PYG{n}{a7fc4bfb}\PYG{o}{\PYGZhy{}}\PYG{n}{f2c2}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5592}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{8}\PYG{n}{b2c}\PYG{o}{\PYGZhy{}}\PYG{n}{f60008111caa}
+\end{Verbatim}

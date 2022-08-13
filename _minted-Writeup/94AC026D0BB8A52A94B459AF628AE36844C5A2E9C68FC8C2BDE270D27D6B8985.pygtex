@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+            \PYG{n}{access\PYGZus{}token} \PYG{o}{=} \PYG{n}{create\PYGZus{}access\PYGZus{}token}\PYG{p}{(}\PYG{n}{identity}\PYG{o}{=}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+            \PYG{n}{refresh\PYGZus{}token} \PYG{o}{=} \PYG{n}{create\PYGZus{}refresh\PYGZus{}token}\PYG{p}{(}\PYG{n}{identity}\PYG{o}{=}\PYG{n}{user}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+            \PYG{o}{...}
+            \PYG{n}{set\PYGZus{}access\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{access\PYGZus{}token}\PYG{p}{)}
+            \PYG{n}{set\PYGZus{}refresh\PYGZus{}cookies}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{refresh\PYGZus{}token}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{def} \PYG{n+nf}{submit\PYGZus{}job}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{job\PYGZus{}id}\PYG{p}{,} \PYG{n}{model\PYGZus{}name}\PYG{p}{,} \PYG{n}{query\PYGZus{}name}\PYG{p}{,} \PYG{n}{query\PYGZus{}config}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{job\PYGZus{}id} \PYG{o+ow}{in} \PYG{n}{jobs}\PYG{p}{:}
+      \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}job id already exists\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{jobs}\PYG{p}{[}\PYG{n}{job\PYGZus{}id}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Job}\PYG{p}{(}\PYG{n}{job\PYGZus{}id}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{query\PYGZus{}config} \PYG{o+ow}{is} \PYG{k+kc}{None} \PYG{o+ow}{or} \PYG{n}{query\PYGZus{}config} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{:}
+      \PYG{n}{query\PYGZus{}config} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+
+    \PYG{n}{args} \PYG{o}{=} \PYG{p}{(}\PYG{n}{job\PYGZus{}id}\PYG{p}{,} \PYG{n}{model\PYGZus{}name}\PYG{p}{,} \PYG{n}{query\PYGZus{}name}\PYG{p}{,} \PYG{n}{query\PYGZus{}config}\PYG{p}{)}
+    \PYG{n}{work} \PYG{o}{=} \PYG{n}{threading}\PYG{o}{.}\PYG{n}{Thread}\PYG{p}{(}\PYG{n}{target}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{run\PYGZus{}job}\PYG{p}{,} \PYG{n}{args}\PYG{o}{=}\PYG{n}{args}\PYG{p}{)}
+    \PYG{n}{work}\PYG{o}{.}\PYG{n}{start}\PYG{p}{()}
+
+    \PYG{k}{return} \PYG{n}{jobs}\PYG{p}{[}\PYG{n}{job\PYGZus{}id}\PYG{p}{]}
+\end{Verbatim}

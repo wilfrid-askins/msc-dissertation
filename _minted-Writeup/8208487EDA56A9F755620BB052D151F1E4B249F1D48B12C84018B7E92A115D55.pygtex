@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{paths}\PYG{p}{:}
+  \PYG{n+nt}{/audio/volume}\PYG{p}{:}
+    \PYG{n+nt}{put}\PYG{p}{:}
+      \PYG{n+nt}{requestBody}\PYG{p}{:}
+        \PYG{n+nt}{required}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{true}
+        \PYG{n+nt}{content}\PYG{p}{:}
+          \PYG{n+nt}{application/json}\PYG{p}{:}
+            \PYG{n+nt}{schema}\PYG{p}{:}
+              \PYG{n+nt}{type}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{integer}
+              \PYG{n+nt}{minimum}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{0}
+              \PYG{n+nt}{maximum}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{11}
+\end{Verbatim}

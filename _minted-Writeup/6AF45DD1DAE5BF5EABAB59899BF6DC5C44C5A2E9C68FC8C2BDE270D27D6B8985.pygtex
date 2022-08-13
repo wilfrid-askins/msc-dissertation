@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{n}{setup} \PYG{o}{=} \PYG{n}{importlib}\PYG{o}{.}\PYG{n}{import\PYGZus{}module}\PYG{p}{(}\PYG{n}{root\PYGZus{}module} \PYG{o}{+}
+                                    \PYG{l+s+s2}{\PYGZdq{}.\PYGZdq{}} \PYG{o}{+}
+                                    \PYG{n}{model\PYGZus{}name} \PYG{o}{+}
+                                    \PYG{l+s+s2}{\PYGZdq{}.\PYGZdq{}} \PYG{o}{+}
+                                    \PYG{n}{setup\PYGZus{}module}\PYG{p}{)}
+    \PYG{n}{query} \PYG{o}{=} \PYG{n}{importlib}\PYG{o}{.}\PYG{n}{import\PYGZus{}module}\PYG{p}{(}\PYG{n}{query\PYGZus{}name}\PYG{p}{)}
+
+    \PYG{n}{filename\PYGZus{}to\PYGZus{}object} \PYG{o}{=} \PYG{n}{setup}\PYG{o}{.}\PYG{n}{filename\PYGZus{}to\PYGZus{}object}
+    \PYG{n}{do\PYGZus{}query} \PYG{o}{=} \PYG{n}{query}\PYG{o}{.}\PYG{n}{do\PYGZus{}query}
+\end{Verbatim}

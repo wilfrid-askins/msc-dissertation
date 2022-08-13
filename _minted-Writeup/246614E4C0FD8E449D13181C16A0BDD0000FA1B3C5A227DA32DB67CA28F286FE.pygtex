@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+bash install\PYGZus{}config.sh
+python3 \PYGZhy{}m frances\PYGZhy{}api.web\PYGZus{}app
+\end{Verbatim}

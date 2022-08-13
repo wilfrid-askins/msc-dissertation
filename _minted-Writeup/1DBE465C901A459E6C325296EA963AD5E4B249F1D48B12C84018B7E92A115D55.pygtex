@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+lScalar+lScalarPlain}{Volume Details}
+\PYG{n+nn}{\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nt}{tags}\PYG{p}{:}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{Query}
+\PYG{n+nt}{consumes}\PYG{p}{:}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{application/json}
+\PYG{n+nt}{parameters}\PYG{p}{:}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{in}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{body}
+    \PYG{n+nt}{name}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{payload}
+    \PYG{n+nt}{schema}\PYG{p}{:}
+      \PYG{n+nt}{type}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{object}
+      \PYG{n+nt}{properties}\PYG{p}{:}
+        \PYG{n+nt}{edition\PYGZus{}selection}\PYG{p}{:}
+          \PYG{n+nt}{type}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{string}
+          \PYG{n+nt}{description}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{The edition to list the volumes of.}
+\PYG{n+nt}{responses}\PYG{p}{:}
+  \PYG{n+nt}{201}\PYG{p}{:}
+    \PYG{n+nt}{description}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Volumes list}
+  \PYG{n+nt}{400}\PYG{p}{:}
+    \PYG{n+nt}{description}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Invalid input}
+\end{Verbatim}

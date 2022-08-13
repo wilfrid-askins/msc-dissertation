@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYG{n}{job} \PYG{o}{=} \PYG{n}{get\PYGZus{}defoe}\PYG{p}{()}\PYG{o}{.}\PYG{n}{submit\PYGZus{}job}\PYG{p}{(}
+          \PYG{n}{job\PYGZus{}id} \PYG{o}{=} \PYG{n}{job\PYGZus{}id}\PYG{p}{,}
+          \PYG{n}{model\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}sparql\PYGZdq{}}\PYG{p}{,}
+          \PYG{n}{query\PYGZus{}name} \PYG{o}{=} \PYG{n}{defoe\PYGZus{}selection}\PYG{p}{,}
+          \PYG{n}{query\PYGZus{}config} \PYG{o}{=} \PYG{n}{config}\PYG{p}{,}
+        \PYG{p}{)}
+\end{Verbatim}

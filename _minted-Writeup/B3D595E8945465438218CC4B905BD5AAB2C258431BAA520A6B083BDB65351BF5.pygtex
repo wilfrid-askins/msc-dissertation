@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+PREFIX eb: \PYGZlt{}https://w3id.org/eb\PYGZsh{}\PYGZgt{}
+    PREFIX rdfs: \PYGZlt{}http://www.w3.org/2000/01/rdf\PYGZhy{}schema\PYGZsh{}\PYGZgt{}
+    SELECT ?definition ?term ?year ?enum ?vnum
+        WHERE \PYGZob{}\PYGZob{}
+            \PYGZpc{}s a eb:Article ;
+               eb:name ?term ;
+               eb:definition ?definition .
+            ?v eb:hasPart \PYGZpc{}s.
+            ?v eb:number ?vnum.
+            ?e eb:hasPart ?v.
+            ?e eb:publicationYear ?year.
+            ?e eb:number ?enum.
+            \PYGZcb{}
+            UNION \PYGZob{}
+            \PYGZpc{}s a eb:Topic ;
+              eb:name ?term ;
+              eb:definition ?definition .
+            ?v eb:hasPart \PYGZpc{}s.
+            ?v eb:number ?vnum.
+            ?e eb:hasPart ?v.
+            ?e eb:publicationYear ?year.
+            ?e eb:number ?enum.
+            \PYGZcb{}
+       \PYGZcb{}
+\end{Verbatim}

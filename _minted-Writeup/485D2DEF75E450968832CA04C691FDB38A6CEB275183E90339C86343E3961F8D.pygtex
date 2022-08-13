@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+  \PYG{n+nt}{\PYGZdq{}users\PYGZdq{}}\PYG{p}{:} \PYG{p}{[}
+    \PYG{p}{\PYGZob{}}
+      \PYG{n+nt}{\PYGZdq{}firstName\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}James\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}lastName\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Wilson\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}age\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{43}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{],}
+  \PYG{n+nt}{\PYGZdq{}opposites\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+      \PYG{n+nt}{\PYGZdq{}up\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}down\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}left\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}right\PYGZdq{}}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

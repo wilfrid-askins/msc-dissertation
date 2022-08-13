@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nn}{\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} An employee record}
+\PYG{n+nt}{name}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Martin D\PYGZsq{}vloper}
+\PYG{n+nt}{job}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Developer}
+\PYG{n+nt}{skill}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Elite}
+\PYG{n+nt}{employed}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{True}
+\PYG{n+nt}{foods}\PYG{p}{:}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{Apple}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{Orange}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{Strawberry}
+  \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{Mango}
+\end{Verbatim}

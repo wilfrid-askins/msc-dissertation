@@ -7,7 +7,7 @@
 \graphicspath{ {./images/} }
 \usepackage{csquotes}
 \usepackage{hyperref}
-% \usepackage{tabularx}
+\usepackage{tabularx}
 \usepackage{tabularray}
 
 \begin{document}
@@ -841,58 +841,65 @@ This section will be going over the requirements we decided on for the new syste
 \subsection{Functional}\label{sec:req-functional}
 
 \begin{flushleft}
-The following requirements are about the how the system should function. They are derived from a combination of two sources. Firstly, the old version of frances. The code and functionality of this app was examined and used to determine its original requirements. Secondly, the new functionality that this project aims to implement, as discussed with my supervisor Rosa Filgueira.
+The following requirements are about the how the system should function. They are derived from a combination of two sources. Firstly, the old version of frances (\ref{sec:frances-desc}). The code and functionality of this app was examined and used to determine its original requirements. Secondly, the objectives defined as the scope of this project (see \ref{sec:objectives}).
+\end{flushleft}
+
+\begin{flushleft}
+In this sub-section there will be two priority levels, called High and Low (noted as H and L). In the evaluation (\ref{sec:evaluation}), all high priority requirements must be fulfilled for the project to be considered a success. Low priority ones are a bonus, but aren't totally necessary. These priorities are based off of the objectives defined earlier (\ref{sec:objectives}) with requirements based on the primary objectives being high priority.
 \end{flushleft}
 
 \subsubsection{Account Requirements}
 
 \begin{flushleft}
-TODO explain
-Link to Objective P1 (\ref{sec:objectives-primary})
+These requirements are specifically relating to the project's account system, making them necessary to fulfil Objective P1 (see \ref{sec:objectives-primary}).
 \end{flushleft}
 
 \renewcommand{\arraystretch}{1.5}
 
 \begin{center}
-\begin{tabularx}{\textwidth}{ c X c }
- ID & Description & Depends \\ 
+\begin{longtblr}[
+  caption = {Account Requirements},
+]{ c X c }
+ ID & Description & Priority \\ 
  \hline
-  F1 & The system shall allow researchers to create their accounts for this system with their email, name and password. To limit the access to protected resources, such as defoe query function, different user files. &  \\ 
-  F2 & The system would allow system administrator to check, approve researcher accounts. To further verify valid researcher accounts for using this system. & F1 \\ 
-  F3 & The system would allow system administrator to delete researcher accounts. To remove accounts with abnormal behaviours to further protect the system. & F1 \\ 
-  F4 & Registered researchers shall be allowed to login the system with their email and password. To provide registered researchers with access to defoe query function. & F1  \\ 
-  F5 & Registered researchers should be allowed to logout the system. & F4  \\ 
-  F6 & The system would allow registered researchers to check and modify their account information. & F4  \\ 
-\end{tabularx}
+  F1 & The system shall allow researchers to create their accounts for this system with their email, name and password. To limit the access to protected resources, such as defoe query function, different user files. & H  \\ 
+  F2 & The system would allow system administrator to check, approve researcher accounts, to further verify valid researcher accounts for using this system. & L \\ 
+  F3 & The system would allow system administrator to delete researcher accounts. To remove accounts with abnormal behaviours to further protect the system. & L \\ 
+  F4 & Registered researchers shall be allowed to login the system with their email and password. To provide registered researchers with access to defoe query function. & H  \\ 
+  F5 & Registered researchers should be allowed to logout the system. & H  \\ 
+  F6 & The system would allow registered researchers to check and modify their account information. & L  \\ 
+\end{longtblr}
 \end{center}
 
 \subsubsection{Query Requirements}
 
 \begin{flushleft}
-TODO explain
+These requirements are specifically related to the querying functionality of the system. These are necessary both to preserve the functionality of the pre-existing frances web app (see \ref{sec:frances-desc}) and fulfil Objective P1 (see \ref{sec:objectives-primary}) as it relates to the account system.
 \end{flushleft}
 
 \begin{center}
-\begin{longtblr}{ c X c }
- ID & Description & Depends \\ 
+\begin{longtblr}[
+  caption = {Query Requirements},
+]{ c X c }
+ ID & Description & Priority \\ 
  \hline
-  F7 & The system shall allow researchers to search for terms information with specific term name in EB (Encyclopedia Britannica), which includes their definitions, types, related terms, metadata information (year, edition, volume, start page, end page), and advanced NLP analyses results (topic model, sentiment score, similar terms, spelling checking and summarisation). &  \\ 
-  F8 & The system shall allow researchers to check a specific term knowledge in EB and provide visualisation for it. & F7, F14, F16 \\ 
-  F9 & The system shall visualise of each topic model found in term search, similar terms search or topic modelling search results. For each topic model, the system shall plot their most common 10 words , along with their c-TF-IDF scores. & F1 \\ 
-  F10 & The system shall compare and visualise the similarity among topic models found in term search results. & F7  \\ 
-  F11 & The system shall allow researchers to check original images of the start pages or end pages of terms in EB. & F7  \\ 
-  F12 & The system shall be able to check spelling in a term definition. &  \\ 
-  F13 & The system shall allow researchers to view the spelling errors in a term definition. & F7, F12  \\ 
-  F14 & The system shall allow researchers to search for similar terms of a specific term in EB. &  \\ 
-  F15 & The system would allow registered researchers to save information of specific terms to their account. Researchers might find some terms valuable for further use. & F4  \\ 
-  F16 & The system would allow registered researchers to view savd term information. & F15  \\ 
-  F17 & The system shall allow researchers to search for terms with the same topic model. &  \\ 
-  F18 & The system shall allow researchers to view details and statistical data of a specific volume in a supporting collection, along with the edition detail (if it is in EB, serie detail otherwise) of this volume. &  \\ 
-  F19 & The system shall allow registered researchers to configure and submit multiple defoe queries. & F4  \\ 
-  F20 & The system shall not allow any users to submit any defoe query without successfully signing in the system. & F4  \\ 
-  F21 & The system shall allow register researchers to view their defoe query information, which includes query configuration, query processing status and query result. & F19  \\ 
-  F22 & The system shall allow registered researchers to view their previous defoe query information. & F19  \\ 
-  F23 & The system shall not allow researchers to view other users information, which includes account, saved terms and defoe query information. & F4, F16, F19  \\ 
+  F7 & The system shall allow researchers to search for terms information with specific term name in EB (Encyclopedia Britannica), which includes their definitions, types, related terms, metadata information (year, edition, volume, start page, end page), and advanced NLP analyses results (topic model, sentiment score, similar terms, spelling checking and summarisation). & H \\ 
+  F8 & The system shall allow researchers to check a specific term knowledge in EB and provide visualisation for it. & H \\ 
+  F9 & The system shall visualise of each topic model found in term search, similar terms search or topic modelling search results. For each topic model, the system shall plot their most common 10 words , along with their c-TF-IDF scores. & H \\ 
+  F10 & The system shall compare and visualise the similarity among topic models found in term search results. & H  \\ 
+  F11 & The system shall allow researchers to check original images of the start pages or end pages of terms in EB. & H  \\ 
+  F12 & The system shall be able to check spelling in a term definition. & H \\ 
+  F13 & The system shall allow researchers to view the spelling errors in a term definition. & H  \\ 
+  F14 & The system shall allow researchers to search for similar terms of a specific term in EB. & H \\ 
+  F15 & The system would allow registered researchers to save information of specific terms to their account. Researchers might find some terms valuable for further use. & H  \\ 
+  F16 & The system would allow registered researchers to view savd term information. & L  \\ 
+  F17 & The system shall allow researchers to search for terms with the same topic model. & H \\ 
+  F18 & The system shall allow researchers to view details and statistical data of a specific volume in a supporting collection, along with the edition detail (if it is in EB, serie detail otherwise) of this volume. & H \\ 
+  F19 & The system shall allow registered researchers to configure and submit multiple defoe queries. & H  \\ 
+  F20 & The system shall not allow any users to submit any defoe query without successfully signing in the system. & H  \\ 
+  F21 & The system shall allow register researchers to view their defoe query information, which includes query configuration, query processing status and query result. & H  \\ 
+  F22 & The system shall allow registered researchers to view their previous defoe query information. & L  \\ 
+  F23 & The system shall not allow researchers to view other users information, which includes account, saved terms and defoe query information. & H  \\ 
 \end{longtblr}
 \end{center}
 
@@ -903,15 +910,17 @@ The following describe the metrics under which the system should function. This 
 \end{flushleft}
 
 \begin{center}
-\begin{tabularx}{\textwidth}{ c X }
- Name & Description \\ 
+\begin{longtblr}[
+  caption = {Non-Functional Requirements},
+]{\textwidth}{ c X }
+ ID & Description \\ 
  \hline
  Availablity & Measured by 99.99\% across 1 hour of typical traffic. \\ 
  Portability & Across Windows, MacOS and Linux operating systems without any code changes. \\ 
  Reliability & Measured by a MTTF (Mean time to failure) of 10,000 hours.   \\ 
  Performance & Measured by fulfilling 99.9\% of standard requests in under 200ms over 1 hour of typical traffic. \\ 
  Scalability & Measured by supporting the execution of 3 or more defoe queries at once. \\ 
-\end{tabularx}
+\end{longtblr}
 \end{center}
 
 \section{Software Engineering Process}
@@ -979,7 +988,9 @@ Task allocation in this project was handled informally and on an ad-hoc basis de
 \renewcommand{\arraystretch}{1.5}
 
 \begin{center}
-\begin{tabular}{|p{0.5\textwidth}|p{0.5\textwidth}|} 
+\begin{longtblr}[
+  caption = {Task Allocation},
+]{|p{0.5\textwidth}|p{0.5\textwidth}|} 
  \hline
  Task name & Members Assigned \\ [0.5ex] 
  \hline
@@ -990,16 +1001,18 @@ Task allocation in this project was handled informally and on an ad-hoc basis de
   Defoe library & Wilfrid Askins \\
   Deployment & Wilfrid Askins \\
  \hline
-\end{tabular}
+\end{longtblr}
 \end{center}
 
 \begin{flushleft}
-This task allocation maps fairly well onto the DOER objectives (see \ref{sec:objectives}), as described below:  
+This task allocation maps fairly well onto the Objectives (see \ref{sec:objectives}), as described below:  
 \end{flushleft}
 
 \begin{flushleft}
 \begin{center}
-\begin{tabular}{|p{0.5\textwidth}|p{0.5\textwidth}|} 
+\begin{longtblr}[
+  caption = {Objectives mapped to Task Allocation},
+]{|p{0.5\textwidth}|p{0.5\textwidth}|} 
  \hline
  Objective & Tasks \\ [0.5ex] 
  \hline
@@ -1007,7 +1020,7 @@ This task allocation maps fairly well onto the DOER objectives (see \ref{sec:obj
   Make improvements to the pre-existing user interface & Frontend interface, Backend API \\
   Containerise the system & Defoe library, Deployment \\
  \hline
-\end{tabular}
+\end{longtblr}
 \end{center}
 \end{flushleft}
 
@@ -2056,7 +2069,10 @@ now defoe runs with different knowledge graphs
 TODO writeup
 
 \section{Future work}
-easily to extend, reproducible
+cloud platform deployment using Terraform
+offer this service to the public
+
+
 
 TODO write
 

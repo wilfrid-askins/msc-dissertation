@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} The base image}
+FROM tiangolo/uwsgi\PYGZhy{}nginx\PYGZhy{}flask:python3.8\PYGZhy{}alpine
+\PYG{c+c1}{\PYGZsh{} Basic system requirement}
+RUN apk \PYGZhy{}\PYGZhy{}update add bash nano
+
+\PYG{c+c1}{\PYGZsh{} Environment variables for Flask}
+ENV STATIC\PYGZus{}URL /static
+ENV STATIC\PYGZus{}PATH /var/www/app/static
+
+\PYG{c+c1}{\PYGZsh{} Install dependencies}
+COPY ./requirements.txt /var/www/requirements.txt
+RUN pip install \PYGZhy{}r /var/www/requirements.txt
+
+\PYG{c+c1}{\PYGZsh{} Run the Flask server}
+CMD \PYG{o}{[}\PYG{l+s+s2}{\PYGZdq{}bash\PYGZdq{}}, \PYG{l+s+s2}{\PYGZdq{}start.sh\PYGZdq{}}\PYG{o}{]}
+\end{Verbatim}
