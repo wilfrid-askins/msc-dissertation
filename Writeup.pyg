@@ -1,0 +1,4 @@
+user@test: >> python3
+>> id = uuid.uuid5(uuid.NAMESPACE_URL, "https://google.com/")
+>> print(id)
+a7fc4bfb-f2c2-5592-8b2c-f60008111caa

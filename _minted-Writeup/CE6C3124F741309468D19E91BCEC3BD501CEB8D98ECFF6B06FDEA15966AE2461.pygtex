@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{version}\PYG{p}{:} \PYG{l+s}{\PYGZdq{}3.9\PYGZdq{}}  \PYG{c+c1}{\PYGZsh{} optional since v1.27.0}
+\PYG{n+nt}{services}\PYG{p}{:}
+  \PYG{n+nt}{web}\PYG{p}{:}
+    \PYG{n+nt}{build}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{.}
+    \PYG{n+nt}{ports}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}8000:5000\PYGZdq{}}
+    \PYG{n+nt}{volumes}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{.:/code}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{logvolume01:/var/log}
+    \PYG{n+nt}{depends\PYGZus{}on}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{redis}
+  \PYG{n+nt}{redis}\PYG{p}{:}
+    \PYG{n+nt}{image}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{redis}
+\PYG{n+nt}{volumes}\PYG{p}{:}
+  \PYG{n+nt}{logvolume01}\PYG{p}{:} \PYG{p+pIndicator}{\PYGZob{}\PYGZcb{}}
+\end{Verbatim}

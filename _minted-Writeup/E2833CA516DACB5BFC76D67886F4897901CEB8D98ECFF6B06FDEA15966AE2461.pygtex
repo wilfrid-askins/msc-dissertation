@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{version}\PYG{p}{:} \PYG{l+s}{\PYGZdq{}3.9\PYGZdq{}}
+\PYG{n+nt}{services}\PYG{p}{:}
+  \PYG{n+nt}{consul}\PYG{p}{:}
+    \PYG{n+nt}{image}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{hashicorp/consul}
+    \PYG{n+nt}{ports}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}8500:8500\PYGZdq{}}
+  \PYG{n+nt}{database}\PYG{p}{:}
+    \PYG{n+nt}{image}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{postgres}
+    \PYG{n+nt}{environment}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{POSTGRES\PYGZus{}USER=frances}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{POSTGRES\PYGZus{}PASSWORD=frances}
+  \PYG{n+nt}{fuseki}\PYG{p}{:}
+    \PYG{n+nt}{image}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{stain/jena\PYGZhy{}fuseki}
+    \PYG{n+nt}{environment}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{ADMIN\PYGZus{}PASSWORD=pass123}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{JVM\PYGZus{}ARGS=\PYGZhy{}Xmx4g}
+    \PYG{n+nt}{deploy}\PYG{p}{:}
+      \PYG{n+nt}{resources}\PYG{p}{:}
+        \PYG{n+nt}{limits}\PYG{p}{:}
+          \PYG{n+nt}{cpus}\PYG{p}{:} \PYG{l+s}{\PYGZdq{}2\PYGZdq{}}
+          \PYG{n+nt}{memory}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{6gb}
+  \PYG{n+nt}{frances}\PYG{p}{:}
+    \PYG{n+nt}{image}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{frances\PYGZhy{}api:latest}
+    \PYG{n+nt}{ports}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}80:80\PYGZdq{}}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}8080:8080\PYGZdq{}}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}5000:5000\PYGZdq{}}
+    \PYG{n+nt}{environment}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}CONSUL\PYGZus{}ADDRESS=consul:8500\PYGZdq{}}
+    \PYG{n+nt}{depends\PYGZus{}on}\PYG{p}{:}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}consul\PYGZdq{}}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}database\PYGZdq{}}
+      \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZdq{}fuseki\PYGZdq{}}
+\end{Verbatim}

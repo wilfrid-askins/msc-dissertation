@@ -44,6 +44,18 @@ SQLAlchemy authors.
 \newblock \url{https://docs.sqlalchemy.org/en/14/orm/}, 2021.
 \newblock [Online; accessed 01-August-2022].
 
+\bibitem{kubernetes-scaling}
+The~Kubernetes Authors.
+\newblock {HorizontalPodAutoscaler Walkthrough}.
+\newblock
+  \url{https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/},
+  2022.
+\newblock [Online; accessed 09-August-2022].
+
+\bibitem{axure-rp}
+Inc Axure Software~Solutions.
+\newblock {Axure RP 10 Infinite Interactions, Unlimited Power}.
+
 \bibitem{test-driven-dev}
 Kent Beck.
 \newblock {TDD}.
@@ -55,6 +67,12 @@ David Beckett and Tim Berners-Lee.
 \newblock {Turtle - Terse RDF Triple Language}.
 \newblock \url{https://www.w3.org/TeamSubmission/turtle/}, 2008.
 \newblock [Online; accessed 31-July-2022].
+
+\bibitem{mutex-lock}
+Jason Brownlee.
+\newblock {Threading Mutex Lock in Python}.
+\newblock \url{https://superfastpython.com/thread-mutex-lock/}, 2022.
+\newblock [Online; accessed 10-August-2022].
 
 \bibitem{rdf-historical}
 Kate Byrne.
@@ -77,6 +95,12 @@ Flasgger Contributors.
 \newblock {Flasgger - Easy Swagger UI for your Flask API}.
 \newblock \url{https://github.com/flasgger/flasgger}, 2021.
 \newblock [Online; accessed 05-August-2022].
+
+\bibitem{huggingface}
+Hugging~Face Contributors.
+\newblock {The AI community building the future.}
+\newblock \url{https://huggingface.co/}, 2022.
+\newblock [Online; accessed 11-August-2022].
 
 \bibitem{http-cookies}
 MDN Contributors.
@@ -110,6 +134,12 @@ Refsnes Data.
 \newblock {W3Schools - HTML Forms}.
 \newblock \url{https://www.w3schools.com/html/html_forms.asp}, 2022.
 \newblock [Online; accessed 06-August-2022].
+
+\bibitem{containers-def}
+IBM~Cloud Education.
+\newblock {Containerization - What is containerization?}
+\newblock \url{https://www.ibm.com/uk-en/cloud/learn/containerization}, 2019.
+\newblock [Online; accessed 11-August-2022].
 
 \bibitem{ontology}
 Lisa Ehrlinger and Wolfram W{\"o}{\ss}.
@@ -184,6 +214,14 @@ Claudio Gutierrez and Juan~F Sequeda.
 \newblock Knowledge graphs.
 \newblock {\em Communications of the ACM}, 64(3):96--104, 2021.
 
+\bibitem{architecture-monoliths}
+Chandler Harris.
+\newblock {Microservices vs. monolithic architecture}.
+\newblock
+  \url{https://www.atlassian.com/microservices/microservices-architecture/microservices-vs-monolith},
+  2022.
+\newblock [Online; accessed 09-August-2022].
+
 \bibitem{bash-desc}
 Zaira Hira.
 \newblock {Shell Scripting for Beginners – How to Write Bash Scripts in
@@ -198,6 +236,26 @@ Auth0 Inc.
 \newblock {Introduction to JSON Web Tokens}.
 \newblock \url{https://jwt.io/introduction}, 2022.
 \newblock [Online; accessed 04-August-2022].
+
+\bibitem{docker-compose-example}
+Docker Inc.
+\newblock {Overview of Docker Compose}.
+\newblock \url{https://docs.docker.com/compose/}, 2022.
+\newblock [Online; accessed 11-August-2022].
+
+\bibitem{json-desc}
+ECMA International.
+\newblock {ECMA-404 The JSON Data Interchange Standard.}
+\newblock
+  \url{https://www.ecma-international.org/publications-and-standards/standards/ecma-404/},
+  2017.
+\newblock [Online; accessed 09-August-2022].
+
+\bibitem{concurrency-problems}
+Simon~Peyton Jones.
+\newblock Beautiful concurrency.
+\newblock {\em Beautiful Code: Leading Programmers Explain How They Think},
+  pages 385--406, 2007.
 
 \bibitem{consul-desc}
 HashiCorp Limited.
@@ -297,6 +355,12 @@ The~Psycopg Team.
 \newblock {psycopg2.extras – Miscellaneous goodies for Psycopg 2}.
 \newblock \url{https://www.psycopg.org/docs/extras.html}, 2021.
 \newblock [Online; accessed 06-August-2022].
+
+\bibitem{nlp-transformers}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
 
 \bibitem{c4-model}
 Andrea V{\'a}zquez-Ingelmo, Alicia Garc{\'\i}a-Holgado, and Francisco~J
