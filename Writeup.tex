@@ -683,7 +683,7 @@ This component will render a basic "Hello Taylor" message to the user. Component
 \subsubsection{Universally Unique Identifiers (UUIDs)}\label{sec:uuids-desc}
 
 \begin{flushleft}
-A UUID is described as "a 128-bit value used to uniquely identify an object or entity on the internet" \cite{uuids-what-is}. There are 5 standard versions of UUID algorithms with each producing a different likelihood uniqueness in various circumstances. Ideally, the long length of a UUID should mean that it will never clash with another ID, although in practice this is possible \cite{uuids-what-is}. UUIDs are relevant to this project because they are used as primary keys in the database of the new frances web app (see \ref{sec:absraction-of-operations}). The following shows an example UUID being generated randomly in the Python interpreter (see \ref{sec:python-desc}).
+A UUID is described as "a 128-bit value used to uniquely identify an object or entity on the internet" \cite{uuids-what-is}. There are 5 standard versions of UUID algorithms with each producing a different likelihood uniqueness in various circumstances. Ideally, the long length of a UUID should mean that it will never clash with another ID, although in practice this is possible \cite{uuids-what-is}. UUIDs are relevant to this project because they are used as primary keys in the database of the new frances web app (see \ref{sec:abstraction-of-operations}). The following shows an example UUID being generated randomly in the Python interpreter (see \ref{sec:python-desc}).
 \end{flushleft}
 
 \begin{flushleft}
@@ -912,16 +912,18 @@ The following describe the metrics under which the system should function. This 
 \begin{center}
 \begin{longtblr}[
   caption = {Non-Functional Requirements},
-]{\textwidth}{ c X }
+]{ c X }
  ID & Description \\ 
  \hline
- Availablity & Measured by 99.99\% across 1 hour of typical traffic. \\ 
- Portability & Across Windows, MacOS and Linux operating systems without any code changes. \\ 
- Reliability & Measured by a MTTF (Mean time to failure) of 10,000 hours.   \\ 
- Performance & Measured by fulfilling 99.9\% of standard requests in under 200ms over 1 hour of typical traffic. \\ 
- Scalability & Measured by supporting the execution of 3 or more defoe queries at once. \\ 
+ NF1 & Measured by 99.99\% across 1 hour of typical traffic. \\ 
+ NF2 & Across Windows, MacOS and Linux operating systems without any code changes. \\ 
+ NF3 & Measured by a MTTF (Mean time to failure) of 10,000 hours.   \\ 
+ NF4 & Measured by fulfilling 99.9\% of standard requests in under 200ms over 1 hour of typical traffic. \\ 
+ NF5 & Measured by supporting the execution of 3 or more defoe queries at once. \\ 
 \end{longtblr}
 \end{center}
+
+TODO update for new non functional requirements
 
 \section{Software Engineering Process}
 
@@ -994,7 +996,7 @@ Task allocation in this project was handled informally and on an ad-hoc basis de
  \hline
  Task name & Members Assigned \\ [0.5ex] 
  \hline
-  Frontend interface & Damon Yu \\
+  Frontend interface & Damon Yu, Wilfrid Askins \\
   Backend authentication & Damon Yu \\
   Backend API & Wilfrid Askins \\
   Database queries & Damon Yu, Wilfrid Askins \\
@@ -1031,7 +1033,7 @@ In the rest of this sub-section, I will go over each task in more detail to desc
 \paragraph{Frontend interface}
 
 \begin{flushleft}
-The Frontend interface involved creating the user interface in React and creating HTTP requests to call the backend API (see \ref{sec:impl-frontend}).
+The Frontend interface involved creating the user interface in React and creating HTTP requests to call the backend API (see \ref{sec:impl-frontend}). I created the defoe queries page (\ref{sec:impl-frontend-defoe}), whereas my partner created the rest.
 \end{flushleft}
 
 \paragraph{Backend authentication}
@@ -1049,7 +1051,7 @@ I converted the old server endpoints (\ref{sec:design-arch-old}) into the Backen
 \paragraph{Database queries}
 
 \begin{flushleft}
-I created the table definitions and made them create on startup (\ref{sec:impl-database-creation}). These tables contain all the account data for the users of the system. I also created the abstraction of operations that allows the backend to easily query user data (\ref{sec:absraction-of-operations}).
+I created the table definitions and made them create on startup (\ref{sec:impl-database-creation}). These tables contain all the account data for the users of the system. I also created the abstraction of operations that allows the backend to easily query user data (\ref{sec:abstraction-of-operations}).
 \end{flushleft}
 
 \paragraph{Defoe library}
@@ -1143,10 +1145,12 @@ One noteworthy feature in this architecture is that Apache Spark is shown as a s
 \subsubsection{Framework}
 
 \begin{flushleft}
-The application's frontend was previously HTML returned from the pre-existing Flask app. However, since the architecture split the system into frontend and backend (see \ref{sec:system-architecture}), this made it a difficult choice to decide which framework was suitable for the frontend.
+The application's frontend was previously HTML returned from the pre-existing Flask app. However, the new architecture split the system into frontend and backend (see \ref{sec:system-architecture}). This was done because it allows for a separate frontend to be created. We chose to create this frontend using a Single-page Application (SAP) \cite{saps-about}. In a traditional web page, as in the old app, each click on a link will send a request to the server, returning a new page. On a SAP, pages of the app are navigated by modifying a single HTML page. This is more efficient because much less data is being sent to the browser during navigation, resulting in faster transitions between pages. Furthermore, a SAP's virtual "pages" have shared state between them, meaning more complex tasks can be achieved. This is why highly interactive apps such as Gmail are built using SAPs \cite{saps-about}. These attributes make SAPs suitable for this project, as they will help achieve Objective P2 (\ref{sec:objectives}), making improvements to the pre-existing user interface in terms of both look and feel, and usability.
 \end{flushleft}
 
-TODO write about react choice
+\begin{flushleft}
+There is a lot of choice between SAP frameworks. The three we considered were Angular \footnote{https://angular.io/}, React \footnote{https://reactjs.org/}, and Vue \footnote{https://vuejs.org/}. Each have their advantages, however our team had too little experience with Vue. Furthermore, Angular is designed for complex enterprise apps, making it often time consuming to work with and unsuitable for the short timeframe of this project \cite{frontend-frameworks}. In considering these factors, we therefore decided to use React as the framework for the frontend.
+\end{flushleft}
 
 \subsubsection{Prototype}
 
@@ -1257,16 +1261,183 @@ In this section I will cover how the project was implemented, going over the hig
 \subsection{Frontend}\label{sec:impl-frontend}
 
 \begin{flushleft}
-The frontend was entirely implemented by my partner. However, I will describe it in this report to make the project easier to understand.
+The frontend was implemented mostly by my partner, with myself creating the defoe queries page (\ref{sec:impl-frontend-defoe}). 
 \end{flushleft}
 
-\subsubsection{Request building}
+\subsubsection{API requests}\label{sec:impl-frontend-api}
 
-TODO write
+\begin{flushleft}
+The frontend must send API requests to the backend to access any server functionality (see \ref{sec:system-architecture}). This was mostly implemented by my partner, with defoe requests from me. Each request has a function which serves as a wrapper for that request, as shown below.
+\end{flushleft}
 
-\subsubsection{Authentication}
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{javascript}
+    checkSpell(uri) {
+        const key = 'checkSpell' + uri;
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
 
-TODO write
+        return axios.post("/query/spelling_checker", {
+            resource_uri: uri,
+        }).then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })
+    }
+\end{minted}
+\caption{How the frontend sends a spell check request}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+Note that before the request is sent, the local storage is checked. This is used to cache the result of a request if needed. This is done when a request always has the same result, as it reduces load times, therefore improving the user interface as per Objective P2 (\ref{sec:objectives}). After checking local storage, the request is sent and the response cached for future requests. 
+\end{flushleft}
+
+\subsubsection{Authentication}\label{sec:impl-frontend-auth}
+
+\begin{flushleft}
+The frontend must authenticate the user with a JWT (see \ref{sec:jwt-desc}) and include it in all future requests. This was implemented by my partner, and is handled all in one file (\ref{appendix:auth.js}) with the login and register requests implemented, along with the refresh request which renews the access token (see \ref{sec:access-and-refresh}).
+\end{flushleft}
+
+\subsubsection{Defoe query}\label{sec:impl-frontend-defoe}
+
+\begin{flushleft}
+This feature of the frontend was implemented by myself. The defoe query form is actually quite complex, as it requires three requests to be made before submission (list all defoe queries, upload file, submit query), then a further status request to be made to check on the query progress.
+\end{flushleft}
+
+\paragraph{List all defoe queries}
+
+\begin{flushleft}
+First, the frontend must know what defoe queries exist. To do this, it sends a simple request to the backend and stores the result, as shown below.
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{javascript}
+    const [queryListLoaded, setQueryListLoaded] = useState(false);
+    const [queryList, setQueryList] = useState([]);
+    useEffect(() => {
+            if (queryListLoaded) {
+                return;
+            }
+            QueryAPI.getAllDefoeQueries().then(response => {
+                const result = response?.data;
+                setQueryListLoaded(true);
+                setQueryList(result.queries);
+                setQueryType(result.queries[0]);
+            })
+    });
+\end{minted}
+\caption{How all defoe queries are requested}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+Note the function setQueryList. This changes the defoe page component state. The interface shown to the user is dependant on this state, so will respond using the following code:
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{html}
+ <Select
+   value={queryType}
+   label="Query selection"
+   onChange={handleQueryTypeChange}
+   disabled={!queryListLoaded}
+ >
+   {queryList.map(item => (
+      <MenuItem value={item} key={item}>{item}</MenuItem>
+   ))}
+</Select>
+\end{minted}
+\caption{How the query list is displayed to the user}
+\end{figure}
+\end{flushleft}
+
+\paragraph{Upload file}
+
+\begin{flushleft}
+TODO desc
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{javascript}
+    const [fileID, setFileID] = useState("");
+    const onFileUpload = (event) => {
+        const file = event.target.files[0];
+        QueryAPI.uploadFile(file).then((r) => {
+            if (!r.data.success) {
+                alert("File upload failed")
+            }
+            setFileID(r.data.file);
+        });
+    };
+\end{minted}
+\caption{How file uploading is handled on the frontend}
+\end{figure}
+\end{flushleft}
+
+\paragraph{Submit query}
+
+\begin{flushleft}
+TODO desc
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{javascript}
+    const handleQuerySubmit = (event) => {
+        setIsQuerying(true);
+        event.preventDefault();
+        const data = {
+            defoe_selection: queryType,
+            preprocess: preProcess,
+            target_sentences: targetSentences,
+            target_filter: targetFilter,
+            start_year: startYear,
+            end_year: endYear,
+            hit_count: hitCount,
+            file: fileID,
+        };
+        QueryAPI.submitDefoeQuery(data)
+...
+\end{minted}
+\caption{How a defoe query is built by the frontend}
+\end{figure}
+\end{flushleft}
+
+\paragraph{Status request}
+
+\begin{flushleft}
+TODO desc
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}[breaklines]{javascript}
+
+\end{minted}
+\caption{How status requests are handled by the frontend}
+\end{figure}
+\end{flushleft}
+
+TODO write this section
 
 \subsection{Database}\label{sec:impl-database}
 
@@ -1274,7 +1445,7 @@ TODO write
 In this sub-section I will describe how the database was implemented. This database is required to store user account information as per the requirements (see \ref{sec:requirements}). This means it needs to support operations for creating accounts and logging into accounts. These operations must then be useable by the frances backend system (see \ref{sec:impl-backend}).
 \end{flushleft}
 
-\subsubsection{Abstraction of operations}\label{sec:absraction-of-operations}
+\subsubsection{Abstraction of operations}\label{sec:abstraction-of-operations}
 
 \begin{flushleft}
 If we had queries written everywhere in the API endpoints, it would be extremely difficult to understand, debug and test. To solve this problem, database operations were handled by the Database class (see \ref{appendix:db.py}). An extract from this class shows some of the typical functions:
@@ -1330,7 +1501,7 @@ class User:
 \end{figure}
 \end{flushleft}
 
-Note that all IDs in the database are UUIDs (see \hyperref[sec:uuids-desc]{UUIDs Description}) created in Python code, rather than an integer auto-incremented by the database. This choice was made because of several factors:
+Note that all IDs in the database are UUIDs (see \ref{sec:uuids-desc}) created in Python code, rather than an integer auto-incremented by the database. This choice was made because of several factors:
 \begin{itemize}
 \item UUIDs are more secure than sequential integer IDs, as they do not given users information about the range of records stored \cite{uuids-compare}.
 \item Both PostgreSQL and Python's PostgreSQL bindings support UUIDs. However, they do not support returning a UUID from a record insertion \cite{uuids-support}.
@@ -1381,7 +1552,7 @@ The pre-existing code did not expose an API publicly, instead it used endpoints 
 \end{flushleft}
 
 \begin{flushleft}
-Because React (see \hyperref[sec:react-desc]{React Description}) was chosen as a frontend framework (see \ref{sec:impl-frontend}), it made sense to work with data that React could handle effectively. Traditional HTTP APIs often use form data, in which the data is defined directly in the HTML, with the request built by the browser and sent to defined endpoint \cite{html-forms}. This is different to how React apps often handle data. Because React is a JavaScript framework, it often works with responses in JSON (JavaScript Object Notation). This is incredibly easy to use because the language supports it by default \cite{react-json}. Furthermore requests can easily be asynchronous if needed, in comparison to HTML forms which are inherently not \cite{html-forms}. This decision changed the previous code to this:
+Because React (see \ref{sec:react-desc}) was chosen as a frontend framework (see \ref{sec:impl-frontend}), it made sense to work with data that React could handle effectively. Traditional HTTP APIs often use form data, in which the data is defined directly in the HTML, with the request built by the browser and sent to defined endpoint \cite{html-forms}. This is different to how React apps often handle data. Because React is a JavaScript framework, it often works with responses in JSON (JavaScript Object Notation). This is incredibly easy to use because the language supports it by default \cite{react-json}. Furthermore requests can easily be asynchronous if needed, in comparison to HTML forms which are inherently not \cite{html-forms}. This decision changed the previous code to this:
 \end{flushleft}
 
 \begin{flushleft}
@@ -1403,7 +1574,7 @@ Because React (see \hyperref[sec:react-desc]{React Description}) was chosen as a
 \subsubsection{API documentation and testing}\label{sec:impl-api-doc-test}
 
 \begin{flushleft}
-Since this project involved creating an API, it was important to document and test it in order to make it reliable and maintainable. The only issue was that we had an extremely limited amount of time to work on this, so we needed to finish it efficiently. The solution was to use Swagger and Flasgger (see \hyperref[sec:swagger-desc]{Swagger Description}) to write a basic OpenAPI document for each endpoint (see \hyperref[sec:openapi-desc]{OpenAPI Description}) and then autogenerate the Swagger UI test suite. The following shows the document for the volume details endpoint:
+Since this project involved creating an API, it was important to document and test it in order to make it reliable and maintainable. The only issue was that we had an extremely limited amount of time to work on this, so we needed to finish it efficiently. The solution was to use Swagger and Flasgger (see \ref{sec:swagger-desc}) to write a basic OpenAPI document for each endpoint (see \ref{sec:openapi-desc}) and then autogenerate the Swagger UI test suite. The following shows the document for the volume details endpoint:
 \end{flushleft}
 
 \begin{flushleft}
@@ -1436,9 +1607,9 @@ responses:
 
 \subsubsection{Enabling user accounts}\label{sec:impl-enable-user-acc}
 
-Creating a user account system was one of the more complex parts of the system's implementation. It involved several steps:
+Creating a user account system was one of the more complex parts of the system's implementation. Furthermore, it is essential to achieve Objective P1 (\ref{sec:objectives}). It involved several steps:
 \begin{itemize}
-\item Creation of the account records stored in the database (see \hyperref[sec:absraction-of-operations]{Abstraction of operations}).
+\item Creation of the account records stored in the database (see \ref{sec:abstraction-of-operations}).
 \item Authorising and protecting specific routes.
 \item Issuing tokens to authorise accounts.
 \item Account security features.
@@ -1446,16 +1617,35 @@ Creating a user account system was one of the more complex parts of the system's
 
 \paragraph{Account security features}
 
-accounts have UUIDs (see \hyperref[sec:uuids-desc]{UUIDs Description}) which has been discussed in depth previously (see \hyperref[sec:absraction-of-operations]{Abstraction of operations})
-accounts have passwords hashed
-example of password hashing code
-
-TODO write
-
-\paragraph{Issuing access and refresh}
+Accounts have UUIDs (see \ref{sec:uuids-desc}) which has been discussed in depth previously (see \ref{sec:abstraction-of-operations}). Furthermore, they also keep passwords hashed when stored in the database, which is important for security \cite{password-security}. This works as shown below:
 
 \begin{flushleft}
-Our implementation of authentication uses an OAuth 2.0 scheme to issue access and refresh tokens. In this scheme, access tokens are used to authenticate a user when calling an API. Refresh tokens are then used to get new access tokens \cite{oauth-2}. My partner used JWT as the format for these tokens (see \hyperref[sec:jwt-desc]{JWT Description}) because they are a standard format with strong security features built in.
+\begin{figure}[H]
+\begin{minted}{python}
+from werkzeug.security import generate_password_hash, check_password_hash
+...
+
+# in register function
+pwd_hash = generate_password_hash(password)
+
+user = User.create_new(first_name=first_name, last_name=last_name, password=pwd_hash, email=email)
+database.add_user(user)
+...
+# in login function
+pwd_correct = check_password_hash(user.password, password)
+\end{minted}
+\caption{Account password hashing}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+The above shows how password hashing works. As an account is created, its password is stored as a hash. When logging in, this is compared against a hashed version of the user's input password. The benefit of this is that the original password isn't stored in a readable format, reducing the damage if the database were to be leaked \cite{password-security}.
+\end{flushleft}
+
+\paragraph{Issuing access and refresh tokens}\label{sec:access-and-refresh}
+
+\begin{flushleft}
+Our implementation of authentication uses an OAuth 2.0 scheme to issue access and refresh tokens. In this scheme, access tokens are used to authenticate a user when calling an API. Refresh tokens are then used to get new access tokens \cite{oauth-2}. My partner used JWT as the format for these tokens (see \ref{sec:jwt-desc}) because they are a standard format with strong security features built in.
 \end{flushleft}
 
 \begin{flushleft}
@@ -2085,6 +2275,58 @@ TODO write
 
 \appendix
 \section{Project Code}\label{appendix:project-code}
+
+\subsection{Frontend}
+
+\subsubsection{auth.js}\label{appendix:auth.js}
+
+\begin{minted}[breaklines]{javascript}
+import axios, {axiosPrivate} from "./axios";
+import Cookies from 'js-cookie'
+
+class AuthAPI {
+    login(email, password) {
+        return axios.post( "/auth/login", {
+            email: email,
+            password: password
+        });
+    }
+
+    register(first_name, last_name, email, password) {
+        return axios.post( "/auth/register", {
+            first_name: first_name,
+            last_name: last_name,
+            email: email,
+            password: password
+        });
+    }
+
+    async refresh() {
+        const options =  {
+            headers:
+                {"X-CSRF-TOKEN": Cookies.get('csrf_refresh_token')
+                }}
+        return await axios.post("/auth/token/refresh",{},  options);
+    }
+
+    async emailRegistered(email) {
+        return await axios.post("/auth/emailRegistered", {
+            email: email,
+        });
+    }
+
+    async getProfile() {
+        return await axiosPrivate.get("protected/auth/profile");
+    }
+
+    logout() {
+        return axios.post("/auth/logout");
+    }
+
+}
+\end{minted}
+
+
 \subsection{Database}
 \subsubsection{tables.sql}\label{appendix:tables.sql}
 

@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{werkzeug.security} \PYG{k+kn}{import} \PYG{n}{generate\PYGZus{}password\PYGZus{}hash}\PYG{p}{,} \PYG{n}{check\PYGZus{}password\PYGZus{}hash}
+\PYG{o}{...}
+
+\PYG{c+c1}{\PYGZsh{} in register function}
+\PYG{n}{pwd\PYGZus{}hash} \PYG{o}{=} \PYG{n}{generate\PYGZus{}password\PYGZus{}hash}\PYG{p}{(}\PYG{n}{password}\PYG{p}{)}
+
+\PYG{n}{user} \PYG{o}{=} \PYG{n}{User}\PYG{o}{.}\PYG{n}{create\PYGZus{}new}\PYG{p}{(}\PYG{n}{first\PYGZus{}name}\PYG{o}{=}\PYG{n}{first\PYGZus{}name}\PYG{p}{,} \PYG{n}{last\PYGZus{}name}\PYG{o}{=}\PYG{n}{last\PYGZus{}name}\PYG{p}{,} \PYG{n}{password}\PYG{o}{=}\PYG{n}{pwd\PYGZus{}hash}\PYG{p}{,} \PYG{n}{email}\PYG{o}{=}\PYG{n}{email}\PYG{p}{)}
+\PYG{n}{database}\PYG{o}{.}\PYG{n}{add\PYGZus{}user}\PYG{p}{(}\PYG{n}{user}\PYG{p}{)}
+\PYG{o}{...}
+\PYG{c+c1}{\PYGZsh{} in login function}
+\PYG{n}{pwd\PYGZus{}correct} \PYG{o}{=} \PYG{n}{check\PYGZus{}password\PYGZus{}hash}\PYG{p}{(}\PYG{n}{user}\PYG{o}{.}\PYG{n}{password}\PYG{p}{,} \PYG{n}{password}\PYG{p}{)}
+\end{Verbatim}

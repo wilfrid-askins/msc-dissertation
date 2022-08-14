@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k+kd}{const} \PYG{n+nx}{handleQuerySubmit} \PYG{o}{=} \PYG{p}{(}\PYG{n+nx}{event}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{setIsQuerying}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{);}
+        \PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{preventDefault}\PYG{p}{();}
+        \PYG{k+kd}{const} \PYG{n+nx}{data} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{defoe\PYGZus{}selection}\PYG{o}{:} \PYG{n+nx}{queryType}\PYG{p}{,}
+            \PYG{n+nx}{preprocess}\PYG{o}{:} \PYG{n+nx}{preProcess}\PYG{p}{,}
+            \PYG{n+nx}{target\PYGZus{}sentences}\PYG{o}{:} \PYG{n+nx}{targetSentences}\PYG{p}{,}
+            \PYG{n+nx}{target\PYGZus{}filter}\PYG{o}{:} \PYG{n+nx}{targetFilter}\PYG{p}{,}
+            \PYG{n+nx}{start\PYGZus{}year}\PYG{o}{:} \PYG{n+nx}{startYear}\PYG{p}{,}
+            \PYG{n+nx}{end\PYGZus{}year}\PYG{o}{:} \PYG{n+nx}{endYear}\PYG{p}{,}
+            \PYG{n+nx}{hit\PYGZus{}count}\PYG{o}{:} \PYG{n+nx}{hitCount}\PYG{p}{,}
+            \PYG{n+nx}{file}\PYG{o}{:} \PYG{n+nx}{fileID}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{};}
+        \PYG{n+nx}{QueryAPI}\PYG{p}{.}\PYG{n+nx}{submitDefoeQuery}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{)}
+\PYG{p}{...}
+\end{Verbatim}

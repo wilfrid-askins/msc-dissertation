@@ -46,9 +46,9 @@
 \contentsline {subsection}{\numberline {5.1}Methodology}{39}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Agile Methodological Approach}{39}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Test-driven Implementation}{41}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Task Allocation}{41}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Task Allocation}{42}{subsection.5.2}%
 \contentsline {paragraph}{Frontend interface}{42}{section*.4}%
-\contentsline {paragraph}{Backend authentication}{42}{section*.5}%
+\contentsline {paragraph}{Backend authentication}{43}{section*.5}%
 \contentsline {paragraph}{Backend API}{43}{section*.6}%
 \contentsline {paragraph}{Database queries}{43}{section*.7}%
 \contentsline {paragraph}{Defoe library}{43}{section*.8}%
@@ -57,67 +57,74 @@
 \contentsline {paragraph}{Database security features}{44}{section*.10}%
 \contentsline {paragraph}{Web server security features}{44}{section*.11}%
 \contentsline {section}{\numberline {7}Design}{44}{section.7}%
-\contentsline {subsection}{\numberline {7.1}System Architecture}{44}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.1}System Architecture}{45}{subsection.7.1}%
 \contentsline {subsubsection}{\numberline {7.1.1}Old Architecture}{45}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}New Architecture}{46}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2}New Architecture}{47}{subsubsection.7.1.2}%
 \contentsline {subsection}{\numberline {7.2}Frontend}{48}{subsection.7.2}%
 \contentsline {subsubsection}{\numberline {7.2.1}Framework}{48}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Prototype}{48}{subsubsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.3}Storage Solutions}{52}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}ElasticSearch}{52}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}PostgreSQL}{52}{subsubsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.4}Deployment}{53}{subsection.7.4}%
-\contentsline {subsubsection}{\numberline {7.4.1}Containerisation}{53}{subsubsection.7.4.1}%
-\contentsline {subsubsection}{\numberline {7.4.2}Local Environment}{54}{subsubsection.7.4.2}%
-\contentsline {subsubsection}{\numberline {7.4.3}Cloud Platform}{54}{subsubsection.7.4.3}%
-\contentsline {section}{\numberline {8}Implementation}{54}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Frontend}{54}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Request building}{54}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Authentication}{54}{subsubsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.2}Database}{55}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Abstraction of operations}{55}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Table creation on startup}{57}{subsubsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.3}Backend}{58}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}API creation}{58}{subsubsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.2}API documentation and testing}{60}{subsubsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3}Enabling user accounts}{61}{subsubsection.8.3.3}%
-\contentsline {paragraph}{Account security features}{61}{section*.12}%
-\contentsline {paragraph}{Issuing access and refresh}{61}{section*.13}%
-\contentsline {paragraph}{Protected routes}{62}{section*.14}%
-\contentsline {subsubsection}{\numberline {8.3.4}Configuration}{63}{subsubsection.8.3.4}%
-\contentsline {paragraph}{Problem description}{63}{section*.15}%
-\contentsline {paragraph}{Consul configuration loading}{64}{section*.16}%
-\contentsline {paragraph}{Note on duplicate fusekiUrl}{65}{section*.17}%
-\contentsline {subsubsection}{\numberline {8.3.5}Removing redundant files}{65}{subsubsection.8.3.5}%
-\contentsline {subsection}{\numberline {8.4}Defoe Library}{66}{subsection.8.4}%
-\contentsline {subsubsection}{\numberline {8.4.1}Execution workflow update}{66}{subsubsection.8.4.1}%
-\contentsline {paragraph}{Problem description}{66}{section*.18}%
-\contentsline {paragraph}{Loading files abstraction}{67}{section*.19}%
-\contentsline {paragraph}{Conversion to Python modules}{68}{section*.20}%
-\contentsline {subsubsection}{\numberline {8.4.2}Processing location change}{69}{subsubsection.8.4.2}%
-\contentsline {subsubsection}{\numberline {8.4.3}Create basic executor}{70}{subsubsection.8.4.3}%
-\contentsline {paragraph}{Problem Description}{70}{section*.21}%
-\contentsline {paragraph}{Creating a job definition}{71}{section*.22}%
-\contentsline {paragraph}{Maintaining the list of jobs}{71}{section*.23}%
-\contentsline {paragraph}{Handling concurrency}{72}{section*.24}%
-\contentsline {paragraph}{Returning job statuses}{73}{section*.25}%
-\contentsline {subsubsection}{\numberline {8.4.4}Fix query name resolution}{73}{subsubsection.8.4.4}%
-\contentsline {subsubsection}{\numberline {8.4.5}Fix frequency keysearch spelling mistake}{76}{subsubsection.8.4.5}%
-\contentsline {subsection}{\numberline {8.5}Deployment}{76}{subsection.8.5}%
-\contentsline {subsubsection}{\numberline {8.5.1}Containerisation}{76}{subsubsection.8.5.1}%
-\contentsline {paragraph}{Docker Image}{76}{section*.26}%
-\contentsline {paragraph}{Installation simplified}{76}{section*.27}%
-\contentsline {paragraph}{Default config script}{76}{section*.28}%
-\contentsline {subsubsection}{\numberline {8.5.2}Local environment}{78}{subsubsection.8.5.2}%
-\contentsline {subsubsection}{\numberline {8.5.3}Cloud platform}{78}{subsubsection.8.5.3}%
-\contentsline {section}{\numberline {9}Evaluation}{78}{section.9}%
-\contentsline {section}{\numberline {10}Future work}{79}{section.10}%
-\contentsline {section}{\numberline {11}Conclusion}{79}{section.11}%
-\contentsline {section}{\numberline {A}Project Code}{85}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Database}{85}{subsection.A.1}%
-\contentsline {subsubsection}{\numberline {A.1.1}tables.sql}{85}{subsubsection.A.1.1}%
-\contentsline {subsubsection}{\numberline {A.1.2}db.py}{86}{subsubsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.2}Backend}{91}{subsection.A.2}%
-\contentsline {subsubsection}{\numberline {A.2.1}auth.py}{91}{subsubsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.3}Deployment}{95}{subsection.A.3}%
-\contentsline {subsubsection}{\numberline {A.3.1}docker-compose.local.yml}{95}{subsubsection.A.3.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Prototype}{49}{subsubsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.3}Storage Solutions}{53}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}ElasticSearch}{53}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}PostgreSQL}{53}{subsubsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.4}Deployment}{54}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Containerisation}{54}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Local Environment}{55}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Cloud Platform}{55}{subsubsection.7.4.3}%
+\contentsline {section}{\numberline {8}Implementation}{55}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Frontend}{55}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}API requests}{55}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Authentication}{57}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}Defoe query}{57}{subsubsection.8.1.3}%
+\contentsline {paragraph}{List all defoe queries}{57}{section*.12}%
+\contentsline {paragraph}{Upload file}{58}{section*.13}%
+\contentsline {paragraph}{Submit query}{59}{section*.14}%
+\contentsline {paragraph}{Status request}{59}{section*.15}%
+\contentsline {subsection}{\numberline {8.2}Database}{59}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Abstraction of operations}{60}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Table creation on startup}{62}{subsubsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.3}Backend}{62}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}API creation}{62}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}API documentation and testing}{64}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Enabling user accounts}{64}{subsubsection.8.3.3}%
+\contentsline {paragraph}{Account security features}{65}{section*.16}%
+\contentsline {paragraph}{Issuing access and refresh tokens}{66}{section*.17}%
+\contentsline {paragraph}{Protected routes}{67}{section*.18}%
+\contentsline {subsubsection}{\numberline {8.3.4}Configuration}{67}{subsubsection.8.3.4}%
+\contentsline {paragraph}{Problem description}{67}{section*.19}%
+\contentsline {paragraph}{Consul configuration loading}{68}{section*.20}%
+\contentsline {paragraph}{Note on duplicate fusekiUrl}{69}{section*.21}%
+\contentsline {subsubsection}{\numberline {8.3.5}Removing redundant files}{70}{subsubsection.8.3.5}%
+\contentsline {subsection}{\numberline {8.4}Defoe Library}{70}{subsection.8.4}%
+\contentsline {subsubsection}{\numberline {8.4.1}Execution workflow update}{71}{subsubsection.8.4.1}%
+\contentsline {paragraph}{Problem description}{71}{section*.22}%
+\contentsline {paragraph}{Loading files abstraction}{72}{section*.23}%
+\contentsline {paragraph}{Conversion to Python modules}{73}{section*.24}%
+\contentsline {subsubsection}{\numberline {8.4.2}Processing location change}{74}{subsubsection.8.4.2}%
+\contentsline {subsubsection}{\numberline {8.4.3}Create basic executor}{74}{subsubsection.8.4.3}%
+\contentsline {paragraph}{Problem Description}{74}{section*.25}%
+\contentsline {paragraph}{Creating a job definition}{75}{section*.26}%
+\contentsline {paragraph}{Maintaining the list of jobs}{76}{section*.27}%
+\contentsline {paragraph}{Handling concurrency}{77}{section*.28}%
+\contentsline {paragraph}{Returning job statuses}{77}{section*.29}%
+\contentsline {subsubsection}{\numberline {8.4.4}Fix query name resolution}{78}{subsubsection.8.4.4}%
+\contentsline {subsubsection}{\numberline {8.4.5}Fix frequency keysearch spelling mistake}{80}{subsubsection.8.4.5}%
+\contentsline {subsection}{\numberline {8.5}Deployment}{80}{subsection.8.5}%
+\contentsline {subsubsection}{\numberline {8.5.1}Containerisation}{81}{subsubsection.8.5.1}%
+\contentsline {paragraph}{Docker Image}{81}{section*.30}%
+\contentsline {paragraph}{Installation simplified}{81}{section*.31}%
+\contentsline {paragraph}{Default config script}{81}{section*.32}%
+\contentsline {subsubsection}{\numberline {8.5.2}Local environment}{83}{subsubsection.8.5.2}%
+\contentsline {subsubsection}{\numberline {8.5.3}Cloud platform}{83}{subsubsection.8.5.3}%
+\contentsline {section}{\numberline {9}Evaluation}{83}{section.9}%
+\contentsline {section}{\numberline {10}Future work}{84}{section.10}%
+\contentsline {section}{\numberline {11}Conclusion}{84}{section.11}%
+\contentsline {section}{\numberline {A}Project Code}{90}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Frontend}{90}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {A.1.1}auth.js}{90}{subsubsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.2}Database}{92}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {A.2.1}tables.sql}{92}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2}db.py}{92}{subsubsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.3}Backend}{98}{subsection.A.3}%
+\contentsline {subsubsection}{\numberline {A.3.1}auth.py}{98}{subsubsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.4}Deployment}{102}{subsection.A.4}%
+\contentsline {subsubsection}{\numberline {A.4.1}docker-compose.local.yml}{102}{subsubsection.A.4.1}%

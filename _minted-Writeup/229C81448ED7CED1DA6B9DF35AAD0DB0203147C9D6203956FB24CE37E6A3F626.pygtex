@@ -1,0 +1,45 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{import} \PYG{n+nx}{axios}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{n+nx}{axiosPrivate}\PYG{p}{\PYGZcb{}} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}./axios\PYGZdq{}}\PYG{p}{;}
+\PYG{k}{import} \PYG{n+nx}{Cookies} \PYG{n+nx}{from} \PYG{l+s+s1}{\PYGZsq{}js\PYGZhy{}cookie\PYGZsq{}}
+
+\PYG{k+kd}{class} \PYG{n+nx}{AuthAPI} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{login}\PYG{p}{(}\PYG{n+nx}{email}\PYG{p}{,} \PYG{n+nx}{password}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(} \PYG{l+s+s2}{\PYGZdq{}/auth/login\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{email}\PYG{p}{,}
+            \PYG{n+nx}{password}\PYG{o}{:} \PYG{n+nx}{password}
+        \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{register}\PYG{p}{(}\PYG{n+nx}{first\PYGZus{}name}\PYG{p}{,} \PYG{n+nx}{last\PYGZus{}name}\PYG{p}{,} \PYG{n+nx}{email}\PYG{p}{,} \PYG{n+nx}{password}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(} \PYG{l+s+s2}{\PYGZdq{}/auth/register\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{first\PYGZus{}name}\PYG{o}{:} \PYG{n+nx}{first\PYGZus{}name}\PYG{p}{,}
+            \PYG{n+nx}{last\PYGZus{}name}\PYG{o}{:} \PYG{n+nx}{last\PYGZus{}name}\PYG{p}{,}
+            \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{email}\PYG{p}{,}
+            \PYG{n+nx}{password}\PYG{o}{:} \PYG{n+nx}{password}
+        \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{async} \PYG{n+nx}{refresh}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{options} \PYG{o}{=}  \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{headers}\PYG{o}{:}
+                \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}X\PYGZhy{}CSRF\PYGZhy{}TOKEN\PYGZdq{}}\PYG{o}{:} \PYG{n+nx}{Cookies}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}csrf\PYGZus{}refresh\PYGZus{}token\PYGZsq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{}\PYGZcb{}}
+        \PYG{k}{return} \PYG{k}{await} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/token/refresh\PYGZdq{}}\PYG{p}{,\PYGZob{}\PYGZcb{},}  \PYG{n+nx}{options}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{async} \PYG{n+nx}{emailRegistered}\PYG{p}{(}\PYG{n+nx}{email}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k}{await} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/emailRegistered\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{email}\PYG{o}{:} \PYG{n+nx}{email}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{async} \PYG{n+nx}{getProfile}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{k}{await} \PYG{n+nx}{axiosPrivate}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}protected/auth/profile\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{logout}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/auth/logout\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

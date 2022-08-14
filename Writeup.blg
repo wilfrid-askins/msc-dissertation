@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Writeup.aux
+The style file: plain.bst
+Database file #1: mybib.bib
+Warning--empty journal in apache-jena
+Warning--empty journal in postgres
+You've used 65 entries,
+            2118 wiz_defined-function locations,
+            817 strings with 13619 characters,
+and the built_in function-call counts, 17528 in all, are:
+= -- 1743
+> -- 717
+< -- 6
++ -- 297
+- -- 228
+* -- 851
+:= -- 2944
+add.period$ -- 239
+call.type$ -- 65
+change.case$ -- 305
+chr.to.int$ -- 0
+cite$ -- 67
+duplicate$ -- 611
+empty$ -- 1553
+format.name$ -- 228
+if$ -- 3773
+int.to.chr$ -- 0
+int.to.str$ -- 65
+missing$ -- 26
+newline$ -- 370
+num.names$ -- 130
+pop$ -- 480
+preamble$ -- 1
+purify$ -- 243
+quote$ -- 0
+skip$ -- 489
+stack$ -- 0
+substring$ -- 731
+swap$ -- 119
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 254
+warning$ -- 2
+while$ -- 164
+width$ -- 67
+write$ -- 754
+(There were 2 warnings)

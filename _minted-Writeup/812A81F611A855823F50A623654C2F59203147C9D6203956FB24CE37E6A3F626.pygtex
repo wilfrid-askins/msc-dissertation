@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k+kd}{const} \PYG{p}{[}\PYG{n+nx}{queryListLoaded}\PYG{p}{,} \PYG{n+nx}{setQueryListLoaded}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{useState}\PYG{p}{(}\PYG{k+kc}{false}\PYG{p}{);}
+    \PYG{k+kd}{const} \PYG{p}{[}\PYG{n+nx}{queryList}\PYG{p}{,} \PYG{n+nx}{setQueryList}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{useState}\PYG{p}{([]);}
+    \PYG{n+nx}{useEffect}\PYG{p}{(()} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{queryListLoaded}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{k}{return}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n+nx}{QueryAPI}\PYG{p}{.}\PYG{n+nx}{getAllDefoeQueries}\PYG{p}{().}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{response}\PYG{o}{?}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{;}
+                \PYG{n+nx}{setQueryListLoaded}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{);}
+                \PYG{n+nx}{setQueryList}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{.}\PYG{n+nx}{queries}\PYG{p}{);}
+                \PYG{n+nx}{setQueryType}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{.}\PYG{n+nx}{queries}\PYG{p}{[}\PYG{l+m+mf}{0}\PYG{p}{]);}
+            \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{});}
+\end{Verbatim}

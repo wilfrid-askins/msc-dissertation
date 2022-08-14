@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ \PYG{p}{\PYGZlt{}}\PYG{n+nt}{Select}
+   \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZob{}queryType\PYGZcb{}}
+   \PYG{n+na}{label}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Query selection\PYGZdq{}}
+   \PYG{n+na}{onChange}\PYG{o}{=}\PYG{l+s}{\PYGZob{}handleQueryTypeChange\PYGZcb{}}
+   \PYG{n+na}{disabled}\PYG{o}{=}\PYG{l+s}{\PYGZob{}!queryListLoaded\PYGZcb{}}
+ \PYG{p}{\PYGZgt{}}
+   \PYGZob{}queryList.map(item =\PYGZgt{} (
+      \PYG{p}{\PYGZlt{}}\PYG{n+nt}{MenuItem} \PYG{n+na}{value}\PYG{o}{=}\PYG{l+s}{\PYGZob{}item\PYGZcb{}} \PYG{n+na}{key}\PYG{o}{=}\PYG{l+s}{\PYGZob{}item\PYGZcb{}}\PYG{p}{\PYGZgt{}}\PYGZob{}item\PYGZcb{}\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{MenuItem}\PYG{p}{\PYGZgt{}}
+   ))\PYGZcb{}
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{Select}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

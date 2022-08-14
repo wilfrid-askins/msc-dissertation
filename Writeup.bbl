@@ -55,6 +55,8 @@ The~Kubernetes Authors.
 \bibitem{axure-rp}
 Inc Axure Software~Solutions.
 \newblock {Axure RP 10 Infinite Interactions, Unlimited Power}.
+\newblock \url{https://www.axure.com/}, 2022.
+\newblock [Online; accessed 12-August-2022].
 
 \bibitem{test-driven-dev}
 Kent Beck.
@@ -128,6 +130,12 @@ Charlie Custer.
 \newblock {What is a UUID, and Why Should You Care?}
 \newblock \url{https://www.cockroachlabs.com/blog/what-is-a-uuid/}, 2021.
 \newblock [Online; accessed 06-August-2022].
+
+\bibitem{frontend-frameworks}
+Shaumik Daityari.
+\newblock {Angular vs React vs Vue: Which Framework to Choose}.
+\newblock \url{https://www.codeinwp.com/blog/angular-vs-vue-vs-react/}, 2022.
+\newblock [Online; accessed 14-August-2022].
 
 \bibitem{html-forms}
 Refsnes Data.
@@ -256,6 +264,15 @@ Simon~Peyton Jones.
 \newblock Beautiful concurrency.
 \newblock {\em Beautiful Code: Leading Programmers Explain How They Think},
   pages 385--406, 2007.
+
+\bibitem{saps-about}
+Katie Lawson.
+\newblock {What are Single Page Applications and Why Do People Like Them so
+  Much?}
+\newblock
+  \url{https://www.bloomreach.com/en/blog/2018/what-is-a-single-page-application},
+  2018.
+\newblock [Online; accessed 14-August-2022].
 
 \bibitem{consul-desc}
 HashiCorp Limited.

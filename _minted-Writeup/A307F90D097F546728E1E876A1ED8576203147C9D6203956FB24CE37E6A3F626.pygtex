@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{n+nx}{checkSpell}\PYG{p}{(}\PYG{n+nx}{uri}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}checkSpell\PYGZsq{}} \PYG{o}{+} \PYG{n+nx}{uri}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/query/spelling\PYGZus{}checker\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{resource\PYGZus{}uri}\PYG{o}{:} \PYG{n+nx}{uri}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k+kd}{const} \PYG{p}{[}\PYG{n+nx}{fileID}\PYG{p}{,} \PYG{n+nx}{setFileID}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{useState}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+    \PYG{k+kd}{const} \PYG{n+nx}{onFileUpload} \PYG{o}{=} \PYG{p}{(}\PYG{n+nx}{event}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{file} \PYG{o}{=} \PYG{n+nx}{event}\PYG{p}{.}\PYG{n+nx}{target}\PYG{p}{.}\PYG{n+nx}{files}\PYG{p}{[}\PYG{l+m+mf}{0}\PYG{p}{];}
+        \PYG{n+nx}{QueryAPI}\PYG{p}{.}\PYG{n+nx}{uploadFile}\PYG{p}{(}\PYG{n+nx}{file}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{((}\PYG{n+nx}{r}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n+nx}{r}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{success}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{alert}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}File upload failed\PYGZdq{}}\PYG{p}{)}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n+nx}{setFileID}\PYG{p}{(}\PYG{n+nx}{r}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{file}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{});}
+    \PYG{p}{\PYGZcb{};}
+\end{Verbatim}

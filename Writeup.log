@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.13)  13 AUG 2022 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.13)  14 AUG 2022 11:36
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -582,14 +582,14 @@ Overfull \hbox (6.21487pt too wide) in paragraph at lines 95--96
 n sen-tences. These
  []
 
-<./images//info-extraction-arch.png, id=547, 699.61375pt x 379.4175pt>
+<./images//info-extraction-arch.png, id=561, 699.61375pt x 379.4175pt>
 File: ./images//info-extraction-arch.png Graphic file (type png)
 <use ./images//info-extraction-arch.png>
 Package pdftex.def Info: ./images//info-extraction-arch.png  used on input line
  110.
 (pdftex.def)             Requested size: 390.0pt x 211.51129pt.
 [7]
-<./images//knowledge-graph-startrek.png, id=561, 651.43375pt x 276.03125pt>
+<./images//knowledge-graph-startrek.png, id=576, 651.43375pt x 276.03125pt>
 File: ./images//knowledge-graph-startrek.png Graphic file (type png)
 <use ./images//knowledge-graph-startrek.png>
 Package pdftex.def Info: ./images//knowledge-graph-startrek.png  used on input 
@@ -652,7 +652,7 @@ ive/serving[]data/fuseki1.html|
 
 (./_minted-Writeup/1459854743B3F4AE9AE950734CF468C13C13E717837797F62ACD69BC405F
 718A.pygtex) [17]
-<./images//html-example.png, id=697, 681.54625pt x 212.795pt>
+<./images//html-example.png, id=712, 681.54625pt x 212.795pt>
 File: ./images//html-example.png Graphic file (type png)
 <use ./images//html-example.png>
 Package pdftex.def Info: ./images//html-example.png  used on input line 429.
@@ -673,7 +673,7 @@ Package pdftex.def Info: ./images//html-example.png  used on input line 429.
 
 (./_minted-Writeup/0020FDBCBE5161063F94515DF3F7B4F644C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex)
-<./images//deep-learning-transformers.png, id=743, 428.60126pt x 599.23875pt>
+<./images//deep-learning-transformers.png, id=758, 428.60126pt x 599.23875pt>
 File: ./images//deep-learning-transformers.png Graphic file (type png)
 <use ./images//deep-learning-transformers.png>
 Package pdftex.def Info: ./images//deep-learning-transformers.png  used on inpu
@@ -690,7 +690,7 @@ t line 541.
 
 (./_minted-Writeup/8208487EDA56A9F755620BB052D151F1E4B249F1D48B12C84018B7E92A11
 5D55.pygtex) [24]
-<./images//swagger-ui.png, id=793, 732.93825pt x 360.74776pt>
+<./images//swagger-ui.png, id=808, 732.93825pt x 360.74776pt>
 File: ./images//swagger-ui.png Graphic file (type png)
 <use ./images//swagger-ui.png>
 Package pdftex.def Info: ./images//swagger-ui.png  used on input line 632.
@@ -706,37 +706,41 @@ Package pdftex.def Info: ./images//swagger-ui.png  used on input line 632.
 
 (./_minted-Writeup/528773B5562C8304966D81B23E5A7D40203147C9D6203956FB24CE37E6A3
 F626.pygtex)
+
+LaTeX Warning: Reference `sec:abstraction-of-operations' on page 27 undefined o
+n input line 686.
+
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/0D2D8FFFAFFC8BCDB18688AFEF236FDC44C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex) [27] [28]
-<./images//defoe-arch.png, id=855, 894.34125pt x 430.60875pt>
+<./images//defoe-arch.png, id=869, 894.34125pt x 430.60875pt>
 File: ./images//defoe-arch.png Graphic file (type png)
 <use ./images//defoe-arch.png>
 Package pdftex.def Info: ./images//defoe-arch.png  used on input line 737.
 (pdftex.def)             Requested size: 390.0pt x 187.77979pt.
  [29 <./images//defoe-arch.png>]
-<./images//eb-ontology.png, id=873, 619.31375pt x 691.58376pt>
+<./images//eb-ontology.png, id=887, 619.31375pt x 691.58376pt>
 File: ./images//eb-ontology.png Graphic file (type png)
 <use ./images//eb-ontology.png>
 Package pdftex.def Info: ./images//eb-ontology.png  used on input line 757.
 (pdftex.def)             Requested size: 390.0pt x 435.53122pt.
  [30] [31 <./images//eb-ontology.png>]
-<./images//frances-old-term-search.png, id=891, 1894.07625pt x 933.4875pt>
+<./images//frances-old-term-search.png, id=905, 1894.07625pt x 933.4875pt>
 File: ./images//frances-old-term-search.png Graphic file (type png)
 <use ./images//frances-old-term-search.png>
 Package pdftex.def Info: ./images//frances-old-term-search.png  used on input l
 ine 777.
 (pdftex.def)             Requested size: 545.99762pt x 269.08064pt.
-<./images//frances-old-term-search-1.png, id=892, 1900.09875pt x 896.34875pt>
+<./images//frances-old-term-search-1.png, id=906, 1900.09875pt x 896.34875pt>
 File: ./images//frances-old-term-search-1.png Graphic file (type png)
 <use ./images//frances-old-term-search-1.png>
 Package pdftex.def Info: ./images//frances-old-term-search-1.png  used on input
  line 782.
 (pdftex.def)             Requested size: 545.99762pt x 257.56833pt.
  [32 <./images//frances-old-term-search.png>]
-<./images//frances-old-defoe.png, id=899, 1881.0275pt x 924.45375pt>
+<./images//frances-old-defoe.png, id=913, 1881.0275pt x 924.45375pt>
 File: ./images//frances-old-defoe.png Graphic file (type png)
 <use ./images//frances-old-defoe.png>
 Package pdftex.def Info: ./images//frances-old-defoe.png  used on input line 78
@@ -771,36 +775,16 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 > Step: split table.
 > Step: init table inner spec.
 > Step: parse table inner spec.
-
-
-./Writeup.tex:923: Package tabularray Error: Unexpandable command \textwidth in
-side column
-(tabularray)                type!
-
-Type <return> to continue.
- ...                                              
-                                                  
-l.923 \end
-          {longtblr}
-? 
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-
-Package tabularray Warning: Table width is too small, need 186.7276pt more!
-
 > Step: build the whole table.
-
-Overfull \hbox (186.7276pt too wide) detected at line 923
- [] 
- []
-
-[39]
-<./images//scrum.png, id=959, 2007.5pt x 1003.75pt>
+ [39]
+<./images//scrum.png, id=972, 2007.5pt x 1003.75pt>
 File: ./images//scrum.png Graphic file (type png)
 <use ./images//scrum.png>
-Package pdftex.def Info: ./images//scrum.png  used on input line 956.
+Package pdftex.def Info: ./images//scrum.png  used on input line 958.
 (pdftex.def)             Requested size: 390.0pt x 194.98764pt.
- [40 <./images//scrum.png>]
+ [40 <./images//scrum.png>] [41]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -813,8 +797,8 @@ Package pdftex.def Info: ./images//scrum.png  used on input line 956.
 Package tabularray Warning: Table width is too small, need 25.19998pt more!
 
 > Step: build the whole table.
-[41]
-Overfull \hbox (25.19998pt too wide) detected at line 1004
+
+Overfull \hbox (25.19998pt too wide) detected at line 1006
  [] 
  []
 
@@ -826,12 +810,12 @@ Overfull \hbox (25.19998pt too wide) detected at line 1004
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1025
 []\OT1/cmr/m/n/12 Backend au-then-ti-ca-tion, Back-end
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 1023--1023
+Underfull \hbox (badness 7722) in paragraph at lines 1025--1025
 []\OT1/cmr/m/n/12 Make im-prove-ments to the pre-
  []
 
@@ -840,86 +824,121 @@ Package tabularray Warning: Table width is too small, need 25.19998pt more!
 
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1025
 []\OT1/cmr/m/n/12 Backend au-then-ti-ca-tion, Back-end
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 1023--1023
+Underfull \hbox (badness 7722) in paragraph at lines 1025--1025
 []\OT1/cmr/m/n/12 Make im-prove-ments to the pre-
  []
 
 
-Overfull \hbox (25.19998pt too wide) detected at line 1023
+Overfull \hbox (25.19998pt too wide) detected at line 1025
  [] 
  []
 
-[42] [43] [44]
-<./images//arch-components-old.png, id=1031, 708.6475pt x 542.025pt>
+[42]
+
+LaTeX Warning: Reference `sec:abstraction-of-operations' on page 43 undefined o
+n input line 1054.
+
+[43] [44]
+<./images//arch-components-old.png, id=1044, 708.6475pt x 542.025pt>
 File: ./images//arch-components-old.png Graphic file (type png)
 <use ./images//arch-components-old.png>
 Package pdftex.def Info: ./images//arch-components-old.png  used on input line 
-1103.
+1105.
 (pdftex.def)             Requested size: 390.0pt x 298.30489pt.
- [45 <./images//arch-components-old.png>]
-<./images//arch-components.png, id=1043, 956.57375pt x 441.65pt>
+ [45] [46 <./images//arch-components-old.png>]
+<./images//arch-components.png, id=1063, 956.57375pt x 441.65pt>
 File: ./images//arch-components.png Graphic file (type png)
 <use ./images//arch-components.png>
-Package pdftex.def Info: ./images//arch-components.png  used on input line 1128
+Package pdftex.def Info: ./images//arch-components.png  used on input line 1130
 .
 (pdftex.def)             Requested size: 390.0pt x 180.06007pt.
- [46] [47 <./images//arch-components.png>]
-<./images//prototype-defoe-access.png, id=1062, 1445.4pt x 771.88374pt>
+ [47 <./images//arch-components.png>] [48]
+<./images//prototype-defoe-access.png, id=1088, 1445.4pt x 771.88374pt>
 File: ./images//prototype-defoe-access.png Graphic file (type png)
 <use ./images//prototype-defoe-access.png>
 Package pdftex.def Info: ./images//prototype-defoe-access.png  used on input li
-ne 1159.
+ne 1163.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [48 <./images//prototype-defoe-access.png>]
-<./images//prototype-defoe.png, id=1071, 1445.4pt x 771.88374pt>
+ [49 <./images//prototype-defoe-access.png>]
+<./images//prototype-defoe.png, id=1102, 1445.4pt x 771.88374pt>
 File: ./images//prototype-defoe.png Graphic file (type png)
 <use ./images//prototype-defoe.png>
-Package pdftex.def Info: ./images//prototype-defoe.png  used on input line 1170
+Package pdftex.def Info: ./images//prototype-defoe.png  used on input line 1174
 .
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
-<./images//prototype-sign-in.png, id=1072, 1445.4pt x 771.88374pt>
+<./images//prototype-sign-in.png, id=1103, 1445.4pt x 771.88374pt>
 File: ./images//prototype-sign-in.png Graphic file (type png)
 <use ./images//prototype-sign-in.png>
 Package pdftex.def Info: ./images//prototype-sign-in.png  used on input line 11
-81.
+85.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [49 <./images//prototype-defoe.png>]
-<./images//prototype-term-search.png, id=1080, 1445.4pt x 771.88374pt>
+ [50 <./images//prototype-defoe.png>]
+<./images//prototype-term-search.png, id=1111, 1445.4pt x 771.88374pt>
 File: ./images//prototype-term-search.png Graphic file (type png)
 <use ./images//prototype-term-search.png>
 Package pdftex.def Info: ./images//prototype-term-search.png  used on input lin
-e 1192.
+e 1196.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [50 <./images//prototype-sign-in.png>]
-<./images//prototype-term-search-result.png, id=1087, 1445.4pt x 771.88374pt>
+ [51 <./images//prototype-sign-in.png>]
+<./images//prototype-term-search-result.png, id=1118, 1445.4pt x 771.88374pt>
 File: ./images//prototype-term-search-result.png Graphic file (type png)
 <use ./images//prototype-term-search-result.png>
 Package pdftex.def Info: ./images//prototype-term-search-result.png  used on in
-put line 1203.
+put line 1207.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [51 <./images//prototype-term-search.png>] [52 <./images//prototype-term-searc
+ [52 <./images//prototype-term-search.png>] [53 <./images//prototype-term-searc
 h-result.png>]
-[53] [54]
+[54]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/A307F90D097F546728E1E876A1ED8576203147C9D6203956FB24CE37E6A3
+F626.pygtex) [55] [56]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/812A81F611A855823F50A623654C2F59203147C9D6203956FB24CE37E6A3
+F626.pygtex) [57]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/D59D71E959E54132746790B1DCA64F663C13E717837797F62ACD69BC405F
+718A.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/B23702945A87E87BFBF733F27220A00E203147C9D6203956FB24CE37E6A3
+F626.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/5CCF6C192A50D10CF504ACDC72F151DF203147C9D6203956FB24CE37E6A3
+F626.pygtex) [58]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/68B329DA9893E34099C7D8AD5CB9C940203147C9D6203956FB24CE37E6A3
+F626.pygtex) [59]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/43A38D967085EC705DF0B352B851E72B44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [55]
+8985.pygtex) [60]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/6E92D0A5836044E9DBFC51B5C1A5DA8844C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [56]
+8985.pygtex) [61]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/6C8D27E7A3287C937781478D6C025CBC44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [57]
+8985.pygtex) [62]
 \openout3 = `Writeup.pyg'.
 
 
@@ -934,97 +953,123 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 \OT1/cmtt/m/n/12 heatmap_plot[]=[]heatmap_plot)|  
  []
 
-) [58]
+)
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/7000D02E8822CAEF83AB37D1793021D044C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [59]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/1DBE465C901A459E6C325296EA963AD5E4B249F1D48B12C84018B7E92A11
-5D55.pygtex) [60]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/94AC026D0BB8A52A94B459AF628AE36844C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [61]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/A6B190774C5C603A5DD817F672AD670744C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex)
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/D57BB4746761E78F9D451E00EF32096E44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [62]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/9CDDC2B8E37509DF91DB33780E79390644C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex) [63]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/9F53FBBD5FE9620D391883AFF9AACDCC8A6CEB275183E90339C86343E396
-1F8D.pygtex) [64]
+(./_minted-Writeup/1DBE465C901A459E6C325296EA963AD5E4B249F1D48B12C84018B7E92A11
+5D55.pygtex) [64]
+
+LaTeX Warning: Reference `sec:abstraction-of-operations' on page 65 undefined o
+n input line 1612.
+
+
+LaTeX Warning: Reference `sec:abstraction-of-operations' on page 65 undefined o
+n input line 1620.
+
+
+LaTeX Warning: Citation `password-security' on page 65 undefined on input line 
+1620.
+
+\openout3 = `Writeup.pyg'.
+
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
+tripnl=False -o _minted-Writeup/F4D3DF24BBD2BF90E238FDA832DA785A44C5A2E9C68FC8C
+2BDE270D27D6B8985.pygtex Writeup.pyg)...executed.
+
+
+(./_minted-Writeup/F4D3DF24BBD2BF90E238FDA832DA785A44C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex)
+
+LaTeX Warning: Citation `password-security' on page 65 undefined on input line 
+1642.
+
+[65]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/B4B4B01D2E1245C438036B75EDFA09ADB2C258431BAA520A6B083BDB6535
-1BF5.pygtex) [65]
+(./_minted-Writeup/94AC026D0BB8A52A94B459AF628AE36844C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex)
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/2D4768B94560B69ED4A1489C3753A10544C5A2E9C68FC8C2BDE270D27D6B
+(./_minted-Writeup/A6B190774C5C603A5DD817F672AD670744C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex) [66]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/2DBE15434D62DA163A4FCF9D1EABFC9344C5A2E9C68FC8C2BDE270D27D6B
+(./_minted-Writeup/D57BB4746761E78F9D451E00EF32096E44C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/9CDDC2B8E37509DF91DB33780E79390644C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex) [67]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/B13B101C2CDBAA911E26B9DDE8AA8D8A44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [68]
+(./_minted-Writeup/9F53FBBD5FE9620D391883AFF9AACDCC8A6CEB275183E90339C86343E396
+1F8D.pygtex) [68] [69]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/82D6E38C4303069F92CF7483A8048380B2C258431BAA520A6B083BDB6535
-1BF5.pygtex)
+(./_minted-Writeup/B4B4B01D2E1245C438036B75EDFA09ADB2C258431BAA520A6B083BDB6535
+1BF5.pygtex) [70]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/C88ECA29AE5651C9286EE843B162AFC444C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [69] [70]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/BEF24DD2AE619CF27FB9864AC5E0D1EF44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex)
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/53D2C4C187779A9CF95C25D2B8C9276844C5A2E9C68FC8C2BDE270D27D6B
+(./_minted-Writeup/2D4768B94560B69ED4A1489C3753A10544C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex) [71]
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/286F12EA3E1446054307097C535F9E5944C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [72]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/45D616BE241D30806254B907551FE04744C5A2E9C68FC8C2BDE270D27D6B
+(./_minted-Writeup/2DBE15434D62DA163A4FCF9D1EABFC9344C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex)
 \openout3 = `Writeup.pyg'.
 
 
+(./_minted-Writeup/B13B101C2CDBAA911E26B9DDE8AA8D8A44C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex) [72]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/82D6E38C4303069F92CF7483A8048380B2C258431BAA520A6B083BDB6535
+1BF5.pygtex) [73]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/C88ECA29AE5651C9286EE843B162AFC444C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex) [74]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/BEF24DD2AE619CF27FB9864AC5E0D1EF44C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex) [75]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/53D2C4C187779A9CF95C25D2B8C9276844C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex) [76]
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/286F12EA3E1446054307097C535F9E5944C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex)
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/45D616BE241D30806254B907551FE04744C5A2E9C68FC8C2BDE270D27D6B
+8985.pygtex) [77]
+\openout3 = `Writeup.pyg'.
+
+
 (./_minted-Writeup/6AF45DD1DAE5BF5EABAB59899BF6DC5C44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [73]
+8985.pygtex) [78]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1034,17 +1079,17 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/3B8E6CE5A41E60B10E3ABA78954476C844C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [74]
+8985.pygtex)
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/EDDA8C447E4A9B5933B6058725B6DA8A44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [75]
+8985.pygtex) [79] [80]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/B698F3008817AB5E1AD49C4CC273EC7E000FA1B3C5A227DA32DB67CA28F2
-86FE.pygtex) [76]
+86FE.pygtex) [81]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1054,7 +1099,7 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/246614E4C0FD8E449D13181C16A0BDD0000FA1B3C5A227DA32DB67CA28F2
-86FE.pygtex) [77] [78] (./Writeup.bbl
+86FE.pygtex) [82] [83] (./Writeup.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 \OT1/cmtt/m/n/12 com / software-[]development-[]greenfield-[]vs-[]brownfield/$[
 ]\OT1/cmr/m/n/12 , 2020.
@@ -1095,197 +1140,222 @@ Underfull \hbox (badness 1325) in paragraph at lines 48--54
 s / tasks / run-[]application /
  []
 
-[79]
-Underfull \hbox (badness 10000) in paragraph at lines 119--125
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 []\OT1/cmr/m/n/12 Coursera.  What Is Python Used For? A Be-gin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--125
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 \OT1/cmr/m/n/12 ner's Guide.  []$\OT1/cmtt/m/n/12 https : / / www . coursera . 
 org / articles /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--125
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 \OT1/cmtt/m/n/12 what-[]is-[]python-[]used-[]for-[]a-[]beginners-[]guide-[]to-[
 ]using-[]python$[]\OT1/cmr/m/n/12 ,
  []
 
-[80]
-Underfull \hbox (badness 10000) in paragraph at lines 139--143
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 135--139
+[]\OT1/cmr/m/n/12 Shaumik Dait-yari.  An-gu-lar vs Re-act vs Vue: Which
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--139
+\OT1/cmr/m/n/12 Frame-work to Choose.  []$\OT1/cmtt/m/n/12 https : / / www . co
+deinwp . com / blog /
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 135--139
+\OT1/cmtt/m/n/12 angular-[]vs-[]vue-[]vs-[]react/$[]\OT1/cmr/m/n/12 , 2022.  [O
+n-line; ac-cessed 14-August-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--151
 []$\OT1/cmtt/m/n/12 https : / / www . ibm . com / uk-[]en / cloud / learn / con
 tainerization$[]\OT1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--177
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
 \OT1/cmtt/m/n/12 / / spark . apache . org / docs / latest / sql-[]getting-[]sta
 rted . html$[]\OT1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 []$\OT1/cmtt/m/n/12 https : / / spark . apache . org / docs / latest / api / py
 thon / getting _
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--199
+[86]
+Underfull \hbox (badness 10000) in paragraph at lines 201--207
 \OT1/cmtt/m/n/12 en-[]US / docs / Learn / Getting _ started _ with _ the _ web 
 / HTML _ basics$[]\OT1/cmr/m/n/12 ,
  []
 
-[81]
-Underfull \hbox (badness 7116) in paragraph at lines 201--206
+
+Underfull \hbox (badness 7116) in paragraph at lines 209--214
 []\OT1/cmr/m/n/12 The Linux Foun-da-tion.  Ope-nAPI - Pro-vid-ing Doc-u-men-ta-
 
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 201--206
+Underfull \hbox (badness 6173) in paragraph at lines 209--214
 \OT1/cmr/m/n/12 tion and Ex-am-ples.  []$\OT1/cmtt/m/n/12 https : / / oai . git
 hub . io / Documentation /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--224
+Underfull \hbox (badness 10000) in paragraph at lines 226--232
 \OT1/cmtt/m/n/12 www . atlassian . com / microservices / microservices-[]archit
 ecture /
  []
 
 
-Underfull \hbox (badness 3989) in paragraph at lines 226--233
+Underfull \hbox (badness 3989) in paragraph at lines 234--241
 []\OT1/cmr/m/n/12 Zaira Hira.  Shell Script-ing for Be-gin-ners { How to Write
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 226--233
+Underfull \hbox (badness 2818) in paragraph at lines 234--241
 \OT1/cmr/m/n/12 Bash Scripts in Linux.  []$\OT1/cmtt/m/n/12 https : / / www . f
 reecodecamp . org / news /
  []
 
 
-Overfull \hbox (37.61658pt too wide) in paragraph at lines 226--233
+Overfull \hbox (37.61658pt too wide) in paragraph at lines 234--241
 \OT1/cmtt/m/n/12 shell-[]scripting-[]crash-[]course-[]how-[]to-[]write-[]bash-[
 ]scripts-[]in-[]linux/$[]\OT1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--253
+Underfull \hbox (badness 10000) in paragraph at lines 255--261
 []\OT1/cmr/m/n/12 ECMA In-ter-na-tional.  ECMA-404 The JSON Data In-ter-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--253
+Underfull \hbox (badness 10000) in paragraph at lines 255--261
 \OT1/cmr/m/n/12 change Stan-dard.  []$\OT1/cmtt/m/n/12 https : / / www . ecma-[
 ]international . org /
  []
 
-[82]
-Underfull \hbox (badness 3108) in paragraph at lines 279--282
+[87]
+Underfull \hbox (badness 3108) in paragraph at lines 296--299
 []\OT1/cmr/m/n/12 Maximilian Nickel, Kevin Mur-phy, Volker Tresp, and Ev-geniy
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 284--287
+Underfull \hbox (badness 3108) in paragraph at lines 301--304
 []\OT1/cmr/m/n/12 Maximilian Nickel, Kevin Mur-phy, Volker Tresp, and Ev-geniy
  []
 
 
-Underfull \hbox (badness 4181) in paragraph at lines 289--296
+Underfull \hbox (badness 4181) in paragraph at lines 306--313
 []\OT1/cmr/m/n/12 Michael Okoh and Alex Gar-nett.  How To Build and De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--296
+Underfull \hbox (badness 10000) in paragraph at lines 306--313
 \OT1/cmr/m/n/12 ploy a Flask Ap-pli-ca-tion Us-ing Docker on Ubuntu 20.04.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--296
+Underfull \hbox (badness 10000) in paragraph at lines 306--313
 []$\OT1/cmtt/m/n/12 https : / / www . digitalocean . com / community / tutorial
 s /
  []
 
 
-Overfull \hbox (88.5166pt too wide) in paragraph at lines 289--296
+Overfull \hbox (88.5166pt too wide) in paragraph at lines 306--313
 \OT1/cmtt/m/n/12 how-[]to-[]build-[]and-[]deploy-[]a-[]flask-[]application-[]us
 ing-[]docker-[]on-[]ubuntu-[]20-[]04$[]\OT1/cmr/m/n/12 ,
  []
 
-
-Underfull \hbox (badness 1735) in paragraph at lines 328--335
+[88]
+Underfull \hbox (badness 1735) in paragraph at lines 345--352
 []\OT1/cmr/m/n/12 Dmitry Shu-rupov.  Ku-ber-netes and con-tainer-iza-tion trend
 s (ac-
  []
 
 
-Underfull \hbox (badness 4927) in paragraph at lines 328--335
+Underfull \hbox (badness 4927) in paragraph at lines 345--352
 \OT1/cmr/m/n/12 cord-ing to the re-ports of 2021).  []$\OT1/cmtt/m/n/12 https :
  / / blog . flant . com /
  []
 
-[83]
-Underfull \hbox (badness 1052) in paragraph at lines 366--372
+
+Underfull \hbox (badness 1052) in paragraph at lines 383--389
 []\OT1/cmr/m/n/12 Andrea V^^Sazquez-Ingelmo, Ali-cia Garc^^S^^Pa-Holgado, and F
 ran-cisco J
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 374--380
+Underfull \hbox (badness 6001) in paragraph at lines 391--397
 []\OT1/cmr/m/n/12 Jason Wat-more.  Re-act + Fetch - HTTP POST Re-quest
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--380
+Underfull \hbox (badness 10000) in paragraph at lines 391--397
 \OT1/cmr/m/n/12 Ex-am-ples.  []$\OT1/cmtt/m/n/12 https : / / jasonwatmore . com
  / post / 2020 / 02 / 01 /
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 374--380
+Underfull \hbox (badness 1931) in paragraph at lines 391--397
 \OT1/cmtt/m/n/12 react-[]fetch-[]http-[]post-[]request-[]examples$[]\OT1/cmr/m/
 n/12 , 2020.  [On-line; ac-
  []
 
-[84])
+[89])
+\openout3 = `Writeup.pyg'.
+
+
+(./_minted-Writeup/229C81448ED7CED1DA6B9DF35AAD0DB0203147C9D6203956FB24CE37E6A3
+F626.pygtex [90])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/0DDECB4F84E27F115556352A58EB794595C943E21B767B5E7238E3F6CADA
-2FC5.pygtex [85])
+2FC5.pygtex [91])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/E2979BC53298E21A52ADC032B56E8C7644C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex [86] [87] [88] [89] [90])
+8985.pygtex [92] [93] [94] [95] [96] [97])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/4F9141C2D4C6D9086D7AA52EF367ACE544C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex [91] [92] [93] [94])
+8985.pygtex [98] [99] [100] [101])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/E2833CA516DACB5BFC76D67886F48979E4B249F1D48B12C84018B7E92A11
-5D55.pygtex [95]) [96] (./Writeup.aux)
+5D55.pygtex [102]) [103] (./Writeup.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `Writeup.out' has not changed.
-(rerunfilecheck)             Checksum: DA3BD5CEC797A4D661253ECC94B45284;13855.
+(rerunfilecheck)             Checksum: B14ABA008F86DE9D4076D0946E602EF6;14163.
 runsystem(rm Writeup.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 16347 strings out of 478268
- 321698 string characters out of 5846347
- 771429 words of memory out of 5000000
- 33827 multiletter control sequences out of 15000+600000
+ 16433 strings out of 478268
+ 326328 string characters out of 5846347
+ 772309 words of memory out of 5000000
+ 33863 multiletter control sequences out of 15000+600000
  482583 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,11n,109p,942b,1098s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,109p,1160b,1098s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -1301,10 +1371,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Writeup.pdf (96 pages, 2600853 bytes).
+Output written on Writeup.pdf (103 pages, 2611256 bytes).
 PDF statistics:
- 1677 PDF objects out of 1728 (max. 8388607)
- 1488 compressed objects within 15 object streams
- 391 named destinations out of 1000 (max. 500000)
- 859 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1761 PDF objects out of 2073 (max. 8388607)
+ 1564 compressed objects within 16 object streams
+ 417 named destinations out of 1000 (max. 500000)
+ 883 words of extra memory for PDF output out of 10000 (max. 10000000)
 
