@@ -21,7 +21,7 @@ This report describes the design, implementation and evaluation of frances, a we
 
 This report builds on existing work in which the prototype of a web tool called frances was created, using AI tools to analyse the Encyclopaedia Britannica. An ontology and knowledge graph were previously created to describe the relationships between definitions, editions, volumes and more in the encyclopaedia.
 
-This was a group project in which several system features were implemented. The primary objectives were to create a user account system, make improvements to the user interface in terms of look and feel, containerise the application, and evaluate the new user interface compared to the original one. I personally worked on the containerisation of the system, and the splitting of the server into a backend API to facilitate improving the user interface.
+This was a group project in which several system features were implemented. The primary objectives were to create a user account system, make improvements to the user interface in terms of look and feel, containerise the application, and evaluate the new user interface compared to the original one. I personally worked on the containerisation of the system, the frontend interface, and the splitting of the server into a backend API to facilitate improving the user interface.
 
 The work was then evaluated based on these objectives, with each objective being compared to its evidence of completion, providing an overall assessment of the project.
 
@@ -206,7 +206,7 @@ The app frontend will be created using React (\ref{sec:react-desc}), replacing t
 \subsubsection{Python}\label{sec:python-desc}
 
 \begin{flushleft}
-Python \footnote{Python: https://www.python.org/} is a dynamically typed programming language, meaning variables do not have types at compile time, and get given them at runtime depending on the data they are assigned. This makes it relatively quick to write Python code. Furthermore, it is used widely in industry for a variety of applications \cite{python-desc}. It is relevant to this dissertation because it is used in the Flask web server (see \ref{sec:flask-desc}) which serves the frances web app (see \ref{sec:design}) .
+Python \footnote{https://www.python.org/} is a dynamically typed programming language, meaning variables do not have types at compile time, and get given them at runtime depending on the data they are assigned. This makes it relatively quick to write Python code. Furthermore, it is used widely in industry for a variety of applications \cite{python-desc}. It is relevant to this dissertation because it is used in the Flask web server (see \ref{sec:flask-desc}) which serves the frances web app (see \ref{sec:design}) .
 \end{flushleft}
 
 \begin{flushleft}
@@ -234,14 +234,14 @@ This basic Python snippet shows a function defined called maths\_function, which
 \subsubsection{Apache Spark}\label{sec:spark-desc}
 
 Apache Spark
-\footnote{Apache Spark: https://spark.apache.org/}
+\footnote{https://spark.apache.org/}
 is a system for executing cluster computing workloads. Spark was originally created to work with RDDs (Resilient Distributed Datasets) which are unique by applying only coarse-grained transformations to data. In other words, a user applies a single operation to each data point. This has the benefit of enabling a high level of parallelism, as computations can be distributed between many machines in a cluster and executed concurrently. Furthermore, it provides fault tolerance by describing a dataset as a result of transformations from a previous dataset. This means an intermediate step or result of a computation can be recreated if lost using the original dataset plus the transformation  \cite{spark-rdds}.
 
 \subsubsection{PySpark}\label{sec:pyspark-desc}
 
 \begin{flushleft}
 PySpark
-\footnote{PySpark: https://spark.apache.org/docs/latest/api/python/}
+\footnote{https://spark.apache.org/docs/latest/api/python/}
 is an Apache Spark driver for Python. It enables you to write Spark queries using the provided Python API. It can also create a local Spark master server if needed for development purposes \cite{pyspark-site}.
 \end{flushleft}
 
@@ -279,15 +279,15 @@ The snippet above shows the creation of a Spark Session. This must be done befor
 \subsubsection{Apache Jena}\label{sec:jena-desc}
 
 Apache Jena
-\footnote{Apache Jena: https://jena.apache.org/}
+\footnote{https://jena.apache.org/}
 is a framework created by the Apache Foundation to create Semantic Web and Linked Data applications. This framework is useful for programs which need to describe both data and relationships between data  \cite{apache-jena}. One commonly used format is RDF (Resource Description Framework) which is a standard to describe graph data \cite{apache-jena}. This data is often exchanged in TTL (Terse RDF Triple Language) files \cite{ttl-files}.
 
 \subsubsection{Apache Jena Fuseki and SPARQL}\label{sec:sparql-desc}\label{sec:fuseki-desc}
 
 Apache Jena Fuseki
-\footnote{Apache Fuseki: https://jena.apache.org/documentation/archive/serving\_data/fuseki1.html}
+\footnote{https://jena.apache.org/documentation/archive/serving\_data/fuseki1.html}
 (usually called Apache Fuseki) is a SPARQL
-\footnote{SPARQL: https://jena.apache.org/tutorials/sparql.html/}
+\footnote{https://jena.apache.org/tutorials/sparql.html/}
 server for the Apache Jena framework. It allows users to upload, store and query RDF files \cite{apache-fuseki}. An example, created by the pre-existing frances project, is shown below:
 
 \begin{flushleft}
@@ -329,7 +329,7 @@ This snippet begins with the prefix declarations, which are simply used to abbre
 \subsubsection{YAML (Yet Another Markup Language)}\label{sec:yaml-desc}
 
 \begin{flushleft}
-YAML \footnote{YAML: https://yaml.org/} is a markup language designed to be human readable and is often used as an alternative to JSON (see \ref{sec:json-desc}). YAML has a number of uses such as for configuration files \cite{yaml-desc}, which is where YAML will be used in this project in creating OpenAPI documents (see \ref{sec:openapi-desc}) to document endpoints with Swagger (see \ref{sec:swagger-desc}).
+YAML \footnote{https://yaml.org/} is a markup language designed to be human readable and is often used as an alternative to JSON (see \ref{sec:json-desc}). YAML has a number of uses such as for configuration files \cite{yaml-desc}, which is where YAML will be used in this project in creating OpenAPI documents (see \ref{sec:openapi-desc}) to document endpoints with Swagger (see \ref{sec:swagger-desc}).
 \end{flushleft}
 
 \begin{flushleft}
@@ -358,7 +358,7 @@ This example shows an employee with the name Martin D'vloper. Their job is as a 
 \subsubsection{Bash}\label{sec:bash-desc}
 
 \begin{flushleft}
-A Bash script \footnote{Bash: https://www.gnu.org/software/bash/} is a set of ordered commands in a file. They can contain variables and control flow structures such as if statements, which makes them an extremely powerful alternative for small operations to creating a full application \cite{bash-desc}. These scripts are relevant because they can be used to setup projects automatically, making them especially useful for Docker files (see \ref{sec:docker-desc}). The following shows an example script.
+A Bash script \footnote{https://www.gnu.org/software/bash/} is a set of ordered commands in a file. They can contain variables and control flow structures such as if statements, which makes them an extremely powerful alternative for small operations to creating a full application \cite{bash-desc}. These scripts are relevant because they can be used to setup projects automatically, making them especially useful for Docker files (see \ref{sec:docker-desc}). The following shows an example script.
 \end{flushleft}
 
 \begin{flushleft}
@@ -435,7 +435,7 @@ This example document is the code for a simple web page. It contains a number of
 
 \begin{flushleft}
 Docker
-\footnote{Docker: https://www.docker.com/}
+\footnote{https://www.docker.com/}
 is a platform which containerises applications so they can be deployed operating system agnostically. In order words, apps contained in Docker can run on any machine with the Docker engine installed. This platform is commonly used to deploy microservice architectures to cloud platforms \cite{docker}.
 \end{flushleft}
 
@@ -467,13 +467,13 @@ CMD ["bash", "start.sh"]
 \end{flushleft}
 
 \begin{flushleft}
-This example begins with a base of a machine with Python 3.8 running Alpine Linux \footnote{Alpine Linux: https://www.alpinelinux.org/}. It then installs Bash (see \ref{sec:bash-desc}). It sets two environment variables needed to deploy Flask (see \ref{sec:flask-desc}). It copies and installs the app's requirements file, which will install the required Python modules on the system. Finally, it runs the Flask server using the command line.
+This example begins with a base of a machine with Python 3.8 running Alpine Linux \footnote{https://www.alpinelinux.org/}. It then installs Bash (see \ref{sec:bash-desc}). It sets two environment variables needed to deploy Flask (see \ref{sec:flask-desc}). It copies and installs the app's requirements file, which will install the required Python modules on the system. Finally, it runs the Flask server using the command line.
 \end{flushleft}
 
 \subsubsection{Docker Compose}\label{sec:docker-compose-desc}
 
 \begin{flushleft}
-Docker Compose \footnote{Docker Compose: https://docs.docker.com/compose/} is defined by its creators as "a tool for defining and running multi-container Docker applications" \cite{docker-compose-example}. What this means is that you can configure several Docker containers at once in a single file, along with the connections between them in a network \cite{docker-compose-example}. This is extremely useful for creating deployments, which is where it becomes relevant to this project (see \ref{sec:design-deployment}).
+Docker Compose \footnote{https://docs.docker.com/compose/} is defined by its creators as "a tool for defining and running multi-container Docker applications" \cite{docker-compose-example}. What this means is that you can configure several Docker containers at once in a single file, along with the connections between them in a network \cite{docker-compose-example}. This is extremely useful for creating deployments, which is where it becomes relevant to this project (see \ref{sec:design-deployment}).
 \end{flushleft}
 
 \begin{flushleft}
@@ -507,7 +507,7 @@ This example compose file defines two services, Web and Redis. Web is described 
 
 \begin{flushleft}
 Flask
-\footnote{Flask: https://flask.palletsprojects.com/en/2.2.x/}
+\footnote{https://flask.palletsprojects.com/en/2.2.x/}
 is a popular Python web server framework. It provides a number of tools to make development easier including hot reload and template rendering \cite{flask}. Flask makes development extremely quick to begin, with the following shown below being a basic Flask app:
 \end{flushleft}
 
@@ -548,12 +548,12 @@ In this diagram, it is not necessary to understand every aspect of Transformers 
 \end{flushleft}
 
 \begin{flushleft}
-One relevant example of this model is implemented by Hugging Face \footnote{Hugging Face: https://huggingface.co/}, which is an AI community that provides a library with a large number of pre-trained models to be applied to a variety of inputs \cite{huggingface}. This library is relevant to this project because it is used in frances (see \ref{sec:frances-desc}).
+One relevant example of this model is implemented by Hugging Face \footnote{https://huggingface.co/}, which is an AI community that provides a library with a large number of pre-trained models to be applied to a variety of inputs \cite{huggingface}. This library is relevant to this project because it is used in frances (see \ref{sec:frances-desc}).
 \end{flushleft}
 
 \subsubsection{JSON (JavaScript Object Notation)}\label{sec:json-desc}
 
-JSON \footnote{JSON: https://www.json.org/json-en.html} is described as a "a lightweight data-interchange format" \cite{json-desc}. This means it is used in the communication of data and structure between applications. It is supported in all major programming languages, making it ideal for this use case. It's main data structures are sets of key and value pairs, and ordered lists of values \cite{json-desc}. JSON is relevant to this project because it is used to configure the new frances web app (see \ref{sec:consul-desc}). The following shows a basic example of a JSON document.
+JSON \footnote{https://www.json.org/json-en.html} is described as a "a lightweight data-interchange format" \cite{json-desc}. This means it is used in the communication of data and structure between applications. It is supported in all major programming languages, making it ideal for this use case. It's main data structures are sets of key and value pairs, and ordered lists of values \cite{json-desc}. JSON is relevant to this project because it is used to configure the new frances web app (see \ref{sec:consul-desc}). The following shows a basic example of a JSON document.
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -595,7 +595,7 @@ JSON Web Tokens are a standard of sending information between two communicators 
 \subsubsection{OpenAPI}\label{sec:openapi-desc}
 
 OpenAPI
-\footnote{OpenAPI: https://www.openapis.org/}
+\footnote{https://www.openapis.org/}
 is a specification which describes how documents can be written to define APIs (Application Programming Interfaces). Most importantly it includes both a machine-readable description and human-readable info for developers. This means it can be used for both documentation and code generation purposes \cite{openapi}. One relevant part of an OpenAPI document is the paths field, which describes the endpoints that exist for an API. This looks like the following:
 
 \begin{flushleft}
@@ -621,10 +621,10 @@ The snippet above describes a HTTP PUT endpoint that takes a JSON body. The sche
 
 \subsubsection{Swagger}\label{sec:swagger-desc}
 Swagger
-\footnote{Swagger: https://swagger.io/}
+\footnote{https://swagger.io/}
 is a set of tools for API Development. This includes Swagger UI, Swagger libraries and many other tools \cite{swagger}.
 
-\paragraph{Swagger UI} is a tool to visualise an OpenAPI Definition (see \hyperref[sec:openapi-desc]{OpenAPI Description}). It will create a local web server which can be navigated to, which will show the following:
+\paragraph{Swagger UI} is a tool to visualise an OpenAPI Definition (see \ref{sec:openapi-desc}). It will create a local web server which can be navigated to, which will show the following:
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -638,7 +638,7 @@ is a set of tools for API Development. This includes Swagger UI, Swagger librari
 This web page will allow a developer to test API requests using the provided forms. This is essentially an auto-generated testing suite in which requests can be generated and sent, and then their responses displayed \cite{swagger-ui}.
 \end{flushleft}
 
-\paragraph{Flasgger} is a Python library which integrates Swagger with Flask (see \hyperref[sec:flask-desc]{Flask Description}). It allows quick generation of the Swagger UI using a Flask REST function combined with an OpenAPI specification \cite{flasgger-desc}. This looks like the following:
+\paragraph{Flasgger} is a Python library which integrates Swagger with Flask (see \ref{sec:flask-desc}). It allows quick generation of the Swagger UI using a Flask REST function combined with an OpenAPI specification \cite{flasgger-desc}. This looks like the following:
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -656,9 +656,9 @@ The code shown above will automatically generate a Swagger UI from the given fil
 
 \subsubsection{React}\label{sec:react-desc}
 React
-\footnote{React: https://reactjs.org/}
+\footnote{https://reactjs.org/}
 is a JavaScript
-\footnote{JavaScript: https://www.javascript.com/}
+\footnote{https://www.javascript.com/}
 frontend framework created by Facebook to make user interfaces. It uses the concept of components, which are instances describing appearance, behaviour and state \cite{react-desc}. A basic example would look like this:
 
 \begin{flushleft}
@@ -711,7 +711,7 @@ In this section, I am going to go over the work that existed prior to this disse
 \subsubsection{NLS Digital Collections}\label{sec:nls-desc}
 
 The National Library of Scotland (NLS) provides many digital collections
-\footnote{NLS Digital Collections: https://data.nls.uk/data/digitised-collections/}
+\footnote{https://data.nls.uk/data/digitised-collections/}
 , which are historical collections in the same sense that a museum might offer. A large part of these collections come from the mass digitisation program of books, maps, manuscripts and newspapers. However, they also include more than 5 million e-books and e-journals \cite{nls-collections}.
 
 \begin{flushleft}
@@ -728,7 +728,7 @@ The NLS has over 5PB stored in the library as of 2020. The NLS Data Foundry make
 
 \begin{flushleft}
 Defoe
-\footnote{Defoe: https://github.com/francesNLP/defoe}
+\footnote{https://github.com/francesNLP/defoe}
 is described as a "portable digital eScience toolbox that enables historical research" \cite{defoe}. Defoe is able to analyse huge datasets using text-mining queries. It uses Apache Spark (see \ref{sec:spark-desc}) to process queries in parallel. Most importantly, defoe is focused on analysing historical sources such as newspapers and books, making it suitable for analysing the Encyclopaedia Britannica as done in the frances web app (see \ref{sec:frances-desc}).
 \end{flushleft}
 
@@ -749,7 +749,7 @@ Defoe is relevant to this project because it was used in frances (see \ref{sec:f
 
 \subsubsection{EB Ontology and EB Knowledge Graph}\label{sec:eb-ontology-desc}
 
-An ontology as described in this report is a formal specification of a model of concepts and their relationships \cite{ontology}. EB Ontology \footnote{EB Ontology: https://w3id.org/eb} is an ontology describing the relationships between definitions, editions, volumes and more in the Encyclopaedia Britannica \cite{eb-ontology}. The following is a diagram of these links:
+An ontology as described in this report is a formal specification of a model of concepts and their relationships \cite{ontology}. EB Ontology \footnote{https://w3id.org/eb} is an ontology describing the relationships between definitions, editions, volumes and more in the Encyclopaedia Britannica \cite{eb-ontology}. The following is a diagram of these links:
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -760,7 +760,7 @@ An ontology as described in this report is a formal specification of a model of 
 \end{flushleft}
 
 With this in mind, EB Knowledge Graph
-\footnote{EB Knowledge Graph: https://zenodo.org/record/6673897\#.YvEYbvHMLz9}
+\footnote{https://zenodo.org/record/6673897\#.YvEYbvHMLz9}
 (also referred to as EB-KG) is then the knowledge graph created using EB Ontology and the data extracted from the Encyclopaedia Britannica. The distinction is that EB Ontology refers to the abstract relationship between entities in the encyclopaedia, whereas EB-KG is a collection of instances of these entities and relationships \cite{eb-ontology}.
 
 \subsubsection{Frances Web App}\label{sec:frances-desc}
@@ -848,7 +848,7 @@ The following requirements are about the how the system should function. They ar
 In this sub-section there will be two priority levels, called High and Low (noted as H and L). In the evaluation (\ref{sec:evaluation}), all high priority requirements must be fulfilled for the project to be considered a success. Low priority ones are a bonus, but aren't totally necessary. These priorities are based off of the objectives defined earlier (\ref{sec:objectives}) with requirements based on the primary objectives being high priority.
 \end{flushleft}
 
-\subsubsection{Account Requirements}
+\subsubsection{Account Requirements}\label{sec:req-functional-account}
 
 \begin{flushleft}
 These requirements are specifically relating to the project's account system, making them necessary to fulfil Objective P1 (see \ref{sec:objectives-primary}).
@@ -871,10 +871,10 @@ These requirements are specifically relating to the project's account system, ma
 \end{longtblr}
 \end{center}
 
-\subsubsection{Query Requirements}
+\subsubsection{Query Requirements}\label{sec:req-functional-query}
 
 \begin{flushleft}
-These requirements are specifically related to the querying functionality of the system. These are necessary both to preserve the functionality of the pre-existing frances web app (see \ref{sec:frances-desc}) and fulfil Objective P1 (see \ref{sec:objectives-primary}) as it relates to the account system.
+These requirements are specifically related to the querying functionality of the system. These are necessary both to preserve the functionality of the pre-existing frances web app (see \ref{sec:frances-desc}) and fulfil Objective P1 (\ref{sec:objectives-primary}) as it relates to the account system.
 \end{flushleft}
 
 \begin{center}
@@ -906,24 +906,25 @@ These requirements are specifically related to the querying functionality of the
 \subsection{Non-Functional}\label{sec:req-non-functional}
 
 \begin{flushleft}
-The following describe the metrics under which the system should function. This means that the system should fulfil each of the constraints stated below.
+The following describe the constraints under which the system should function.
 \end{flushleft}
 
 \begin{center}
 \begin{longtblr}[
   caption = {Non-Functional Requirements},
-]{ c X }
- ID & Description \\ 
+]{ c X c }
+ ID & Description & Priority \\ 
  \hline
- NF1 & Measured by 99.99\% across 1 hour of typical traffic. \\ 
- NF2 & Across Windows, MacOS and Linux operating systems without any code changes. \\ 
- NF3 & Measured by a MTTF (Mean time to failure) of 10,000 hours.   \\ 
- NF4 & Measured by fulfilling 99.9\% of standard requests in under 200ms over 1 hour of typical traffic. \\ 
- NF5 & Measured by supporting the execution of 3 or more defoe queries at once. \\ 
+ NF1 & The system should not ask authenticated users to login again within 7 days unless users signed out. Persistent login will improve user browsing exeprience, while frequent login requests will even confuse users. & H \\ 
+ NF2 & Users can always easily find a link to the home page. Home page includes main entries to all functions, so the link to it should be add to all pages. & L \\ 
+ NF3 & The system should explain the required inputs from users. This is a novel system, users might be very new to some concepts such as normalisation, lexicon file, etc. & H \\ 
+ NF4 & User data should be encrypted. Passwords are private data and needs to be protected from hackers. & H \\ 
 \end{longtblr}
 \end{center}
 
-TODO update for new non functional requirements
+\begin{flushleft}
+These requirements come from a number of sources. NF1, NF2 and NF3 are all necessary to achieve Objective P2, as they all improve the usability of the frontend. NF4 is justified because of the discussion on the ethics of this project (\ref{sec:ethics}).
+\end{flushleft}
 
 \section{Software Engineering Process}
 
@@ -979,7 +980,7 @@ Test-driven development (TDD) was followed relatively closely in the development
 \end{itemize}
 \cite{test-driven-dev}
 
-It should be mentioned that this was process adapted significantly for this project, as we were not dealing with a greenfield project \cite{greenfield-project}. Because we had pre-existing code to adapt, we obviously could not create tests before the code, as the code already exists. For this reason, it was decided that Swagger should be used to retroactively create tests for the frances API (see \hyperref[sec:swagger-desc]{Swagger Description}. This tool was used to write documentation for HTTP APIs, then automatically create a HTTP client with default request values. This could then be used to test the API \cite{swagger}. This was a compromise due to the small timeframe. Had we had longer, end-to-end and unit tests could have been created for all areas of the project. Swagger is a good alternative because it provides both documentation and testing in a smaller development time \cite{swagger}.
+It should be mentioned that this was process adapted significantly for this project, as we were not dealing with a greenfield project \cite{greenfield-project}. Because we had pre-existing code to adapt, we obviously could not create tests before the code, as the code already exists. Because of this, Swagger (\ref{sec:swagger-desc}) was used to retroactively create tests for the frances API. This tool was used to write documentation for HTTP APIs, then automatically create a HTTP client with default request values. This could then be used to test the API \cite{swagger}. Had we had more time, end-to-end and unit tests could have been created for all areas of the project. Swagger is a good alternative because it provides both documentation and testing in a smaller development time \cite{swagger}.
 
 \subsection{Task Allocation}\label{sec:task-allocation}
 
@@ -1007,7 +1008,7 @@ Task allocation in this project was handled informally and on an ad-hoc basis de
 \end{center}
 
 \begin{flushleft}
-This task allocation maps fairly well onto the Objectives (see \ref{sec:objectives}), as described below:  
+This task allocation maps fairly well onto the Objectives (\ref{sec:objectives}), as described below:  
 \end{flushleft}
 
 \begin{flushleft}
@@ -1033,13 +1034,13 @@ In the rest of this sub-section, I will go over each task in more detail to desc
 \paragraph{Frontend interface}
 
 \begin{flushleft}
-The Frontend interface involved creating the user interface in React and creating HTTP requests to call the backend API (see \ref{sec:impl-frontend}). I created the defoe queries page (\ref{sec:impl-frontend-defoe}), whereas my partner created the rest.
+The Frontend interface involved creating the user interface in React and creating HTTP requests to call the backend API (\ref{sec:impl-frontend}). I created the defoe queries page (\ref{sec:impl-frontend-defoe}), whereas my partner created the rest.
 \end{flushleft}
 
 \paragraph{Backend authentication}
 
 \begin{flushleft}
-The Backend authentication was implemented by my partner creating endpoints to handle the authentication of users (see \ref{appendix:auth.py}). To find a user, I had to create database queries (see \ref{sec:impl-database}) which were then further developed by my partner. I then updated certain API routes to be protected by this authentication (see \ref{sec:impl-backend}).
+The Backend authentication was implemented by my partner creating endpoints to handle the authentication of users (\ref{appendix:auth.py}). To find a user, I had to create database queries (\ref{sec:impl-database}) which were then further developed by my partner. I then updated certain API routes to be protected by this authentication (\ref{sec:impl-backend}).
 \end{flushleft}
 
 \paragraph{Backend API}
@@ -1066,7 +1067,7 @@ I converted the pre-existing defoe library from being accessible via the command
 I made the deployment by creating a Docker Compose file (\ref{sec:impl-deployment}). I also updated the frances configuration loading to use consul (\ref{sec:consul-desc}) to load configs in different environments, enabling deployment (\ref{sec:impl-config}).
 \end{flushleft}
 
-\section{Ethics}
+\section{Ethics}\label{sec:ethics}
 
 \begin{flushleft}
 This project was relatively low-risk ethically for a number of reasons. It analyses data that is publicly available, meaning that most of the project has zero privacy risk. Also, the scope of our report is only on software development, and does not require us to conduct any research on real subjects (e.g. interviewing people and collecting data).  
@@ -1090,11 +1091,15 @@ Users should not be able to input file paths outside the application's root dire
 
 \section{Design}\label{sec:design}
 
-In this section I will go over how the project was designed, i.e. how we planned its creation and justify the choices made in this process. This includes the system's architecture (see \ref{sec:system-architecture}), the frontend technology (see \ref{sec:design-frontend}), planned storage solutions (see \ref{sec:storage-solutions}), processes for deployment (see \ref{sec:design-deployment}) and technologies for containerisation (see \ref{sec:design-containerisation}).
+\begin{flushleft}
+In this section I will go over how the project was designed, i.e. how we planned its creation and justify the choices made in this process. This includes the system's architecture (\ref{sec:system-architecture}), the frontend technology (\ref{sec:design-frontend}), planned storage solutions (\ref{sec:design-database}), processes for deployment (\ref{sec:design-deployment}) and technologies for containerisation (\ref{sec:design-containerisation}).
+\end{flushleft}
 
 \subsection{System Architecture}\label{sec:system-architecture}
 
-The system architecture was designed using the Component diagram from the C4 Model \footnote{C4 Model: https://c4model.com/}. The C4 Model is a viewpoint set which describes what diagrams should be included in the documentation of an architecture. It uses four main diagrams, called the Context, Containers, Components, and Code diagrams \cite{c4-model}. However, since we are updating an existing system, the only diagram that is required is the Component diagram. This is because the other viewpoints (System Context, Container, Code) have already been decided by pre-existing work so will not be changed throughout this report.
+\begin{flushleft}
+The system architecture was designed using the Component diagram from the C4 Model \footnote{https://c4model.com/}. The C4 Model is a viewpoint set which describes what diagrams should be included in the documentation of an architecture. It uses four main diagrams, called the Context, Containers, Components, and Code diagrams \cite{c4-model}. However, since we are updating an existing system, the only diagram that is required is the Component diagram. This is because the other viewpoints (System Context, Container, Code) have already been decided by pre-existing work so will not be changed throughout this report.
+\end{flushleft}
 
 \subsubsection{Old Architecture}\label{sec:design-arch-old}
 
@@ -1122,7 +1127,15 @@ One good aspect of this architecture is that the Apache Fuseki server is kept se
 \subsubsection{New Architecture}\label{sec:design-arch-new}
 
 \begin{flushleft}
-I designed the new frances app architecture to be separated into several components, to reduce the level of complexity for each individual component, therefore increasing its maintainability. Furthermore this separation allows for more complex functionality, for example the frontend can now use the React framework (see \ref{sec:design-frontend}) supporting complex features such as asynchronous requests.
+I designed the new frances app architecture to be separated into several components. This separation allows for more complex functionality, for example the frontend can now use the React framework (see \ref{sec:design-frontend}) supporting complex features such as asynchronous requests. This is necessary to achieve Objective P2 (\ref{sec:objectives-primary}), by making huge improvements to the user interface.
+\end{flushleft}
+
+\begin{flushleft}
+The requirements (\ref{sec:requirements}) and Objective P1 (\ref{sec:objectives-primary}) specify that the app should support user accounts. These require a persistent state regardless of whether the frances app is restarted. Furthermore, the number of accounts that could conceivably exist may not fit in memory, therefore a database is required to store and query them.
+\end{flushleft}
+
+\begin{flushleft}
+These considerations resulted in the following architecture design:
 \end{flushleft}
 
 \begin{flushleft}
@@ -1133,11 +1146,7 @@ I designed the new frances app architecture to be separated into several compone
 \end{flushleft}
 
 \begin{flushleft}
-Other aspects of the architecture are easily justifiable from a design perspective. The requirements (see \ref{sec:requirements}) specify that the app should support user accounts. These require a persistent state regardless of whether the frances app is restarted. Furthermore, the number of accounts that could conceivably exist may not fit in memory, therefore a database is required to store and query them.
-\end{flushleft}
-
-\begin{flushleft}
-One noteworthy feature in this architecture is that Apache Spark is shown as a separate node to the backend. This is in contrast to the old architecture (see \ref{sec:design-arch-old}) in which Spark was only run locally on the backend server. This is a viable setup but it is possible an admin would want to run Spark queries on large clusters of machines, in order to harness the distributed computing elements of Apache Spark (see \ref{sec:spark-desc}). This means the architecture supports this execution of Spark queries using a remote master, therefore supporting this use case. Note that Spark can be run locally in the same way as before, in which case the processing happens within the backend node instead.
+One noteworthy feature in this architecture is that Apache Spark is shown as a separate node to the backend. This is in contrast to the old architecture (see \ref{sec:design-arch-old}) in which Spark was only run locally on the backend server. This is a viable setup but it is possible an admin would want to run Spark queries on large clusters of machines, in order to harness the distributed computing elements of Apache Spark (see \ref{sec:spark-desc}). This means the architecture supports this execution of Spark queries using a remote master if needed, therefore supporting this use case. This flexibility supports different deployment environments, achieving Objective P3 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
 \subsection{Frontend}\label{sec:design-frontend}
@@ -1152,10 +1161,10 @@ The application's frontend was previously HTML returned from the pre-existing Fl
 There is a lot of choice between SAP frameworks. The three we considered were Angular \footnote{https://angular.io/}, React \footnote{https://reactjs.org/}, and Vue \footnote{https://vuejs.org/}. Each have their advantages, however our team had too little experience with Vue. Furthermore, Angular is designed for complex enterprise apps, making it often time consuming to work with and unsuitable for the short timeframe of this project \cite{frontend-frameworks}. In considering these factors, we therefore decided to use React as the framework for the frontend.
 \end{flushleft}
 
-\subsubsection{Prototype}
+\subsubsection{Prototype}\label{sec:design-frontend-prototype}
 
 \begin{flushleft}
-My partner developed the prototype of the frontend using Axure RP \footnote{Axure RP: https://www.axure.com/}. This is a prototyping tool which uses a library of drag-and-drop components to create complex user interfaces \cite{axure-rp}. The following shows screenshots of the finished prototype.
+My partner developed the prototype of the frontend using Axure RP \footnote{https://www.axure.com/}. This is a prototyping tool which uses a library of drag-and-drop components to create complex user interfaces \cite{axure-rp}. The following shows screenshots of the finished prototype. Large parts of the prototype show the account system, which is designed to achieve Objective P1 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
 \begin{flushleft}
@@ -1210,18 +1219,48 @@ This figure shows the term search page, in which the user can input a term into 
 \end{flushleft}
 
 \begin{flushleft}
-This figure shows the results of searching for the term "flower". This includes the details about each definition, e.g. the year, edition and volume this definition was published in. It also includes advanced options including being able to click visualise, spell check, or similar terms to get to the next query quicker.
+This figure shows the results of searching for the term "flower". This includes the details about each definition, e.g. the year, edition and volume this definition was published in. It also includes advanced options including being able to click visualise, spell check, or similar terms to get to the next query quicker. This improvement to the user interface helps to achieve Objective P2 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
-\subsection{Storage Solutions}\label{sec:storage-solutions}
-\subsubsection{ElasticSearch}
-
-TODO write or delete
-
-\subsubsection{PostgreSQL}
+\subsubsection{Evaluation}\label{sec:design-frontend-evaluation}
 
 \begin{flushleft}
-PostgreSQL \footnote{PostgreSQL: https://www.postgresql.org/} was selected as the database software for this project over MySQL. The two DBMS (Database Management Systems) are extremely similar but PostgresSQL offers slightly better features for customisation of constraints, data security and recovery \cite{postgres}. While these are not enormously important pressures on the project, this made it the preferred solution.
+My partner created the frontend prototype considering the Web Usability Standards \cite{web-usability}. This standard allows us to evaluate the new user interface against the pre-existing system, therefore achieving Objective P4 (\ref{sec:objectives-primary}). A comparison between the systems with the Web Usability Heuristics \cite{web-usability} is shown below.
+\end{flushleft}
+
+\begin{center}
+\begin{longtblr}[
+  caption = {Heuristic Comparison},
+]{c c c} 
+  Number & Heuristic & Comparison \\
+ \hline
+  1 & Visibility of system status & Old system \\
+  2 & Match between system and the real world & Old system \\
+  3 & User control and freedom & Old system \\
+  4 & Consistency and standards & Old system \\
+  5 & Error prevention & The new system is better as it does not need you to copy and paste complex resource URIs. \\
+  6 & Recognition rather than recall & The new system is better, as auxiliary features (e.g. spell check) are shown when relevant rather than relying on a user's memory. \\
+  7 & Flexibility and efficiency of use & Old system \\
+  8 & Aesthetic and minimalist design & Old system \\
+  9 & Help users recognize, diagnose, and recover from errors & Old system \\
+  10 & Help and documentation & Old system \\
+\end{longtblr}
+\end{center}
+
+\begin{flushleft}
+To summarise, the new user interface is better according to the Web Usability standards \cite{web-usability} compared to the pre-existing one.
+\end{flushleft}
+
+TODO finish
+
+\subsection{Database}\label{sec:design-database}
+
+\begin{flushleft}
+The Objective P1 (\ref{sec:objectives}) requires the creation of a user account system, meaning account data must be stored persistently, and queried when needed. This requires a DBMS (Database Management System), which will store this information. We considered using either PostgreSQL \footnote{https://www.postgresql.org/} or MySQL \footnote{https://www.mysql.com/}.
+\end{flushleft}
+
+\begin{flushleft}
+PostgreSQL was selected as the database software for this project over MySQL. The two DBMS are extremely similar but PostgresSQL offers slightly better features for customisation of constraints, data security and recovery \cite{postgres}. While these are not enormously important pressures on the project, this made it the preferred solution.
 \end{flushleft}
 
 \begin{flushleft}
@@ -1231,13 +1270,13 @@ Note that this app was designed to use PostgreSQL directly, instead of an ORM (O
 \subsection{Deployment}\label{sec:design-deployment}
 
 \begin{flushleft}
-In this sub-section I will go over the design choices in regards to deploying the new frances application. Deployment should be understood to be the process of running the app as an end-user rather than a developer. This includes the containerisation of the app to run in various environments (see \ref{sec:design-containerisation}), and how this works on both local (see \ref{sec:design-local-env}) and cloud platforms (see \ref{sec:design-cloud-env}).
+In this sub-section I will go over the design choices in regards to deploying the new frances application. The app needs to be containerised (\ref{sec:design-containerisation})  to run in various environments to achieve Objective P3 (\ref{sec:objectives-primary}). This is further supported by the deployment (\ref{sec:design-local-env}), which must also run in multiple environments. 
 \end{flushleft}
  
 \subsubsection{Containerisation}\label{sec:design-containerisation}
 
 \begin{flushleft}
-Containerisation is defined by IBM as "encapsulating or packaging up software code and all its dependencies so that it can run uniformly and consistently on any infrastructure" \cite{containers-def}. In this context specifically, a containerised app should be considered as one that can run on any machine regardless of environment. The idea is that the new frances web app will run without the requirement of installing Python (\ref{sec:python-desc}), Apache Spark (\ref{sec:spark-desc}) or any other piece of software except the container runtime.
+Containerising the system is Objective P3 (\ref{sec:objectives-primary}) and is therefore hugely important to the project. It is defined by IBM as "encapsulating or packaging up software code and all its dependencies so that it can run uniformly and consistently on any infrastructure" \cite{containers-def}. The idea is that the new frances web app will run without the requirement of installing Python (\ref{sec:python-desc}), Apache Spark (\ref{sec:spark-desc}) or any other piece of software except the container runtime.
 \end{flushleft}
 
 \begin{flushleft}
@@ -1246,11 +1285,9 @@ The choice was made to use Docker (see \ref{sec:docker-desc}) as the framework t
 
 \subsubsection{Local Environment}\label{sec:design-local-env}
 
-To deploy the project to a local environment, the tool Docker Compose (see \ref{sec:docker-compose-desc}) was chosen. This was a natural choice because it comes packaged with the default Docker installation. By creating a YAML config file (see \ref{sec:yaml-desc}), a user can describe a number of containers with a network between them. This config file can then be run locally by a user to create the app and its dependencies \cite{docker}.
-
-\subsubsection{Cloud Platform}\label{sec:design-cloud-env}
-
-When deployed to a cloud platform, the choice was made to use the tool Terraform. This software is an IaC (Infrastructure as Code) tool which uses config files to create a deployment in the cloud. This has the benefit of being able to both deploy the project, and describe the deployment to future researchers. Furthermore, the deployment can be reproduced consistently by anyone using the Terraform command-line app \cite{terraform}.
+\begin{flushleft}
+To achieve Objective P3 (\ref{sec:objectives-primary}), we must not just containerise the app, but also deploy it to various environments. To deploy the project locally, the tool Docker Compose (see \ref{sec:docker-compose-desc}) was chosen. This was a natural choice because it comes packaged with the default Docker installation. By creating a YAML config file (see \ref{sec:yaml-desc}), a user can describe a number of containers with a network between them. This config file can then be run locally by a user to create the app and its dependencies \cite{docker}.
+\end{flushleft}
 
 \section{Implementation}\label{sec:implementation}
 
@@ -1261,51 +1298,17 @@ In this section I will cover how the project was implemented, going over the hig
 \subsection{Frontend}\label{sec:impl-frontend}
 
 \begin{flushleft}
-The frontend was implemented mostly by my partner, with myself creating the defoe queries page (\ref{sec:impl-frontend-defoe}). 
+The frontend was implemented mostly by my partner, with myself creating the defoe queries page (\ref{sec:impl-frontend-defoe}). Creating the new frontend was necessary to fulfil Objective P2 (\ref{sec:objectives-primary}), by improving the user interface with advanced features from React.
 \end{flushleft}
 
 \subsubsection{API requests}\label{sec:impl-frontend-api}
 
 \begin{flushleft}
-The frontend must send API requests to the backend to access any server functionality (see \ref{sec:system-architecture}). This was mostly implemented by my partner, with defoe requests from me. Each request has a function which serves as a wrapper for that request, as shown below.
+The frontend must send API requests to the backend to access any server functionality (see \ref{sec:system-architecture}). This is needed to include the functionality of the old frances web app, and therefore fulfil the query requirements (\ref{sec:req-functional-query}). This was mostly implemented by my partner, with defoe requests from me. Each request has a function which serves as a wrapper for that request (see \ref{appendix:frontend-query.js}).
 \end{flushleft}
 
 \begin{flushleft}
-\begin{figure}[H]
-\begin{minted}[breaklines]{javascript}
-    checkSpell(uri) {
-        const key = 'checkSpell' + uri;
-        const result = localStorage.getItem(key);
-        if (result) {
-            return new Promise((resolve => {
-                console.log('Local');
-                resolve({
-                    data: JSON.parse(result)
-                });
-            }));
-        }
-
-        return axios.post("/query/spelling_checker", {
-            resource_uri: uri,
-        }).then(response => {
-            console.log('Server');
-            try {
-                localStorage.setItem(key, JSON.stringify(response.data));
-            } catch (e) {
-                console.log(e);
-                localStorage.clear();
-            }
-
-            return response;
-        })
-    }
-\end{minted}
-\caption{How the frontend sends a spell check request}
-\end{figure}
-\end{flushleft}
-
-\begin{flushleft}
-Note that before the request is sent, the local storage is checked. This is used to cache the result of a request if needed. This is done when a request always has the same result, as it reduces load times, therefore improving the user interface as per Objective P2 (\ref{sec:objectives}). After checking local storage, the request is sent and the response cached for future requests. 
+Before the request is sent, the local storage is checked. This is used to cache the result of a request if needed. This is done when a request always has the same result, as it reduces load times, therefore improving the user interface as per Objective P2 (\ref{sec:objectives}). After checking local storage, the request is sent and the response cached for future requests. 
 \end{flushleft}
 
 \subsubsection{Authentication}\label{sec:impl-frontend-auth}
@@ -1442,7 +1445,7 @@ TODO write this section
 \subsection{Database}\label{sec:impl-database}
 
 \begin{flushleft}
-In this sub-section I will describe how the database was implemented. This database is required to store user account information as per the requirements (see \ref{sec:requirements}). This means it needs to support operations for creating accounts and logging into accounts. These operations must then be useable by the frances backend system (see \ref{sec:impl-backend}).
+In this sub-section I will describe how the database was implemented. This database is required to store user account information as per the requirements (\ref{sec:requirements}) and Objective P1 (\ref{sec:objectives-primary}). This means it needs to support operations for creating accounts and logging into accounts. These operations must then be useable by the frances backend system (see \ref{sec:impl-backend}).
 \end{flushleft}
 
 \subsubsection{Abstraction of operations}\label{sec:abstraction-of-operations}
@@ -1530,7 +1533,7 @@ This file contains a collection of SQL statements which describe the entire tabl
 \subsection{Backend}\label{sec:impl-backend}
 
 \begin{flushleft}
-In this sub-section I will describe how the backend of the frances app was implemented. This involved API creation (\ref{sec:api-creation}), API documentation and testing (\ref{sec:impl-api-doc-test}), enabling user accounts (\ref{sec:impl-enable-user-acc}) and significant work on the configuration of the backend (\ref{sec:impl-config}).
+In this sub-section I will describe how the backend of the frances app was implemented. To achieve Objective P2 (\ref{sec:objectives-primary}) we must provide a backend API for the new frontend user interface (\ref{sec:impl-frontend}) to query. Do do this, I had to create the API (\ref{sec:api-creation}) and then document and test it (\ref{sec:impl-api-doc-test}). To achieve Objective P1, I had to add new code to enable user accounts (\ref{sec:impl-enable-user-acc}). Furthermore, for Objective P3, I had to make the configuration of the backend work with multiple environments (\ref{sec:impl-config}).
 \end{flushleft}
 
 \subsubsection{API creation}\label{sec:api-creation}
@@ -1607,7 +1610,10 @@ responses:
 
 \subsubsection{Enabling user accounts}\label{sec:impl-enable-user-acc}
 
-Creating a user account system was one of the more complex parts of the system's implementation. Furthermore, it is essential to achieve Objective P1 (\ref{sec:objectives}). It involved several steps:
+\begin{flushleft}
+Creating a user account system was one of the more complex parts of the system's implementation and was essential to achieve Objective P1 (\ref{sec:objectives}). It involved several steps:
+\end{flushleft}
+
 \begin{itemize}
 \item Creation of the account records stored in the database (see \ref{sec:abstraction-of-operations}).
 \item Authorising and protecting specific routes.
@@ -1639,7 +1645,7 @@ pwd_correct = check_password_hash(user.password, password)
 \end{flushleft}
 
 \begin{flushleft}
-The above shows how password hashing works. As an account is created, its password is stored as a hash. When logging in, this is compared against a hashed version of the user's input password. The benefit of this is that the original password isn't stored in a readable format, reducing the damage if the database were to be leaked \cite{password-security}.
+The above shows how password hashing works. As an account is created, its password is stored as a hash. When logging in, this is compared against a hashed version of the user's input password. The benefit of this is that the original password isn't stored in a readable format, reducing the damage if the database were to be leaked \cite{password-security}. This is necessary to ensure the Requirement NF4 (\ref{sec:req-non-functional}).
 \end{flushleft}
 
 \paragraph{Issuing access and refresh tokens}\label{sec:access-and-refresh}
@@ -1714,7 +1720,7 @@ def profile():
 \paragraph{Problem description}
 
 \begin{flushleft}
-The pre-existing service was configured using hardcoded values within the frances application, as shown below (abridged):
+The pre-existing service was configured using hardcoded values within the frances application, as shown below (abridged).
 \end{flushleft}
 
 \begin{flushleft}
@@ -1733,7 +1739,7 @@ RESULTS_FOLDER="/Users/.../frances/web-app/query_app/defoe_results"
 \end{flushleft}
 
 \begin{flushleft}
-This form of configuration is fine for a proof-of-concept program, but it has immediate limitations which become apparent when deploying it to several diverse environments. For example, deploying the app locally for development will use a different database address from an app deployed in a Docker image on a cloud server. This principle applies to a large collection of fields which will vary depending on environment. The most difficult example is the file path to the machine learning models, which will vary on every machine the app is run on.
+This method of configuration won't work when deploying across multiple environments. For example, deploying the app locally for development will use a different database address from an app deployed in a Docker image on a cloud server. This applies to a large collection of fields which will vary depending on environment. The most difficult example is the file path to the machine learning models, which will vary on every machine the app is run on. For these reasons, the configuration of frances had to be replaced to achieve Objective P3 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
 \paragraph{Consul configuration loading}
@@ -1777,15 +1783,46 @@ The following points may need to be explained to fully understand this document:
     \item The database is configured to connect locally through the docker container network, that is why it can use the IP address "database".
 \end{itemize}
 
-\paragraph{Note on duplicate fusekiUrl}
+\paragraph{Duplicate fusekiUrl}
 
 \begin{flushleft}
 You may notice that "fusekiUrl" is included twice in the config. This is not a mistake. It is instead because they could in-theory be running on different machines. If Frances runs within a docker network, and sends query requests to an Apache Spark cluster outside that network, the two URLs will be different because Spark will be accessing Fuseki externally. 
 \end{flushleft}
 
+\paragraph{Remote config}\label{sec:impl-config-remote}
+
+\begin{flushleft}
+It should also be noted that the configuration is slightly different if frances is configured with a remote Spark master. In this scenario, it looks like the following.
+\end{flushleft}
+
+\begin{flushleft}
+\begin{figure}[H]
+\begin{minted}{json}
+...
+  "defoe": {
+    "sparkUrl": "spark://spark:7077",
+    "fusekiUrl": "http://fuseki:3030/total_eb/sparql",
+    "remote": {
+      "module": "/app/frances-api/defoe_lib.zip",
+      "environment": "/app/frances-api/defoe_lib.tar.gz",
+      "driverHost": "123.456.789.1011"
+    }
+  },
+...
+\end{minted}
+\caption{An example of a remote frances config (\ref{appendix:deploy-remote-config.json})}
+\end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+In this config, the module and environment fields set the paths to the archives required by Spark to run remotely. These files can be built easily by a script included in defoe (\ref{appendix:defoe-build.sh}).
+\end{flushleft}
+
 \subsubsection{Removing redundant files}\label{sec:impl-backend-redundant}
 
-There were a huge number of redundant files that existed in the frances web app code that made the codebase extremely messy. The largest example was the existence of a Node.js server \footnote{Node.js: https://nodejs.org/en/} which did not serve any clear purpose and was therefore deleted. This included the following files:
+\begin{flushleft}
+There were a huge number of redundant files that existed in the frances web app code that made the codebase extremely messy. The largest example was the existence of a Node.js server \footnote{https://nodejs.org/en/} which did not serve any clear purpose and was therefore deleted. This reduced the time to build container images, enabling Objective P3 (\ref{sec:objectives-primary}). This included the following files:
+\end{flushleft}
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -1807,7 +1844,7 @@ web-app/query_app/package.json
 \subsection{Defoe Library}\label{sec:impl-defoe}
 
 \begin{flushleft}
-In this sub-section I will describe how the defoe library (\ref{sec:defoe-desc}) was changed to accommodate this project. This required significantly changing the execution of defoe (\ref{sec:impl-workflow-exec}), changing where defoe queries were processed (\ref{sec:impl-defoe-location}), creating an executor to handle job submissions (\ref{sec:impl-executor}), updating how defoe finds query functions from query names (\ref{sec:query-name-res}), and fixing a query name spelling mistake (\ref{sec:impl-spelling-mistake}).
+In this sub-section I will describe how the defoe library (\ref{sec:defoe-desc}) was changed to achieve the objectives. Objective P1 (\ref{sec:objectives-primary}), which involves having multiple user accounts, required defoe to be updated so users are separated from each other (\ref{sec:impl-workflow-exec}) and the creation of a system to manage defoe submissions from many users concurrently (\ref{sec:impl-executor}). Objective P3 (\ref{sec:objectives-primary}), which involves containerisation, required query name resolution to be replaced (\ref{sec:query-name-res}) and defoe's execution location to be updated to work on different environments (\ref{sec:impl-defoe-location}).
 \end{flushleft}
 
 \subsubsection{Execution workflow update}\label{sec:impl-workflow-exec}
@@ -1838,13 +1875,17 @@ This looked like the following in the code when running defoe:
 \end{figure}
 \end{flushleft}
 
-This sequence presented several problems which were removed in the final implementation:
-\begin{itemize}
+This sequence presented several problems which conflicted with the objectives (\ref{sec:objectives-primary}):
+\begin{enumerate}
 \item With many concurrent users, a single results file can not be used across them. This is because new queries will overwrite the results of previous queries.
 \item Apache Spark was being run locally in a process created by the PySpark driver. This is a problem because it will be ended when the command line process ends, meaning all logs stored by Spark are lost.
 \item Using spark-submit from the command line presents a large security risk. Malicious actors could conceivably inject their own commands, doing operations such as deleting user data.
-\item Compressing defoe to a zip file is a manual and time consuming step in the development workflow.
-\end{itemize}
+\item Defoe can only be run locally, meaning some environments with separate Apache Spark clusters are not supported.
+\end{enumerate}
+
+\begin{flushleft}
+Problems 1, 2 and 3 all make it difficult to have multiple users using defoe at once, stopping Objective P1. Also, Problem 4 will block Objective P3, as we can't run on many environments. Therefore, these problems must all be solved to fulfil the objectives.
+\end{flushleft}
 
 \paragraph{Loading files abstraction}
 
@@ -1882,6 +1923,10 @@ The updates to the code were done in all the query files, which was time consumi
 \end{minted}
 \caption{The difference between the old and new config handling in terms\_snippet\_keysearch\_by\_year.py}
 \end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+Now that parameters aren't taken as files anymore, we don't need to worry about conflicting files between multiple users, achieving Objective P1 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
 \paragraph{Conversion to Python modules}
@@ -1929,14 +1974,14 @@ After these updates, running defoe looks like the following in the code:
 \end{figure}
 \end{flushleft}
 
+\begin{flushleft}
+The fact that we now call defoe in this way gives increasing flexibility to the environment we configure for it, achieving Objective P3 (\ref{sec:objectives-primary}). If running with a separate Apache Spark cluster (e.g. in a cloud environment), we can zip the required  defoe files (see \ref{appendix:defoe-build.sh}) and configure the Spark master as a remote (\ref{sec:impl-config-remote}). Alternatively, if we want to run defoe locally, we just use a local config instead (see \ref{sec:impl-config}).
+\end{flushleft}
+
 \subsubsection{Processing location change}\label{sec:impl-defoe-location}
 
 \begin{flushleft}
-To solve the problems discussed previously (see \ref{sec:problem-desc}), the execution of defoe was simplified significantly. This involves defoe being imported directly by the frances project within the Python runtime (see \hyperref[sec:convert-to-modules]{Conversion to Python modules}). This means that the defoe code runs in the same process as the frances backend API. However, to reduce load on the backend, defoe can be configured with a Spark Master URL which is then passed to the PySpark driver. This is used when deploying to a cloud environment because Apache Spark could be running on a separate machine or cluster. This has the effect of offloading defoe query computation to a node separate from the backend server.
-\end{flushleft}
-
-\begin{flushleft}
-It should be noted that the communication between the PySpark driver and Apache Spark is done using RPCs (Remote Procedure Calls). Initially in our design, it had been planned to create a separate defoe service which would expose an RPC server to queries. This service would then submit the defoe computation to Apache Spark. However, it makes more sense to include the driver in frances, as it avoids the redundant intermediate request from frances to defoe to Apache Spark.
+To solve the problem blocking Objective P3 (see \ref{sec:problem-desc}), the execution of defoe was upda. This involves defoe being imported directly by the frances project within the Python runtime (see \ref{sec:convert-to-modules}). This means that the defoe code runs in the same process as the frances backend API. However, to reduce load on the backend, defoe can be configured with a Spark Master URL which is then passed to the PySpark driver. This is used when deploying to a cloud environment because Apache Spark could be running on a separate machine or cluster. This has the effect of offloading defoe query computation to a node separate from the backend server.
 \end{flushleft}
 
 \subsubsection{Create basic executor}\label{sec:impl-executor}
@@ -1944,7 +1989,7 @@ It should be noted that the communication between the PySpark driver and Apache 
 \paragraph{Problem Description}\label{sec:executor-problem-desc}
 
 \begin{flushleft}
-The requirements of this project (see \ref{sec:requirements}) need many defoe jobs to be executed concurrently for multiple users. This is not a simple task as the pre-existing project supported only a single query at once. To track the progress of each query, the Spark API could be used, but this is not desirable for a number of reasons:
+Objective P1 of this project (\ref{sec:objectives-primary}) needs many defoe jobs to be executed concurrently for multiple users. This is not a simple task as the pre-existing project supported only a single query at once. To track the progress of each query, the Spark API could be used, but this is not desirable for a number of reasons:
 \end{flushleft}
 
 \begin{itemize}
@@ -2092,7 +2137,7 @@ The pre-existing defoe code used string-based importing of module and function n
 \end{flushleft}
 
 \begin{flushleft}
-This is a terrible idea because it will not work when the Python command is run in a different directory (e.g. when defoe is imported as a module). If you do that as I did (see \ref{snippet:new-run-frances}) then defoe will crash when it cannot find the query requested. We could hardcode a new path from that new directory, but we run into the same problem again when testing defoe on its own, or running in a different context.
+This is a terrible idea because it will not work when the Python command is run in a different directory (e.g. when defoe is imported as a module). If you do that as I did (see \ref{snippet:new-run-frances}) then defoe will crash when it cannot find the query requested. We could hardcode a new path from that new directory, but we run into the same problem again when testing defoe on its own, or running in a different context. This must be solved to achieve Objective P3 (\ref{sec:objectives-primary}), as different deployments will inevitably run the module from different directories.
 \end{flushleft}
 
 \begin{flushleft}
@@ -2156,56 +2201,39 @@ Using both of these, the app can then map from a string such as "sparql.frequenc
 
 \subsubsection{Fix frequency keysearch spelling mistake}\label{sec:impl-spelling-mistake}
 
-The query file frequency\_keyseach\_by\_year.py was missing the letter "r" which caused some problems with testing and execution. This was fixed by renaming it to frequency\_keysearch\_by\_year.py. Note that due to how query name resolution was setup (see \ref{sec:query-name-res}) this also changes the required parameters for defoe. One of the example commands used this query name, and will cause an error message unless you've updated it.
+\begin{flushleft}
+The query file frequency\_keyseach\_by\_year.py was missing the letter "r" which caused some problems with testing and execution. This was fixed by renaming it to frequency\_keysearch\_by\_year.py. Note that due to how query name resolution was setup (see \ref{sec:query-name-res}) this also changes the required parameters for defoe. One of the example commands used this query name, and will cause an error message unless you've updated it. This doesn't help achieve any objectives but is useful nonetheless.
+\end{flushleft}
 
 \subsection{Deployment}\label{sec:impl-deployment}
 
 \begin{flushleft}
-In this sub-section I will describe how I implemented the deployment of the app. This includes the containerisation (\ref{sec:impl-containerisation}), along with the modifications made to the installation to make it easier to create. It also includes the deployment steps created for both local (\ref{sec:impl-deploy-local}) and cloud environments (\ref{sec:impl-deploy-cloud}).
+In this sub-section I will describe how I implemented the deployment of the app. This section is necessary to achieve Objective P3 (\ref{sec:objectives-primary}), as working on multiple environments is done by containerising the application (\ref{sec:impl-containerisation}), and then deploying using a Docker Compose file (\ref{sec:impl-deploy-local}).
 \end{flushleft}
 
 \subsubsection{Containerisation}\label{sec:impl-containerisation}
 
 \paragraph{Docker Image}
 
+\begin{flushleft}
 The frances application was containerised in a Docker image (see \ref{sec:docker-desc}). A Linux OS with Python was used as the base image, with the dependencies for frances and defoe installed afterwards. 
+\end{flushleft}
 
 \paragraph{Installation simplified}
 
+\begin{flushleft}
 Creating the Docker image was made easier by the simplification of the installation process. The Conda Python environment had previously been required to install defoe, but was removed entirely in our version. Furthermore, the previous work had both requirements.txt files and requirements.sh scripts which would install dependencies. These were condensed into only requirements.txt files which can be installed by the stock Python dependency manager. Overall this makes the installation process far easier.
+\end{flushleft}
 
 \paragraph{Default config script}\label{sec:impl-default-config}
 
-The container is likely to be deployed to a fresh installation in a variety of contexts. For example, if a new user wants to use frances locally. In this scenario, the frances container will look for a configuration and find nothing, causing it to crash. To avoid this, I included a Bash script in the container to push a default configuration to Consul when none exists. This looks like the following:
-
 \begin{flushleft}
-\begin{figure}[H]
-\begin{minted}{bash}
-# Address within a docker network
-consul_addr="consul"
-
-config_file="./data/config.json"
-consul_url="http://${consul_addr}:8500/v1/kv/frances/config"
-
-# Check consul for the uploaded config
-consul_response=$(
-  curl -X GET $consul_url \
-  --write-out \%{http_code} \
-  --silent \
-  --output /dev/null
-  )
-
-# If needed, set consul key/value
-if [[ "$consul_response" == 404 ]] ; then
-  consul_config=`cat ${config_file}`
-  curl -X PUT -d "$consul_config" $consul_url
-fi
-\end{minted}
-\caption{Bash code (see \ref{sec:bash-desc}) the new frances web app installs the default configuration}
-\end{figure}
+The container is likely to be deployed to a fresh installation in a variety of contexts. For example, if a new user wants to use frances locally. In this scenario, the frances container will look for a configuration and find nothing, causing it to crash. To avoid this, I included a Bash script in the container to push a default configuration to Consul when none exists. The code (see \ref{appendix:deploy-install-config.sh}) is fairly straightforward. It sends a HTTP GET request to Consul, with the key "frances/config" as a parameter. If the server returns a not found error, it sends a PUT request which stores the config in Consul.
 \end{flushleft}
 
-This script fits incredibly cleanly into the Docker startup process. The following entry point is set in the Dockerfile:
+\begin{flushleft}
+This script fits cleanly into the Docker startup process. The following entry point is set in the Dockerfile:
+\end{flushleft}
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -2231,7 +2259,7 @@ python3 -m frances-api.web_app
 \end{figure}
 \end{flushleft}
 
-\subsubsection{Local environment}\label{sec:impl-deploy-local}
+\subsubsection{Compose file}\label{sec:impl-deploy-local}
 
 \begin{flushleft}
 To deploy the frances app to a local environment, I used Docker Compose (see \ref{sec:docker-compose-desc}). This allowed me to define the containers that make up the local deployment and their relationships in the network.
@@ -2245,13 +2273,55 @@ In this file (\ref{appendix:docker-compose.local.yml}) I defined all the service
 One important part of Docker Compose to understand is that each service is put on the same network by default \cite{docker-compose-example}. In this case, each container IP address can be resolved internally using the service name. This is why the Docker Compose file (\ref{appendix:docker-compose.local.yml}) has some service addresses (e.g. "consul:5000") that will only resolve within the network. 
 \end{flushleft}
 
-\subsubsection{Cloud platform}\label{sec:impl-deploy-cloud}
+\section{Evaluation}\label{sec:evaluation}
+
+\begin{flushleft}
+In this section I will be judging whether the project has met the Objectives (\ref{sec:objectives}) and Requirements (\ref{sec:requirements}) defined earlier in this report.
+\end{flushleft}
+
+\subsection{Objectives}
+\subsubsection{Primary}
+
+\begin{displayquote}
+P1 - Create a user account system, which supports separation of user data (collections, queries, etc).
+\end{displayquote}
+
+This objective has been achieved, as we have designed (\ref{sec:}) and implemented an account system (\ref{sec:}) which supports these features.
+
+\begin{displayquote}
+P2 - Make improvements to the pre-existing user interface in terms of look and feel, usability, etc.
+\end{displayquote}
+
+This is a subjective objective, but arguably has been achieved
+visualise and spell check buttons
+
+\begin{displayquote}
+P3 - Containerise the system so it can be deployed to various environments (locally, cloud server, etc).
+\end{displayquote}
+
+This has been achieved
+we have tested this on 3 machines
+can be deployed easily by downloading and running the docker image
+
+\begin{displayquote}
+P4 - Evaluate the look and feel of the system’s user interface compared to the pre-existing system.
+\end{displayquote}
 
 TODO write
 
-\section{Evaluation}\label{sec:evaluation}
-e.g. containerisation, has this been achieved? we have tested this on 3 machines
-can be deployed easily by downloading and running the docker image
+\subsubsection{Secondary}
+
+Neither of the following secondary objectives (\ref{sec:objectives-secondary}) have been achieved, mainly due to time constraints with the project. However, these objectives 
+
+\begin{displayquote}
+S1 - Increase the speed of term searches by using elastic search on the backend rather than text file scanning.
+\end{displayquote}
+
+\begin{displayquote}
+S2 - Add support for an additional digital collection from NLS, creating a new knowledge graph and making it compatible with some features of frances, e.g. defoe.
+\end{displayquote}
+
+\subsection{Requirements}
 
 defoe queries, submit query and compare results to previous defoe
 now defoe runs with different knowledge graphs
@@ -2259,10 +2329,15 @@ now defoe runs with different knowledge graphs
 TODO writeup
 
 \section{Future work}
-cloud platform deployment using Terraform
+
+cloud platform deployment using Terraform \footnote{https://www.terraform.io/docs} \cite{terraform}
+manage a Kubernetes cluster \footnote{https://kubernetes.io/} \cite{kubernetes}
+already enabled by using Consul for configuration (see \ref{sec:impl-config})
 offer this service to the public
 
-
+elastic search for text files
+add support for additional collections
+secondary objectives S1 and S2 (\ref{sec:objectives})
 
 TODO write
 
@@ -2275,12 +2350,13 @@ TODO write
 
 \appendix
 \section{Project Code}\label{appendix:project-code}
-
 \subsection{Frontend}
 
 \subsubsection{auth.js}\label{appendix:auth.js}
 
 \begin{minted}[breaklines]{javascript}
+$ TODO remove dollar sign, temp wordcount fix
+
 import axios, {axiosPrivate} from "./axios";
 import Cookies from 'js-cookie'
 
@@ -2326,6 +2402,278 @@ class AuthAPI {
 }
 \end{minted}
 
+\subsubsection{query.js}\label{appendix:frontend-query.js}
+
+\begin{minted}[breaklines]{javascript}
+import axios from "./axios";
+
+class QueryAPI {
+    searchTerm(term, page = 1) {
+        const key = 'searchTerm' + term + page;
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return axios.post("/query/term_search", {
+            search: term,
+            page: page
+        }).then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })
+    }
+
+    searchSimilarTerms(resource_uri, page = 1) {
+        const key = 'searchSimilarTerms' + resource_uri + page;
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return axios.post("/query/similar_terms", {
+            resource_uri: resource_uri,
+            page: page
+        }).then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+            return response;
+        })
+    }
+
+    searchTopicModels(model_name_or_number, page = 1) {
+        const key = 'searchTopicModels' + model_name_or_number + page;
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return axios.post("/query/topic_modelling", {
+            topic_name: model_name_or_number,
+            page: page
+        }).then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })
+    }
+
+    checkSpell(uri) {
+        const key = 'checkSpell' + uri;
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return axios.post("/query/spelling_checker", {
+            resource_uri: uri,
+        }).then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })
+    }
+
+    visualise(uri) {
+        const key = 'visualise' + uri;
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return axios.post("/query/visualization_resources", {
+            resource_uri: uri,
+        }).then(response => {
+            console.log('server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })
+    }
+
+    getAllCollectionName() {
+        const key = 'allCollectionNames';
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return new Promise((resolve => {
+            // fake server call
+            const collectionNames = [
+                'Encyclopaedia Britannica (1768-1860)',
+                'Chapbooks printed in Scotland',
+                'Ladies’ Edinburgh Debating Society'
+            ]
+            resolve({
+                data: collectionNames
+            });
+        }));
+
+        /*return axios.post("/query/allCollectionName").then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })*/
+    }
+
+    getAllEditionNameFromEB() {
+        const key = 'allEditionNamesFromEB';
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return new Promise((resolve => {
+            // fake server call
+            const editionNames = [
+                'Encyclopaedia Britannica (1768-1860)',
+                'Chapbooks printed in Scotland',
+                'Ladies’ Edinburgh Debating Society'
+            ]
+            resolve({
+                data: editionNames
+            });
+        }));
+
+        /*return axios.post("/query/allEditionNames").then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })*/
+    }
+
+    getAllDefoeQueries() {
+        const key = "defoe-queries";
+        const result = localStorage.getItem(key);
+        if (result) {
+            return new Promise((resolve => {
+                console.log('Local');
+                resolve({
+                    data: JSON.parse(result)
+                });
+            }));
+        }
+
+        return axios.get("http://34.125.20.38:5000/api/v1/query/defoe_list").then(response => {
+            console.log('Server');
+            try {
+                localStorage.setItem(key, JSON.stringify(response.data));
+            } catch (e) {
+                console.log(e);
+                localStorage.clear();
+            }
+
+            return response;
+        })
+    }
+
+    uploadFile(file) {
+        return axios.post("http://34.125.20.38:5000/api/v1/query/upload", {
+            file: file,
+        },{
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then(response => {
+            return response;
+        })
+    }
+
+    submitDefoeQuery(data) {
+        return axios.post("/defoe_submit", data).then(response => {
+            return response;
+        })
+    }
+
+    getDefoeQueryStatus(id) {
+        return axios.get("/defoe_status", {
+            params: {
+                id: id,
+            },
+        }).then(response => {
+            return response;
+        })
+    }
+
+}
+\end{minted}
 
 \subsection{Database}
 \subsubsection{tables.sql}\label{appendix:tables.sql}
@@ -2735,6 +3083,81 @@ services:
       - "consul"
       - "database"
       - "fuseki"
+\end{minted}
+
+\subsubsection{remote-config.json}\label{appendix:deploy-remote-config.json}
+
+\begin{minted}{json}
+{
+  "frances": {
+    "fusekiUrl": "http://fuseki:3030/total_eb/sparql",
+    "files": {
+      "uploads": "/app/frances-api/web_app/query_app/upload_folder",
+      "results": "/app/frances-api/web_app/query_app/defoe_results",
+      "models": "/app/frances-api/web_app/models"
+    }
+  },
+  "defoe": {
+    "sparkUrl": "spark://spark:7077",
+    "fusekiUrl": "http://fuseki:3030/total_eb/sparql",
+    "remote": {
+      "module": "/app/frances-api/defoe_lib.zip",
+      "environment": "/app/frances-api/defoe_lib.tar.gz",
+      "driverHost": "123.456.789.1011"
+    }
+  },
+  "database": {
+    "host": "database",
+    "user": "frances",
+    "password": "frances"
+  }
+\end{minted}
+
+\subsubsection{install\_config.sh}\label{appendix:deploy-install-config.sh}
+
+\begin{minted}{bash}
+# Address within a docker network
+consul_addr="consul"
+
+config_file="./data/config.json"
+consul_url="http://${consul_addr}:8500/v1/kv/frances/config"
+
+# Check consul for the uploaded config
+consul_response=$(
+  curl -X GET $consul_url \
+  --write-out \%{http_code} \
+  --silent \
+  --output /dev/null
+  )
+
+# If needed, set consul key/value
+if [[ "$consul_response" == 404 ]] ; then
+  consul_config=`cat ${config_file}`
+  curl -X PUT -d "$consul_config" $consul_url
+fi
+\end{minted}
+
+\subsection{Defoe}
+\subsubsection{build.sh}\label{appendix:defoe-build.sh}
+
+\begin{minted}{bash}
+#!/bin/sh
+
+requirements=$1
+if [[ -z "$requirements" ]] ; then
+  requirements="requirements.txt"
+fi
+
+python3 -m venv defoe_env
+source defoe_env/bin/activate
+pip3 install -r $requirements
+venv-pack -o defoe_env.tar.gz
+
+targetDir=$2
+if [[ -z "$targetDir" ]] ; then
+  targetDir="./defoe_lib"
+fi
+zip -r defoe_lib.zip $targetDir
 \end{minted}
 
 \end{document}

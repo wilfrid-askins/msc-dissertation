@@ -1,0 +1,270 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{import} \PYG{n+nx}{axios} \PYG{n+nx}{from} \PYG{l+s+s2}{\PYGZdq{}./axios\PYGZdq{}}\PYG{p}{;}
+
+\PYG{k+kd}{class} \PYG{n+nx}{QueryAPI} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{searchTerm}\PYG{p}{(}\PYG{n+nx}{term}\PYG{p}{,} \PYG{n+nx}{page} \PYG{o}{=} \PYG{l+m+mf}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}searchTerm\PYGZsq{}} \PYG{o}{+} \PYG{n+nx}{term} \PYG{o}{+} \PYG{n+nx}{page}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/query/term\PYGZus{}search\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{search}\PYG{o}{:} \PYG{n+nx}{term}\PYG{p}{,}
+            \PYG{n+nx}{page}\PYG{o}{:} \PYG{n+nx}{page}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{searchSimilarTerms}\PYG{p}{(}\PYG{n+nx}{resource\PYGZus{}uri}\PYG{p}{,} \PYG{n+nx}{page} \PYG{o}{=} \PYG{l+m+mf}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}searchSimilarTerms\PYGZsq{}} \PYG{o}{+} \PYG{n+nx}{resource\PYGZus{}uri} \PYG{o}{+} \PYG{n+nx}{page}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/query/similar\PYGZus{}terms\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{resource\PYGZus{}uri}\PYG{o}{:} \PYG{n+nx}{resource\PYGZus{}uri}\PYG{p}{,}
+            \PYG{n+nx}{page}\PYG{o}{:} \PYG{n+nx}{page}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{searchTopicModels}\PYG{p}{(}\PYG{n+nx}{model\PYGZus{}name\PYGZus{}or\PYGZus{}number}\PYG{p}{,} \PYG{n+nx}{page} \PYG{o}{=} \PYG{l+m+mf}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}searchTopicModels\PYGZsq{}} \PYG{o}{+} \PYG{n+nx}{model\PYGZus{}name\PYGZus{}or\PYGZus{}number} \PYG{o}{+} \PYG{n+nx}{page}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/query/topic\PYGZus{}modelling\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{topic\PYGZus{}name}\PYG{o}{:} \PYG{n+nx}{model\PYGZus{}name\PYGZus{}or\PYGZus{}number}\PYG{p}{,}
+            \PYG{n+nx}{page}\PYG{o}{:} \PYG{n+nx}{page}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{checkSpell}\PYG{p}{(}\PYG{n+nx}{uri}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}checkSpell\PYGZsq{}} \PYG{o}{+} \PYG{n+nx}{uri}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/query/spelling\PYGZus{}checker\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{resource\PYGZus{}uri}\PYG{o}{:} \PYG{n+nx}{uri}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{visualise}\PYG{p}{(}\PYG{n+nx}{uri}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}visualise\PYGZsq{}} \PYG{o}{+} \PYG{n+nx}{uri}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/query/visualization\PYGZus{}resources\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{resource\PYGZus{}uri}\PYG{o}{:} \PYG{n+nx}{uri}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{getAllCollectionName}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}allCollectionNames\PYGZsq{}}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// fake server call}
+            \PYG{k+kd}{const} \PYG{n+nx}{collectionNames} \PYG{o}{=} \PYG{p}{[}
+                \PYG{l+s+s1}{\PYGZsq{}Encyclopaedia Britannica (1768\PYGZhy{}1860)\PYGZsq{}}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}Chapbooks printed in Scotland\PYGZsq{}}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}Ladies’ Edinburgh Debating Society\PYGZsq{}}
+            \PYG{p}{]}
+            \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{collectionNames}
+            \PYG{p}{\PYGZcb{});}
+        \PYG{p}{\PYGZcb{}));}
+
+        \PYG{c+cm}{/*return axios.post(\PYGZdq{}/query/allCollectionName\PYGZdq{}).then(response =\PYGZgt{} \PYGZob{}}
+\PYG{c+cm}{            console.log(\PYGZsq{}Server\PYGZsq{});}
+\PYG{c+cm}{            try \PYGZob{}}
+\PYG{c+cm}{                localStorage.setItem(key, JSON.stringify(response.data));}
+\PYG{c+cm}{            \PYGZcb{} catch (e) \PYGZob{}}
+\PYG{c+cm}{                console.log(e);}
+\PYG{c+cm}{                localStorage.clear();}
+\PYG{c+cm}{            \PYGZcb{}}
+
+\PYG{c+cm}{            return response;}
+\PYG{c+cm}{        \PYGZcb{})*/}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{getAllEditionNameFromEB}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}allEditionNamesFromEB\PYGZsq{}}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{// fake server call}
+            \PYG{k+kd}{const} \PYG{n+nx}{editionNames} \PYG{o}{=} \PYG{p}{[}
+                \PYG{l+s+s1}{\PYGZsq{}Encyclopaedia Britannica (1768\PYGZhy{}1860)\PYGZsq{}}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}Chapbooks printed in Scotland\PYGZsq{}}\PYG{p}{,}
+                \PYG{l+s+s1}{\PYGZsq{}Ladies’ Edinburgh Debating Society\PYGZsq{}}
+            \PYG{p}{]}
+            \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{editionNames}
+            \PYG{p}{\PYGZcb{});}
+        \PYG{p}{\PYGZcb{}));}
+
+        \PYG{c+cm}{/*return axios.post(\PYGZdq{}/query/allEditionNames\PYGZdq{}).then(response =\PYGZgt{} \PYGZob{}}
+\PYG{c+cm}{            console.log(\PYGZsq{}Server\PYGZsq{});}
+\PYG{c+cm}{            try \PYGZob{}}
+\PYG{c+cm}{                localStorage.setItem(key, JSON.stringify(response.data));}
+\PYG{c+cm}{            \PYGZcb{} catch (e) \PYGZob{}}
+\PYG{c+cm}{                console.log(e);}
+\PYG{c+cm}{                localStorage.clear();}
+\PYG{c+cm}{            \PYGZcb{}}
+
+\PYG{c+cm}{            return response;}
+\PYG{c+cm}{        \PYGZcb{})*/}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{getAllDefoeQueries}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{const} \PYG{n+nx}{key} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}defoe\PYGZhy{}queries\PYGZdq{}}\PYG{p}{;}
+        \PYG{k+kd}{const} \PYG{n+nx}{result} \PYG{o}{=} \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{getItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k}{new} \PYG{n+nb}{Promise}\PYG{p}{((}\PYG{n+nx}{resolve} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Local\PYGZsq{}}\PYG{p}{);}
+                \PYG{n+nx}{resolve}\PYG{p}{(\PYGZob{}}
+                    \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{parse}\PYG{p}{(}\PYG{n+nx}{result}\PYG{p}{)}
+                \PYG{p}{\PYGZcb{});}
+            \PYG{p}{\PYGZcb{}));}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}http://34.125.20.38:5000/api/v1/query/defoe\PYGZus{}list\PYGZdq{}}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Server\PYGZsq{}}\PYG{p}{);}
+            \PYG{k}{try} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{setItem}\PYG{p}{(}\PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{);}
+                \PYG{n+nx}{localStorage}\PYG{p}{.}\PYG{n+nx}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{uploadFile}\PYG{p}{(}\PYG{n+nx}{file}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}http://34.125.20.38:5000/api/v1/query/upload\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{file}\PYG{o}{:} \PYG{n+nx}{file}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{},\PYGZob{}}
+            \PYG{n+nx}{headers}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s1}{\PYGZsq{}Content\PYGZhy{}Type\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}multipart/form\PYGZhy{}data\PYGZsq{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{submitDefoeQuery}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/defoe\PYGZus{}submit\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{data}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n+nx}{getDefoeQueryStatus}\PYG{p}{(}\PYG{n+nx}{id}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{n+nx}{axios}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/defoe\PYGZus{}status\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{n+nx}{params}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{n+nx}{id}\PYG{o}{:} \PYG{n+nx}{id}\PYG{p}{,}
+            \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZcb{}).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{n+nx}{response}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{})}
+    \PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

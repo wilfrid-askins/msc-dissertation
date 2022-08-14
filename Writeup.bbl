@@ -24,6 +24,14 @@ Grigoris Antoniou and Frank Van~Harmelen.
 \newblock {\em A semantic web primer}.
 \newblock MIT press, 2004.
 
+\bibitem{password-security}
+Dan Arias.
+\newblock {Hashing Passwords: One-Way Road to Security}.
+\newblock
+  \url{https://auth0.com/blog/hashing-passwords-one-way-road-to-security/},
+  2019.
+\newblock [Online; accessed 14-August-2022].
+
 \bibitem{oauth-2}
 Dan Arias and Sam Bellen.
 \newblock {What Are Refresh Tokens and How to Use Them Securely}.
@@ -279,6 +287,18 @@ HashiCorp Limited.
 \newblock {Use Case - Discover Services with Consul}.
 \newblock \url{https://www.consul.io/use-cases/discover-services}, 2022.
 \newblock [Online; accessed 04-August-2022].
+
+\bibitem{kubernetes}
+Google LLC.
+\newblock {Google Cloud - What is Kubernetes?}
+\newblock \url{https://cloud.google.com/learn/what-is-kubernetes}, 2022.
+\newblock [Online; accessed 14-August-2022].
+
+\bibitem{web-usability}
+Maristella Matera, Francesca Rizzo, and Giovanni Carughi.
+\newblock {\em Web Usability: Principles and Evaluation Methods}, pages
+  143--180.
+\newblock 03 2006.
 
 \bibitem{react-desc}
 Inc Meta~Platforms.

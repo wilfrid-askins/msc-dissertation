@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{...}
+  \PYG{n+nt}{\PYGZdq{}defoe\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+    \PYG{n+nt}{\PYGZdq{}sparkUrl\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}spark://spark:7077\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nt}{\PYGZdq{}fusekiUrl\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}http://fuseki:3030/total\PYGZus{}eb/sparql\PYGZdq{}}\PYG{p}{,}
+    \PYG{n+nt}{\PYGZdq{}remote\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+      \PYG{n+nt}{\PYGZdq{}module\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}/app/frances\PYGZhy{}api/defoe\PYGZus{}lib.zip\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}environment\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}/app/frances\PYGZhy{}api/defoe\PYGZus{}lib.tar.gz\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nt}{\PYGZdq{}driverHost\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}123.456.789.1011\PYGZdq{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{},}
+\PYG{err}{...}
+\end{Verbatim}

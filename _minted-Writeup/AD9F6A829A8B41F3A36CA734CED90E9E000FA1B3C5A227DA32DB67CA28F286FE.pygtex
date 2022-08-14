@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/sh}
+
+\PYG{n+nv}{requirements}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}1}
+\PYG{k}{if} \PYG{o}{[[} \PYGZhy{}z \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}requirements}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{]]} \PYG{p}{;} \PYG{k}{then}
+  \PYG{n+nv}{requirements}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}requirements.txt\PYGZdq{}}
+\PYG{k}{fi}
+
+python3 \PYGZhy{}m venv defoe\PYGZus{}env
+\PYG{n+nb}{source} defoe\PYGZus{}env/bin/activate
+pip3 install \PYGZhy{}r \PYG{n+nv}{\PYGZdl{}requirements}
+venv\PYGZhy{}pack \PYGZhy{}o defoe\PYGZus{}env.tar.gz
+
+\PYG{n+nv}{targetDir}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}2}
+\PYG{k}{if} \PYG{o}{[[} \PYGZhy{}z \PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}targetDir}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{]]} \PYG{p}{;} \PYG{k}{then}
+  \PYG{n+nv}{targetDir}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}./defoe\PYGZus{}lib\PYGZdq{}}
+\PYG{k}{fi}
+zip \PYGZhy{}r defoe\PYGZus{}lib.zip \PYG{n+nv}{\PYGZdl{}targetDir}
+\end{Verbatim}
