@@ -142,21 +142,7 @@ It is difficult to understand what the Semantic Web might look like without seei
 \begin{flushleft}
 \begin{figure}[H]
 \centering
-\begin{minted}{text}
-<h1>Agilitas Physiotherapy Centre</h1>
-Welcome to the home page of the Agilitas Physiotherapy Centre.
-Do you feel pain? Have you had an injury? Let our staff
-Lisa Davenport, Kelly Townsend (our lovely secretary)
-and Steve Matthews take care of your body and soul.
-Mon 11am - 7pm <br>
-Tue 11am - 7pm <br>
-Wed 3pm - 7pm <br>
-Thu 11am - 7pm <br>
-Fri 11am - 3pm <br>
-But note that we do not offer consultation
-during the weeks of the
-<a href="...">State Of Origin</a> games.
-\end{minted}
+\includegraphics[width=\textwidth]{semantic-before}
 \caption{An example web page for a physiotherapist \cite{semantic-web-primer}}
 \end{figure}
 \end{flushleft}
@@ -168,17 +154,7 @@ Whereas the following is the Semantic Web equivalent:
 \begin{flushleft}
 \begin{figure}[H]
 \centering
-\begin{minted}{text}
-<company>
-	<treatmentOffered>Physiotherapy</treatmentOffered>
-	<companyName>Agilitas Physiotherapy Centre</companyName>
-	<staff>
-		<therapist>Lisa Davenport</therapist>
-		<therapist>Steve Matthews</therapist>
-		<secretary>Kelly Townsend</secretary>
-	</staff>
-</company>
-\end{minted}
+\includegraphics[width=\textwidth]{semantic-after}
 \caption{An example of a Semantic Web page \cite{semantic-web-primer}}
 \end{figure}
 \end{flushleft}
@@ -200,7 +176,7 @@ In deploying the app, Docker (\ref{sec:docker-desc})  will be used to containeri
 \end{flushleft}
 
 \begin{flushleft}
-The app frontend will be created using React (\ref{sec:react-desc}), replacing the previous HTML templates (\ref{sec:html-desc}). Users of the frontend app will then be authenticated using JWT (\ref{sec:jwt-desc}).
+The app frontend will be created using React (\ref{sec:react-desc}), replacing the previous HTML templates (\ref{sec:flask-desc}). Users of the frontend app will then be authenticated using JWT (\ref{sec:jwt-desc}).
 \end{flushleft}
 
 \subsubsection{Python}\label{sec:python-desc}
@@ -393,44 +369,6 @@ Nice to meet you
 \end{figure}
 \end{flushleft}
 
-\subsubsection{HTML (HyperText Markup Language)}\label{sec:html-desc}
-
-\begin{flushleft}
-HTML is a language designed to define the structure of content on the web. All web pages are written in HTML which is then rendered and displayed by a web browser \cite{html-desc}. HTML is relevant to this project because the pre-existing frances web app was a server which would return HTML on requests (see \ref{sec:api-creation}).
-\end{flushleft}
-
-\begin{flushleft}
-\begin{figure}[H]
-\begin{minted}[breaklines]{html}
-<!doctype html>
-<html>
-  <h1>Phone company</h1>
-  <body>
-    <p>
-      This is my phone company's website. We sell all kinds of <b>phones, accessories and more!</b>
-    </p>
-    <p>
-      Buy from us on <a href="https://amazon.com">Amazon</a> now.
-    </p>
-  </body>
-</html>
-\end{minted}
-\caption{An example of a basic HTML document}
-\end{figure}
-\end{flushleft}
-
-\begin{flushleft}
-This example document is the code for a simple web page. It contains a number of elements, beginning with the doctype tag which tells the browser this is a HTML document. It has a title defined by the "h1" tags. It has content structured using paragraph tags, then a piece of text in bold, then a link to Amazon using an anchor tag \cite{html-desc}. This document looks like this when rendered:
-\end{flushleft}
-
-\begin{flushleft}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{html-example}
-\caption{A screenshot of the HTML document when rendered}
-\end{figure}
-\end{flushleft}
-
 \subsubsection{Docker}\label{sec:docker-desc}
 
 \begin{flushleft}
@@ -526,7 +464,7 @@ def index():
 \end{flushleft}
 
 \begin{flushleft}
-This snippet shows the creation of a Flask app using the name of the current file. Flask will then load this file by name. All functions with the route decorator will then be turned into endpoints. In this case, any request to the root endpoint will return a basic hello world message in HTML format (see \ref{sec:html-desc}).
+This snippet shows the creation of a Flask app using the name of the current file. Flask will then load this file by name. All functions with the route decorator will then be turned into endpoints. In this case, any request to the root endpoint will return a basic hello world message in HTML (HyperText Markup Language) \footnote{https://developer.mozilla.org/en-US/docs/Learn/Getting\_started\_with\_the\_web/HTML\_basics}. This code is used to define page content and structure on the web \cite{html-desc}.
 \end{flushleft}
 
 \subsubsection{Deep Learning Transformers}\label{sec:transformers-desc}
@@ -1064,7 +1002,7 @@ I converted the pre-existing defoe library from being accessible via the command
 \paragraph{Deployment}
 
 \begin{flushleft}
-I made the deployment by creating a Docker Compose file (\ref{sec:impl-deployment}). I also updated the frances configuration loading to use consul (\ref{sec:consul-desc}) to load configs in different environments, enabling deployment (\ref{sec:impl-config}).
+I made the deployment by creating a Docker Compose file (\ref{sec:impl-deployment}). I also updated the frances configuration loading to use Consul (\ref{sec:consul-desc}) to load configs in different environments, enabling deployment (\ref{sec:impl-config}).
 \end{flushleft}
 
 \section{Ethics}\label{sec:ethics}
@@ -1074,16 +1012,16 @@ This project was relatively low-risk ethically for a number of reasons. It analy
 \end{flushleft}
 
 \begin{flushleft}
-On the other hand, the project did have some small areas which had to be focused on. The project holds user account data which could contain sensitive data (full names, passwords, etc). Furthermore, the project exposes a web server which could compromise user's machines to malicious actors. Overall, these ethical factors had to be considered in the design and implementation of the application. The following paragraphs will describe this.
+However, the project did have some areas to focus on. The project holds user data which could contain sensitive data (full names, passwords, etc). Furthermore, the project exposes a web server which could compromise user's machines to malicious actors. Overall, these factors had to be considered in the design and implementation of the application. The following paragraphs will describe this.
 \end{flushleft}
 
-\paragraph{Database security features}
+\paragraph{Database security}
 
 \begin{flushleft}
-All database configuration should be done dynamically with options for any IP address, username and password. This means that account data can be held in a PostgreSQL database configured securely and separately from the main application. The alternative is hardcoded values in the same way as frances was previously configured, but this is inherently risky from a security perspective. If possible, all database connections should stay within the container orchestration network, meaning no outside connection from bad actors is possible. Finally, account passwords should always be hashed, meaning a data leak will not expose the real values of user passwords.
+All database configuration should be done dynamically with options for any IP address, username and password. This means that account data can be held in a database configured securely and separately from the main application. The alternative is hardcoded values in the same way as frances was previously configured, but this is inherently risky from a security perspective. If possible, all database connections should stay within the container network, meaning no outside connection from bad actors is possible. Finally, user passwords should be hashed, so a data leak will not expose their real values.
 \end{flushleft}
 
-\paragraph{Web server security features}
+\paragraph{Web server security}
 
 \begin{flushleft}
 Users should not be able to input file paths outside the application's root directory, as this could be used to access a host machine remotely. Also, when running defoe, users should not be able to execute arbitrary shell commands, as this could be used for a wide variety of malicious goals.
@@ -1092,7 +1030,7 @@ Users should not be able to input file paths outside the application's root dire
 \section{Design}\label{sec:design}
 
 \begin{flushleft}
-In this section I will go over how the project was designed, i.e. how we planned its creation and justify the choices made in this process. This includes the system's architecture (\ref{sec:system-architecture}), the frontend technology (\ref{sec:design-frontend}), planned storage solutions (\ref{sec:design-database}), processes for deployment (\ref{sec:design-deployment}) and technologies for containerisation (\ref{sec:design-containerisation}).
+In this section I will go over how the project was designed, i.e. how we planned its creation and justified the choices made. This includes the system's architecture (\ref{sec:system-architecture}), the frontend technology (\ref{sec:design-frontend}), planned storage solutions (\ref{sec:design-database}), processes for deployment (\ref{sec:design-deployment}) and technologies for containerisation (\ref{sec:design-containerisation}).
 \end{flushleft}
 
 \subsection{System Architecture}\label{sec:system-architecture}
@@ -1113,29 +1051,29 @@ To make comparisons easier, I have recreated the old system architecture diagram
 \end{flushleft}
 
 \begin{flushleft}
-This diagram is fairly simple because the old frances web app had a very basic client-server architecture, with the server using a monolithic model in which all components (frontend, backend, etc) are kept together in one application. A monolith is fine for small applications, but can quickly become difficult to maintain as an app becomes more complex \cite{architecture-monoliths}. The old frances web app was in my opinion on the border of too complex, due to the mixing of both frontend and backend in the server. Furthermore, this architecture is impossible to scale to demand, making it a poor choice to be used in the long term. Normally components have different resource needs, requiring different scaling \cite{kubernetes-scaling}. Since this cannot be done, the system is limited in its max capacity.
+This diagram is simple because the old frances app had a very basic client-server architecture, with the server using a monolithic model in which all components (frontend, backend, etc) are in one application. A monolith is fine for small applications, but can  become difficult to maintain as a project becomes more complex \cite{architecture-monoliths}. The old frances app was in my opinion on the border of too complex, due to the mixing of both frontend and backend in the server. Furthermore, this architecture is impossible to scale to demand, making it a poor choice to be used long term. Often components have different resource needs, requiring different scaling \cite{kubernetes-scaling}. Since this cannot be done, the system is limited in its max capacity.
 \end{flushleft}
 
 \begin{flushleft}
-Note that in this diagram, Apache Spark is shown within the frances web server process. This is important because all defoe queries were done within frances, and therefore the resources of Apache Spark could not be controlled directly. This is an important design decision that was changed in the new architecture (see \ref{sec:design-arch-new}).
+Note that in this diagram, Apache Spark is shown within the frances server process. This is important because all defoe queries were done within frances, so the resources of Apache Spark could not be controlled directly. This is a decision that was changed in the new architecture (see \ref{sec:design-arch-new}).
 \end{flushleft}
 
 \begin{flushleft}
-One good aspect of this architecture is that the Apache Fuseki server is kept separate from the frances server application. This is a good idea as it keeps the separation property mentioned above, and will therefore be kept in the new design of this architecture.
+One good aspect of this architecture is that Apache Fuseki is kept separate from the frances server. This is a good idea as it keeps the separation property mentioned above, so will be kept in the new architecture.
 \end{flushleft}
 
 \subsubsection{New Architecture}\label{sec:design-arch-new}
 
 \begin{flushleft}
-I designed the new frances app architecture to be separated into several components. This separation allows for more complex functionality, for example the frontend can now use the React framework (see \ref{sec:design-frontend}) supporting complex features such as asynchronous requests. This is necessary to achieve Objective P2 (\ref{sec:objectives-primary}), by making huge improvements to the user interface.
+I designed the new architecture to be separated into components. This allows for more sophisticated functionality, for example the frontend can now use the React framework (see \ref{sec:design-frontend}) supporting features such as asynchronous requests. This is necessary to achieve Objective P2 (\ref{sec:objectives-primary}), by making huge improvements to the user interface.
 \end{flushleft}
 
 \begin{flushleft}
-The requirements (\ref{sec:requirements}) and Objective P1 (\ref{sec:objectives-primary}) specify that the app should support user accounts. These require a persistent state regardless of whether the frances app is restarted. Furthermore, the number of accounts that could conceivably exist may not fit in memory, therefore a database is required to store and query them.
+The requirements (\ref{sec:requirements}) and Objective P1 (\ref{sec:objectives-primary}) specify that the app should support user accounts. These require a persistent state regardless of whether the frances app is restarted. Furthermore, the number of accounts that could exist may not fit in memory, so a database is required to store and query them.
 \end{flushleft}
 
 \begin{flushleft}
-These considerations resulted in the following architecture design:
+These factors resulted in the following architecture design:
 \end{flushleft}
 
 \begin{flushleft}
@@ -1154,17 +1092,17 @@ One noteworthy feature in this architecture is that Apache Spark is shown as a s
 \subsubsection{Framework}
 
 \begin{flushleft}
-The application's frontend was previously HTML returned from the pre-existing Flask app. However, the new architecture split the system into frontend and backend (see \ref{sec:system-architecture}). This was done because it allows for a separate frontend to be created. We chose to create this frontend using a Single-page Application (SAP) \cite{saps-about}. In a traditional web page, as in the old app, each click on a link will send a request to the server, returning a new page. On a SAP, pages of the app are navigated by modifying a single HTML page. This is more efficient because much less data is being sent to the browser during navigation, resulting in faster transitions between pages. Furthermore, a SAP's virtual "pages" have shared state between them, meaning more complex tasks can be achieved. This is why highly interactive apps such as Gmail are built using SAPs \cite{saps-about}. These attributes make SAPs suitable for this project, as they will help achieve Objective P2 (\ref{sec:objectives}), making improvements to the pre-existing user interface in terms of both look and feel, and usability.
+The old app frontend was HTML returned from the Flask app. However, the new architecture split the system into frontend and backend (see \ref{sec:system-architecture}). This was because it allows for a separate frontend to be created. We chose to create this frontend using a Single-page Application (SAP) \cite{saps-about}. In a traditional web page, as in the old app, each click on a link will send a request to the server, returning a new page. On a SAP, pages of the app are navigated by modifying a single HTML page. This is more efficient because less data is sent to the browser during navigation, resulting in faster transitions between pages. Furthermore, a SAP's virtual "pages" have shared state, meaning more complex tasks can be achieved. This is why highly interactive apps such as Gmail are built using SAPs \cite{saps-about}. This makes SAPs suitable for this project, as they will help achieve Objective P2 (\ref{sec:objectives}), making improvements to the pre-existing user interface in terms of both look and feel, and usability.
 \end{flushleft}
 
 \begin{flushleft}
-There is a lot of choice between SAP frameworks. The three we considered were Angular \footnote{https://angular.io/}, React \footnote{https://reactjs.org/}, and Vue \footnote{https://vuejs.org/}. Each have their advantages, however our team had too little experience with Vue. Furthermore, Angular is designed for complex enterprise apps, making it often time consuming to work with and unsuitable for the short timeframe of this project \cite{frontend-frameworks}. In considering these factors, we therefore decided to use React as the framework for the frontend.
+There is a lot of choice between SAP frameworks. We considered Angular \footnote{https://angular.io/}, React \footnote{https://reactjs.org/}, and Vue \footnote{https://vuejs.org/}. Each have their advantages, however our team had too little experience with Vue. Furthermore, Angular is designed for complex enterprise apps, making it time consuming to work with and unsuitable for our short timeframe \cite{frontend-frameworks}. In considering these factors, we decided to use React as the framework for the frontend.
 \end{flushleft}
 
 \subsubsection{Prototype}\label{sec:design-frontend-prototype}
 
 \begin{flushleft}
-My partner developed the prototype of the frontend using Axure RP \footnote{https://www.axure.com/}. This is a prototyping tool which uses a library of drag-and-drop components to create complex user interfaces \cite{axure-rp}. The following shows screenshots of the finished prototype. Large parts of the prototype show the account system, which is designed to achieve Objective P1 (\ref{sec:objectives-primary}).
+My partner developed the prototype of the frontend using Axure RP \footnote{https://www.axure.com/}. This is a tool which uses a library of drag-and-drop components to create complex user interfaces \cite{axure-rp}. The following shows screenshots of the finished prototype. This includes the account system, which is designed to achieve Objective P1 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
 \begin{flushleft}
@@ -1219,7 +1157,7 @@ This figure shows the term search page, in which the user can input a term into 
 \end{flushleft}
 
 \begin{flushleft}
-This figure shows the results of searching for the term "flower". This includes the details about each definition, e.g. the year, edition and volume this definition was published in. It also includes advanced options including being able to click visualise, spell check, or similar terms to get to the next query quicker. This improvement to the user interface helps to achieve Objective P2 (\ref{sec:objectives-primary}).
+This figure shows a search for the term "flower". This includes the details about each definition, e.g. the year, edition and volume this definition was published in. It also includes advanced options including being able to click visualise, spell check, or similar terms to get to the next query quicker. This improvement to the user interface helps to achieve Objective P2 (\ref{sec:objectives-primary}).
 \end{flushleft}
 
 \subsubsection{Evaluation}\label{sec:design-frontend-evaluation}
@@ -1231,27 +1169,25 @@ My partner created the frontend prototype considering the Web Usability Standard
 \begin{center}
 \begin{longtblr}[
   caption = {Heuristic Comparison},
-]{c c c} 
-  Number & Heuristic & Comparison \\
+]{X X} 
+ Heuristic & Comparison \\
  \hline
-  1 & Visibility of system status & Old system \\
-  2 & Match between system and the real world & Old system \\
-  3 & User control and freedom & Old system \\
-  4 & Consistency and standards & Old system \\
-  5 & Error prevention & The new system is better as it does not need you to copy and paste complex resource URIs. \\
-  6 & Recognition rather than recall & The new system is better, as auxiliary features (e.g. spell check) are shown when relevant rather than relying on a user's memory. \\
-  7 & Flexibility and efficiency of use & Old system \\
-  8 & Aesthetic and minimalist design & Old system \\
-  9 & Help users recognize, diagnose, and recover from errors & Old system \\
-  10 & Help and documentation & Old system \\
+  Visibility of system status & The new interface is better, as the SAP allows you to be updated on a defoe query's execution, whereas this is not visible in the old interface and appears only as a long page loading. \\
+  Match between system and the real world & Both interfaces appear equal. \\
+  User control and freedom & Both interfaces appear equal. \\
+  Consistency and standards & Both interfaces appear equal. \\
+  Error prevention & The new interface is better as it does not need you to copy and paste complex resource URIs. \\
+  Recognition rather than recall & The new interface is better, as auxiliary features (e.g. spell check) are shown when relevant rather than relying on a user's memory. \\
+  Flexibility and efficiency of use & The new interface is far more efficient due to not requiring arduous copy and pasting of resource URIs. \\
+  Aesthetic and minimalist design & The new interface is better, as it doesn't include long URIs in search results in the way that the old interface does. \\
+  Help users recognize, diagnose, and recover from errors & The new interface is better, as it offers some real-time input validation to recognise and diagnose errors. \\
+  Help and documentation & Both interfaces appear equal, with little difference in the help and documentation offered. \\
 \end{longtblr}
 \end{center}
 
 \begin{flushleft}
-To summarise, the new user interface is better according to the Web Usability standards \cite{web-usability} compared to the pre-existing one.
+To summarise, the new user interface is equal or better in each heuristic given by the Web Usability standards \cite{web-usability} compared to the pre-existing one. This makes it a better interface overall.
 \end{flushleft}
-
-TODO finish
 
 \subsection{Database}\label{sec:design-database}
 
@@ -1304,11 +1240,7 @@ The frontend was implemented mostly by my partner, with myself creating the defo
 \subsubsection{API requests}\label{sec:impl-frontend-api}
 
 \begin{flushleft}
-The frontend must send API requests to the backend to access any server functionality (see \ref{sec:system-architecture}). This is needed to include the functionality of the old frances web app, and therefore fulfil the query requirements (\ref{sec:req-functional-query}). This was mostly implemented by my partner, with defoe requests from me. Each request has a function which serves as a wrapper for that request (see \ref{appendix:frontend-query.js}).
-\end{flushleft}
-
-\begin{flushleft}
-Before the request is sent, the local storage is checked. This is used to cache the result of a request if needed. This is done when a request always has the same result, as it reduces load times, therefore improving the user interface as per Objective P2 (\ref{sec:objectives}). After checking local storage, the request is sent and the response cached for future requests. 
+The frontend must send API requests to the backend to access any server functionality (see \ref{sec:system-architecture}). This is needed to include the functionality of the old frances web app, and therefore fulfil the query requirements (\ref{sec:req-functional-query}). This was mostly implemented by my partner, with defoe requests from me. Each request has a function which serves as a wrapper for that request (see \ref{appendix:frontend-query.js}). When a request always has the same result, it is cached in local storage to reduce load times, therefore improving the user interface as per Objective P2 (\ref{sec:objectives}).
 \end{flushleft}
 
 \subsubsection{Authentication}\label{sec:impl-frontend-auth}
@@ -1372,10 +1304,14 @@ Note the function setQueryList. This changes the defoe page component state. The
 \end{figure}
 \end{flushleft}
 
+\begin{flushleft}
+In this code, the HTML output by React is generated by mapping the queryList to items in the dropdown menu. When the backend returns the list of queries, this list will then be updated.
+\end{flushleft}
+
 \paragraph{Upload file}
 
 \begin{flushleft}
-TODO desc
+To upload a file, the frontend must send the file to the backend, getting a unique File ID which is then included in the defoe query request. This is done with the following code:
 \end{flushleft}
 
 \begin{flushleft}
@@ -1396,10 +1332,14 @@ TODO desc
 \end{figure}
 \end{flushleft}
 
+\begin{flushleft}
+The file upload request is sent by the frontend when the user selects the file. Then, as the File ID is returned by the backend, this is stored in the component state for later requests.
+\end{flushleft}
+
 \paragraph{Submit query}
 
 \begin{flushleft}
-TODO desc
+The defoe query is built when the query button is pressed. It is shown below.
 \end{flushleft}
 
 \begin{flushleft}
@@ -1423,6 +1363,10 @@ TODO desc
 \end{minted}
 \caption{How a defoe query is built by the frontend}
 \end{figure}
+\end{flushleft}
+
+\begin{flushleft}
+In this code, the request fields are filled with the current state values and sent to the backend API (\ref{sec:api-creation}) in JSON format (\ref{sec:json-desc}).
 \end{flushleft}
 
 \paragraph{Status request}
@@ -1623,7 +1567,7 @@ Creating a user account system was one of the more complex parts of the system's
 
 \paragraph{Account security features}
 
-Accounts have UUIDs (see \ref{sec:uuids-desc}) which has been discussed in depth previously (see \ref{sec:abstraction-of-operations}). Furthermore, they also keep passwords hashed when stored in the database, which is important for security \cite{password-security}. This works as shown below:
+Accounts have UUIDs (see \ref{sec:uuids-desc}) which has been discussed previously (see \ref{sec:abstraction-of-operations}). Also, they store hashed passwords in the database, which is important for security \cite{password-security}. This works as shown below:
 
 \begin{flushleft}
 \begin{figure}[H]
@@ -1745,7 +1689,7 @@ This method of configuration won't work when deploying across multiple environme
 \paragraph{Consul configuration loading}
 
 \begin{flushleft}
-To solve this problem, I used a service called consul (see \ref{sec:consul-desc}). On startup, frances will send a HTTP GET request to consul for the value of the key called "frances/config". This returns a JSON document which is parsed by the program and contains all the required config values. Consul can be deployed on a single user's machine, or on a cloud platform, meaning no code has to be changed between environments.
+To solve this problem, I used a service called Consul (see \ref{sec:consul-desc}). On startup, frances will send a HTTP GET request to Consul for the value of the key called "frances/config". This returns a JSON document which is parsed by the program and contains all the required config values. Consul can be deployed on a single user's machine, or on a cloud platform, meaning no code has to be changed between environments.
 \end{flushleft}
 
 Here is an example of the new frances configuration:
@@ -2280,38 +2224,45 @@ In this section I will be judging whether the project has met the Objectives (\r
 \end{flushleft}
 
 \subsection{Objectives}
-\subsubsection{Primary}
+\subsubsection{Primary}\label{sec:evaluation-obj-primary}
 
 \begin{displayquote}
 P1 - Create a user account system, which supports separation of user data (collections, queries, etc).
 \end{displayquote}
 
-This objective has been achieved, as we have designed (\ref{sec:}) and implemented an account system (\ref{sec:}) which supports these features.
+\begin{flushleft}
+This objective has been achieved, as we have designed (\ref{sec:design-database}) and implemented an account system (\ref{sec:impl-enable-user-acc}) which supports these features.
+\end{flushleft}
 
 \begin{displayquote}
 P2 - Make improvements to the pre-existing user interface in terms of look and feel, usability, etc.
 \end{displayquote}
 
-This is a subjective objective, but arguably has been achieved
-visualise and spell check buttons
+\begin{flushleft}
+This is a subjective objective, but has almost certainly been achieved. The usage of React to create a frontend interface (\ref{sec:design-frontend}) along with the positive evaluation of this interface (\ref{sec:design-frontend-evaluation}) shows clearly that improvements have been made.
+\end{flushleft}
 
 \begin{displayquote}
 P3 - Containerise the system so it can be deployed to various environments (locally, cloud server, etc).
 \end{displayquote}
 
-This has been achieved
-we have tested this on 3 machines
-can be deployed easily by downloading and running the docker image
+\begin{flushleft}
+This has been achieved. I containerised this system using Docker (\ref{sec:impl-containerisation}). We have tested this system this on 6 machines, including 2 Windows, 2 macOS and 2 Linux systems. Furthermore, the system can be deployed easily by downloading and running the Docker image. Overall, this shows the objective has been met.
+\end{flushleft}
 
 \begin{displayquote}
 P4 - Evaluate the look and feel of the system’s user interface compared to the pre-existing system.
 \end{displayquote}
 
-TODO write
+\begin{flushleft}
+This has been achieved by using heuristics provided by the Web Usability Standard \cite{web-usability} to compare the old and new user interface (see \ref{sec:design-frontend-evaluation}).
+\end{flushleft}
 
-\subsubsection{Secondary}
+\subsubsection{Secondary}\label{sec:evaluation-obj-secondary}
 
-Neither of the following secondary objectives (\ref{sec:objectives-secondary}) have been achieved, mainly due to time constraints with the project. However, these objectives 
+\begin{flushleft}
+Neither of the following secondary objectives (\ref{sec:objectives-secondary}) have been achieved, mainly due to time constraints with the project. However, these objectives are suitable for future improvements on this system (see \ref{sec:future-work}).
+\end{flushleft}
 
 \begin{displayquote}
 S1 - Increase the speed of term searches by using elastic search on the backend rather than text file scanning.
@@ -2321,29 +2272,75 @@ S1 - Increase the speed of term searches by using elastic search on the backend 
 S2 - Add support for an additional digital collection from NLS, creating a new knowledge graph and making it compatible with some features of frances, e.g. defoe.
 \end{displayquote}
 
-\subsection{Requirements}
+\subsection{Requirements}\label{sec:evaluation-requirements}
 
-defoe queries, submit query and compare results to previous defoe
-now defoe runs with different knowledge graphs
+\subsubsection{Functional}
 
-TODO writeup
+\paragraph{Accounts}
 
-\section{Future work}
-
-cloud platform deployment using Terraform \footnote{https://www.terraform.io/docs} \cite{terraform}
-manage a Kubernetes cluster \footnote{https://kubernetes.io/} \cite{kubernetes}
-already enabled by using Consul for configuration (see \ref{sec:impl-config})
-offer this service to the public
-
-elastic search for text files
-add support for additional collections
-secondary objectives S1 and S2 (\ref{sec:objectives})
-
+\begin{flushleft}
+(\ref{sec:req-functional-account})
+high priority requirements have all been fulfilled
+the following low priority ones have not
 TODO write
+\end{flushleft}
+
+\paragraph{Queries}
+
+\begin{flushleft}
+by replicating all the same functionality as the old system (\ref{sec:frances-desc}), all query requirements (\ref{sec:req-functional-query}) have been fulfilled
+TODO write
+\end{flushleft}
+
+\subsubsection{Non-Functional}
+
+\begin{flushleft}
+TODO write
+\end{flushleft}
+
+\subsection{Summary}
+
+\begin{flushleft}
+In summary, all of the primary objectives (\ref{sec:evaluation-obj-primary}) and requirements (\ref{sec:evaluation-requirements}) have been met, making the project a success overall. However, none of the secondary objectives (\ref{sec:evaluation-obj-secondary}) have been met due to time constraints. 
+\end{flushleft}
+
+\section{Future work}\label{sec:future-work}
+
+\begin{flushleft}
+In this section I will go over work that could be done in the future to further improve frances. This includes uncompleted objectives (\ref{sec:future-secondary-obj}) and requirements (\ref{sec:future-accounts}), as well as a new method of deployment (\ref{sec:future-terraform-k}).
+\end{flushleft}
+
+\subsection{Secondary Objectives}\label{sec:future-secondary-obj}
+
+\begin{flushleft}
+As established in the evaluation (\ref{sec:evaluation-obj-secondary}), this project's secondary objectives were not achieved. These were to use Elastic Search to improve search term speed, and add support for additional collection queries (see \ref{sec:objectives-secondary}). Both objectives are totally doable with more time and could be implemented in the future.
+\end{flushleft}
+
+\subsection{Account Administration}\label{sec:future-accounts}
+
+\begin{flushleft}
+As established in the evaluation (\ref{sec:evaluation-requirements}), account administration features were mentioned in the requirements (\ref{sec:req-functional-account}) but not implemented. These are entirely achievable and important if frances is used by the public, so should be implemented in the future.
+\end{flushleft}
+
+\subsection{Terraform and Kubernetes Deployment}\label{sec:future-terraform-k8s}
+
+\begin{flushleft}
+Docker Compose (\ref{sec:docker-compose-desc}) can be used to deploy to both local and cloud environments. However, a far better setup would be to use Terraform \footnote{https://www.terraform.io/docs} to deploy a Kubernetes cluster \footnote{https://kubernetes.io/} to a cloud environment. Terraform can configure more complex cloud resources, such as load balancers \cite{terraform}. Kubernetes could automatically manage frances, improving the quality of service \cite{kubernetes}. This new setup may be the next step in offering frances to an even wider audience.
+\end{flushleft}
+
+\begin{flushleft}
+Furthermore, this deployment is already extremely easy because of using Consul for configuration (see \ref{sec:impl-config}), as this service can be put in Kubernetes quickly \cite{consul-kubernetes}.
+\end{flushleft}
 
 \section{Conclusion}
 
-TODO write
+\begin{flushleft}
+In conclusion, we have taken a pre-existing prototype web tool called frances (\ref{sec:frances-desc}). We have created a user account system. Also, we have made large improvements to the user interface and evaluated it versus the old version. Finally, we have containerised the system to run on multiple environments. These have achieved our primary objectives (\ref{sec:objectives-primary}).
+\end{flushleft}
+
+\begin{flushleft}
+Overall, this project has fulfilled our motivation (\ref{sec:context-motivation}) of making frances more accessible to academics. However, there are still important features that should be implemented in the future (\ref{sec:future-work}). These include a cloud deployment using Terraform (\ref{sec:future-terraform-k8s}), and using Elastic Search for backend queries (\ref{sec:future-secondary-obj}).
+\end{flushleft}
 
 \bibliography{mybib}{}
 \bibliographystyle{plain}

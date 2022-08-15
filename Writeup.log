@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.13)  14 AUG 2022 18:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.13)  15 AUG 2022 15:24
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -572,46 +572,49 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-)
+ [4])
 \tf@toc=\write6
 \openout6 = `Writeup.toc'.
 
- [4] [5] [6]
+ [5] [6]
 Overfull \hbox (6.21487pt too wide) in paragraph at lines 95--96
 []\OT1/cmr/m/n/12 Discourse Anal-y-sis - han-dling the re-la-tion-ships be-twee
 n sen-tences. These
  []
 
-<./images//info-extraction-arch.png, id=591, 699.61375pt x 379.4175pt>
+[7]
+<./images//info-extraction-arch.png, id=623, 699.61375pt x 379.4175pt>
 File: ./images//info-extraction-arch.png Graphic file (type png)
 <use ./images//info-extraction-arch.png>
 Package pdftex.def Info: ./images//info-extraction-arch.png  used on input line
  110.
 (pdftex.def)             Requested size: 390.0pt x 211.51129pt.
-[7]
-<./images//knowledge-graph-startrek.png, id=606, 651.43375pt x 276.03125pt>
+<./images//knowledge-graph-startrek.png, id=630, 651.43375pt x 276.03125pt>
 File: ./images//knowledge-graph-startrek.png Graphic file (type png)
 <use ./images//knowledge-graph-startrek.png>
 Package pdftex.def Info: ./images//knowledge-graph-startrek.png  used on input 
 line 124.
 (pdftex.def)             Requested size: 390.0pt x 165.2578pt.
  [8 <./images//info-extraction-arch.png>]
+<./images//semantic-before.png, id=644, 583.17876pt x 291.0875pt>
+File: ./images//semantic-before.png Graphic file (type png)
+<use ./images//semantic-before.png>
+Package pdftex.def Info: ./images//semantic-before.png  used on input line 145.
+
+(pdftex.def)             Requested size: 390.0pt x 194.66783pt.
+ [9 <./images//knowledge-graph-startrek.png>]
+<./images//semantic-after.png, id=656, 583.17876pt x 192.72pt>
+File: ./images//semantic-after.png Graphic file (type png)
+<use ./images//semantic-after.png>
+Package pdftex.def Info: ./images//semantic-after.png  used on input line 157.
+(pdftex.def)             Requested size: 390.0pt x 128.88351pt.
+ [10 <./images//semantic-before.png> <./images//semantic-after.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 185.
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/default.pygstyle)
-(./_minted-Writeup/9166CA2F10B3EF0DEB173653591C3DF6B2C258431BAA520A6B083BDB6535
-1BF5.pygtex) [9 <./images//knowledge-graph-startrek.png>]
-\openout3 = `Writeup.pyg'.
-
-
-(./_minted-Writeup/85332D1E1F4FD8ED6480BB5973411099B2C258431BAA520A6B083BDB6535
-1BF5.pygtex) [10]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 209.
-\openout3 = `Writeup.pyg'.
-
-
 (./_minted-Writeup/6BF3EF20B0DA12A88F9259315C643C9E44C5A2E9C68FC8C2BDE270D27D6B
 8985.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
@@ -645,57 +648,51 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 \openout3 = `Writeup.pyg'.
 
 
-(./_minted-Writeup/1459854743B3F4AE9AE950734CF468C13C13E717837797F62ACD69BC405F
-718A.pygtex) [17]
-<./images//html-example.png, id=742, 681.54625pt x 212.795pt>
-File: ./images//html-example.png Graphic file (type png)
-<use ./images//html-example.png>
-Package pdftex.def Info: ./images//html-example.png  used on input line 429.
-(pdftex.def)             Requested size: 390.0pt x 121.76845pt.
- [18 <./images//html-example.png>]
-\openout3 = `Writeup.pyg'.
-
-
 (./_minted-Writeup/BDC518718549C15AA046A0E38D1D0324000FA1B3C5A227DA32DB67CA28F2
-86FE.pygtex) [19]
+86FE.pygtex) [17]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/CE6C3124F741309468D19E91BCEC3BD5E4B249F1D48B12C84018B7E92A11
-5D55.pygtex) [20]
+5D55.pygtex) [18]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/0020FDBCBE5161063F94515DF3F7B4F644C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex)
-<./images//deep-learning-transformers.png, id=789, 428.60126pt x 599.23875pt>
+8985.pygtex) [19]
+Overfull \hbox (39.237pt too wide) in paragraph at lines 467--467
+[][][]\OT1/cmr/m/n/10 https://developer.mozilla.org/en-US/docs/Learn/Getting[]s
+tarted[]with[]the[]web/HTML[]basics| 
+ []
+
+<./images//deep-learning-transformers.png, id=807, 428.60126pt x 599.23875pt>
 File: ./images//deep-learning-transformers.png Graphic file (type png)
 <use ./images//deep-learning-transformers.png>
 Package pdftex.def Info: ./images//deep-learning-transformers.png  used on inpu
-t line 541.
+t line 479.
 (pdftex.def)             Requested size: 292.5pt x 408.94908pt.
- [21] [22 <./images//deep-learning-transformers.png>]
+[20] [21 <./images//deep-learning-transformers.png>]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/485D2DEF75E450968832CA04C691FDB38A6CEB275183E90339C86343E396
-1F8D.pygtex) [23]
+1F8D.pygtex) [22]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/8208487EDA56A9F755620BB052D151F1E4B249F1D48B12C84018B7E92A11
-5D55.pygtex) [24]
-<./images//swagger-ui.png, id=838, 732.93825pt x 360.74776pt>
+5D55.pygtex) [23]
+<./images//swagger-ui.png, id=856, 732.93825pt x 360.74776pt>
 File: ./images//swagger-ui.png Graphic file (type png)
 <use ./images//swagger-ui.png>
-Package pdftex.def Info: ./images//swagger-ui.png  used on input line 632.
+Package pdftex.def Info: ./images//swagger-ui.png  used on input line 570.
 (pdftex.def)             Requested size: 390.0pt x 191.96053pt.
- [25]
+ [24]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/2FFB3345EE353EF2E437BBDF42023BD644C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [26 <./images//swagger-ui.png>]
+8985.pygtex) [25 <./images//swagger-ui.png>]
 \openout3 = `Writeup.pyg'.
 
 
@@ -705,44 +702,44 @@ F626.pygtex)
 
 
 (./_minted-Writeup/0D2D8FFFAFFC8BCDB18688AFEF236FDC44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [27] [28]
-<./images//defoe-arch.png, id=900, 894.34125pt x 430.60875pt>
+8985.pygtex) [26] [27]
+<./images//defoe-arch.png, id=918, 894.34125pt x 430.60875pt>
 File: ./images//defoe-arch.png Graphic file (type png)
 <use ./images//defoe-arch.png>
-Package pdftex.def Info: ./images//defoe-arch.png  used on input line 737.
+Package pdftex.def Info: ./images//defoe-arch.png  used on input line 675.
 (pdftex.def)             Requested size: 390.0pt x 187.77979pt.
- [29 <./images//defoe-arch.png>]
-<./images//eb-ontology.png, id=917, 619.31375pt x 691.58376pt>
+ [28 <./images//defoe-arch.png>]
+<./images//eb-ontology.png, id=935, 619.31375pt x 691.58376pt>
 File: ./images//eb-ontology.png Graphic file (type png)
 <use ./images//eb-ontology.png>
-Package pdftex.def Info: ./images//eb-ontology.png  used on input line 757.
+Package pdftex.def Info: ./images//eb-ontology.png  used on input line 695.
 (pdftex.def)             Requested size: 390.0pt x 435.53122pt.
- [30] [31 <./images//eb-ontology.png>]
-<./images//frances-old-term-search.png, id=935, 1894.07625pt x 933.4875pt>
+ [29] [30 <./images//eb-ontology.png>]
+<./images//frances-old-term-search.png, id=952, 1894.07625pt x 933.4875pt>
 File: ./images//frances-old-term-search.png Graphic file (type png)
 <use ./images//frances-old-term-search.png>
 Package pdftex.def Info: ./images//frances-old-term-search.png  used on input l
-ine 777.
+ine 715.
 (pdftex.def)             Requested size: 545.99762pt x 269.08064pt.
-<./images//frances-old-term-search-1.png, id=936, 1900.09875pt x 896.34875pt>
+<./images//frances-old-term-search-1.png, id=953, 1900.09875pt x 896.34875pt>
 File: ./images//frances-old-term-search-1.png Graphic file (type png)
 <use ./images//frances-old-term-search-1.png>
 Package pdftex.def Info: ./images//frances-old-term-search-1.png  used on input
- line 782.
+ line 720.
 (pdftex.def)             Requested size: 545.99762pt x 257.56833pt.
- [32 <./images//frances-old-term-search.png>]
-<./images//frances-old-defoe.png, id=943, 1881.0275pt x 924.45375pt>
+ [31 <./images//frances-old-term-search.png>]
+<./images//frances-old-defoe.png, id=961, 1881.0275pt x 924.45375pt>
 File: ./images//frances-old-defoe.png Graphic file (type png)
 <use ./images//frances-old-defoe.png>
-Package pdftex.def Info: ./images//frances-old-defoe.png  used on input line 78
-7.
+Package pdftex.def Info: ./images//frances-old-defoe.png  used on input line 72
+5.
 (pdftex.def)             Requested size: 545.99762pt x 268.33862pt.
- [33 <./images//frances-old-term-search-1.png>]
+ [32 <./images//frances-old-term-search-1.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 801.
+(hyperref)                than one, level fixed on input line 739.
 
-[34 <./images//frances-old-defoe.png>] [35]
+[33 <./images//frances-old-defoe.png>] [34]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -751,7 +748,7 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
- [36]
+ [35]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -760,7 +757,7 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
- [37] [38]
+ [36] [37]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -769,13 +766,13 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
- [39]
-<./images//scrum.png, id=1004, 2007.5pt x 1003.75pt>
+ [38]
+<./images//scrum.png, id=1022, 2007.5pt x 1003.75pt>
 File: ./images//scrum.png Graphic file (type png)
 <use ./images//scrum.png>
-Package pdftex.def Info: ./images//scrum.png  used on input line 959.
+Package pdftex.def Info: ./images//scrum.png  used on input line 897.
 (pdftex.def)             Requested size: 390.0pt x 194.98764pt.
- [40] [41 <./images//scrum.png>]
+ [39] [40 <./images//scrum.png>]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -789,7 +786,7 @@ Package tabularray Warning: Table width is too small, need 25.19998pt more!
 
 > Step: build the whole table.
 
-Overfull \hbox (25.19998pt too wide) detected at line 1007
+Overfull \hbox (25.19998pt too wide) detected at line 945
  [] 
  []
 
@@ -801,12 +798,12 @@ Overfull \hbox (25.19998pt too wide) detected at line 1007
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
+Underfull \hbox (badness 10000) in paragraph at lines 964--964
 []\OT1/cmr/m/n/12 Backend au-then-ti-ca-tion, Back-end
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 1026--1026
+Underfull \hbox (badness 7722) in paragraph at lines 964--964
 []\OT1/cmr/m/n/12 Make im-prove-ments to the pre-
  []
 
@@ -814,70 +811,69 @@ Underfull \hbox (badness 7722) in paragraph at lines 1026--1026
 Package tabularray Warning: Table width is too small, need 25.19998pt more!
 
 > Step: build the whole table.
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 964--964
 []\OT1/cmr/m/n/12 Backend au-then-ti-ca-tion, Back-end
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 1026--1026
+Underfull \hbox (badness 7722) in paragraph at lines 964--964
 []\OT1/cmr/m/n/12 Make im-prove-ments to the pre-
  []
 
 
-Overfull \hbox (25.19998pt too wide) detected at line 1026
+Overfull \hbox (25.19998pt too wide) detected at line 964
  [] 
  []
 
-[43] [44]
-<./images//arch-components-old.png, id=1075, 708.6475pt x 542.025pt>
+[42] [43]
+<./images//arch-components-old.png, id=1093, 708.6475pt x 542.025pt>
 File: ./images//arch-components-old.png Graphic file (type png)
 <use ./images//arch-components-old.png>
 Package pdftex.def Info: ./images//arch-components-old.png  used on input line 
-1110.
+1048.
 (pdftex.def)             Requested size: 390.0pt x 298.30489pt.
- [45] [46 <./images//arch-components-old.png>]
-<./images//arch-components.png, id=1098, 956.57375pt x 441.65pt>
+ [44] [45 <./images//arch-components-old.png>]
+<./images//arch-components.png, id=1116, 956.57375pt x 441.65pt>
 File: ./images//arch-components.png Graphic file (type png)
 <use ./images//arch-components.png>
-Package pdftex.def Info: ./images//arch-components.png  used on input line 1143
+Package pdftex.def Info: ./images//arch-components.png  used on input line 1081
 .
 (pdftex.def)             Requested size: 390.0pt x 180.06007pt.
- [47] [48 <./images//arch-components.png>]
-<./images//prototype-defoe-access.png, id=1125, 1445.4pt x 771.88374pt>
+ [46 <./images//arch-components.png>] [47]
+<./images//prototype-defoe-access.png, id=1147, 1445.4pt x 771.88374pt>
 File: ./images//prototype-defoe-access.png Graphic file (type png)
 <use ./images//prototype-defoe-access.png>
 Package pdftex.def Info: ./images//prototype-defoe-access.png  used on input li
-ne 1172.
+ne 1110.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [49]
-<./images//prototype-defoe.png, id=1137, 1445.4pt x 771.88374pt>
+<./images//prototype-defoe.png, id=1148, 1445.4pt x 771.88374pt>
 File: ./images//prototype-defoe.png Graphic file (type png)
 <use ./images//prototype-defoe.png>
-Package pdftex.def Info: ./images//prototype-defoe.png  used on input line 1183
+Package pdftex.def Info: ./images//prototype-defoe.png  used on input line 1121
 .
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [50 <./images//prototype-defoe-access.png>]
-<./images//prototype-sign-in.png, id=1144, 1445.4pt x 771.88374pt>
+ [48 <./images//prototype-defoe-access.png>]
+<./images//prototype-sign-in.png, id=1157, 1445.4pt x 771.88374pt>
 File: ./images//prototype-sign-in.png Graphic file (type png)
 <use ./images//prototype-sign-in.png>
 Package pdftex.def Info: ./images//prototype-sign-in.png  used on input line 11
-94.
+32.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [51 <./images//prototype-defoe.png> <./images//prototype-sign-in.png>]
-<./images//prototype-term-search.png, id=1153, 1445.4pt x 771.88374pt>
+ [49 <./images//prototype-defoe.png> <./images//prototype-sign-in.png>]
+<./images//prototype-term-search.png, id=1167, 1445.4pt x 771.88374pt>
 File: ./images//prototype-term-search.png Graphic file (type png)
 <use ./images//prototype-term-search.png>
 Package pdftex.def Info: ./images//prototype-term-search.png  used on input lin
-e 1205.
+e 1143.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
-<./images//prototype-term-search-result.png, id=1154, 1445.4pt x 771.88374pt>
+<./images//prototype-term-search-result.png, id=1168, 1445.4pt x 771.88374pt>
 File: ./images//prototype-term-search-result.png Graphic file (type png)
 <use ./images//prototype-term-search-result.png>
 Package pdftex.def Info: ./images//prototype-term-search-result.png  used on in
-put line 1216.
+put line 1154.
 (pdftex.def)             Requested size: 390.0pt x 208.27005pt.
- [52 <./images//prototype-term-search.png>]
+ [50 <./images//prototype-term-search.png>]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -885,658 +881,19 @@ put line 1216.
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-
-Overfull \hbox (31.45294pt too wide) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Comparison 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 new
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 tem
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 bet-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 ter
- []
-
-
-Underfull \hbox (badness 6094) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 as it
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 does
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 not
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 need
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 you
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 copy
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 paste
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 com-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 plex
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 re-
- []
-
-
-Overfull \hbox (2.07825pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 source
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 new
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 tem
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 bet-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 ter,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 as
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 aux-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 il-iary
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 fea-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 tures
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 (e.g.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 spell
- []
-
-
-Overfull \hbox (2.33936pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 check)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 are
- []
-
-
-Overfull \hbox (1.75186pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 shown
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 when
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 rel-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 vant
- []
-
-
-Overfull \hbox (1.3602pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 rather
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 than
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 re-ly-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 ing
- []
-
-
-Underfull \hbox (badness 6252) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 on a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 user's
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 mem-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
 > Step: build the whole table.
-[53 <./images//prototype-term-search-result.png>]
-Overfull \hbox (31.45294pt too wide) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Comparison 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 new
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 tem
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 bet-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 ter
- []
-
-
-Underfull \hbox (badness 6094) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 as it
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 does
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 not
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 need
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 you
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 copy
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 paste
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 com-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 plex
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 re-
- []
-
-
-Overfull \hbox (2.07825pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 source
- []
-
-[55]
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 new
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 tem
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 bet-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 ter,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 as
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 aux-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 il-iary
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 fea-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 tures
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 (e.g.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 spell
- []
-
-
-Overfull \hbox (2.33936pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 check)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 are
- []
-
-
-Overfull \hbox (1.75186pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 shown
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 when
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 rel-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 vant
- []
-
-
-Overfull \hbox (1.3602pt too wide) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 rather
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 than
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 re-ly-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 ing
- []
-
-
-Underfull \hbox (badness 6252) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 on a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 user's
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 mem-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-[56]
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\OT1/cmr/m/n/12 Old
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\OT1/cmr/m/n/12 sys-
- []
-
-[57] [58] [59]
+ [51 <./images//prototype-term-search-result.png>] [52]
+[53] [54]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/812A81F611A855823F50A623654C2F59203147C9D6203956FB24CE37E6A3
-F626.pygtex)
+F626.pygtex) [55]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/D59D71E959E54132746790B1DCA64F663C13E717837797F62ACD69BC405F
-718A.pygtex) [60]
+718A.pygtex) [56]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1546,12 +903,12 @@ F626.pygtex)
 
 
 (./_minted-Writeup/5CCF6C192A50D10CF504ACDC72F151DF203147C9D6203956FB24CE37E6A3
-F626.pygtex) [61]
+F626.pygtex) [57]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/68B329DA9893E34099C7D8AD5CB9C940203147C9D6203956FB24CE37E6A3
-F626.pygtex) [62]
+F626.pygtex) [58]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1561,12 +918,12 @@ F626.pygtex) [62]
 
 
 (./_minted-Writeup/6E92D0A5836044E9DBFC51B5C1A5DA8844C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [63]
+8985.pygtex) [59]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/6C8D27E7A3287C937781478D6C025CBC44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [64]
+8985.pygtex) [60]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1581,22 +938,22 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 \OT1/cmtt/m/n/12 heatmap_plot[]=[]heatmap_plot)|  
  []
 
-) [65]
+) [61]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/7000D02E8822CAEF83AB37D1793021D044C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [66]
+8985.pygtex) [62]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/1DBE465C901A459E6C325296EA963AD5E4B249F1D48B12C84018B7E92A11
-5D55.pygtex) [67]
+5D55.pygtex) [63]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/F4D3DF24BBD2BF90E238FDA832DA785A44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [68]
+8985.pygtex) [64]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1606,7 +963,7 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/A6B190774C5C603A5DD817F672AD670744C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [69]
+8985.pygtex) [65]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1616,12 +973,12 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/9CDDC2B8E37509DF91DB33780E79390644C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [70]
+8985.pygtex) [66]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/9F53FBBD5FE9620D391883AFF9AACDCC8A6CEB275183E90339C86343E396
-1F8D.pygtex) [71] [72]
+1F8D.pygtex) [67] [68]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1631,12 +988,12 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/B4B4B01D2E1245C438036B75EDFA09ADB2C258431BAA520A6B083BDB6535
-1BF5.pygtex) [73] [74]
+1BF5.pygtex) [69] [70]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/2D4768B94560B69ED4A1489C3753A10544C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [75]
+8985.pygtex) [71]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1646,27 +1003,27 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/B13B101C2CDBAA911E26B9DDE8AA8D8A44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [76]
+8985.pygtex) [72]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/82D6E38C4303069F92CF7483A8048380B2C258431BAA520A6B083BDB6535
-1BF5.pygtex) [77]
+1BF5.pygtex) [73]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/C88ECA29AE5651C9286EE843B162AFC444C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [78]
+8985.pygtex) [74]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/BEF24DD2AE619CF27FB9864AC5E0D1EF44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [79]
+8985.pygtex) [75]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/53D2C4C187779A9CF95C25D2B8C9276844C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [80]
+8985.pygtex) [76]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1676,12 +1033,12 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/45D616BE241D30806254B907551FE04744C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [81]
+8985.pygtex) [77]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/6AF45DD1DAE5BF5EABAB59899BF6DC5C44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [82]
+8985.pygtex) [78]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1691,12 +1048,12 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/3B8E6CE5A41E60B10E3ABA78954476C844C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [83]
+8985.pygtex) [79]
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/EDDA8C447E4A9B5933B6058725B6DA8A44C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex) [84]
+8985.pygtex) [80]
 \openout3 = `Writeup.pyg'.
 
 
@@ -1706,26 +1063,29 @@ Overfull \hbox (60.77522pt too wide) in paragraph at lines 5--5
 
 
 (./_minted-Writeup/246614E4C0FD8E449D13181C16A0BDD0000FA1B3C5A227DA32DB67CA28F2
-86FE.pygtex) [85] [86]
+86FE.pygtex) [81] [82] [83]
 
-LaTeX Warning: Reference `sec:' on page 87 undefined on input line 2289.
+LaTeX Warning: Reference `sec:future-terraform-k' on page 84 undefined on input
+ line 2310.
 
+[84]
 
-LaTeX Warning: Reference `sec:' on page 87 undefined on input line 2289.
+LaTeX Warning: Citation `consul-kubernetes' on page 85 undefined on input line 
+2332.
 
-[87] (./Writeup.bbl
+(./Writeup.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 \OT1/cmtt/m/n/12 com / software-[]development-[]greenfield-[]vs-[]brownfield/$[
 ]\OT1/cmr/m/n/12 , 2020.
  []
 
-
+[85]
 Underfull \hbox (badness 10000) in paragraph at lines 28--34
 \OT1/cmtt/m/n/12 auth0 . com / blog / hashing-[]passwords-[]one-[]way-[]road-[]
 to-[]security/$[]\OT1/cmr/m/n/12 ,
  []
 
-[88]
+
 Underfull \hbox (badness 2626) in paragraph at lines 36--42
 []\OT1/cmr/m/n/12 Dan Arias and Sam Bellen.  What Are Re-fresh To-kens and
  []
@@ -1760,7 +1120,7 @@ Underfull \hbox (badness 1325) in paragraph at lines 56--62
 s / tasks / run-[]application /
  []
 
-[89]
+[86]
 Underfull \hbox (badness 10000) in paragraph at lines 129--135
 []\OT1/cmr/m/n/12 Coursera.  What Is Python Used For? A Be-gin-
  []
@@ -1794,13 +1154,13 @@ Underfull \hbox (badness 1072) in paragraph at lines 143--147
 n-line; ac-cessed 14-August-
  []
 
-
+[87]
 Underfull \hbox (badness 10000) in paragraph at lines 155--159
 []$\OT1/cmtt/m/n/12 https : / / www . ibm . com / uk-[]en / cloud / learn / con
 tainerization$[]\OT1/cmr/m/n/12 ,
  []
 
-[90]
+
 Underfull \hbox (badness 10000) in paragraph at lines 188--193
 \OT1/cmtt/m/n/12 / / spark . apache . org / docs / latest / sql-[]getting-[]sta
 rted . html$[]\OT1/cmr/m/n/12 ,
@@ -1818,7 +1178,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--215
 / HTML _ basics$[]\OT1/cmr/m/n/12 ,
  []
 
-
+[88]
 Underfull \hbox (badness 7116) in paragraph at lines 217--222
 []\OT1/cmr/m/n/12 The Linux Foun-da-tion.  Ope-nAPI - Pro-vid-ing Doc-u-men-ta-
 
@@ -1836,7 +1196,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--240
 ecture /
  []
 
-[91]
+
 Underfull \hbox (badness 3989) in paragraph at lines 242--249
 []\OT1/cmr/m/n/12 Zaira Hira.  Shell Script-ing for Be-gin-ners { How to Write
  []
@@ -1864,7 +1224,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--269
 ]international . org /
  []
 
-[92]
+[89]
 Underfull \hbox (badness 3108) in paragraph at lines 316--319
 []\OT1/cmr/m/n/12 Maximilian Nickel, Kevin Mur-phy, Volker Tresp, and Ev-geniy
  []
@@ -1896,7 +1256,7 @@ Overfull \hbox (88.5166pt too wide) in paragraph at lines 326--333
 ing-[]docker-[]on-[]ubuntu-[]20-[]04$[]\OT1/cmr/m/n/12 ,
  []
 
-
+[90]
 Underfull \hbox (badness 1735) in paragraph at lines 365--372
 []\OT1/cmr/m/n/12 Dmitry Shu-rupov.  Ku-ber-netes and con-tainer-iza-tion trend
 s (ac-
@@ -1908,7 +1268,7 @@ Underfull \hbox (badness 4927) in paragraph at lines 365--372
  / / blog . flant . com /
  []
 
-[93]
+
 Underfull \hbox (badness 1052) in paragraph at lines 403--409
 []\OT1/cmr/m/n/12 Andrea V^^Sazquez-Ingelmo, Ali-cia Garc^^S^^Pa-Holgado, and F
 ran-cisco J
@@ -1931,69 +1291,69 @@ Underfull \hbox (badness 1931) in paragraph at lines 411--417
 n/12 , 2020.  [On-line; ac-
  []
 
-[94])
+[91])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/351394FA6D2A354B32374D9A67644EF6203147C9D6203956FB24CE37E6A3
-F626.pygtex [95])
+F626.pygtex [92])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/0A24C38A1824A9442E4B4844B2049356203147C9D6203956FB24CE37E6A3
-F626.pygtex [96] [97] [98] [99] [100]
+F626.pygtex [93] [94] [95] [96] [97]
 Overfull \hbox (11.69702pt too wide) in paragraph at lines 166--166
 \OT1/cmtt/m/it/12 axios.post("/query/allCollectionName").then(response 
  []
 
-[101]
+[98] [99]
 Overfull \hbox (147.22527pt too wide) in paragraph at lines 228--228
 \OT1/cmtt/m/n/12 axios.get([]"http://34.125.20.38:5000/api/v1/query/defoe_list"
 []).then(response 
  []
 
-[102]
+
 Overfull \hbox (42.25021pt too wide) in paragraph at lines 242--242
 \OT1/cmtt/m/n/12 axios.post([]"http://34.125.20.38:5000/api/v1/query/upload"[],
  
  []
 
-[103])
+[100])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/0DDECB4F84E27F115556352A58EB794595C943E21B767B5E7238E3F6CADA
-2FC5.pygtex [104])
+2FC5.pygtex [101])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/E2979BC53298E21A52ADC032B56E8C7644C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex [105] [106] [107] [108] [109])
+8985.pygtex [102] [103] [104] [105] [106])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/4F9141C2D4C6D9086D7AA52EF367ACE544C5A2E9C68FC8C2BDE270D27D6B
-8985.pygtex [110] [111] [112] [113])
+8985.pygtex [107] [108] [109] [110])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/E2833CA516DACB5BFC76D67886F48979E4B249F1D48B12C84018B7E92A11
-5D55.pygtex [114])
+5D55.pygtex [111])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/6E92572133DCB00DC17BB6D7072A8EA18A6CEB275183E90339C86343E396
-1F8D.pygtex [115])
+1F8D.pygtex [112])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/B698F3008817AB5E1AD49C4CC273EC7E000FA1B3C5A227DA32DB67CA28F2
-86FE.pygtex [116])
+86FE.pygtex [113])
 \openout3 = `Writeup.pyg'.
 
 
 (./_minted-Writeup/AD9F6A829A8B41F3A36CA734CED90E9E000FA1B3C5A227DA32DB67CA28F2
-86FE.pygtex) [117] (./Writeup.aux)
+86FE.pygtex) [114] (./Writeup.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2001,18 +1361,18 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `Writeup.out' has not changed.
-(rerunfilecheck)             Checksum: 6481C60BAF2335ACCC4549551FE6BDA5;14737.
+(rerunfilecheck)             Checksum: 8AC38432F886C2BE34ABE0E9704A4793;15427.
 runsystem(rm Writeup.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 16501 strings out of 478268
- 328617 string characters out of 5846347
- 772136 words of memory out of 5000000
- 33891 multiletter control sequences out of 15000+600000
- 484076 words of font info for 70 fonts, out of 8000000 for 9000
+ 16509 strings out of 478268
+ 327793 string characters out of 5846347
+ 772007 words of memory out of 5000000
+ 33905 multiletter control sequences out of 15000+600000
+ 483917 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,11n,109p,1160b,1098s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,109p,1090b,1098s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -2028,10 +1388,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Writeup.pdf (117 pages, 2628466 bytes).
+Output written on Writeup.pdf (114 pages, 2716386 bytes).
 PDF statistics:
- 1914 PDF objects out of 2073 (max. 8388607)
- 1702 compressed objects within 18 object streams
- 448 named destinations out of 1000 (max. 500000)
- 931 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1956 PDF objects out of 2073 (max. 8388607)
+ 1745 compressed objects within 18 object streams
+ 451 named destinations out of 1000 (max. 500000)
+ 976 words of extra memory for PDF output out of 10000 (max. 10000000)
 
